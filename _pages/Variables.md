@@ -39,7 +39,7 @@ There are variable names that are reserved as macros which cannot be overwritten
 |vehicles|Integer|Returns the amount of vehicles|
 |buildings|Integer|Returns the amount of buildings|
 |time|Integer|Returns the amount of seconds that have passed since the level began.|
-|[[Classes|LINK]]|Integer|Returns the amount of existing units/buildings of the specified class.**|
+|[Classes](LINK)|Integer|Returns the amount of existing units/buildings of the specified class.**|
 |lastminer||Return the last miner that activated a trigger.|
 |lastvehicle||Return the last vehicle that activated a trigger.|
 |lastbuilding||Return the last building that activated a trigger.|

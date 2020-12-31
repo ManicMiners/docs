@@ -15,7 +15,7 @@
 - [Triggers](_pages/Triggers)
 - [Conditions](_pages/Conditions)
 - [Events](_pages/Events)
-	- [Event Chains](_pages/EventChains)
+- [Event Chains](_pages/EventChains)
 - [Objectives](_pages/Objectives)
 - [Comments](_pages/Comments)
 
