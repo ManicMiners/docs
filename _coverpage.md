@@ -2,7 +2,7 @@
 
 # Manic Miners Scripting
 
-> How Rock Raiders really talk
+> How Rock Raiders really talk!
 
 [GitHub](https://github.com/ManicMiners/docs)
 [Get Started](#Scripting)
