@@ -22,7 +22,6 @@
 </details>
 
 <details open>
-<details open>
 <summary><b>Classes</b></summary>
 
 - [General Information](_pages/Classes)
