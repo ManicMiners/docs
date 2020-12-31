@@ -1,9 +1,11 @@
 # Building Class
 The building class is used to create a reference to a building. With that reference you can then call on and use triggers and properties exclusive to that building. You may also refer to a building collection where you may use triggers connected to every building of a specific type.
 
-## Declaration 
-building MyStore=2,14
-This declares the building at position 2,14 as MyStore.
+## Declaration
+
+	building MyStore=2,14
+	
+This declares the building at row 2, column 14 as `MyStore`.
 
 ## Triggers
 
