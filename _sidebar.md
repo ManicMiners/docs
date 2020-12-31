@@ -15,16 +15,20 @@
 - [Triggers](_pages/Triggers)
 - [Conditions](_pages/Conditions)
 - [Events](_pages/Events)
-	- [Event Chains](_pages/EventChains)
+- [Event Chains](_pages/EventChains)
 - [Objectives](_pages/Objectives)
 - [Comments](_pages/Comments)
 
 </details>
 
 <details open>
+<details open>
 <summary><b>Classes</b></summary>
 
-Coming soon...
+- [General Information](_pages/Classes)
+	- [Buildings](_pages/ClassesBuildings)
+	- [Miners](_pages/ClassesMiners)
+	- [Vehicles](_pages/ClassesVehicles)
 
 </details>
 

@@ -1,0 +1,6 @@
+:root {
+    --content-max-width                 : 85em;
+	--code-block-padding                : 1em 0.75em 0.75em 0.75em;
+	--heading-margin                    : 1.5rem 0 0;
+
+}
