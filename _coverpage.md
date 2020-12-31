@@ -4,7 +4,7 @@
 
 > How Rock Raiders really talk
 
-[GitHub](https://github.com/ManicMiners/scripting)
+[GitHub](https://github.com/ManicMiners/docs)
 [Get Started](#Scripting)
 
 <!-- background image -->
