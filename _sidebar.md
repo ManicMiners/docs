@@ -3,7 +3,7 @@
 <details open>
 <summary><b>Getting Started</b></summary>
 
-- [Scripting](Scripting)
+- [Scripting](README)
 - [Scripting Structure](_pages/ScriptingStructure)
 
 </details>
