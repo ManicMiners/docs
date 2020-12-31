@@ -47,7 +47,7 @@ Disable/Enable is used to control what the player can and cannot do in the curre
 where MACRO can be one of the following:
 
 |Macro name|Description|
-|---|---|
+|---|---|---|
 |miners|Toggle player's ability to teleport miners|
 |vehicles|Toggle player's ability to teleport vehicles|
 |buildings|Toggle player's ability to teleport buildings|
