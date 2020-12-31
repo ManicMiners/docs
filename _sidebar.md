@@ -22,9 +22,13 @@
 </details>
 
 <details open>
+<details open>
 <summary><b>Classes</b></summary>
 
-Coming soon...
+- [General Information](_pages/Classes)
+	- [Buildings](_pages/ClassesBuildings)
+	- [Miners](_pages/ClassesMiners)
+	- [Vehicles](_pages/ClassesVehicles)
 
 </details>
 
