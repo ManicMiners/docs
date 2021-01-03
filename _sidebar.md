@@ -12,6 +12,7 @@
 <summary><b>General</b></summary>
 
 - [Variables](_pages/Variables)
+ - [Macros](_pages/Macros)
 - [Triggers](_pages/Triggers)
 - [Conditions](_pages/Conditions)
 - [Events](_pages/Events)
