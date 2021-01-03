@@ -5,16 +5,16 @@ There exist variable names that are reserved as macros. When used in Scripting, 
 
 |Macro|Return Type|Function|
 |----|----|----|
-|crystals|Integer or null|Returns the crystal count*|
-|ore|Integer or null|Returns the ore count*|
-|studs|Integer or null|Returns the studs count*|
-|air|Integer|Returns the air status in miner-seconds*|
+|crystals|Integer or null|Returns the crystal count**\***|
+|ore|Integer or null|Returns the ore count**\***|
+|studs|Integer or null|Returns the studs count**\***|
+|air|Integer|Returns the air status in miner-seconds**\***|
 |miners|Integer|Returns the amount of miners|
 |vehicles|Integer|Returns the amount of vehicles|
 |buildings|Integer|Returns the amount of buildings|
 |time|Integer|Returns the amount of seconds that have passed since the level began.|
 |get|get(ROW)(COLUMN)|Returns the tile ID of the specified coordinates.|
-|`[Class](_pages/Classes)`|Integer|Returns the amount of existing units/buildings of the specified class.**|
+|`[Class](_pages/Classes)`|Integer|Returns the amount of existing units/buildings of the specified class.**\*\***|
 |lastminer||Return the last miner that activated a trigger.|
 |lastvehicle||Return the last vehicle that activated a trigger.|
 |lastbuilding||Return the last building that activated a trigger.|
@@ -22,7 +22,7 @@ There exist variable names that are reserved as macros. When used in Scripting, 
 |datafield|various|properties that return information about a unit or building. See [[Datafields]] for more info.|
 
 ?> \* These macros can also be used to directly set the current gathered resources (such as crystals=5).<br>
-?>
+
 ?> \*\* You can fetch the current count of any class in the game if you know the name of it. A full list of classes is **LINK**. Buildings and vehicles **will only monitor non-hidden units**.
 
 ## Macros with input
