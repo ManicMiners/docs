@@ -26,3 +26,10 @@ To assist you with scripting the Level Editor can display the Row, Column and Ti
 
 # Level data file
 The Level data file contains all the information needed to generate a level including scripting. Among other useful things it describes the [tile ID's](https://manicminers.fandom.com/wiki/Level_data_file#Tile_ID_list:)
+
+
+```javascript
+var s = "JavaScript syntax highlighting";
+alert(s);
+```
+	code block
