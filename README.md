@@ -32,4 +32,10 @@ The Level data file contains all the information needed to generate a level incl
 var s = "JavaScript syntax highlighting";
 alert(s);
 ```
-	code block
+
+```mms
+var s = "MMS syntax highlighting";
+alert(s);
+#test
+*/ test */
+```
