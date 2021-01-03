@@ -22,7 +22,7 @@ There exist variable names that are reserved as macros. When used in Scripting, 
 |datafield|various|properties that return information about a unit or building. See [[Datafields]] for more info.|
 
 ?> \* These macros can also be used to directly set the current gathered resources (such as crystals=5).<br>
-?> \*\* You can fetch the current count of any class in the game if you know the name of it. A full list of classes is **LINK**. Buildings and vehicles **will only monitor non-hidden units**.
+> \*\* You can fetch the current count of any class in the game if you know the name of it. A full list of classes is **LINK**. Buildings and vehicles **will only monitor non-hidden units**.
 
 ## Macros with input
 This macro requires input values in order to function.
