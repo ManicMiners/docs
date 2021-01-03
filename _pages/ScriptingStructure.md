@@ -1,28 +1,25 @@
 # Scripting structure
-
 The scripting works by calling events from triggers. The structure looks like this:
 
-	OCCURENCE(TRIGGER)((CONDITION))[EVENT1][EVENT2] 
+`OCCURENCE``(TRIGGER)``((CONDITION))``[EVENT1]``[EVENT2]`
 
 To make it work, replace each word with a proper scripting sentence.
 
 ## OCCURENCE
+This defines how many times a event can occur.
 
-This defines how many times a event can happen, it can be either **when** or **if**.
+- `when` means the event can fire multiple times.
+- `if` fires once, and then the trigger is removed forever.
 
-`when` fires every time the trigger happens. Triggers such as `walk` and `drive` fire once every time the tile is entered, not while someone is there.
+## [TRIGGER](_pages/Triggers)
+A trigger defines when the event should be called. It is marked with single parenthesis`()`. 
 
-`if` fires once, and then the trigger is removed forever.
+Triggers such as `walk` and `drive` fire once every time the tile is entered, not while someone is there.
 
-## TRIGGER
+## [CONDITION](_pages/Conditions)
+A condition is an optional statement you can use to add a requirement to your script. This is marked with double parenthesis: `(())`. A condition allows you to compare two variables with each other and fire a event based on if the result equals `true` or `false`
 
-A trigger defines when the event should be called. It is marked with single parenthesis: `()`. 
-
-## CONDITION (optional)
-
-Optionally you can add a condition to your script. This is marked with double parenthesis: `(())`. Inside conditions you can compare variables with each other and fire a event based on if the result equals `true` or `false`
-
-## Event
+## [Event](_pages/Events)
 Events define what should happen. They are marked with square brackets: `[]` and can be written either one or two on the same line.
 
 The first event is mandatory. It can be used with or without conditions. If it is used with conditions it will only fire if the condition equals `true`. The second event is **optional** and can only be used together with a condition. It will only fire if the condition equals `false`.
