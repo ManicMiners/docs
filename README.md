@@ -14,8 +14,13 @@ Scripting is programmed level-specific behaviour that is currently defined by in
 
 To assist you with scripting the Level Editor can display the Row, Column and Tile ID of the tile beneath the mouse cursor. This function is activated when you press the Script Interface button in the Level Editor.
 
+<center><img src="_media/EditorScriptingMenu.png" alt="Scripting Button" width="100" /></center>
+
 !> If you notice something that's incorrect or require an update, create a issue on **[Github](https://github.com/ManicMiners/docs/issues)** or come over to the **#Scripting** channel over on **[Discord](https://discord.gg/85k8JHz)**.
 
 ## Links
  - [Discord](https://discord.gg/85k8JHz)
  - [Manic Miners](https://manicminers.baraklava.com/)
+
+# Level data file
+The Level data file contains all the information needed to generate a level including scripting. Among other useful things it describes the [tile ID's](https://manicminers.fandom.com/wiki/Level_data_file#Tile_ID_list:)
