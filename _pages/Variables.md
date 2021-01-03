@@ -20,6 +20,4 @@ Variables can be of different types. Each type can only save certain values whic
 |arrow|arrow MyArrow / arrow MyArrow=color|To be used with [[Scripting#Arrow events|LINK]]. Color represent the color to highlight the tile beneth the arrow and can be one of the following: ''red, green, blue, darkgreen, yellow, white, black''|
 
 
-?> **\*** **miner** and **vehicle** binds to the unit that currently holds the specified ID, not to the ID itself. If the associated unit dies and another is assigned their ID, the associated events will NOT trigger.
-?>
-?> **\*\*** **Buildings**, **miners** and **vehicles** bind at the beginning of a level which mean that if a bound unit or structure is teleported or destroyed then any associated events will no longer trigger.
+?> **\*** **miner** and **vehicle** binds to the unit that currently holds the specified ID, not to the ID itself. If the associated unit dies and another is assigned their ID, the associated events will NOT trigger.<br>**\*\*** **Buildings**, **miners** and **vehicles** bind at the beginning of a level which mean that if a bound unit or structure is teleported or destroyed then any associated events will no longer trigger.
