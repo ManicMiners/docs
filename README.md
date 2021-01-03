@@ -14,7 +14,7 @@ To assist you with scripting the Level Editor can display the Row, Column and Ti
 
 ![ShowLogButton_Screenshot](_media/EditorShowLog.png "Show Log")
 
-!> If you notice something that's incorrect or require an update, create a issue on [Discord](https://github.com/manicminers/docs) or come over to the #Scripting channel over on [Discord](https://discord.gg/85k8JHz).
+!> If you notice something that's incorrect or require an update, create a issue on [Github](https://github.com/manicminers/docs) or come over to the #Scripting channel over on [Discord](https://discord.gg/85k8JHz).
 
 ## Links
  - [Discord](https://discord.gg/85k8JHz)
