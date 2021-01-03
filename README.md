@@ -15,3 +15,9 @@ To assist you with scripting the Level Editor can display the Row, Column and Ti
 ![ShowLogButton_Screenshot](_media/EditorShowLog.png "Show Log")
 
 If you are going to use class references in your scripting, head over to the [Classes](_pages/Classes) page.
+
+!> If you notice something that's incorrect or require an update, create a issue on discord or come over to the #Scripting channel over on discord.
+
+## Links
+ - [Discord](https://discord.gg/85k8JHz)
+ - [Manic Miners](https://manicminers.baraklava.com/)
