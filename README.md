@@ -12,6 +12,6 @@ Variables are used to keep track of what's happening in the level. Triggers chec
 
 To assist you with scripting the Level Editor can display the Row, Column and Tile ID of the tile beneath the mouse cursor. This function is activated when you press the Script Interface button in the Level Editor.
 
-![ShowLogButton_Screenshot](_media/ShowLogButton.png "Show Log Button")
+![ShowLogButton_Screenshot](_media/EditorShowLogButton.png "Show Log Button")
 
 If you are going to use class references in your scripting, head over to the [Classes](_pages/Classes) page.
