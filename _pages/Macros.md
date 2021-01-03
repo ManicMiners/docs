@@ -14,15 +14,15 @@ There exist variable names that are reserved as macros. When used in Scripting, 
 |buildings|Integer|Returns the amount of buildings|
 |time|Integer|Returns the amount of seconds that have passed since the level began.|
 |get|get(ROW)(COLUMN)|Returns the tile ID of the specified coordinates.|
-|[Classes](LINK)|Integer|Returns the amount of existing units/buildings of the specified class.**|
+|`[Class](_pages/Classes)`|Integer|Returns the amount of existing units/buildings of the specified class.**|
 |lastminer||Return the last miner that activated a trigger.|
 |lastvehicle||Return the last vehicle that activated a trigger.|
 |lastbuilding||Return the last building that activated a trigger.|
 |ConstructedBuilding||Return the last constructed building.|
 |datafield|various|properties that return information about a unit or building. See [[Datafields]] for more info.|
 
-\* These macros can also be used to directly set the current gathered resources (such as crystals=5).<br>
-\*\* You can fetch the current count of any class in the game if you know the name of it. A full list of classes is **LINK**. Buildings and vehicles **will only monitor non-hidden units**.
+>? \* These macros can also be used to directly set the current gathered resources (such as crystals=5).<br>
+>? \*\* You can fetch the current count of any class in the game if you know the name of it. A full list of classes is **LINK**. Buildings and vehicles **will only monitor non-hidden units**.
 
 ## Macros with input
 This macro requires input values in order to function.
