@@ -22,17 +22,11 @@ A trigger activates in response to things that happen in the world, such as a wa
 |comparison|(`expression`)|Activates when the `expression` is evaluated as `true`. See the next section for usage.|
 
 ## How to monitor triggers (comparisons)
-A trigger can be set to fire by comparing [Variables](_pages/Variables) with eachother. You can use this to e.g. play a sound when the player has collected half of the amount of crystals needed complete a objective.
+A trigger can be set to fire based on a comparison between two [Variables](_pages/Variables). This is the same as asking the game a yes/no question like *is value1 greater than value2?*. The comparison or question must evaluate to `true` for the trigger to fire. You can use this to e.g. play a sound when the player has collected half of the amount of crystals needed complete a objective.
 
-	when(VALUE1>=VALUE2)[EVENT]
+!> All variables used within a trigger are converted to integers which cuts off any decimals. This is different from rounding as if you compare 2.2 and 2.9 they will be equal. Furthermore comparisons are not to be confused with conditions that are marked by double parenthesis `(())` although they work in a similar way.
 
-The above statement asks if VALUE1 is larger than or equal to VALUE2. If the expression evaluates to `true` then the trigger will activate the event. The **operator** in the middle can be replaced by anything from the table below.
-
-!> Comparisons are not to be confused with conditions that are marked by double parenthesis `(())` although they work in a similar way.
-
-?> The compared _values_ can be set to any valid float or integer variable, macro, class macro, function call, or regular numeric values. 
-
-All variables used within a trigger are converted to integers which cuts off any decimals. This is different from rounding as if you compare 2.2 and 2.9 they will be equal. For more ideas on what you can use these for, please refer to [Macros](_pages/Macros).
+?> The compared _values_ can be set to any valid `float`, `integer`, [Macro](_pages/Macro), [Class Macro](_pages/Classes), or regular numeric values.
 
 |Logical operators|Meaning|
 |---|---|
@@ -42,3 +36,13 @@ All variables used within a trigger are converted to integers which cuts off any
 |<=|Less than or equal to|
 |==|Equal to|
 |!=|Not equal to|
+
+### Example
+
+	int VALUE1=1
+	int VALUE2=2
+	
+	if(VALUE1>=VALUE2)[EVENT] #Trigger1
+	if(VALUE2>=VALUE1)[EVENT] #Trigger2
+
+In the above code only `Trigger2` will fire as `2>=1` is `true`, but `1>=2` is `false`.

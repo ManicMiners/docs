@@ -13,6 +13,7 @@ There exist variable names that are reserved as macros. When used in Scripting, 
 |vehicles|Integer|Returns the amount of vehicles|
 |buildings|Integer|Returns the amount of buildings|
 |time|Integer|Returns the amount of seconds that have passed since the level began.|
+|get|get(ROW)(COLUMN)|Returns the tile ID of the specified coordinates.|
 |[Classes](LINK)|Integer|Returns the amount of existing units/buildings of the specified class.**|
 |lastminer||Return the last miner that activated a trigger.|
 |lastvehicle||Return the last vehicle that activated a trigger.|

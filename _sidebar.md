@@ -13,6 +13,7 @@
 
 - [Variables](_pages/Variables)
  - [Macros](_pages/Macros)
+ - [Arrays](_pages/Arrays)
 - [Triggers](_pages/Triggers)
 - [Conditions](_pages/Conditions)
 - [Events](_pages/Events)
