@@ -1,7 +1,7 @@
 # Scripting structure
 The scripting works by calling events from triggers. The structure looks like this:
 
-`OCCURENCE``(TRIGGER)``((CONDITION))``[EVENT1]``[EVENT2]`
+`OCCURENCE` `(TRIGGER)` `((CONDITION))` `[EVENT1]` `[EVENT2]`
 
 To make it work, replace each word with a proper scripting sentence.
 
