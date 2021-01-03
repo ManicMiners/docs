@@ -23,35 +23,3 @@ Variables can be of different types. Each type can only save certain values whic
 *_miner_ and _vehicle_ binds to the unit that currently holds the specified ID, not to the ID itself. If the associated unit dies and another is assigned their ID, the associated events will NOT trigger.
 
 **_Buildings_, _miners_ and _vehicles_ bind at the beginning of a level which mean that if a bound unit or structure is teleported or destroyed then any associated events will no longer trigger.
-
-## Macros
-There are variable names that are reserved as macros which cannot be overwritten. When used in scripting, these can return and in some cases set a value. You can use macros to e.g. show a message when the player has collected 3 crystals or to trigger a monster invasion if the player constructs too many buildings (with a fair warning first).
-
-### Macros without input
-
-|Macro|Return Type|Function|
-|----|----|----|
-|crystals|Integer or null|Returns the crystal count*|
-|ore|Integer or null|Returns the ore count*|
-|studs|Integer or null|Returns the studs count*|
-|air|Integer|Returns the air status in miner-seconds*|
-|miners|Integer|Returns the amount of miners|
-|vehicles|Integer|Returns the amount of vehicles|
-|buildings|Integer|Returns the amount of buildings|
-|time|Integer|Returns the amount of seconds that have passed since the level began.|
-|[Classes](LINK)|Integer|Returns the amount of existing units/buildings of the specified class.**|
-|lastminer||Return the last miner that activated a trigger.|
-|lastvehicle||Return the last vehicle that activated a trigger.|
-|lastbuilding||Return the last building that activated a trigger.|
-|ConstructedBuilding||Return the last constructed building.|
-|datafield|various|properties that return information about a unit or building. See [[Datafields]] for more info.|
-
-\* These macros can also be used to directly set the current gathered resources (such as crystals=5).<br>
-\*\* You can fetch the current count of any class in the game if you know the name of it. A full list of classes is **LINK**. Buildings and vehicles **will only monitor non-hidden units**.
-
-### Macros with input
-These macros requires input values in order to function.
-
-|Macro|Return Type|Description|
-|----|----|----|
-|random(MIN)(MAX)|Integer or float|Return a random number in the range [MIN-MAX]. Can be used with both integers and floats.|

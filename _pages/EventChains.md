@@ -31,3 +31,17 @@ Conditions can also be used together with event chains. They can be used with on
 	((CONDITION))[EVENT_TRUE][EVENT_FALSE];
 	
 The above statement fire EVENT\_TRUE if CONDITION equals `true` or EVENT\_FALSE if `CONDITION` equals `false`
+## Example
+
+	int counter=0				#A number
+	string myStr="Counter: "	#A partial message
+	string myMsg				#A blank string
+
+	if(time:5)[myChain]			#A trigger
+	
+	myChain::;					#The Chain
+	counter+=1;					#Increase the counter
+	myMsg=myStr+counter;		#Combine a message
+	msg:myMsg;					#Display the message
+	
+The above code run after 5 game-seconds, increases the counter from 0 to 1 and display a message to the player.

@@ -3,31 +3,32 @@ A trigger activates in response to things that happen in the world, such as a wa
 
 |Trigger|Syntax|Description|
 |----|----|----|
-|drill|(drill:ROW,COLUMN)|Call the corresponding event when a wall at ROW,COLUMN is drilled, or the wall there collapses.|
-|built|(built:ROW,COLUMN)|Call the corresponding event when a building is built upon the specified coordinate.|
-|laser|(laser:ROW,COLUMN)|Call the corresponding event when a wall at ROW,COLUMN is destroyed by a laser.|
-|laserhit|(laserhit:ROW,COLUMN)|Call the corresponding event when a wall at ROW,COLUMN is hit by a laser, but not destroyed.|
-|change|(change:ROW,COLUMN / (change:ROW,COLUMN,ID)|Call the corresponding event when a wall at ROW,COLUMN is changed in any way. This includes reinforcing, shoveling once, drilling, finding a cave etc. Optionally add a ID requirement for the trigger to fire only if the tile is changed to a specific tile ID.|
-|reinforce|(reinforce:ROW,COLUMN)|Call the corresponding event when a wall at ROW,COLUMN is reinforced by any unit.|
-|time|(time:SECONDS)|Call the corresponding event when SECONDS seconds have been reached. Supports decimal floats.|
-|hover|(hover:ROW,COLUMN)|Activates when the player hovers that tile. The tile has to be visible.|
-|click|(click:ROW,COLUMN)|Activates when the player clicks that tile. The tile has to be visible.|
-|walk|(walk:ROW,COLUMN) / (walk:ROW,COLUMN, NAME)|Activates when a [[Classes|LINK]] walks on a tile. Optionally add a NAME requirement to make the trigger fire only for a specific class.*|
-|drive|(drive:ROW,COLUMN) / (drive:ROW,COLUMN, NAME)|Activates when a [[Classes|LINK]] is driven over a tile. Optionally add a NAME requirement to make the trigger fire only for a specific class.*|
-|enter|(enter:ROW,COLUMN) / (enter:ROW,COLUMN, NAME)|Activates when a [[Classes|class]] enters a tile, either miner or vehicle. Optionally add a NAME requirement to make the trigger fire only for a specific class.*|
-|comparison|(''expression'')|Activates when the ''expression'' is evaluated as `true`. See the next section for usage.|
-*ID only works with named miner or vehicle variables. 
+|drill|(drill:ROW,COLUMN)|Triggers when a wall at ROW,COLUMN is drilled or collapses.|
+|built|(built:ROW,COLUMN)|Triggers when a building is built upon the specified coordinate.|
+|laser|(laser:ROW,COLUMN)|Triggers when a wall at ROW,COLUMN is destroyed by a laser.|
+|laserhit|(laserhit:ROW,COLUMN)|Triggers when a wall at ROW,COLUMN is hit by a laser.|
+|change|(change:ROW,COLUMN|Triggers when a wall at ROW,COLUMN is changed in any way. This includes reinforcing, shoveling once, drilling, finding a cave etc.|
+|change|(change:ROW,COLUMN,ID)|Triggers only if the tile is changed to the specified tile ID.|
+|reinforce|(reinforce:ROW,COLUMN)|Triggers when a wall at ROW,COLUMN is reinforced by any unit.|
+|time|(time:SECONDS)|Triggers when the specified amount of seconds have been reached. (Supports decimal floats.)|
+|hover|(hover:ROW,COLUMN)|Triggers when the player hovers the tile at the specified coordinates with the mouse cursor. (The tile has to be visible.)|
+|click|(click:ROW,COLUMN)|Triggers when the player clicks the tile at the specified coordinates. (The tile has to be visible.)|
+|walk|(walk:ROW,COLUMN)|Triggers when a [Miner](_pages/ClassesMiners) walks on a tile.|
+|walk|(walk:ROW,COLUMN, NAME)|Like walk but trigger only for the specified [Miner](_pages/ClassesMiners). (Require named miner variable.)|
+|drive|(drive:ROW,COLUMN)|Triggers when a [Vehicle](_pages/ClassesVehicles) is driven over the specified tile.|
+|drive|(drive:ROW,COLUMN, NAME)|Like drive but trigger only for the specified [Vehicle](_pages/ClassesVehicles). (Require named vehicle variable or class.)|
+|enter|(enter:ROW,COLUMN)|Activates when either a [Miner](_pages/ClassesMiners) or [Vehicle](_pages/ClassesVehicles) enter a tile.|
+|enter|(enter:ROW,COLUMN, NAME)|Like enter but trigger only for the specified vehicle class or named [Miner](_pages/ClassesMiners)/[Vehicle](_pages/ClassesVehicles).|
+|comparison|(`expression`)|Activates when the `expression` is evaluated as `true`. See the next section for usage.|
 
-## How to monitor triggers
-A trigger can be set to fire by comparing Variables and macros. You can use this to e.g. play a sound when the player has collected half of the amount of crystals they need to complete the level.
+## How to monitor triggers (comparisons)
+A trigger can be set to fire based on a comparison between two [Variables](_pages/Variables). This is the same as asking the game a yes/no question like *is value1 greater than value2?*. The comparison or question must evaluate to `true` for the trigger to fire. You can use this to e.g. play a sound when the player has collected half of the amount of crystals needed complete a objective.
 
-`(VALUE1>=VALUE2)`
+!> All variables used within a trigger are converted to integers which cuts off any decimals. This is different from rounding as if you compare 2.2 and 2.9 they will be equal. Furthermore comparisons are not to be confused with conditions that are marked by double parenthesis `(())` although they work in a similar way.
 
-The above statement asks if VALUE1 is larger than or equal to VALUE2. If the expression evaluates to `true` then the trigger will activate a following event. This is not to be confused with conditions that are marked by double parenthesis `(())` although they work almost exactly the same. The _operator_ in the middle can be replaced by anything from the table below.
+?> The compared _values_ can be set to any valid `float`, `integer`, [Macro](_pages/Macro), [Class Macro](_pages/Classes), or regular numeric values.
 
-The _values_ can be set to any valid float or integer variable, macro, class macro, function call, or regular numeric values.  All variables used within a trigger are converted to integers which cuts off any decimals. This is different from rounding as if you compare 2.2 and 2.9 they will be equal. For more ideas on what you can use these for, please refer to [Macros](_pages/Variables#Macros).
-
-|Comparison operators||
+|Logical operators|Meaning|
 |---|---|
 |>|Larger than|
 |>=|Larger than or equal to|
@@ -35,3 +36,13 @@ The _values_ can be set to any valid float or integer variable, macro, class mac
 |<=|Less than or equal to|
 |==|Equal to|
 |!=|Not equal to|
+
+### Example
+
+	int VALUE1=1
+	int VALUE2=2
+	
+	if(VALUE1>=VALUE2)[EVENT] #Trigger1
+	if(VALUE2>=VALUE1)[EVENT] #Trigger2
+
+In the above code only `Trigger2` will fire as `2>=1` is `true`, but `1>=2` is `false`.
