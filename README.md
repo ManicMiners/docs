@@ -36,11 +36,12 @@ alert(s);
 ```clike
 var s = "MMS syntax highlighting";
 alert(s);
-#test
-*/ test */
-miners test
-miner test
-objectives test
+
+/* test */
+miners test #class
+miner test #variable
+if(test) #occurrence
+
 ```
 
 

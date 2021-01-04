@@ -4149,13 +4149,13 @@
           ],
       	  string: [
 			{
-				pattern: /(")((?:\\\1|(?:(?!\1).))*)\1/,
+				pattern: /(")((?:#\1|(?:(?!\1).))*)\1/,
 				lookbehind: !0,	
 				greedy: !0,
 			},
 		  ],
           "class-name": {
-            pattern: /(?:when|if)(?=\()|(?:int|string|boolean|float|miner|vehicle|building|arrow)\s/i,
+            pattern: /(\b(?:class|interface|extends|implements|trait|instanceof|new)\s+|\bcatch\s+\()[\w.\\]+/i,
           },
           keyword: /\b(?:comments|info|tiles|height|resource|objectives|buildings|landslidefrequency|lavaspread|miners|briefing|briefingsuccess|briefingfailure|vehicles|creatures)\b/,
           boolean: /\b(?:true|false)\b/,
