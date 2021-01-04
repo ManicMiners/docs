@@ -33,11 +33,13 @@ var s = "JavaScript syntax highlighting";
 alert(s);
 ```
 
-```clike
+```mms
 var s = "MMS syntax highlighting";
 alert(s);
+string stringtest="test"+"test2"
 
 /* test */
+
 miners test #class
 miner test #variable
 if(test) #occurrence

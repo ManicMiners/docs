@@ -4143,6 +4143,27 @@
               n.tag
             ));
         })(a),
+		(a.languages.mms = {
+          comment: [
+     	   { pattern: /#.*/, lookbehind: !0 },
+          ],
+      	  string: [
+			{
+				pattern: /(")((?:#\1|(?:(?!\1).))*)\1/,
+				lookbehind: !0,	
+				greedy: !0,
+			},
+		  ],
+          "class-name": {
+            pattern: /(\b(?:class|interface|extends|implements|trait|instanceof|new)\s+|\bcatch\s+\()[\w.\\]+/i,
+          },
+          keyword: /\b(?:comments|info|tiles|height|resource|objectives|buildings|landslidefrequency|lavaspread|miners|briefing|briefingsuccess|briefingfailure|vehicles|creatures)\b/,
+          boolean: /\b(?:true|false)\b/,
+          function: /(?<=\()(?:drill|built|laser|laserhit|change|reinforce|time|hover|click|walk|drive|enter|comparison)+(:)/,
+          number: /\b0x[\da-f]+\b|(?:\b\d+\.?\d*|\B\.\d+)(?:e[+-]?\d+)?/i,
+          operator: /[<>]=?|[!=]=?=?|--?|\+\+?|&&?|\|\|?|[?*/~^%]/,
+          punctuation: /[(){};:,\[\]]/,
+        }),
         (a.languages.clike = {
           comment: [
      	   { pattern: /#.*/, lookbehind: !0 },
