@@ -33,4 +33,10 @@
 
 </details>
 
-[Scripting Examples](_pages/ScriptingExamples)
+<details open>
+<summary><b>Other</b></summary>
+
+- [Level Data File](_pages/LevelDataFile)
+- [Scripting Examples](_pages/ScriptingExamples)
+
+</details>

@@ -3,8 +3,10 @@ The building class is used to create a reference to a building. With that refere
 
 ## Declaration
 
+```mms
 	building MyStore=2,14
-	
+```
+
 This declares the building at row 2, column 14 as `MyStore`.
 
 ## Triggers
@@ -32,8 +34,10 @@ Each native building class have their own collection. When used by itself the co
 ### Disable or enable a building
 A collection can be used together with the disable event in order to prevent the player from creating a specified building. Likewise the enable event will re-allow a player to construct the specified building.
 
+```mms
 	disable:BuildingSuperTeleport_C
 	enable:BuildingSuperTeleport_C
+```
 
 ### List of collections
 
@@ -56,20 +60,27 @@ A collection can be used together with the disable event in order to prevent the
 ## Examples
 ### Count buildings
 
+```mms
 	when(drill:2,2)[msg:BuildingSupportStation_C]
+```
+
 When you drill a wall at position 2,2 a number indicating the total amount of constructed Support 	Stations will be displayed.
 
 ### Click a building
 
+```mms
 	building MyStore=2,14
 	string MyMsg="You clicked on MyStore!"
 	when(MyStore.click)[msg=MyMsg]
+```
 
 When you click on the building at the given coordinates a message will be displayed.
 
 ### Click any building
 
+```mms
 	string MyMsg="You clicked on a building!"
 	when(building.click)[msg=MyMsg]
+```
 
 When you click any building a message will be displayed.

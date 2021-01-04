@@ -13,26 +13,36 @@ A class can imply a declaration of an object type or a reference to a collection
 ### Declaration 
 A variable is declared a object of a certain type, for example a miner.
 
+```mms
 	miner myMiner=1
+```
 
 ### Collection 
 A group of objects of a specific type or category, for example miners or Support Stations
 
+```mms
 	miners
 	BuildingSupportStation_C
+```
 
 ### Usage
 Declared objects or collections can be used together with triggers or properties, for example:
 
+```mms
 	when(myMiner.dead)[EVENT]
+```
 
 Trigger when the specified miner gets teleported back up.
 
+```mms
 	when(BuildingSupportStation_C.new)[EVENT]
+```
 
 Trigger when a Support Station is built.
 
+```mms
 	when(MyBuilding.click)((MyBuilding.power==true))[EVENT]
+```
 
 Trigger when a building is clicked but only if the building is currently powered and not turned off.
 <hr>
@@ -54,7 +64,9 @@ These classes can be used in some instances. These classes can have undefined re
 ## Class triggers 
 Class triggers are predefined triggers bound to specific object types. For triggers connected to larger classes, see their respective wiki-page. 
 
+```mms
 	CLASS.Trigger
+```
 
 Where CLASS is replaced with a collection or declared object and trigger with a valid trigger:
 

@@ -12,10 +12,15 @@ Scripting is programmed level-specific behaviour that is currently defined by in
 
 ![ShowLogButton_Screenshot](_media/EditorShowLog.png "Show Log")
 
+
+<img src="_media/EditorScriptingMenu.png" alt="Scripting Button" width="100" style="float:left; margin: 0.2em"/>
 To assist you with scripting the Level Editor can display the Row, Column and Tile ID of the tile beneath the mouse cursor. This function is activated when you press the Script Interface button in the Level Editor.
+
+<p style="clear:both; float:none;" />
 
 !> If you notice something that's incorrect or require an update, create a issue on **[Github](https://github.com/ManicMiners/docs/issues)** or come over to the **#Scripting** channel over on **[Discord](https://discord.gg/85k8JHz)**.
 
 ## Links
  - [Discord](https://discord.gg/85k8JHz)
  - [Manic Miners](https://manicminers.baraklava.com/)
+ 
