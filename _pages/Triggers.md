@@ -26,7 +26,7 @@ A trigger can be set to fire based on a comparison between two [Variables](_page
 
 !> All variables used within a trigger are converted to integers which cuts off any decimals. This is different from rounding as if you compare 2.2 and 2.9 they will be equal. Furthermore comparisons are not to be confused with conditions that are marked by double parenthesis `(())` although they work in a similar way.
 
-?> The compared _values_ can be set to any valid `float`, `integer`, [Macro](_pages/Macro), [Class Macro](_pages/Classes), or regular numeric values.
+?> The compared _values_ can be set to any valid `float`, `integer`, [Macro](_pages/Macros), [Class Macro](_pages/Classes), or regular numeric values.
 
 |Logical operators|Meaning|
 |---|---|
