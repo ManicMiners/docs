@@ -88,7 +88,7 @@ When you collect 5 or more crystals a message will appear once and display your 
 Every time you click on the tile at row 6, column 6 the value of '''counter''' increases and a message is displayed with the new value. This example includes an event chain.
 
 ### Conditions inside Event Chains
-```
+```clike
 	int myRow
 	int myCol
 	bool myBool
