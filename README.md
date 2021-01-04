@@ -39,7 +39,7 @@ alert(s);
 string stringtest="test"+"test2"
 
 /* test */
-
+boolean mybooleam=true #boolean test
 miners test #class
 miner test #variable
 if(test) #occurrence
