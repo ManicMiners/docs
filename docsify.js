@@ -4155,14 +4155,14 @@
 			},
 		  ],
           "class-name": {
-            pattern: /(\b(?:when|if|int|string|boolean|float|miner|vehicle|building|arrow)\s)/i,
+            pattern: /(?:when|if)(?=\()|(?:int|string|boolean|float|miner|vehicle|building|arrow)\s/i,
           },
           keyword: /\b(?:comments|info|tiles|height|resource|objectives|buildings|landslidefrequency|lavaspread|miners|briefing|briefingsuccess|briefingfailure|vehicles|creatures)\b/,
           boolean: /\b(?:true|false)\b/,
           function: /(?<=\()(?:drill|built|laser|laserhit|change|reinforce|time|hover|click|walk|drive|enter|comparison)+(:)/,
           number: /\b0x[\da-f]+\b|(?:\b\d+\.?\d*|\B\.\d+)(?:e[+-]?\d+)?/i,
           operator: /[<>]=?|[!=]=?=?|--?|\+\+?|&&?|\|\|?|[?*/~^%]/,
-          punctuation: /[(){};:,]/,
+          punctuation: /[(){};:,\[\]]/,
         }),
         (a.languages.javascript = a.languages.extend("clike", {
           "class-name": [
