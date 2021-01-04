@@ -4157,7 +4157,6 @@
 		  variable: /\b(?:when|if)\b/,
 		  constant: /\b(?:crystals|ore|studs|air|miners|vehicles|buildings|time|lastminer|lastvehicle|lastbuilding|ConstructedBuilding|datafield|random|get)\b/, <!-- macros -->
 		  atrule: /\b(?:int|string|boolean|float|miner|vehicle|building|arrow)\s/,
-		  keyword: /\b(?:init|reset|pause|unpause|resume|resetspeed|miners|vehicles|buildings|light|lights)|(?:drill|msg|place|wait|truewait|win|lose|sound|pan|shake|save|speed|resetspeed|showarrow|highlight|highlightarrow|hidearrow)(?=:)\b/,
           boolean: /\b(?:true|false)\b/,
           function: [
 		  	{ 	pattern: /([\(])(?:drill|built|laser|laserhit|change|reinforce|time|hover|click|walk|drive|enter)\b/,
@@ -4165,6 +4164,7 @@
 				greedy: !0,
 			},
 		  ],
+		  keyword: /\b(?:init|reset|pause|unpause|resume|resetspeed|miners|vehicles|buildings|light|lights)|(?:drill|msg|place|wait|truewait|win|lose|sound|pan|shake|save|speed|resetspeed|showarrow|highlight|highlightarrow|hidearrow)(?=:)\b/,
           number: /\b0x[\da-f]+\b|(?:\b\d+\.?\d*|\B\.\d+)(?:e[+-]?\d+)?/i,
           operator: /[<>]=?|[!=]=?=?|--?|\+\+?|&&?|\|\|?|[?*/~^%]/,
           punctuation: /[(){};:,\[\]]/,
