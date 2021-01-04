@@ -55,10 +55,10 @@ chain_event::test;
 change:3,45;
 msg:mymsg;
 
-		  filehandle: /filehandle/,
+		  
 		  constant: /constant/,
-		  delimiter: /delimiter/,
 		  symbol: /symbol/
+		  function: /function/,
 
 ```
 
@@ -69,6 +69,7 @@ Here you can find all sorts of examples to try and modify for your level.
 ## General Scripts
 
 ### A simple message
+
 ```mms
     string HappyBirthday="Happy birthday, cadet!"
 	when(drill:2,2)[msg:HappyBirthday]
@@ -76,7 +77,8 @@ Here you can find all sorts of examples to try and modify for your level.
 When any unit drill the wall in row 2, column 2, call the '''message''' event which in this case will display the text saved in the string variable '''HappyBirthday'''. As that string was defined above, drilling this wall wishes the player a happy birthday!
 
 ### Time based event
-```clike    
+
+```mms
 	when(time:10)[place:6,7,11]
 ```
 When `time` reaches 10 seconds, place a tile of water (ID 11) at row 6, column 7.
