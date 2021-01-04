@@ -39,10 +39,12 @@ A trigger can be set to fire based on a comparison between two [Variables](_page
 
 ### Example
 
+```mms
 	int VALUE1=1
 	int VALUE2=2
 	
 	if(VALUE1>=VALUE2)[EVENT] #Trigger1
 	if(VALUE2>=VALUE1)[EVENT] #Trigger2
+```
 
 In the above code only `Trigger2` will fire as `2>=1` is `true`, but `1>=2` is `false`.
