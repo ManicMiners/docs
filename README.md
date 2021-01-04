@@ -31,6 +31,7 @@ The Level data file contains all the information needed to generate a level incl
 ```javascript
 var s = "JavaScript syntax highlighting";
 alert(s);
+public class test extends test2
 ```
 
 ```mms
@@ -47,6 +48,11 @@ if(drill:5,34)[change:3,45] #event
 chain_event::test;
 change:3,45;
 msg:mymsg;
+
+		  filehandle: /filehandle/,
+		  constant: /constant/,
+		  delimiter: /delimiter/,
+		  symbol: /symbol/
 
 ```
 

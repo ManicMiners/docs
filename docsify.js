@@ -4154,10 +4154,15 @@
 				greedy: !0,
 			},
 		  ],
-          "class-name": {
+		  variable: /(?:^(?:when|if)(?=\())/,
+		  filehandle: /filehandle/,
+		  constant: /constant/,
+		  delimiter: /delimiter/,
+		  symbol: /symbol/,
+	/*    "class-name": {
             pattern: /(?:^(?:when|if)(?=\())/i,
 			lookbehind: !0,	
-          },
+          }, */
           keyword: /\b(?:comments|info|tiles|height|resource|objectives|buildings|landslidefrequency|lavaspread|miners|briefing|briefingsuccess|briefingfailure|vehicles|creatures)\b/,
           boolean: /\b(?:true|false)\b/,
           function: /(?<=\()(?:drill|built|laser|laserhit|change|reinforce|time|hover|click|walk|drive|enter|comparison)/,
