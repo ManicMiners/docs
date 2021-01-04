@@ -4149,23 +4149,16 @@
           ],
       	  string: [
 			{
-				pattern: /(["'])(?:\\(?:\r\n|[\s\S])|(?!\1)[^\\\r\n])*\1/,
+				pattern: /(["])(?:#(?:\r\n|[\s\S])|(?!\1)[^#\r\n])*(?=")/,
 				lookbehind: !0,	
 				greedy: !0,
 			},
 		  ],
-<!--		  variable: /(?:^(?:when|if)(?=\())/,
 		  variable: /\b(?:when|if)\b/,
 		  constant: /\b(?:crystals|ore|studs|air|miners|vehicles|buildings|time|lastminer|lastvehicle|lastbuilding|ConstructedBuilding|datafield|random|get)\b/, <!-- macros -->
-	/*    "class-name": {
-            pattern: /(?:^(?:when|if)(?=\())/i,
-			lookbehind: !0,	
-          }, */
-<!--          keyword: /\b(?:comments|info|tiles|height|resource|objectives|buildings|landslidefrequency|lavaspread|miners|briefing|briefingsuccess|briefingfailure|vehicles|creatures)\b/,
 		  keyword: /\b(?:init|reset|pause|unpause|resume|resetspeed|miners|vehicles|buildings|light|lights)|(?:drill|msg|place|wait|truewait|win|lose|sound|pan|shake|save|speed|resetspeed|showarrow|highlight|highlightarrow|hidearrow)(?=:)\b/,
           boolean: /\b(?:true|false)\b/,
-          <!-- function: /(?<=\()(?:drill|built|laser|laserhit|change|reinforce|time|hover|click|walk|drive|enter|comparison)/,
-		  function: /function/,
+          function: /(?<=\()(?:drill|built|laser|laserhit|change|reinforce|time|hover|click|walk|drive|enter|comparison)/,
           number: /\b0x[\da-f]+\b|(?:\b\d+\.?\d*|\B\.\d+)(?:e[+-]?\d+)?/i,
           operator: /[<>]=?|[!=]=?=?|--?|\+\+?|&&?|\|\|?|[?*/~^%]/,
           punctuation: /[(){};:,\[\]]/,
