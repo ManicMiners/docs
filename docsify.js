@@ -4163,7 +4163,7 @@
 		  	{ 	pattern: /\((?:drill|built|laser|laserhit|change|reinforce|time|hover|click|walk|drive|enter)\b/,
 				lookbehind: !0,	
 				greedy: !0,
-			}
+			},
 		  ],
           number: /\b0x[\da-f]+\b|(?:\b\d+\.?\d*|\B\.\d+)(?:e[+-]?\d+)?/i,
           operator: /[<>]=?|[!=]=?=?|--?|\+\+?|&&?|\|\|?|[?*/~^%]/,
