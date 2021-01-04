@@ -43,7 +43,13 @@ string stringtest="test"+"test2"
 boolean mybooleam=true #boolean test
 miners test #class
 miner test #variable
+
 if(drill:5,34)[change:3,45] #event
+when(drill:5,34)[] #event
+
+init::;
+test;
+
 
 chain_event::test;
 change:3,45;
