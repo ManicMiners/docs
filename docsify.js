@@ -4162,7 +4162,7 @@
 			lookbehind: !0,	
           }, */
 <!--          keyword: /\b(?:comments|info|tiles|height|resource|objectives|buildings|landslidefrequency|lavaspread|miners|briefing|briefingsuccess|briefingfailure|vehicles|creatures)\b/,
-		  keyword: /(?:init\b|\b(?:reset|pause|unpause|resume|resetspeed|miners|vehicles|buildings|light|lights)\b|\b(?:|drill|msg|place|wait|truewait|win|lose|sound|pan|shake|save|speed|resetspeed|showarrow|highlight|highlightarrow|hidearrow)(?=:))/,
+		  keyword: /(?:init\b|\b(?:reset|pause|unpause|resume|resetspeed|miners|vehicles|buildings|light|lights)\b|\b(?:drill|msg|place|wait|truewait|win|lose|sound|pan|shake|save|speed|resetspeed|showarrow|highlight|highlightarrow|hidearrow)(?=:))/,
           boolean: /\b(?:true|false)\b/,
           function: /(?<=\()(?:drill|built|laser|laserhit|change|reinforce|time|hover|click|walk|drive|enter|comparison)/,
           number: /\b0x[\da-f]+\b|(?:\b\d+\.?\d*|\B\.\d+)(?:e[+-]?\d+)?/i,
