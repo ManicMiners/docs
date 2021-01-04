@@ -1,18 +1,19 @@
 # Event chains
 You can declare multiple events as chains (functions) that can be executed all at once. When using event chains `OCCURRANCE`(when/if) must be omitted.
 
+```mms
 	EVENT_CHAIN::EVENT;
 	EVENT;
 	EVENT; 
-	(EMPTY LINE)
+	<EMPTY LINE>
 
 	alternative
 
 	EVENT_CHAIN::;
 	EVENT;
 	EVENT;
-	(EMPTY LINE)
-
+	<EMPTY LINE>
+```
 
 * EVENT_CHAIN is replaced by whatever '''name''' you want to name the event chain.
 * EVENT are the events you want to execute, in that order.
@@ -27,12 +28,15 @@ The Init (Initialize) event chain runs before any trigger can fire in the level.
 ## Conditions
 Conditions can also be used together with event chains. They can be used with one or **optionally** two events.
 
+```mms
 	EVENT_CHAIN::EVENT;
 	((CONDITION))[EVENT_TRUE][EVENT_FALSE];
-	
+```
+
 The above statement fire EVENT\_TRUE if CONDITION equals `true` or EVENT\_FALSE if `CONDITION` equals `false`
 ## Example
 
+```mms
 	int counter=0				#A number
 	string myStr="Counter: "	#A partial message
 	string myMsg				#A blank string
@@ -43,5 +47,6 @@ The above statement fire EVENT\_TRUE if CONDITION equals `true` or EVENT\_FALSE 
 	counter+=1;					#Increase the counter
 	myMsg=myStr+counter;		#Combine a message
 	msg:myMsg;					#Display the message
+```
 	
 The above code run after 5 game-seconds, increases the counter from 0 to 1 and display a message to the player.

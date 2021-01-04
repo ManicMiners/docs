@@ -1,9 +1,11 @@
 # Vehicle Class
 The vehicle class is used to create a reference to a vehicle. With that reference you can then call on and use triggers and properties exclusive to that vehicle. You may also refer to a vehicle collection where you may use triggers connected to every vehicle of a specific type.
 ## Declaration
-	
+
+```mms
 	vehicle Sofia=2
-	
+```
+
 This declares the vehicle with an ID of 2 as Sofia. The ID is given to vehicles based on the order they are placed in the level. The ID can be manually changed inside the level file.
 
 ## Triggers 
@@ -22,8 +24,10 @@ Each native vehicle class have their own collection. When used by itself the col
 ### Disable or enable a building 
 A collection can be used together with the disable event in order to prevent the player from teleporting the specified vehicle. Likewise the enable event will re-allow a player to teleport the specified vehicle.
 
+```mms
 	disable:VehicleChromeCrusher_C
 	enable:VehicleChromeCrusher_C
+```
 
 ### List of collections 
 
@@ -45,6 +49,7 @@ A collection can be used together with the disable event in order to prevent the
 ## Examples 
 ### Vehicle gets teleported 
 
+```mms
 	vehicle Sofia=1
 	
 	string SofiaDied="Oh no! We lost Sofia!"
@@ -54,12 +59,15 @@ A collection can be used together with the disable event in order to prevent the
 	when(Sofia.dead)[msg:SofiaDied]
 	when(vehicle.dead)[msg:VehicleDied]
 	when(VehicleSmallDigger_C.dead)[msg:SmallDiggerDied]
+```
 
 When you lose your Small Digger named Sofia you will get two messages: One because the named vehicle got teleported and one because a vehicle of the Small Digger collection got teleported. You would expect a third message being created by "vehicle.dead" but it is overriden by "Sofia.dead" which means a third message will not be displayed.
 
 ### A miner enter a vehicle 
 
+```mms
 	vehicle Sofia=1
 	when(Sofia.driven)[GiantEruption]
-	
+```
+
 When a miner enter the vehicle Sofia a chain event will be called. <sub>This example might need to be updated</sub>

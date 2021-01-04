@@ -14,7 +14,7 @@ There exist variable names that are reserved as macros. When used in Scripting, 
 |buildings|Integer|Returns the amount of buildings|
 |time|Integer|Returns the amount of seconds that have passed since the level began.|
 |get|get(ROW)(COLUMN)|Returns the tile ID of the specified coordinates.|
-|`[Class](_pages/Classes)`|Integer|Returns the amount of existing units/buildings of the specified class.**\*\***|
+|[`Class`](_pages/Classes)|Integer|Returns the amount of existing units/buildings of the specified class.**\*\***|
 |lastminer||Return the last miner that activated a trigger.|
 |lastvehicle||Return the last vehicle that activated a trigger.|
 |lastbuilding||Return the last building that activated a trigger.|
@@ -32,9 +32,12 @@ This macro requires input values in order to function.
 |random(MIN)(MAX)|Integer or float|Return a random number in the range [MIN-MAX]. Can be used with both integers and floats.|
 
 ## Example
-	
+
+```mms	
 	int CrystalGoal=3
 	string myMsg=You have collected 3 crystals!
 	
 	if(crystals>=CrystalGoal)(msg:myMsg)
+```
+
 The above code make the game display a message when the player has collected 3 or more crystals.

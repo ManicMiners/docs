@@ -3,10 +3,12 @@ Inserting a condition before an event means the condition has to be true for the
 
 `OCCURENCE(TRIGGER)((CONDITION))[EVENT_IF_TRUE]`
 ### Example
-```
+
+```mms
 when(TRIGGER)((BOOLEAN==true))[EVENT]
 when(TRIGGER)((crystals>30))[EVENT]
- ```
+```
+
 Where TRIGGER is any valid trigger, BOOLEAN is a variable of boolean-type and EVENT is any valid event.
 ###  Disclaimers
 * A condition being false does NOT break or stop a event chain.
@@ -15,7 +17,11 @@ Where TRIGGER is any valid trigger, BOOLEAN is a variable of boolean-type and EV
 ## Branches
 A branch can select one of two events depending on a condition. If the condition equals `true` the first event is called, otherwise the second event is called.
 ### Example
+
+```mms
+int INTEGER=10
+
+when(INTEGER>10)((air>=6000))[place:6,6,6][place:9,9,6]
 ```
- when(INTEGER>10)((air>=6000))[EVENT1][EVENT2]
-```
+
 Where INTEGER is any valid integer and EVENT is any valid event.

@@ -17,7 +17,7 @@ Variables can be of different types. Each type can only save certain values whic
 |miner|miner Charlie=3|This binds the miner with the ID specified to the variable name at the time of initialization.*|
 |vehicle|vehicle BigBoye=2|This binds the vehicle with the ID specified to the variable name at the time of initialization.*|
 |building|building MyHQ=3,4|This binds the building with a footpoint on tile on row 3, column 4 to the variable name at the time of initialization.**|
-|arrow|arrow MyArrow / arrow MyArrow=color|To be used with [[Scripting#Arrow events|LINK]]. Color represent the color to highlight the tile beneth the arrow and can be one of the following: ''red, green, blue, darkgreen, yellow, white, black''|
+|arrow|arrow MyArrow / arrow MyArrow=color|To be used with [Arrow Events](_pages/Events). Color represent the color to highlight the tile beneth the arrow and can be one of the following: ''red, green, blue, darkgreen, yellow, white, black''|
 
 
 ?> **\*** **miner** and **vehicle** binds to the unit that currently holds the specified ID, not to the ID itself. If the associated unit dies and another is assigned their ID, the associated events will NOT trigger.<br>**\*\*** **Buildings**, **miners** and **vehicles** bind at the beginning of a level which mean that if a bound unit or structure is teleported or destroyed then any associated events will no longer trigger.

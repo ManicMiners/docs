@@ -3,10 +3,10 @@ Events describe to the game what you want it to do when a trigger is activated.
 
 |Event|Syntax|Description|
 |---|---|---|
-|init|init::EVENT;|Creates a [[Scripting#Event Chains|event chain ]]that is called at start before any trigger in the level.|
+|init|init::EVENT;|Creates a [Event Chain](_pages/EventChains) that is called at start before any trigger in the level.|
 |drill|[drill:ROW,COLUMN]|Drill tile ROW,COLUMN. It will play the appropriate effect and place rubble, ignoring what tile it is.*|
 |message|[msg:MsgStr]|Display the message string MsgStr, as defined above.|
-|place|[place:ROW,COLUMN,ID]|Place tile with ID at ROW,COLUMN. You can find IDs of the tiles [https://manicminers.fandom.com/wiki/Level_data_file#Tile_ID_list: here].**|
+|place|[place:ROW,COLUMN,ID]|Place a tile with the specified [ID](_pages/LevelDataFile) in the level at the coordinates given by ROW and COLUMN.__**__|
 |wait|[wait:GAME_SECONDS]|Ask the game to wait a set amount of seconds before executing the next command. Only supported within an event chain. Scales with game speed.|
 |truewait|[truewait:REAL_SECONDS]|Ask the game to wait a set amount of seconds before executing the next command. Only supported within a event chain. Does not scale with game speed.|
 |win|[win:MsgStr]|Player wins the level with the message defined by string MsgStr. If no string is supplied, they win the level anyway.|
@@ -16,12 +16,10 @@ Events describe to the game what you want it to do when a trigger is activated.
 |shake|[shake:1.0]|The player's camera shakes with magnitude 1.0. The magnitude has no limit.|
 |save|[save:SomeUnitVariable]|Saves the last unit who activated a trigger into a variable. Can be combined with walk/drive/enter triggers for example.|
 
-*Drilling will get fixed later to check that the tile can actually be drilled.
-
-**If you place a wall on top of a miner or vehicle, they will just phase through the ground. This behaviour will be updated in the future to simply bury them until they are dug out.
+?> __*__ Drilling will get fixed later to check that the tile can actually be drilled. <br>__**__ If you place a wall on top of a miner or vehicle, they will just phase through the ground. This behaviour will be updated in the future to simply bury them until they are dug out.
 
 ## Player interaction
-> <span style="color:#FF0000">These events interact directly with the player and should be used with caution.</span>
+!> These events interact directly with the player and should be used with caution.
 
 |Event|Syntax|Description|
 |---|---|---|

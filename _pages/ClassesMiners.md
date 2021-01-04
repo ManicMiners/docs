@@ -1,9 +1,11 @@
 # Miner Class
 The miner class is used to create a reference to a miner. With that reference you can then call on and use triggers exclusive to that miner.
-## Declaration 
+## Declaration
 
+```mms
 	miner Charlie=2
-	
+```
+
 This declares the miner with an ID of 2 as Charlie. The ID is given to miners based on the order they are placed in the level. The ID can be manually changed inside the level file.
 
 ## Collection 
@@ -27,6 +29,7 @@ enable:miners
 
 ### A miner gets teleported 
 
+```mms
 	#First we bind our variable to a object of the miner class.
 	miner Charlie=3
 	
@@ -35,5 +38,6 @@ enable:miners
 
 	#Then the event itself.
 	when(Charlie.dead)[msg:MyString]
-	
+```
+
 When the miner Charlie gets teleported up a message will be displayed.
