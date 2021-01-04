@@ -38,6 +38,9 @@ var s = "MMS syntax highlighting";
 alert(s);
 #test
 */ test */
+miners test
+miner test
+objectives test
 ```
 
 
