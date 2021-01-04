@@ -4155,8 +4155,8 @@
 			},
 		  ],
 <!--		  variable: /(?:^(?:when|if)(?=\())/,
-		  variable: /when/,
-		  constant: /constant/,
+		  variable: /\b(?:when|if)\b/,
+		  constant: /\b(?:crystals|ore|studs|air|miners|vehicles|buildings|time|lastminer|lastvehicle|lastbuilding|ConstructedBuilding|datafield|random|get)\b/, <!-- macros -->
 	/*    "class-name": {
             pattern: /(?:^(?:when|if)(?=\())/i,
 			lookbehind: !0,	

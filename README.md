@@ -69,7 +69,7 @@ Here you can find all sorts of examples to try and modify for your level.
 ## General Scripts
 
 ### A simple message
-```clike
+```mms
     string HappyBirthday="Happy birthday, cadet!"
 	when(drill:2,2)[msg:HappyBirthday]
 ```
@@ -82,7 +82,7 @@ When any unit drill the wall in row 2, column 2, call the '''message''' event wh
 When `time` reaches 10 seconds, place a tile of water (ID 11) at row 6, column 7.
 
 ### Crystal count
-```clike    
+```mms    
 	int myCrystals=0
 	string myStr="Crystals: "
 	string myMsg
@@ -96,7 +96,7 @@ When `time` reaches 10 seconds, place a tile of water (ID 11) at row 6, column 7
 When you collect 5 or more crystals a message will appear once and display your currently collected 	crystals. This example includes an event chain.
 
 ### Increasing counter
-```clike    
+```mms    
 	int counter=0
 	string myStr="Counter: "
 	string myMsg
@@ -110,7 +110,7 @@ When you collect 5 or more crystals a message will appear once and display your 
 Every time you click on the tile at row 6, column 6 the value of '''counter''' increases and a message is displayed with the new value. This example includes an event chain.
 
 ### Conditions inside Event Chains
-```clike
+```mms
 	int myRow
 	int myCol
 	bool myBool
@@ -135,7 +135,7 @@ The above example will drill out all the walls on a filled 8x8 map in less than 
 ## Class Scripts
 
 ### Class count
-```clike
+```mms
 	when(drill:2,2)[msg:BuildingSupportStation_C]
 ```
 When you drill a wall at position 2,2 a number indicating the total amount of constructed Support Stations will be displayed. This works with any class.
@@ -150,7 +150,7 @@ When you drill a wall at position 2,2 a number indicating the total amount of co
 When miner *Charlie* dies a message will be shown.
 
 ### Class gets teleported 2
-```clike
+```mms
 	vehicle Sofia=1
 	string SofiaDied="Oh no! We lost Sofia!"
 	string VehicleDied="We have lost a vehicle."
