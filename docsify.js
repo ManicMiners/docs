@@ -4156,6 +4156,7 @@
 		  ],
 		  variable: /\b(?:when|if)\b/,
 		  constant: /\b(?:crystals|ore|studs|air|miners|vehicles|buildings|time|lastminer|lastvehicle|lastbuilding|ConstructedBuilding|datafield|random|get)\b/, <!-- macros -->
+		  atrule: /\b(?:int|string|boolean|float|miner|vehicle|building|arrow)\s/,
 		  keyword: /\b(?:init|reset|pause|unpause|resume|resetspeed|miners|vehicles|buildings|light|lights)|(?:drill|msg|place|wait|truewait|win|lose|sound|pan|shake|save|speed|resetspeed|showarrow|highlight|highlightarrow|hidearrow)(?=:)\b/,
           boolean: /\b(?:true|false)\b/,
           function: /\((?:drill|built|laser|laserhit|change|reinforce|time|hover|click|walk|drive|enter)\b/,
