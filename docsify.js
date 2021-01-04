@@ -4156,6 +4156,7 @@
 		  ],
           "class-name": {
             pattern: /(?:^(?:when|if)(?=\())/i,
+			lookbehind: !0,	
           },
           keyword: /\b(?:comments|info|tiles|height|resource|objectives|buildings|landslidefrequency|lavaspread|miners|briefing|briefingsuccess|briefingfailure|vehicles|creatures)\b/,
           boolean: /\b(?:true|false)\b/,

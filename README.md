@@ -42,7 +42,11 @@ string stringtest="test"+"test2"
 boolean mybooleam=true #boolean test
 miners test #class
 miner test #variable
-if(test) #occurrence
+if(drill:5,34)[change:3,45] #event
+
+chain_event::test;
+change:3,45;
+msg:mymsg;
 
 ```
 
