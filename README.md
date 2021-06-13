@@ -1,5 +1,5 @@
 # Scripting
-
+If see this page on github with a white background, press [here](https://manicminers.github.io/docs/#/) to get to the correct page.
 Scripting is programmed level-specific behaviour that is currently defined by inputting command lines in the level files' script section. It has **three main components:**
 
 * **Variables**
@@ -21,6 +21,6 @@ To assist you with scripting the Level Editor can display the Row, Column and Ti
 !> If you notice something that's incorrect or require an update, create a issue on **[Github](https://github.com/ManicMiners/docs/issues)** or come over to the **#Scripting** channel over on **[Discord](https://discord.gg/85k8JHz)**.
 
 ## Links
- - [Discord](https://discord.gg/85k8JHz)
- - [Manic Miners](https://manicminers.baraklava.com/)
- 
+ - [Manic Miners Discord](https://discord.gg/85k8JHz)
+ - [Manic Miners Homepage](https://manicminers.baraklava.com/)
+ - [Manic Miners Wiki](https://manicminers.fandom.com/)
