@@ -1,5 +1,7 @@
+If you see this page on github with a white background, press [here](https://manicminers.github.io/docs/#/) to get to the correct page.
+
 # Scripting
-If see this page on github with a white background, press [here](https://manicminers.github.io/docs/#/) to get to the correct page.
+
 Scripting is programmed level-specific behaviour that is currently defined by inputting command lines in the level files' script section. It has **three main components:**
 
 * **Variables**
