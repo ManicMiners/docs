@@ -112,3 +112,22 @@ When miner *Charlie* dies a message will be shown.
 ```
  
 When you lose your `Small Digger` named Sofia you will get two messages; One because the named unit got teleported and one because class a unit of the vehicle class got teleported. `Sofia.dead` overrides `vehicle.dead` which means a third message will not be displayed even though we have 3 events in this example.
+
+## Variable Scripts
+
+### Copy Array values
+
+```mms
+intarray ArrayA		#The array with values we want to replace
+intarray ArrayB		#The array we take the new values from
+
+init::;
+ArrayB[0]=1;		#Set a value to ArrayB
+ArrayB[1]=4;		#Set another value to ArrayB
+
+ReplaceArray::;		#Replace ArrayA values with values from ArrayB
+ArrayA[Counter]=ArrayB[Counter];
+Counter+=1;
+((Counter<2))ReplaceArray;
+```
+This will replace a given array's values with the values of a different array. A trigger for the script is not included in the example.
