@@ -5,7 +5,7 @@ The Level data file contains all the information needed to generate a level incl
 
 |ID|Name|
 |---|---|
-0|DEBUG|
+0|UNUSED|
 1|Ground|
 2|Rubble Level 1|
 3|Rubble Level 2|
@@ -59,12 +59,12 @@ The Level data file contains all the information needed to generate a level incl
 51|Recharge seam corner|
 52|Recharge seam edge|
 53|Recharge seam intersect|
-54|UNUSED|
-55|UNUSED|
-56|UNUSED|
-57|UNUSED|
+54|ERROR|
+55|ERROR|
+56|ERROR|
+57|ERROR|
 58|Roof|
-59|UNUSED|
+59|ERROR|
 60|Fake rubble 1|
 61|Fake rubble 2|
 62|Fake rubble 3|
