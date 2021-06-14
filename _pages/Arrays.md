@@ -26,3 +26,4 @@ The above creates an array variable. To put values in it you use `SomeArray[#]` 
 ```	
 The above code gets the tile ID at row 2, column 5 and puts it into position 0 of the array.
 
+More examples can be found at [Scripting Examples](_pages/ScriptingExamples)
