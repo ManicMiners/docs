@@ -5,6 +5,7 @@ The Level data file contains all the information needed to generate a level incl
 
 |ID|Name|
 |---|---|
+0|DEBUG|
 1|Ground|
 2|Rubble Level 1|
 3|Rubble Level 2|
