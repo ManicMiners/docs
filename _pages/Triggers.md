@@ -1,5 +1,5 @@
 # Triggers
-A trigger activates in response to things that happen in the world, such as a wall being drilled or a miner walking over a tile. 
+A trigger activates in response to things that happen in the world, such as a wall being drilled or a miner walking over a tile. A list of triggers can be found below. In addition there are triggers that can be used by [Classes](_pages/Classes) but since available triggers differ between classes they are not mentioned here in detail.
 
 |Trigger|Syntax|Description|
 |----|----|----|
@@ -20,6 +20,7 @@ A trigger activates in response to things that happen in the world, such as a wa
 |enter|(enter:ROW,COLUMN)|Activates when either a [Miner](_pages/ClassesMiners) or [Vehicle](_pages/ClassesVehicles) enter a tile.|
 |enter|(enter:ROW,COLUMN, NAME)|Like enter but trigger only for the specified vehicle class or named [Miner](_pages/ClassesMiners)/[Vehicle](_pages/ClassesVehicles).|
 |comparison|(`expression`)|Activates when the `expression` is evaluated as `true`. See the next section for usage.|
+|CLASS||Activates when the class is interacted with in some way. See the [Classes](_pages/Classes) page for details.|
 
 ## How to monitor triggers (comparisons)
 A trigger can be set to fire based on a comparison between two [Variables](_pages/Variables). This is the same as asking the game a yes/no question like *is value1 greater than value2?*. The comparison or question must evaluate to `true` for the trigger to fire. You can use this to e.g. play a sound when the player has collected half of the amount of crystals needed complete a objective.
