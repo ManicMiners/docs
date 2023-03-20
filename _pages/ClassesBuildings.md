@@ -26,6 +26,9 @@ This declares the building at row 2, column 14 as `MyStore`.
 |Property|Type|Note|
 |---|---|---|
 |power|Boolean|Returns TRUE if the building has power, FALSE if it doesn't.|
+|row|Integer|Returns row of the building.|
+|col|Integer|Returns col of the building.|
+|level|Integer|Returns upgrade level of the building.|
 
 
 ## Collections 
