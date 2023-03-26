@@ -12,7 +12,7 @@ There exist variable names that are reserved as macros. When used in Scripting, 
 |miners|Integer|Returns the amount of miners|
 |vehicles|Integer|Returns the amount of vehicles|
 |buildings|Integer|Returns the amount of buildings|
-|time|Integer|Returns the amount of seconds that have passed since the level began.|
+|time|Integer or Float|Returns the amount of seconds that have passed since the level began.|
 |get|get(ROW)(COLUMN)|Returns the tile ID of the specified coordinates.|
 |[`Class`](_pages/Classes)|Integer|Returns the amount of existing units/buildings of the specified class.**\*\***|
 |lastminer||Return the last miner that activated a trigger.|

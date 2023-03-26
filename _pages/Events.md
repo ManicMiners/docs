@@ -15,6 +15,7 @@ Events describe to the game what you want it to do when a trigger is activated.
 |pan|[pan:ROW,COLUMN]|The player's camera pans to the tile at ROW,COLUMN|
 |shake|[shake:1.0]|The player's camera shakes with magnitude 1.0. The magnitude has no limit.|
 |save|[save:SomeUnitVariable]|Saves the last unit who activated a trigger into a variable. Can be combined with walk/drive/enter triggers for example.|
+|savebuilding|[savebuilding:SomeBuildingVariable]|Saves the last building that activated a trigger into a variable.|
 
 ?> __*__ Drilling will get fixed later to check that the tile can actually be drilled. <br>__**__ If you place a wall on top of a miner or vehicle, they will just phase through the ground. This behaviour will be updated in the future to simply bury them until they are dug out.
 
