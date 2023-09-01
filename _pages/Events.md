@@ -17,6 +17,7 @@ Events describe to the game what you want it to do when a trigger is activated.
 |save|[save:SomeUnitVariable]|Saves the last unit who activated a trigger into a variable. Can be combined with walk/drive/enter triggers for example.|
 |savebuilding|[savebuilding:SomeBuildingVariable]|Saves the last building that activated a trigger into a variable.|
 |emerge|[emerge:ROW,COLUMN,DIRECTION,COLLECTION,DISTANCE]|Causes a monster to emerge. ROW,COLUMN integers are desired tile. DIRECTION is one of A,N,S,E,W. COLLECTION is one of CreatureRockMonster_C, CreatureLavaMonster_C, CreatureIceMonster_C. DISTANCE is integer distance from ROW,COLUMN to find emergeable tile to use.|
+|kill|[kill:variable]|kill will transport up the given object, either building, miner, or vehicle. variable must be one of those three types. If object also has a .dead trigger, that trigger will fire.|
 ?> __*__ Drilling will get fixed later to check that the tile can actually be drilled. <br>__**__ If you place a wall on top of a miner or vehicle, they will just phase through the ground. This behaviour will be updated in the future to simply bury them until they are dug out.
 
 ## Player interaction
