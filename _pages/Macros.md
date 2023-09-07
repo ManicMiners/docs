@@ -18,6 +18,7 @@ There exist variable names that are reserved as macros. When used in Scripting, 
 |lastminer||Return the last miner that activated a trigger.|
 |lastvehicle||Return the last vehicle that activated a trigger.|
 |lastbuilding||Return the last building that activated a trigger.|
+|lastcreature||Return the last creature that activated a trigger. TODO TEST|
 |ConstructedBuilding||Return the last constructed building.|
 |datafield|various|properties that return information about a unit or building. See [[Datafields]] for more info.|
 

@@ -26,3 +26,11 @@ Events define what should happen. They are marked with square brackets: `[]` and
 The first event is mandatory. It can be used with or without conditions. If it is used with conditions it will only fire if the condition equals `true`. The second event is **optional** and can only be used together with a condition. It will only fire if the condition equals `false`.
 
 If you want to fire a bunch of events at once you can create a event chain. This is described in detail on the [Event chains](_pages/EventChains)-page.
+
+## NO SPACES
+
+Do not use spaces at the beginning of a line.
+Do not use spaces at the end of a line.
+Do not use spaces in the middle of a line.
+Spaces are allowed inside of a string:  "  spaces are ok here"
+Spaces are allowed after the end of a line if you have a comment.

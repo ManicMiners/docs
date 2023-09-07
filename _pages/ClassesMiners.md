@@ -25,6 +25,14 @@ enable:miners
 |click|Trigger when a miner is clicked.|
 |hurt|Trigger when a miner take damage.|
 
+## Properties
+
+|Property|Type|Note|
+|---|---|---|
+|row|Integer|Returns row of the miner.|
+|col|Integer|Returns column of the miner.|
+|level|Integer|Returns upgrade level of the miner.|
+
 ## Examples 
 
 ### A miner gets teleported 
