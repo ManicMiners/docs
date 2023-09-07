@@ -4,11 +4,13 @@ Events describe to the game what you want it to do when a trigger is activated.
 |Event|Syntax|Description|
 |---|---|---|
 |init|init::EVENT;|Creates a [Event Chain](_pages/EventChains) that is called at start before any trigger in the level.|
+|tick|tick::EVENT;|Creates a [Event Chain](_pages/EventChains) that is called on every tick of the engine. Not recommended.|
 |drill|[drill:ROW,COLUMN]|Drill tile ROW,COLUMN. It will play the appropriate effect and place rubble, ignoring what tile it is.*|
-|message|[msg:MsgStr]|Display the message string MsgStr, as defined above.|
+|message|[msg:MsgStr]|Display the message string MsgStr, as defined above. Message is added to the list of message in the message area of the user interface.|
+|qmessage|[qmsg:MsgStr]|Display the message string MsgStr, wait for message to be acknowledged by user|
 |place|[place:ROW,COLUMN,ID]|Place a tile with the specified [ID](_pages/LevelDataFile) in the level at the coordinates given by ROW and COLUMN.__**__|
-|wait|[wait:GAME_SECONDS]|Ask the game to wait a set amount of seconds before executing the next command. Only supported within an event chain. Scales with game speed.|
-|truewait|[truewait:REAL_SECONDS]|Ask the game to wait a set amount of seconds before executing the next command. Only supported within a event chain. Does not scale with game speed.|
+|wait|[wait:GAME_SECONDS]|Ask the game to wait a set amount of seconds before executing the next command. Only supported within an event chain. Scales with game speed. While waiting the engine continues to run and script responds to events - so it is possible to re-entrant into the waiting event. You are responsible for handling this case.|
+|truewait|[truewait:REAL_SECONDS]|Ask the game to wait a set amount of seconds before executing the next command. Only supported within a event chain. Does not scale with game speed. Like above be careful of reentrant events.|
 |win|[win:MsgStr]|Player wins the level with the message defined by string MsgStr. If no string is supplied, they win the level anyway.|
 |lose|[lose:MsgStr]|Player loses the level with the message defined by string MsgStr. If no string is supplied, they lose the level anyway.|
 |sound|[sound:MySoundName]|Plays the .ogg file of that name from /ManicMiners/Levels/ASSETS/Sounds (do '''not''' include the ".ogg" extension in the script)|
@@ -18,6 +20,8 @@ Events describe to the game what you want it to do when a trigger is activated.
 |savebuilding|[savebuilding:SomeBuildingVariable]|Saves the last building that activated a trigger into a variable.|
 |emerge|[emerge:ROW,COLUMN,DIRECTION,COLLECTION,DISTANCE]|Causes a monster to emerge. ROW,COLUMN integers are desired tile. DIRECTION is one of A,N,S,E,W. COLLECTION is one of CreatureRockMonster_C, CreatureLavaMonster_C, CreatureIceMonster_C. DISTANCE is integer distance from ROW,COLUMN to find emergeable tile to use.|
 |kill|[kill:variable]|kill will transport up the given object, either building, miner, or vehicle. variable must be one of those three types. If object also has a .dead trigger, that trigger will fire.|
+|starttimer|[starttimer:name]|name is timer variable, its timer is started if it was stopped.|
+|stoptimer|[stoptimer:name]|name is a timer variable, its timer is stopped if it is running.|
 ?> __*__ Drilling will get fixed later to check that the tile can actually be drilled. <br>__**__ If you place a wall on top of a miner or vehicle, they will just phase through the ground. This behaviour will be updated in the future to simply bury them until they are dug out.
 
 ## Player interaction

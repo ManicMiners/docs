@@ -30,6 +30,7 @@
 	- [Buildings](_pages/ClassesBuildings)
 	- [Miners](_pages/ClassesMiners)
 	- [Vehicles](_pages/ClassesVehicles)
+    - [Creatures](_pages/ClassesCreatures)
 
 </details>
 

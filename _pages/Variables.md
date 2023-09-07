@@ -18,6 +18,8 @@ Variables can be of different types. Each type can only save certain values whic
 |vehicle|vehicle BigBoye=2|This binds the vehicle with the ID specified to the variable name at the time of initialization.*|
 |building|building MyHQ=3,4|This binds the building with a footpoint on tile on row 3, column 4 to the variable name at the time of initialization.**|
 |arrow|arrow MyArrow / arrow MyArrow=color|To be used with [Arrow Events](_pages/Events). Color represent the color to highlight the tile beneth the arrow and can be one of the following: ''red, green, blue, darkgreen, yellow, white, black''|
+|creature|creature name=id|The creature identified by id is assigned to name|ex: creature PetMonster=5   Id's are from the creature section, the ID= field.|
+|timer|timer name=delay,min,max,eventchain|Defines a variable of type timer with the given name. It will wait delay seconds to start, and will fire between min seconds and max seconds, calling the given eventchain. Timer values can be int or float. See Levels\DEMO\Scripts\demotimers.dat for example.|
 
 
 ?> **\*** **miner** and **vehicle** binds to the unit that currently holds the specified ID, not to the ID itself. If the associated unit dies and another is assigned their ID, the associated events will NOT trigger.<br>**\*\*** **Buildings**, **miners** and **vehicles** bind at the beginning of a level which mean that if a bound unit or structure is teleported or destroyed then any associated events will no longer trigger.

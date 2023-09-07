@@ -18,6 +18,14 @@ This declares the vehicle with an ID of 2 as Sofia. The ID is given to vehicles 
 |hurt|Trigger when a vehicle take damage.|
 |driven|Trigger when a miner enters a vehicle.|
 
+## Properties
+
+|Property|Type|Note|
+|---|---|---|
+|row|Integer|Returns row of the vehicle.|
+|col|Integer|Returns column of the vehicle.|
+|level|Integer|Returns upgrade level of the vehicle.|
+
 ## Collections
 Each native vehicle class have their own collection. When used by itself the collection return the total amount of constructed vehicles of that type. The collection can utlize triggers but not properties.
 
