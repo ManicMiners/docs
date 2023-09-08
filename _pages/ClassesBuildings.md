@@ -18,8 +18,9 @@ This declares the building at row 2, column 14 as `MyStore`.
 |click|Trigger when a building is clicked.|
 |hurt|Trigger when a building take damage.|
 |built|Trigger when a building is built.|
-|poweron|Trigger when power is activated for a building|
-|poweroff|Trigger when power is deactivated for a building|
+|poweron|Trigger when power is activated for a building.|
+|poweroff|Trigger when power is deactivated for a building.|
+|upgraded|Trigger when building is upgraded.|
 
 ## Properties
 

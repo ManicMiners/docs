@@ -24,6 +24,7 @@ enable:miners
 |new|Trigger when a miner is created.|
 |click|Trigger when a miner is clicked.|
 |hurt|Trigger when a miner take damage.|
+|upgraded|Trigger when miner is upgraded.|
 
 ## Properties
 
