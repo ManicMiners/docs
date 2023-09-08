@@ -17,6 +17,7 @@ This declares the vehicle with an ID of 2 as Sofia. The ID is given to vehicles 
 |click|Trigger when a vehicle is clicked.|
 |hurt|Trigger when a vehicle take damage.|
 |driven|Trigger when a miner enters a vehicle.|
+|upgraded|Trigger when vehicle is upgraded.|
 
 ## Properties
 
