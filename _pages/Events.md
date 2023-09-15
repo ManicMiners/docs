@@ -22,6 +22,7 @@ Events describe to the game what you want it to do when a trigger is activated.
 |kill|[kill:variable]|kill will transport up the given object, either building, miner, or vehicle. variable must be one of those three types. If object also has a .dead trigger, that trigger will fire.|
 |starttimer|[starttimer:name]|name is timer variable, its timer is started if it was stopped.|
 |stoptimer|[stoptimer:name]|name is a timer variable, its timer is stopped if it is running.|
+|heal|[heal:name,amount]|name is a miner, building, vehicle variable to heal. amount is number of hit points to give to unit. Unit cannot be healed beyond full health. Use .hp datafield to see current hit points.|
 ?> __*__ Drilling will get fixed later to check that the tile can actually be drilled. <br>__**__ If you place a wall on top of a miner or vehicle, they will just phase through the ground. This behaviour will be updated in the future to simply bury them until they are dug out.
 
 ## Player interaction

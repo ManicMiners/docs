@@ -30,9 +30,18 @@ enable:miners
 
 |Property|Type|Note|
 |---|---|---|
-|row|Integer|Returns row of the miner.|
 |col|Integer|Returns column of the miner.|
+|column|Integer|Returns column of the miner. Same as col.|
+|health|Integer|Returns current hitpoints. Same has hp.|
+|hp|Integer|Returns current hitpoints. Same has health.|
 |level|Integer|Returns upgrade level of the miner.|
+|row|Integer|Returns row of the miner.|
+|stamina|Integer|Returns stamina. TODO what is that?|
+|tile|Integer|TODO unknown. Same as tileid.|
+|tileid|Integer|TODO unknown. Same as tile.|
+|X|Integer|Column, 300 values per cell|
+|Y|Integer|Row, 300 values per cell|
+|Z|Integer|Height - TODO UNITS?|
 
 ## Examples 
 

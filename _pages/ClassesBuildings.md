@@ -26,10 +26,22 @@ This declares the building at row 2, column 14 as `MyStore`.
 
 |Property|Type|Note|
 |---|---|---|
-|power|Boolean|Returns TRUE if the building has power, FALSE if it doesn't.|
-|row|Integer|Returns row of the building.|
-|col|Integer|Returns column of the building.|
+|col|Integer|Returns column of the building. Same as column.|
+|column|Integer|Returns column of the building. Same as col.|
+|health|Integer|Returns current hitpoints. Same has hp.|
+|hp|Integer|Returns current hitpoints. Same has health.|
+|id||Integer|Returns the ID the building.|
+|ispowered|Boolean|Same as power.|
 |level|Integer|Returns upgrade level of the building.|
+|power|Boolean|Returns TRUE if the building has power, FALSE if it doesn't.|
+|powered|Boolean|Same as power.|
+|row|Integer|Returns row of the building.|
+|stamina|Integer|Eat to increase. TODO units.|
+|tile|Integer|TODO unknown. Same as tileid.|
+|tileid|Integer|TODO unknown. Same as tile.|
+|X|Integer|Column, 300 values per cell|
+|Y|Integer|Row, 300 values per cell|
+|Z|Integer|Height - TODO UNITS?|
 
 
 ## Collections 
