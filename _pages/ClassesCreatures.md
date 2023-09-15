@@ -22,8 +22,8 @@ This declares the creature with an ID of 2 as `MyMonster`.
 |row|Integer|Returns row of the creature.|
 |col|Integer|Returns column of the creature.|
 |column|Integer|Returns column of the creature. Same as col.|
-|hp|Integer|Returns current hitpoints. Same has health. TODO figure out range|
-|health|Integer|Returns current hitpoints. Same has hp. TODO figure out range|
+|hp|Integer|Returns current hitpoints. Same has health.|
+|health|Integer|Returns current hitpoints. Same has hp.|
 |id||Integer|Returns the ID the creature.|
 |tile|Integer|TODO unknown. Same as tileid.|
 |tileid|Integer|TODO unknown. Same as tile.|
