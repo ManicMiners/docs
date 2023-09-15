@@ -33,6 +33,9 @@ enable:miners
 |row|Integer|Returns row of the miner.|
 |col|Integer|Returns column of the miner.|
 |level|Integer|Returns upgrade level of the miner.|
+|X|Integer|Column, 300 values per cell|
+|Y|Integer|Row, 300 values per cell|
+|Z|Integer|Height - TODO UNITS?|
 
 ## Examples 
 

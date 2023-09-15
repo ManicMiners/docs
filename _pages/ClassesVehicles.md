@@ -23,9 +23,21 @@ This declares the vehicle with an ID of 2 as Sofia. The ID is given to vehicles 
 
 |Property|Type|Note|
 |---|---|---|
-|row|Integer|Returns row of the vehicle.|
 |col|Integer|Returns column of the vehicle.|
-|level|Integer|Returns upgrade level of the vehicle.|
+|column|Integer|Returns column of the vehicle. Same as col.|
+|driver||Integer|TODO possible driverid?.|
+|driverid||Integer|ID of the miner driving.|
+|health|Integer|Returns current hitpoints. Same has hp. TODO figure out range|
+|hp|Integer|Returns current hitpoints. Same has health. TODO figure out range|
+|id||Integer|Returns the ID the vehicle.|
+|level|Integer|TODO verify, not in Bara's screen shots .Returns upgrade level of the vehicle.|
+|row|Integer|Returns row of the vehicle.|
+|tile|Integer|TODO unknown. Same as tileid.|
+|tileid|Integer|TODO unknown. Same as tile.|
+|X|Integer|Column, 300 values per cell|
+|Y|Integer|Row, 300 values per cell|
+|Z|Integer|Height - TODO UNITS?|
+
 
 ## Collections
 Each native vehicle class have their own collection. When used by itself the collection return the total amount of constructed vehicles of that type. The collection can utlize triggers but not properties.
