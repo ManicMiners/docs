@@ -46,6 +46,8 @@ Arrows are used for highlighting things in the world. Once you declare an arrow 
 |highlightarrow|[highlightarrow:ROW,COLUMN,ARROW]|Executes both showarrow and highlight at once.|
 |hidearrow|[hidearrow:ARROW]|The arrow is hidden until manually shown again.|
 
+It is highly recommended to review the Arrow examples in ManicMiners\Levels\DEMO\Scripts
+
 ## Disable/Enable events
 Disable/Enable is used to control what the player can and cannot do in the current level. One example might be that you don't want the player to use flying vehicles, in which case you can disable the Tunnel Scout and Tunnel Transport manually. The syntax looks like this:
  disable:MACRO

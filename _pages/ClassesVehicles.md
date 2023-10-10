@@ -25,25 +25,25 @@ This declares the vehicle with an ID of 2 as Sofia. The ID is given to vehicles 
 |---|---|---|
 |col|Integer|Returns column of the vehicle.|
 |column|Integer|Returns column of the vehicle. Same as col.|
-|driver||Integer|TODO possible driverid?.|
-|driverid||Integer|ID of the miner driving.|
-|health|Integer|Returns current hitpoints. Same has hp. TODO figure out range|
-|hp|Integer|Returns current hitpoints. Same has health. TODO figure out range|
-|id||Integer|Returns the ID the vehicle.|
-|level|Integer|TODO verify, not in Bara's screen shots .Returns upgrade level of the vehicle.|
+|driver|Integer|miner id of the driver. Same as driverid.|
+|driverid|Integer|miner id of the driver. Same as driver.|
+|health|Integer|Returns current hitpoints. Same has hp.|
+|hp|Integer|Returns current hitpoints. Same has health.|
+|id|Integer|Returns the ID the vehicle.|
 |row|Integer|Returns row of the vehicle.|
-|tile|Integer|TODO unknown. Same as tileid.|
-|tileid|Integer|TODO unknown. Same as tile.|
+|tile|Integer|Current tile ID vehicle is over. Same as tileid.|
+|tileid|Integer|Current tile ID vehicle is over. Same as tile.|
 |X|Integer|Column, 300 values per cell|
 |Y|Integer|Row, 300 values per cell|
-|Z|Integer|Height - TODO UNITS?|
+|Z|Integer|Height - units are from height value in map
 
+Note: there is no level property on vehicles to query upgrade level
 
 ## Collections
-Each native vehicle class have their own collection. When used by itself the collection return the total amount of constructed vehicles of that type. The collection can utlize triggers but not properties.
+Each native vehicle class have their own collection. When used by itself the collection return the total amount of constructed vehicles of that type. The collection can utilize triggers but not properties.
 
 ### Disable or enable a building 
-A collection can be used together with the disable event in order to prevent the player from teleporting the specified vehicle. Likewise the enable event will re-allow a player to teleport the specified vehicle.
+A collection can be used together with the disable event in order to prevent the player from teleporting down the specified vehicle. Likewise the enable event will re-allow a player to teleport the specified vehicle.
 
 ```mms
 	disable:VehicleChromeCrusher_C
@@ -52,20 +52,20 @@ A collection can be used together with the disable event in order to prevent the
 
 ### List of collections 
 
-|Name|Curated|Note|
+|Name|Note|
 |---|---|---|
-|VehicleHoverScout_C|Yes||
-|VehicleSmallDigger_C|Yes||
-|VehicleSmallTransportTruck_C|Yes||
-|VehicleSMLC_C|Yes|Small Mobile Laser Cutter|
-|VehicleRapidRider_C|Yes||
-|VehicleTunnelScout_C|Yes||
-|VehicleLoaderDozer_C|Yes||
-|VehicleGraniteGrinder_C|Yes||
-|VehicleChromeCrusher_C|Yes||
-|VehicleLMLC_C|Yes|Large Mobile Laser Cutter|
-|VehicleCargoCarrier_C|Yes||
-|VehicleTunnelTransport_C|Yes||
+|VehicleHoverScout_C||
+|VehicleSmallDigger_C||
+|VehicleSmallTransportTruck_C||
+|VehicleSMLC_C|Small Mobile Laser Cutter|
+|VehicleRapidRider_C||
+|VehicleTunnelScout_C||
+|VehicleLoaderDozer_C||
+|VehicleGraniteGrinder_C||
+|VehicleChromeCrusher_C||
+|VehicleLMLC_C|Large Mobile Laser Cutter|
+|VehicleCargoCarrier_C||
+|VehicleTunnelTransport_C||
 
 ## Examples 
 ### Vehicle gets teleported 
@@ -91,4 +91,4 @@ When you lose your Small Digger named Sofia you will get two messages: One becau
 	when(Sofia.driven)[GiantEruption]
 ```
 
-When a miner enter the vehicle Sofia a chain event will be called. <sub>This example might need to be updated</sub>
+When a miner enter the vehicle Sofia a chain event will be called. 
