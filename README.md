@@ -22,6 +22,12 @@ To assist you with scripting the Level Editor can display the Row, Column and Ti
 
 !> If you notice something that's incorrect or require an update, create a issue on **[Github](https://github.com/ManicMiners/docs/issues)** or come over to the **#Scripting** channel over on **[Discord](https://discord.gg/85k8JHz)**.
 
+The script syntax will most likely confuse one at first - especially if one is familiar with modern free format programming languages. You cannot indent for readability - in general spaces are only allowed in a few specific places. There are no complex logical  conditions or expressions - in many ways those whom have had experience with assembly will notice many similarities.
+
+It is highly recommended that one review the demo scripts provided with the game to understand the syntax rules. If you are wondering if it is known how to do something - these would be the best place to start your search. These are found in the location where Manic Miners is installed in the following subdirectory path: ManicMiners\Levels\DEMO\Scripts
+
+Additional formating rules are found in this set of documents.
+
 ## Links
  - [Manic Miners Discord](https://discord.gg/85k8JHz)
  - [Manic Miners Homepage](https://manicminers.baraklava.com/)
