@@ -12,7 +12,7 @@ Scripting is programmed level-specific behavior that is currently defined by inp
 
 Start by reviewing the [Scripting Structure](page/ScriptingStructure)
 
-Reserved words are here: [Reserved Words](page/ReservedWords)
+Reserved words are here: [Reserved Words](_pages/ReservedWords)
 
 ?> The game provide a handy log that tells you exactly what has occurred and if any errors happen.
 
