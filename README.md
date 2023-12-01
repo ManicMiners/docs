@@ -2,7 +2,7 @@ If you see this page on github with a white background, press [here](https://man
 
 # Scripting
 
-Scripting is programmed level-specific behaviour that is currently defined by inputting command lines in the level files' script section. It has **three main components:**
+Scripting is programmed level-specific behavior that is currently defined by inputting command lines in the level files' script section. It has **three main components:**
 
 * **Variables**
 * **Triggers**
@@ -10,7 +10,11 @@ Scripting is programmed level-specific behaviour that is currently defined by in
 
 **Variables** are used to keep track of what's happening in the level. **Triggers** check for when something specific occurs in the level. **Events** are executed to alter the level or player in some way.
 
-?> The game provide a handy log that tells you exactly what has occured and if any errors happen.
+Start by reviewing the [Scripting Structure](page/ScriptingStructure)
+
+Reserved words are here: [Reserved Words](page/ReservedWords)
+
+?> The game provide a handy log that tells you exactly what has occurred and if any errors happen.
 
 ![ShowLogButton_Screenshot](_media/EditorShowLog.png "Show Log")
 

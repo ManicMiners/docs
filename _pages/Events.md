@@ -23,6 +23,12 @@ Events describe to the game what you want it to do when a trigger is activated.
 |starttimer|[starttimer:name]|name is timer variable, its timer is started if it was stopped.|
 |stoptimer|[stoptimer:name]|name is a timer variable, its timer is stopped if it is running.|
 |heal|[heal:name,amount]|name is a miner, building, vehicle variable to heal. amount is number of hit points to give to unit. Unit cannot be healed beyond full health. Use .hp datafield to see current hit points.|
+|addrandomspawn|addrandomspawn:Collection,MinTime,MaxTime|Configure random spawn for the given collection, each spawn will be between the MinTime and MaxTime in game seconds.|
+|spawnwave|spawnwave:Collection],Min,Max|For the random spawn for the given collection, setup the minimum and maximum number of waves.|
+|spawncap|spawncap:Collection,min,max|For the given collection, each random wave will have between min and max creatures.|
+|startrandomspawn|startrandomspawn:Collection|Start the random spawn for the given collection.|
+|stoprandomspawn|stoprandomspawn:Collection|Stop the random spawn for the given collection|
+
 ?> __*__ Drilling will get fixed later to check that the tile can actually be drilled. <br>__**__ If you place a wall on top of a miner or vehicle, they will just phase through the ground. This behaviour will be updated in the future to simply bury them until they are dug out.
 
 ## Player interaction

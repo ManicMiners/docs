@@ -36,12 +36,12 @@ This declares the building at row 2, column 14 as `MyStore`.
 |power|Boolean|Returns TRUE if the building has power, FALSE if it doesn't.|
 |powered|Boolean|Same as power.|
 |row|Integer|Returns row of the building.|
-|stamina|Integer|TODO units and meaning.|
-|tile|Integer|TODO unknown. Same as tileid.|
-|tileid|Integer|TODO unknown. Same as tile.|
+|stamina|Integer|same as hp.|
+|tile|Integer|TileID for the initial place point of the building.|
+|tileid|Integer|same as tile.|
 |X|Integer|Column, 300 values per cell|
 |Y|Integer|Row, 300 values per cell|
-|Z|Integer|Height - TODO UNITS?|
+|Z|Integer|Height, 300 values per cell|
 
 
 ## Collections 
@@ -70,7 +70,6 @@ A collection can be used together with the disable event in order to prevent the
 |BuildingMiningLaser_C|Yes||
 |BuildingSuperTeleport_C|Yes||
 |BuildingElectricFence_C|Yes|The fence item and fence building are two separate objects|
-|BuildingPowerPath_C|Yes|This object is deleted when construction is finished|
 |BuildingPowerPath_C|Yes|This object is deleted when construction is finished|
 
 ## Examples
