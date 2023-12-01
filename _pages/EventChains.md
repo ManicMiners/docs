@@ -15,7 +15,8 @@ Event chain names are defined by a valid name followed by two semi-colons and ei
 	EVENT;
 ```
 
-- Event chain names follow the same rules as variables. They start with an alpha and are followed by optional alpha/digits. Using a reserved keyword as an event chain name will cause non-deterministic behaviors/errors just like variables.
+- Event chain names follow the same rules as variables. They start with an alpha and are followed by optional alpha/digits followed by two semi-colons. It is the two semi-colons that identify an Event Chain. Do not use any of the reserved works for the event chain name. Using a reserved keyword as an event chain name will cause non-deterministic behaviors/errors just like variables. [list of reserved words](_pages/ReservedWords).
+
 - The `EVENT` events will execute in order as they are written.
 
 !> After each event chain there should be an **empty line** to signal the end of the chain.

@@ -42,4 +42,4 @@ It is highly recommended that one review the demo scripts provided with the game
 
 ## Reserved Words
 
-A list of all known [reserved words](page/ReservedWords>). Do not use these for variable names or event chains.
+A list of all known [reserved words](_pages/ReservedWords). Do not use these for variable names or event chains.

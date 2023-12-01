@@ -20,6 +20,7 @@
  - [Macros](_pages/Macros)
  - [Arrays](_pages/Arrays)
 - [Triggers](_pages/Triggers)
+- [Reserved Words](_pages/ReservedWords)
 
 </details>
 
