@@ -25,12 +25,12 @@ This declares the creature with an ID of 2 as `MyMonster`.
 |hp|Integer|Returns current hitpoints. Same has health.|
 |health|Integer|Returns current hitpoints. Same has hp.|
 |id||Integer|Returns the ID the creature.|
-|tile|Integer|TODO unknown. Same as tileid.|
-|tileid|Integer|TODO unknown. Same as tile.|
+|tile|Integer|TileID the creature is over.|
+|tileid|Integer|same as tile.|
 |X|Integer|Column, 300 values per cell|
 |Y|Integer|Row, 300 values per cell|
-|Z|Integer|Height - TODO UNITS?|
-|eaten|Integer|TODO. possibly the number of crystals eaten/absorbed|
+|Z|Integer|Height, 300 values per cell|
+|eaten|Integer|The number of crystals eaten/absorbed|
 
 ## Collections 
 Each native creature class have their own collection. When used by itself the collection return the total amount of creatures of that type. The collection can utilize triggers but not properties.
