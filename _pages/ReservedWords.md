@@ -47,6 +47,7 @@ List of keywords in alphabetical order used by the script engine. These should n
 |darkgreen|Color|Arrow colors.|
 |dead|Data Field Trigger|Trigger when object is dead.|
 |dirt|Macro|Tile ID of dirt (26).|
+|disable|Event|Disable object|
 |drill|Event|Drill tile.|
 |driven|Data Field Trigger|Trigger when a miner enters a vehicle.|
 |driver|Data Field|miner id of the driver. Same as driverid.|
@@ -56,6 +57,7 @@ List of keywords in alphabetical order used by the script engine. These should n
 |eaten|Data Field|The number of crystals eaten/absorbed.|
 |ElectricFence_C|Collection|All fence objects.|
 |emerge|Event|Spawn creature.|
+|enable|Event|Enable object|
 |EventErosion_C|Collection|Active erosions.|
 |EventLandslide_C|Collection|Active active landslides.|
 |erosionscale|Macro|Global erosion scale factor|
@@ -64,8 +66,11 @@ List of keywords in alphabetical order used by the script engine. These should n
 |green|Color|Arrow colors.|
 |hard_rock|Macro|Tile ID of hard rock (34).|
 |heal|Event|Heal object.|
-|hostiles|Macro|Number of hostile creatures.|
 |health|Data Field|Object hitpoints. Same has hp.|
+|hidearrow|Event|Hide arrow object.|
+|highlight|Event|Highlight tile.|
+|highlightarrow|[Event]|showarrow and highlight at once.|
+|hostiles|Macro|Number of hostile creatures.|
 |hp|Data Field|Object hitpoints. Same has health.|
 |hurt|Data Field Trigger|Trigger when object takes damage.|
 |id|Data Field|Object ID.|
@@ -81,6 +86,8 @@ List of keywords in alphabetical order used by the script engine. These should n
 |lastvehicle|Macro|Last vehicle that activated a trigger.|
 |lava|Macro|Tile ID of lava (6).|
 |level|Data Field|Returns upgrade level of the building.|
+|light|Parameter|enable/disable parameter.|
+|lights|Parameter|same as light.|
 |loose_rock|Macro|Tile ID of loose rock (30).|
 |lose|Event|Lose the map.|
 |miner|Variable|Miner object (different use than miner triggers).|
@@ -98,6 +105,7 @@ List of keywords in alphabetical order used by the script engine. These should n
 |Ore_C|Collection|All ore.|
 |ore_seam|Macro|Tile ID of an ore seam (46).|
 |pan|Event|Pan camera.|
+|pause|Event|Pauses the game.|
 |place|Event|Change tile.|
 |power|Data Field|Returns 1 if the building has power, 0 if it doesn't.|
 |powered|Data Field|Same as power.|
@@ -107,17 +115,22 @@ List of keywords in alphabetical order used by the script engine. These should n
 |qmsgs|Event|Display message to user.|
 |RechargeSeamGoal_C|Collection|Visible recharge seams.|
 |red|Color|Arrow colors.|
+|reset|Event|Resets the player's selection|
+|resetspeed|Event|Loads the game speed from settings again.|
+|resume|Event|Same as unpause.|
 |row|Data Field|Object row.|
 |S|Emerge Direction|South.|
 |save|Event|Save last miner that activated a trigger into a variable.|
 |savebuilding|Event|Save last building that activated a trigger into a variable.|
 |shake|Event|Shake camera.|
+|showarrow|Event|Show arrow object.|
 |slug_hole|Macro|Tile id of slimy slug hole (12).|
 |slugs|Macro|Number of slimy slugs.|
 |solid_rock|Macro|Tile ID of solid rock (38).|
 |sound|Event|Play .ogg file.|
 |spawncap|Event|Config random spawn.|
 |spawnwave|Event|Config random spawn.|
+|speed|Event|Sets the game speed.|
 |stamina|Data Field|same as hp.|
 |startrandomspawn|Event|Start configured random spawn.|
 |starttimer|Event|Start a timer.|
@@ -133,6 +146,7 @@ List of keywords in alphabetical order used by the script engine. These should n
 |timer|Variable|Timer object.|
 |truewait|Event|Suspend event chain for real user time period.|
 |upgraded|Trigger when object is upgraded.|
+|unpause|Event|Resumes the game if paused.|
 |vehicle|Variable|Vehicle object (different use than miner triggers).|
 |vehicle|Class|Vehicle class in trigger (different use than vehicle variable).|
 |vehicles|Macro|Number of vehicles.|
@@ -146,4 +160,3 @@ List of keywords in alphabetical order used by the script engine. These should n
 |Y|Data Field|Row, 300 values per cell|
 |yellow|Colors|Arrow colors.|
 |Z|Data Field|Height, 300 values per cell|
-
