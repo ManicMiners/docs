@@ -43,3 +43,7 @@ It is highly recommended that one review the demo scripts provided with the game
 ## Reserved Words
 
 A list of all known [reserved words](_pages/ReservedWords). Do not use these for variable names or event chains.
+
+## Order of coordinates
+
+All events that use row, col are always row first followed by col. row,col.  Row maps to Y and col maps to X. This will confuse those that would expect the the normal order of X,Y used in most vector and graphics system. The level editor will show coordinates as row,col.
