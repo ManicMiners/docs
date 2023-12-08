@@ -1,24 +1,25 @@
 # Triggers
 A trigger activates in response to things that happen in the world, such as a wall being drilled or a miner walking over a tile. A list of triggers can be found below. In addition there are triggers that can be used by [Classes](_pages/Classes) but since available triggers differ between classes they are not mentioned here in detail.
+Triggers may be used with if and when occurrences.
 
 |Trigger|Syntax|Description|
 |----|----|----|
-|drill|(drill:ROW,COLUMN)|Triggers when a wall at ROW,COLUMN is drilled or collapses.|
 |built|(built:ROW,COLUMN)|Triggers when a building is built upon the specified coordinate.|
-|laser|(laser:ROW,COLUMN)|Triggers when a wall at ROW,COLUMN is destroyed by a laser.|
-|laserhit|(laserhit:ROW,COLUMN)|Triggers when a wall at ROW,COLUMN is hit by a laser.|
 |change|(change:ROW,COLUMN|Triggers when a wall at ROW,COLUMN is changed in any way. This includes reinforcing, shoveling once, drilling, finding a cave etc.|
 |change|(change:ROW,COLUMN,ID)|Triggers only if the tile is changed to the specified tile ID.|
-|reinforce|(reinforce:ROW,COLUMN)|Triggers when a wall at ROW,COLUMN is reinforced by any unit.|
-|time|(time:SECONDS)|Triggers when the specified amount of seconds have been reached. (Supports decimal floats.)|
-|hover|(hover:ROW,COLUMN)|Triggers when the player hovers the tile at the specified coordinates with the mouse cursor. (The tile has to be visible.)|
 |click|(click:ROW,COLUMN)|Triggers when the player clicks the tile at the specified coordinates. (The tile has to be visible.)|
-|walk|(walk:ROW,COLUMN)|Triggers when a [Miner](_pages/ClassesMiners) walks on a tile.|
-|walk|(walk:ROW,COLUMN, NAME)|Like walk but trigger only for the specified [Miner](_pages/ClassesMiners). (Require named miner variable.)|
+|drill|(drill:ROW,COLUMN)|Triggers when a wall at ROW,COLUMN is drilled or collapses.|
 |drive|(drive:ROW,COLUMN)|Triggers when a [Vehicle](_pages/ClassesVehicles) is driven over the specified tile.|
 |drive|(drive:ROW,COLUMN, NAME)|Like drive but trigger only for the specified [Vehicle](_pages/ClassesVehicles). (Require named vehicle variable or class.)|
-|enter|(enter:ROW,COLUMN)|Activates when either a [Miner](_pages/ClassesMiners) or [Vehicle](_pages/ClassesVehicles) enter a tile.|
-|enter|(enter:ROW,COLUMN, NAME)|Like enter but trigger only for the specified vehicle class or named [Miner](_pages/ClassesMiners)/[Vehicle](_pages/ClassesVehicles).|
+|enter|(enter:ROW,COLUMN)|Activates when either a [Miner](_pages/ClassesMiners) or [Vehicle](_pages/ClassesVehicles) enter a tile. This version does not trigger on creatures, only miners and vehicles.|
+|enter|(enter:ROW,COLUMN,NAME)|Like enter but trigger only for the specified object or collection. This does work on creature objects and collections.|
+|hover|(hover:ROW,COLUMN)|Triggers when the player hovers the tile at the specified coordinates with the mouse cursor. (The tile has to be visible.)|
+|laser|(laser:ROW,COLUMN)|Triggers when a wall at ROW,COLUMN is destroyed by a laser.|
+|laserhit|(laserhit:ROW,COLUMN)|Triggers when a wall at ROW,COLUMN is hit by a laser.|
+|reinforce|(reinforce:ROW,COLUMN)|Triggers when a wall at ROW,COLUMN is reinforced by any unit.|
+|time|(time:SECONDS)|Triggers when the specified amount of seconds have been reached. (Supports decimal floats.)|
+|walk|(walk:ROW,COLUMN)|Triggers when a [Miner](_pages/ClassesMiners) walks on a tile.|
+|walk|(walk:ROW,COLUMN,NAME)|Like walk but trigger only for the specified [Miner](_pages/ClassesMiners). (Require named miner variable.)|
 |comparison|(`expression`)|Activates when the `expression` is evaluated as `true`. See the next section for usage.|
 |CLASS||Activates when the class is interacted with in some way. See the [Classes](_pages/Classes) page for details.|
 

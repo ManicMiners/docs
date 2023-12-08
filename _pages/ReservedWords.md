@@ -11,8 +11,7 @@ List of keywords in alphabetical order used by the script engine. These should n
 |black|Color|Arrow colors.|
 |blue|Color|Arrow colors.|
 |bool|Variable|true false.|
-|building|Variable|Building object (different use than building trigger).|
-|building|Class Trigger|Building Trigger (different use than building variable).|
+|building|Variable / Class Trigger|Building object or trigger.|
 |building_path|Macro|Tile ID of a building path (14).|
 |BuildingDocks_C|Collection|Docks|
 |BuildingElectricFence_C|Collection|The fence item and fence building are two separate objects|
@@ -28,6 +27,7 @@ List of keywords in alphabetical order used by the script engine. These should n
 |BuildingToolStore_C|Collection|Toolstores|
 |BuildingUpgradeStation_C|Collection|Upgrade Stations|
 |built|Data Field Trigger|Trigger when a building is built.|
+|change|Trigger|Trigger when tile changes|
 |click|Data Field Trigger|Trigger when object is clicked.|
 |clock|Macro|Same as time.|
 |col|Data Field|Object column. Same as column.|
@@ -48,7 +48,8 @@ List of keywords in alphabetical order used by the script engine. These should n
 |dead|Data Field Trigger|Trigger when object is dead.|
 |dirt|Macro|Tile ID of dirt (26).|
 |disable|Event|Disable object|
-|drill|Event|Drill tile.|
+|drill|Event / Trigger|Drill tile.|
+|drive|Trigger|Trigger when vehicle over tile.|
 |driven|Data Field Trigger|Trigger when a miner enters a vehicle.|
 |driver|Data Field|miner id of the driver. Same as driverid.|
 |driverid|Data Field|miner id of the driver. Same as driver.|
@@ -58,6 +59,7 @@ List of keywords in alphabetical order used by the script engine. These should n
 |ElectricFence_C|Collection|All fence objects.|
 |emerge|Event|Spawn creature.|
 |enable|Event|Enable object|
+|enter|Trigger|Trigger when object enters tile.|
 |EventErosion_C|Collection|Active erosions.|
 |EventLandslide_C|Collection|Active active landslides.|
 |erosionscale|Macro|Global erosion scale factor|
@@ -71,6 +73,7 @@ List of keywords in alphabetical order used by the script engine. These should n
 |highlight|Event|Highlight tile.|
 |highlightarrow|[Event]|showarrow and highlight at once.|
 |hostiles|Macro|Number of hostile creatures.|
+|hover|Trigger|Trigger when mouse is over a tile.|
 |hp|Data Field|Object hitpoints. Same has health.|
 |hurt|Data Field Trigger|Trigger when object takes damage.|
 |id|Data Field|Object ID.|
@@ -80,6 +83,8 @@ List of keywords in alphabetical order used by the script engine. These should n
 |integer|Variable|Integer number.|
 |ispowered|Data Field|Same as power.|
 |kill|Event|Kill object.|
+|laser|Trigger|Trigger when wall destroyed by laser.|
+|laserhit|Trigger|Trigger when wall hit by laser.|
 |lastbuilding|Macro|Last building that activated a trigger.|
 |lastcreature|Macro|Last creature that activated a trigger.|
 |lastminer|Macro|Last miner that activated a trigger.|
@@ -90,8 +95,7 @@ List of keywords in alphabetical order used by the script engine. These should n
 |lights|Parameter|same as light.|
 |loose_rock|Macro|Tile ID of loose rock (30).|
 |lose|Event|Lose the map.|
-|miner|Variable|Miner object (different use than miner triggers).|
-|miner|Class|miner class in triggers (different use than miner variable).|
+|miner|Variable / Class|Miner object or class.|
 |miners|Macro|Miners discovered or active.|
 |monsters|Macro|Number of monsters.|
 |msg|Event|Display a message to user.|
@@ -112,9 +116,10 @@ List of keywords in alphabetical order used by the script engine. These should n
 |poweroff|Data Field Trigger|Trigger when power is deactivated for a building.|
 |poweron|Data Field Trigger|Trigger when power is activated for a building.|
 |progress_path|Macro|Tile id of a progress path (13).|
-|qmsgs|Event|Display message to user.|
+|qmsg|Event|Display message to user.|
 |RechargeSeamGoal_C|Collection|Visible recharge seams.|
 |red|Color|Arrow colors.|
+|reinforce|Trigger|Trigger when wall is reinforced.|
 |reset|Event|Resets the player's selection|
 |resetspeed|Event|Loads the game speed from settings again.|
 |resume|Event|Same as unpause.|
@@ -142,7 +147,7 @@ List of keywords in alphabetical order used by the script engine. These should n
 |tick|Event Chain|Called on every engine tick. Not recommended.|
 |tile|Data Field|TileID for objectt.|
 |tileid|Data Field|same as tile.|
-|time|Macro|Game time.|
+|time|Macro / Trigger|Game time or trigger.|
 |timer|Variable|Timer object.|
 |truewait|Event|Suspend event chain for real user time period.|
 |upgraded|Trigger when object is upgraded.|
@@ -151,6 +156,7 @@ List of keywords in alphabetical order used by the script engine. These should n
 |vehicle|Class|Vehicle class in trigger (different use than vehicle variable).|
 |vehicles|Macro|Number of vehicles.|
 |wait|Event|Suspend event chain for a given period of time modified by game speed.|
+|walk|Trigger|Trigger when miner walks on a tile.|
 |water|Macro|Tile ID of water (11).|
 |W|Emerge Direction|West.|
 |when|Trigger|multiple time trigger.|
