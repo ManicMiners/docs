@@ -10,7 +10,7 @@ Scripting is programmed level-specific behavior that is currently defined by inp
 
 **Variables** are used to keep track of what's happening in the level. **Triggers** check for when something specific occurs in the level. **Events** are executed to alter the level or player in some way.
 
-Start by reviewing the [Scripting Structure](page/ScriptingStructure)
+Start by reviewing the [Scripting Structure](_pages/ScriptingStructure)
 
 Reserved words are here: [Reserved Words](_pages/ReservedWords)
 
