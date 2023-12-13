@@ -6,7 +6,7 @@ You can bind objectives to scripting using the `variable` keyword.
 The format is variable:EXPRESSION/OBJECTIVE
 
 EXPRESSION is any valid variable expression and may use macros.
-OBJECTIVE is a string seen by the player describing the objective.
+OBJECTIVE is a message seen by the player describing the objective.
 
 ```mms
 variable:NumDrilledWalls>=10/Drill these 10 walls!
@@ -14,4 +14,4 @@ variable:NumDrilledWalls>=10/Drill these 10 walls!
 
 This will create an objective called `Drill these 10 walls!` that will be completed once the variable `NumDrilledWalls` contain a value of 10 or higher.
 
-If all objectives are complete, the player will automatically win the map. That means if you want to always provide a custom message to the win event, you may need to put a final objective in the list that will only become true after your logic uses the win event.
+If all objectives are complete, the player will automatically win the map. If your logic wants to only win the map by using the win event you may need to put a final objective in the list that will only become true after your logic uses the win event.

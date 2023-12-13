@@ -1,11 +1,25 @@
 # Scripting structure
-The scripting works by calling events from triggers. The structure looks like this:
+Scripting is text inside the Script section of the map file. There are four catagory of lines that are found inside this section.
+- comments. [Comments](_pages/Comments) start with a `#` character and continue until the end of the line.
+- variables. [Variables](_pages/Variables) provide storage for values or objects to modify.
+- triggers. [Triggers](_pages/Triggers) are notifications from the engine to the script allowing logic changes. Every action a script is able to do starts with a trigger. Triggers may use a single event or call Event Chains.
+- Event Chains. [Event Chains](_pages/EventChains) are multiple events assigned to a name, they are similar to a function call in other languages. They are called by triggers, the block system or by other Event Chains.
+
+The general logic flow of a script is to have trigger(s) to respond to gameplay. When those triggers are invoked (trigger fires), the script runs performing some action by using event(s). If the action is simple the trigger may only use a single event. If the action is more complex, the trigger is able to call an Event Chain to perform a sequence of actions. The script then returns from the trigger.  This process continues until the map is exited.
+
+If the map is either won or lost, most triggers will continue to fire until the user exits the map. This allows gameplay to continue after the map is won.
+
+There are two predefined hidden triggers and they call special Event Chains in the script. If you have an Event Chain called `init` that Event Chain will be called once at the start of the gameplay prior to any other trigger in the map firing. If you have an Event Chain called `tick` that Event Chain will be called on every game engine frame update. See [Event Chain](_pages/EventChains) for more information on these.
+
+There are two types of triggers.
+- Single call triggers defined using `if`. They are only called a single time
+- Multiple call triggers defined using `when`. They are called every time the trigger condition is true. 
+
+The format of a trigger is:
 
 ```mms
-OCCURRENCE(TRIGGER)((CONDITION))[EVENT1][EVENT2]
+OCCURRENCE(TRIGGER)((CONDITION))[TRUE_EVENT][FALSE_EVENT]
 ```
-To make it work, replace each word with a proper scripting sentence.
-
 ## OCCURRENCE
 This defines how many times a event can occur.
 
@@ -13,28 +27,40 @@ This defines how many times a event can occur.
 - `if` fires once, and then the trigger is removed forever.
 
 ## [TRIGGER](_pages/Triggers)
-A trigger defines when the event should be called. It is marked with single parenthesis`()`. 
+A trigger defines when the event should be called. The trigger itself is inside of the single parenthesis`()`. 
 
-Triggers such as `walk` and `drive` fire once every time the tile is entered, not while someone is there.
+Triggers such as `walk` and `drive` fire when the tile is entered, not while someone is there.
 
 ## [CONDITION](_pages/Conditions)
-A condition is an optional statement you can use to add a requirement to your script. This is marked with double parenthesis: `(())`. A condition allows you to compare two variables with each other and fire a event based on if the result equals `true` or `false`
+A condition is an optional statement you can use to add a requirement to your script. The conditional test is inside of double parenthesis: `(())`. A condition allows you to compare two variables with each other and fire a event based on if the result equals `true` or `false`
 
 ## [Event](_pages/Events)
-Events define what should happen. They are marked with square brackets: `[]` and can be written either one or two on the same line.
+Events define what should happen. They are contained inside square brackets: `[]`. There is always a true event and an optional false event.
 
-The first event is mandatory. It can be used with or without conditions. If it is used with conditions it will only fire if the condition equals `true`. The second event is **optional** and can only be used together with a condition. It will only fire if the condition equals `false`.
+Events may be a single statement or an Event Chain name to execute multiple statements.
 
-If you want to fire a bunch of events at once you can create a event chain. This is described in detail on the [Event chains](_pages/EventChains)-page.
+The first event is mandatory. It can be used with or without conditions. If it is used with conditions it will only fire if the condition is true equals `true`. The second event is optional and can only be used together with a condition. It will only fire if the condition equals `false`.
 
-## NO SPACES
+Examples:
+```mms
+# display message after every Ice Monster leaves map.
+when(CreatureIceMonster_C.dead)[msg:DeadIceMonMsg]
 
-Do not use spaces at the beginning of a line.
-Do not use spaces at the end of a line.
-Do not use spaces in the middle of a line. (see variables below)
-Spaces are allowed inside of a string:  "  spaces are ok here"
-Spaces are allowed after the end of a line if you have a comment.
-A space is required between a variable declaration and its name.
+# call Event Chain when the first unit enters row 1 col 2 tile and then never call again.
+if(enter:1,2)[MyEnterChain]
+
+# call either EnoughCrystals or TooFewCrystals everytime a unit enters row 3 col 4 tile.
+when(enter:3,4)((crystals>10))[EnoughCrystals][TooFewCrystals]  
+```
+
+## No Spaces
+
+- Do not use spaces at the beginning of a line.
+- Do not use spaces at the end of a line.
+- Do not use spaces in the middle of a line. (see variables below)
+- Spaces are allowed inside of a string:  "  spaces are ok here"
+- Spaces are allowed after the end of a line if you have a comment.
+- A space is required between a variable declaration and its name.
 
 ## Example Scripts
 
@@ -46,4 +72,6 @@ A list of all known [reserved words](_pages/ReservedWords). Do not use these for
 
 ## Order of coordinates
 
-All events that use row, col are always row first followed by col. row,col.  Row maps to Y and col maps to X. This will confuse those that would expect the the normal order of X,Y used in most vector and graphics system. The level editor will show coordinates as row,col.
+All events that use row, col are always row first followed by col. Row maps to Y and col maps to X. This will confuse those that would expect the normal order of X,Y used in most vector and graphics system. The level editor always  shows coordinates as row,col.
+
+Remember - everything that uses coordinates ALWAYS use row,col.
