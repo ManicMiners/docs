@@ -127,6 +127,8 @@ List of keywords in alphabetical order used by the script engine. These should n
 |S|Emerge Direction|South.|
 |save|Event|Save last miner that activated a trigger into a variable.|
 |savebuilding|Event|Save last building that activated a trigger into a variable.|
+|savecreature|Event|Save last creature that activated a trigger into a variable.|
+|savevehicle|Event|Save last vehicle that activated a triggger into a variable.|
 |shake|Event|Shake camera.|
 |showarrow|Event|Show arrow object.|
 |slug_hole|Macro|Tile id of slimy slug hole (12).|

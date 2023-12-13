@@ -32,7 +32,7 @@ You can dynamically change miner, vehicle, building and creature variables with 
 ## Mixing Variable Types
 
 It is good programming practice to not mix bool and int variable types. For example, testing a bool variable to be > 0 - it works but not officially supported.  For bools the only logical operation types recommended are:
-```
+```mms
 ((var==true))
 ((var==false))
 ((var!=true))
@@ -42,7 +42,7 @@ int and float types may freely be assigned to each other. Floats are truncated t
 
 Int and float values may be added to a string. For example:
 
-```
+```mms
 string s="The current game time: "
 float fNow=0.0
 
@@ -58,7 +58,7 @@ Variables of different types, ex, arrows, miners, buildings, etc, cannot be assi
 
 Negative constants are not supported by the parser. To assign a variable to a negative number or to use a negative constant, it must be computed at runtime usually from within an event chain.
 
-```
+```mms
 int i
 
 init::i=0-1;  # i is now -1

@@ -83,10 +83,10 @@ Where CLASS is replaced with a collection or declared object and trigger with a 
 
 |Name|Description|
 |---|---|
-|dead|Trigger when a object dies or get teleported.|
-|new|Trigger when a object is created.|
 |click|Trigger when a object is clicked.|
-|hurt|Trigger when a object take damage.|
+|dead|Trigger when a object dies or get teleported.|
+|hurt|Trigger when a object takes damage.|
+|new|Trigger when a object is created.|
 
 ## Known classes 
 ### Larger classes 
@@ -120,4 +120,5 @@ Where CLASS is replaced with a collection or declared object and trigger with a 
 |NavModifierRubble_C|No|Amount of Rubble tiles, any stage.|
 
 ## More classes
+TODO - is this still valid?
 If you have an interest in a specific type of class to be added to this page, you can personally request them from the developer or check an older unpacked game build. In the unpacked build, every class has its own object. Please note that some class names have changed between different builds of the game.
