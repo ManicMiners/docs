@@ -50,13 +50,14 @@ Each native creature class has their own collection. When used by itself the col
 ## Automatic Monster Spawning
 
 The following events control automatic pseudo random monster spawning in waves.
-| Event | Description |
-|-------|-------------|
+
+|Event|Description|
+|---|---|
 |addrandomspawn:COLLECTION,MINTIME,MAXTIME|Configure random spawn of a creature collection. MINTIME and MAXTIME define a random time in float seconds between each spawn wave.|
 |spawncap:COLLECTION,MIN,MAX|For the given collection, random spawns will occur until total number of active creatures is over a random value between MIN and MAX.|
 |spawnwave:COLLECTION,MIN,MAX|For the given collection each spawn wave will have a random number of creatures between MIN and MAX.|
 |startrandomspawn:COLLECTION|Start the random spawn for the given collection.|
-|stoprandomspawn:COLLECTION|Stop the random spawn for the given collection|
+|stoprandomspawn:COLLECTION|Stop the random spawn for the given collection.|
 
 Mainly added for slimy slugs, it work on monsters also.  Creatures are spawned on a random basis in waves until the the spawncap number of creatures are active. Creatures are spawned from any random valid emergeable location in the discovered areas of the map.
 
