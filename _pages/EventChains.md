@@ -88,7 +88,7 @@ There is no traditional looping one would find in other languages. No for, while
 Every use of an event chain from a ((expression))[trueevent][falseevent] is a function call. An example best shows this:
 ```
     int i=0
-    int sum=0;
+    int sum=0
     string s=""
 
     #loop 5 times

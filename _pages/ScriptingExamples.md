@@ -85,10 +85,10 @@ The above example will drill out all the walls from 1,1 until 6,6 in the map. Th
 ### Class count
 
 ```mms
-when(drill:2,2)[msg:BuildingSupportStation_C]
+when(drill:2,3)[msg:BuildingSupportStation_C]
 ```
 
-When you drill a wall at position 2,2 a number indicating the total amount of constructed Support Stations will be displayed. This works with any class.
+When you drill a wall at position 2,3 a number indicating the total amount of constructed Support Stations will be displayed. This works with any collection.  `BuildingSupportStation_C` being a colleciton will return an int that is the number of them. `msg:` event wants a string parameter, so the int value is converted to a string and thus displayed.
 
 ### Class gets teleported
 

@@ -30,14 +30,8 @@ A trigger can be set to fire based on a comparison between two [Variables](_page
 
 ?> The compared _values_ can be set to any valid `float`, `integer`, [Macro](_pages/Macros), [Class Macro](_pages/Classes), or regular numeric values.
 
-|Logical operators|Meaning|
-|---|---|
-|>|Larger than|
-|>=|Larger than or equal to|
-|<|Less than|
-|<=|Less than or equal to|
-|==|Equal to|
-|!=|Not equal to|
+See [Conditions](_pages/Conditions) for more detail.
+
 
 ### Example
 
