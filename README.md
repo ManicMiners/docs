@@ -14,9 +14,9 @@ Reserved words are here: [Reserved Words](_pages/ReservedWords)
 
 ?> The game provide a handy log that tells you exactly what has occurred and if any errors happen.
 
-![ShowLogButton_Screenshot](_media/EditorScriptingOptions.png "Script Button")
+![ShowLogs_Screenshot](_media/EditorScriptingOptions.png "Script Button")
 
-![ShowLogButton1_Screenshot](_media/EditorShowLog.png "Show Logs")
+![ShowLog_Screenshot](_media/EditorShowLogs.png "Show Logs")
 
 To assist you with scripting the Level Editor can display the Row, Column and Tile ID of the tile beneath the mouse cursor. This function is activated when you press the Script Interface button in the Level Editor.
 
