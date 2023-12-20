@@ -88,8 +88,8 @@ where COLLECTION can be one of the following:
 |miners|Toggle player's ability to teleport miners.|
 |vehicles|Toggle player's ability to teleport vehicles.|
 |buildings|Toggle player's ability to teleport buildings.|
-|VEHICLE_NAME_C|Toggle player's ability to teleport a specific vehicle class.|
-|BUILDING_NAME_C|Toggle player's ability to teleport a specific building class.|
+|VEHICLENAME_C|Toggle player's ability to teleport a specific vehicle class.|
+|BUILDINGNAME_C|Toggle player's ability to teleport a specific building class.|
 |light/lights|Toggle all ambient light in the cavern. The player cannot override this. Vehicles have floodlights and some miner helmets have a light.|
 
 Example - this event chain will turn off any ability to transport miners, vehicles, buildings or use explosives:

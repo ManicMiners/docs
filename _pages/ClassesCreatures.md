@@ -5,47 +5,62 @@ The creature class is used to create a reference to a creature. With that refere
 
 ```mms
 creature MyMonster=2   # The existing creature of ID 2 is mapped to this variable.
-creature MyCreature    # creature not yet assigned to any specific unit
+creature MyCreature    # will be assigned later by lastcreature or =.
 ```
-If a creature variable is not initialized to a specific creature, it must be initialized later by savecreature, or = events prior to use. This variable cannot be used in any trigger since it is not known at map startup.
+- Creature variables not assigned may later be assigned via `=lastcreature` or `savecreature`.
+- Creature variables may be assigned to each other.
+- Unassigned creature variables cannot be used in a trigger.
+- It is common to use a creature collection class in the trigger and use `=lastcreature` or `savecreature` in an event chain.
+- Undiscovered creatures and their triggers are inactive until they are discovered.
+
 
 ## Triggers
 
 |Name|Description|
 |---|---|
 |dead|Trigger when a creature gets killed or enters rock.|
-|new|Trigger when creature is emerged. TODO TEST.
+|new|Trigger when creature is emerged. Only used with collections.
 
 ## Properties
 
 |Property|Type|Note|
 |---|---|---|
-|col|Integer|Returns column of the creature.|
-|column|Integer|Returns column of the creature. Same as col.|
-|eaten|Integer|The number of crystals eaten/absorbed|
-|health|Integer|Returns current hitpoints. Same as hp.|
-|hp|Integer|Returns current hitpoints. Same as health.|
-|id||Integer|Returns the ID the creature.|
-|row|Integer|Returns row of the creature.|
-|tile|Integer|TileID the creature is over.|
-|tileid|Integer|same as tile.|
-|X|Integer|Column, 300 values per cell|
-|Y|Integer|Row, 300 values per cell|
-|Z|Integer|Height, 300 values per cell|
+|col|int|Returns column of the creature.|
+|column|int|Returns column of the creature. Same as col.|
+|eaten|int|The number of crystals eaten/absorbed|
+|health|int|Returns current hitpoints. Same as hp.|
+|hp|int|Returns current hitpoints. Same as health.|
+|id|int|Returns the ID the creature.|
+|row|int|Returns row of the creature.|
+|tile|int|TileID the creature is over.|
+|tileid|int|same as tile.|
+|X|int|Column, 300 values per cell|
+|Y|int|Row, 300 values per cell|
+|Z|int|Height, 300 values per cell|
 
 ## Collections 
 Each native creature class has their own collection. When used by itself the collection acts like a macro and returns the total amount of creatures of that type. The collection can be used in triggers.
 
-### List of collections
+|Name|Description|
+|---|---|
+|Bat|Bats.|
+|CreatureRockMonster_C|Rock Monsters.|
+|CreatureIceMonster_C|Ice Monsters.|
+|CreatureLavaMonster_C|Lava Monsters.|
+|CreatureSlimySlug_C|Slimy Slugs.|
+|CreatureSmallSpider_C|Small Spiders.|
+|CreatureBat_C|Bats.|
+|IceMonster|Ice Monsters.|
+|LavaMonster|Lava Monsters.|
+|RockMonster|Rock Monsters.|
+|SlimySlug|Slimy Slugs.|
+|SmallSpider|Small Spiders.|
 
-|Name|
-|---|
-|CreatureRockMonster_C|
-|CreatureIceMonster_C|
-|CreatureLavaMonster_C|
-|CreatureSlimySlug_C|
-|CreatureSmallSpider_C|
-|CreatureBat_C|
+> There are two names for each creature collection, it is recommend to use the long name for clarity. The short names are for compatibility with older maps.
+
+## Macros
+- `creatures` macro returns the number of all creatures.
+- `hostiles` macro returns the number of monsters and slugs.
 
 ## Automatic Monster Spawning
 
@@ -65,12 +80,12 @@ If you want to have control over the spawn locations, you have to write your own
 
 Emerge event will allow you the ability to emerge a single creature from a given location and an optional radius
 
-### Making a creature flee
+## Making a creature flee
 Use the flee: event to cause a creature to flee to that location.  If you use a collection, all active monsters of that type will flee to that location. The location must be a valid location for the creature, once it gets there it expects to be able to leave the map as it normally would. Thus for slimy slugs, it must be a slug hole. For monsters it must be next to a wall that is emergeable or solid rock.
 
 ```mms
 flee:MyMonster,row,col
 flee:CreatureIceMonster_C,row,col
 ```
-First is a specific monster will flee to row,col
-Second is all active ice monsters will flee to row,col.
+First example is a specific monster will flee to row,col. 
+Second example is all active ice monsters will flee to row,col.

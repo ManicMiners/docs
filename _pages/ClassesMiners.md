@@ -1,47 +1,64 @@
 # Miner Class
 The miner class is used to create a reference to a miner. With that reference you can then call on and use triggers exclusive to that miner.
-## Declaration
 
+## Declaration
 ```mms
-	miner Charlie=2
+miner Charlie=2   # miner with ID of 2
+miner Charlie     # miner unassigned, will be assigned later.
 ```
 
-This declares the miner with an ID of 2 as Charlie. The ID is given to miners based on the order they are placed in the level. The ID can be manually changed inside the level file.
+- Miner variables not assigned may later be assigned via `=lastminer` or `save`.
+- Miner variables may be assigned to each other.
+- Unassigned Miner variables cannot be used in a trigger.
+- It is common to use `miner` collection class in the trigger and use `=lastminer` or `save` in an event chain.
+- Undiscovered miners and their triggers are inactive until they are discovered.
 
-## Collection 
-The miner collection can be used together with triggers to execute events when something happens to any miner in the level.
-
-### Disable or enable the teleportation of miners 
-The miner collection can be used together with the disable event in order to prevent the player from teleporting down miners. Likewise the enable event will re-allow a player to teleport down miners.
-disable:miners
-enable:miners
 
 ## Triggers 
 
 |Name|Description|
 |---|---|
 |dead|Trigger when a miner dies.|
-|new|Trigger when a miner is created.|
+|new|Trigger when a miner is created. Requires collection. |
 |click|Trigger when a miner is clicked.|
 |hurt|Trigger when a miner take damage.|
-|upgraded|Trigger when miner is upgraded.|
+|levelup|Trigger when miners upgrade level is increased.|
 
 ## Properties
 
 |Property|Type|Note|
 |---|---|---|
-|col|Integer|Returns column of the miner.|
-|column|Integer|Returns column of the miner. Same as col.|
-|health|Integer|Returns current hitpoints. Same has hp.|
-|hp|Integer|Returns current hitpoints. Same has health.|
-|level|Integer|Returns upgrade level of the miner.|
-|row|Integer|Returns row of the miner.|
-|stamina|Integer|same as hp.|
-|tile|Integer|TileID miner is over|
-|tileid|Integer|same as tile|
-|X|Integer|Column, 300 values per cell|
-|Y|Integer|Row, 300 values per cell|
-|Z|Integer|Height, 300 values per cell|
+|col|int|Returns column of the miner.|
+|column|int|Returns column of the miner. Same as col.|
+|health|int|Returns current hitpoints. Same has hp.|
+|hp|int|Returns current hitpoints. Same has health.|
+|level|int|Returns upgrade level of the miner.|
+|row|int|Returns row of the miner.|
+|stamina|int|same as hp.|
+|tile|int|TileID miner is over|
+|tileid|int|same as tile|
+|X|int|Column, 300 values per cell|
+|Y|int|Row, 300 values per cell|
+|Z|int|Height, 300 values per cell|
+
+Note: that there does not appear to be any way to detect miners skills.
+
+## Collections
+
+> `miner` keyword may also be used as a collection in triggers.  It is a special collection in that it cannot be used as a macro to return number of miners but can be used in triggers. To detect every new miner:
+```msg
+when(miner.new)[MyNewMinerChain]
+```
+
+The `miners` macro returns the number of miners.
+
+## enable / disable
+The `enable` and `disable` events support disabling transporting of miners and re-enabling. See [Events](_pages/Events).
+
+|Event|Description|
+|---|---|
+|disable:miners|Disable transporting down new miners.|
+|enable:miners|Enable transporting down new miners.|
 
 ## Examples 
 
