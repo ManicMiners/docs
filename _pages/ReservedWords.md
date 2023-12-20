@@ -1,5 +1,6 @@
 # Reserved Words
-List of keywords in alphabetical order used by the script engine. These should not be used by variable names or event chains.  Doing so will have undefined behavior!
+List of keywords in alphabetical order used by the script engine. These should not be used as variable names or event chain names.  Doing so will have undefined behavior!
+These are not case sensitive since variable names and event chain names are not case sensitive.
 
 |Name|Type|Brief Description|
 |---|---|---|
@@ -8,13 +9,14 @@ List of keywords in alphabetical order used by the script engine. These should n
 |air|Macro|Air remaining.|
 |arrow|Variable|Arrow object.|
 |Barrier_C|Collection|TODO what are these?|
+|Bat|Collection|Bats.|
 |black|Color|Arrow colors.|
 |blue|Color|Arrow colors.|
 |bool|Variable|true false.|
 |building|Variable / Class Trigger|Building object or trigger.|
 |building_path|Macro|Tile ID of a building path (14).|
 |BuildingDocks_C|Collection|Docks|
-|BuildingElectricFence_C|Collection|The fence item and fence building are two separate objects|
+|BuildingElectricFence_C|Collection|Electric Fences.|
 |BuildingGeologicalCenter_C|Collection|Geological Centers|
 |BuildingMiningLaser_C|Collection|Mining Lasers|
 |BuildingOreRefinery_C|Collection|Ore Refineries|
@@ -27,7 +29,9 @@ List of keywords in alphabetical order used by the script engine. These should n
 |BuildingToolStore_C|Collection|Toolstores|
 |BuildingUpgradeStation_C|Collection|Upgrade Stations|
 |built|Data Field Trigger|Trigger when a building is built.|
+|cargocarrier|Macro|Number of Cargo Carriers.|
 |change|Trigger|Trigger when tile changes|
+|chromecrusher|Macro|Number of Chrome Crushers.|
 |click|Data Field Trigger|Trigger when object is clicked.|
 |clock|Macro|Same as time.|
 |col|Data Field|Object column. Same as column.|
@@ -47,7 +51,8 @@ List of keywords in alphabetical order used by the script engine. These should n
 |darkgreen|Color|Arrow colors.|
 |dead|Data Field Trigger|Trigger when object is dead.|
 |dirt|Macro|Tile ID of dirt (26).|
-|disable|Event|Disable object|
+|disable|Event|Disable object.|
+|docks|Macro|Number of Docks.|
 |drill|Event / Trigger|Drill tile.|
 |drive|Trigger|Trigger when vehicle over tile.|
 |driven|Data Field Trigger|Trigger when a miner enters a vehicle.|
@@ -56,7 +61,8 @@ List of keywords in alphabetical order used by the script engine. These should n
 |Dynamite_C|Collection|All dynamite outside of toolstore.|
 |E|Emerge Direction|East.|
 |eaten|Data Field|The number of crystals eaten/absorbed.|
-|ElectricFence_C|Collection|All fence objects.|
+|electricfence|Macro|Number of Fences.|
+|ElectricFence_C|Macro|Number of Fence objects. Not a collection.|
 |emerge|Event|Spawn creature.|
 |enable|Event|Enable object|
 |enter|Trigger|Trigger when object enters tile.|
@@ -64,7 +70,9 @@ List of keywords in alphabetical order used by the script engine. These should n
 |EventLandslide_C|Collection|Active active landslides.|
 |erosionscale|Macro|Global erosion scale factor|
 |float|Variable|Floating point number.|
+|geologicalcenter|Macro|Number of Geological Centers.|
 |get|Macro|Get tile ID.|
+|granitegrinder|Macro|Number of Granite Grinders.|
 |green|Color|Arrow colors.|
 |hard_rock|Macro|Tile ID of hard rock (34).|
 |heal|Event|Heal object.|
@@ -74,8 +82,10 @@ List of keywords in alphabetical order used by the script engine. These should n
 |highlightarrow|[Event]|showarrow and highlight at once.|
 |hostiles|Macro|Number of hostile creatures.|
 |hover|Trigger|Trigger when mouse is over a tile.|
+|hoverscout|Macro|Number of Hover Scouts.|
 |hp|Data Field|Object hitpoints. Same has health.|
 |hurt|Data Field Trigger|Trigger when object takes damage.|
+|IceMonster|Collection|Ice Monsters.|
 |id|Data Field|Object ID.|
 |if|Trigger|single time trigger.|
 |init|Event Chain|First event called after map load.|
@@ -90,13 +100,17 @@ List of keywords in alphabetical order used by the script engine. These should n
 |lastminer|Macro|Last miner that activated a trigger.|
 |lastvehicle|Macro|Last vehicle that activated a trigger.|
 |lava|Macro|Tile ID of lava (6).|
+|LavaMonster|Collection|Lava Monsters.|
 |level|Data Field|Returns upgrade level of the building.|
 |light|Parameter|enable/disable parameter.|
 |lights|Parameter|same as light.|
+|LMLC|Macro|Number of Large Mobile Laser Cutters.|
+|loaderdozer|Macro|Number of Loader Dozers.|
 |loose_rock|Macro|Tile ID of loose rock (30).|
 |lose|Event|Lose the map.|
 |miner|Variable / Class|Miner object or class.|
 |miners|Macro|Miners discovered or active.|
+|mininglaser|Macro|Number of Geological Centers.|
 |monsters|Macro|Number of monsters.|
 |msg|Event|Display a message to user.|
 |N|Emerge Direction|North.|
@@ -107,6 +121,7 @@ List of keywords in alphabetical order used by the script engine. These should n
 |new|Data Field Trigger|Trigger when object is created.|
 |ore|Macro|Ore count.|
 |Ore_C|Collection|All ore.|
+|orerefinery|Macro|Number of Ore Refineries.|
 |ore_seam|Macro|Tile ID of an ore seam (46).|
 |pan|Event|Pan camera.|
 |pause|Event|Pauses the game.|
@@ -115,14 +130,17 @@ List of keywords in alphabetical order used by the script engine. These should n
 |powered|Data Field|Same as power.|
 |poweroff|Data Field Trigger|Trigger when power is deactivated for a building.|
 |poweron|Data Field Trigger|Trigger when power is activated for a building.|
+|powerstation|Macro|Number of Power Stations.|
 |progress_path|Macro|Tile id of a progress path (13).|
 |qmsg|Event|Display message to user.|
+|rapidrider|Macro|Number of Rapid Riders.|
 |RechargeSeamGoal_C|Collection|Visible recharge seams.|
 |red|Color|Arrow colors.|
 |reinforce|Trigger|Trigger when wall is reinforced.|
 |reset|Event|Resets the player's selection|
 |resetspeed|Event|Loads the game speed from settings again.|
 |resume|Event|Same as unpause.|
+|RockMonster|Collection|Rock Monsters.|
 |row|Data Field|Object row.|
 |S|Emerge Direction|South.|
 |save|Event|Save last miner that activated a trigger into a variable.|
@@ -131,8 +149,13 @@ List of keywords in alphabetical order used by the script engine. These should n
 |savevehicle|Event|Save last vehicle that activated a triggger into a variable.|
 |shake|Event|Shake camera.|
 |showarrow|Event|Show arrow object.|
+|SlimySlug|Collection|Slimy Slugs.|
 |slug_hole|Macro|Tile id of slimy slug hole (12).|
 |slugs|Macro|Number of slimy slugs.|
+|smalldigger|Macro|Number of Small Diggers.|
+|SmallSpider|Collection|Small Spiders.|
+|smalltransporttruck|Macro|Number of Small Transport Trucks.|
+|SMLC|Macro|Number of Small Mobile Laser Cutters|
 |solid_rock|Macro|Tile ID of solid rock (38).|
 |sound|Event|Play .ogg file.|
 |spawncap|Event|Config random spawn.|
@@ -146,17 +169,35 @@ List of keywords in alphabetical order used by the script engine. These should n
 |Stud_C|Collection|All building studs.|
 |studs|Macro|Building Stud count.|
 |string|Variable|Text.|
+|supportstation|Macro|Number of Support Stations.|
+|teleportpad|Macro|Numbewr of Teleport Pads.|
 |tick|Event Chain|Called on every engine tick. Not recommended.|
 |tile|Data Field|TileID for objectt.|
 |tileid|Data Field|same as tile.|
 |time|Macro / Trigger|Game time or trigger.|
 |timer|Variable|Timer object.|
+|toolstore|Macro|Returns number of toolstores.|
 |truewait|Event|Suspend event chain for real user time period.|
-|upgraded|Trigger when object is upgraded.|
+|tunnelscout|Macro|Number of Tunnel Scouts.|
+|tunneltransport|Macro|Number of Tunnel Transports.|
+|upgrade|Trigger when vehicle is upgraded.|
+|upgraded|Trigger|Not working, don't use.|
+|upgradestation|Macro|Number of Upgrade Stations.|
 |unpause|Event|Resumes the game if paused.|
-|vehicle|Variable|Vehicle object (different use than miner triggers).|
-|vehicle|Class|Vehicle class in trigger (different use than vehicle variable).|
+|vehicle|Variable / Class|Vehicle object or trigger class.|
 |vehicles|Macro|Number of vehicles.|
+|VehicleCargoCarrier_C|Collection|Cargo Carriers|
+|VehicleChromeCrusher_C|Collection|Chrome Crushers|
+|VehicleGraniteGrinder_C|Collection|Granite Grinders|
+|VehicleHoverScout_C|Collection|Hover Scouts|
+|VehicleLMLC_C|Collection|Large Mobile Laser Cutters|
+|VehicleLoaderDozer_C|Collection|Loader Dozers|
+|VehicleRapidRider_C|Collection|Rapid Riders|
+|VehicleSmallDigger_C|Collection|Small Diggers|
+|VehicleSmallTransportTruck_C|Collection|Small Transport Trucks|
+|VehicleSMLC_C|Collection|Small Mobile Laser Cutter|
+|VehicleTunnelScout_C|Collection|Tunnel Scouts|
+|VehicleTunnelTransport_C|Collection|Tunnel Transports|
 |wait|Event|Suspend event chain for a given period of time modified by game speed.|
 |walk|Trigger|Trigger when miner walks on a tile.|
 |water|Macro|Tile ID of water (11).|
@@ -168,3 +209,5 @@ List of keywords in alphabetical order used by the script engine. These should n
 |Y|Data Field|Row, 300 values per cell|
 |yellow|Colors|Arrow colors.|
 |Z|Data Field|Height, 300 values per cell|
+
+
