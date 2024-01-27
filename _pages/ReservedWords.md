@@ -45,9 +45,9 @@ These are not case sensitive since variable names and event chain names are not 
 |CreatureSmallSpider_C|Collection|Spider objects.|
 |CreatureSlimySlug_C|Collection|Slimy Slug objects.|
 |creatures|Macro|Number of creatures.|
-|Crystal_C|Collection|All crystals include those needing recharge.|
+|Crystal_C|Collection|Unstored crystals include those needing recharge.|
 |crystal_seam|Macro|Tile ID of a crystal seam (42).|
-|crystals|Macro|Crystal count.|
+|crystals|Macro|Stored Crystal count.|
 |darkgreen|Color|Arrow colors.|
 |dead|Data Field Trigger|Trigger when object is dead.|
 |dirt|Macro|Tile ID of dirt (26).|
@@ -93,6 +93,7 @@ These are not case sensitive since variable names and event chain names are not 
 |integer|Variable|Integer number.|
 |ispowered|Data Field|Same as power.|
 |kill|Event|Kill object.|
+|landslide|Event|Unknown.|
 |laser|Trigger|Trigger when wall destroyed by laser.|
 |laserhit|Trigger|Trigger when wall hit by laser.|
 |lastbuilding|Macro|Last building that activated a trigger.|
@@ -169,6 +170,7 @@ These are not case sensitive since variable names and event chain names are not 
 |Stud_C|Collection|All building studs.|
 |studs|Macro|Building Stud count.|
 |string|Variable|Text.|
+|superteleport|Macro|Number of Super Teleports.|
 |supportstation|Macro|Number of Support Stations.|
 |teleportpad|Macro|Numbewr of Teleport Pads.|
 |tick|Event Chain|Called on every engine tick. Not recommended.|

@@ -15,7 +15,7 @@ Events describe to the game what you want it to do when a trigger is activated. 
 |---|---|---|
 |addrandomspawn|addrandomspawn:COLLECTION,MINTIME,MAXTIME|Configure random spawn of a creature collection. MINTIME and MAXTIME define a random time in float seconds between each spawn wave.|
 |disable|disable:COLLECTION|Disable the given object type. See description below for list of types|
-|drill|drill:ROW,COLUMN|Drill tile ROW,COLUMN. It will play the appropriate effect and place rubble, ignoring what tile it is.*|
+|drill|drill:ROW,COLUMN|Drill tile ROW,COLUMN. It will play the appropriate effect and place rubble. All wall tiles can be drilled with this event including those not normally drillable.
 |emerge|emerge:ROW,COLUMN,DIRECTION,COLLECTION,DISTANCE|Causes a monster to emerge. ROW,COLUMN integers are desired tile. DIRECTION is one of A,N,S,E,W. COLLECTION is one of CreatureRockMonster_C, CreatureLavaMonster_C, CreatureIceMonster_C. DISTANCE is integer distance from ROW,COLUMN to find emergeable tile to use.|
 |enable|enable:COLLECTION|Enable the given object type. See description below for list of types.|
 |flee|flee:OBJECT,ROW,COL|Causes the given monster object (or collection) to flee to the given tile. Once there, the Creature will try and escape as it normally does. Collections will cause all creatures of that collection to flee to that location.|
@@ -24,11 +24,11 @@ Events describe to the game what you want it to do when a trigger is activated. 
 |highlight|highlight:ROW,COLUMN,ARROW|Shows a highlight the size of a tile at ROW,COLUMN.|
 |highlightarrow|highlightarrow:ROW,COLUMN,ARROW|Executes both showarrow and highlight at |kill|kill:VARIABLE|kill will transport up the given object, either building, miner, or vehicle. If object also has a .dead trigger, that trigger will fire.|
 |lose|lose:MsgStr|Player loses the level with the message defined by string MsgStr. If no string is supplied, they lose the level anyway.|
-|message|msg:MsgStr|Display the message string MsgStr, as defined above. Message is added to the list of message in the message area of the user interface.|
+|message|msg:MsgStr|Display the message string MsgStr, as defined above. Message is added to the list of message in the message area of the user interface. You must use a string variable or a numeric value that will be displayed as a string - you cannot use a string constant.|
 |pan|pan:ROW,COLUMN|The player's camera pans to the tile at ROW,COLUMN. The view direction does not change.|
 |pause|pause|Pauses the game. A bit weird right now as it stops the camera lag effect. The player can unpause with the pause button (P)|
 |place|place:ROW,COLUMN,ID|Place a tile with the specified [ID](_pages/LevelDataFile) in the level at the coordinates given by ROW and COLUMN.__**__|
-|qmessage|qmsg:MsgStr|Display the message string MsgStr, wait for message to be acknowledged by user|
+|qmessage|qmsg:MsgStr|Display the message string MsgStr, wait for message to be acknowledged by user. You must use a string variable or a numeric value that will be displayed as a string - you cannot use a string constant.|
 |save|[save:MINERVAR]|Saves the last miner unit who activated a trigger into a variable.|
 |savebuilding|savebuilding:BUILDINGVAR|Saves the last building that activated a trigger into given building variable.|
 |savecreature|savecreature:CREATUREVARIABLE|Save last creature that activated a trigger into a creature variable.|
@@ -48,32 +48,27 @@ Events describe to the game what you want it to do when a trigger is activated. 
 |wait|wait:GAME_SECONDS|Ask the game to wait a set amount of seconds before executing the next command. Only supported within an event chain. Scales with game speed. While waiting the engine continues to run and script responds to events - so it is possible to re-entrant into the waiting event. You are responsible for handling this case.|
 |win|win:MsgStr|Player wins the level with the message defined by string MsgStr. If no string is supplied, they win the level anyway.|
 
+<br>__**__ If you place a wall on top of a miner or vehicle, they will just phase through the ground. This behaviour will be updated in the future to simply bury them until they are dug out.
 
-?> __*__ Drilling will get fixed later to check that the tile can actually be drilled. <br>__**__ If you place a wall on top of a miner or vehicle, they will just phase through the ground. This behaviour will be updated in the future to simply bury them until they are dug out.
-
-## Player interaction
-!> These events interact directly with the player and should be used with caution.
+## Unknown Events
+> These are events that appear to be known by the engine but no one has figured out the syntax and behavior.
 
 |Event|Syntax|Description|
 |---|---|---|
-|pause|pause|Pauses the game. A bit weird right now as it stops the camera lag effect. The player can unpause with the pause button (P)|
+|landslide|unknown|unknown, landslide is a reserved word.|
+
+## Player interaction
+> These events interact directly with the player and should be used with caution.
+
+|Event|Syntax|Description|
+|---|---|---|
+|pause|pause|Pauses the game. When the game is paused, time does not pass, timers do not fire. The player can unpause with the pause button (P) or by unpause event.|
 |reset|reset|Resets the player's selection (equivalent to a right-click)|
 |resetspeed|resetspeed|Loads the game speed from settings again.|
 |resume|resume|Same as unpause.|
 |speed|speed:NEW_SPEED|Sets the game speed to NEW_SPEED temporarily. The speed does not save and should only be used in specific instances, like a slow motion sequence. Does not prevent the player from increasing the speed in settings.|
-|unpause|unpause|Resumes the game if paused. Note that since time does not pass while the game is paused, even with truewait, this can only be called via player interaction such as clicks.|
+|unpause|unpause|Resumes the game if paused. Note that since time does not pass while the game is paused and timers are suspended - this can only be called via player interaction such as clicks.|
 
-## Arrow events
-Arrows are used for highlighting things in the world. Once you declare an arrow as a variable you can use these to move it around or hide it. The arrows have two usable components: A physical, hovering arrow, and a tile-sized highlight.
-
-|Event|Syntax|Description|
-|---|---|---|
-|hidearrow|hidearrow:ARROW|The arrow is hidden until manually shown again.|
-|highlight|highlight:ROW,COLUMN,ARROW|Shows a highlight the size of a tile at ROW,COLUMN.|
-|highlightarrow|highlightarrow:ROW,COLUMN,ARROW|Executes both showarrow and highlight at once.|
-|showarrow|showarrow:ROW,COLUMN,ARROW|Shows the designated arrow at the tile ROW,COLUMN.|
-
-It is highly recommended to review the Arrow examples in ManicMiners\Levels\DEMO\Scripts
 
 ## Disable/Enable events
 Disable/Enable is used to control what the player can and cannot do in the current level. One example might be that you don't want the player to use flying vehicles, in which case you can disable the Tunnel Scout and Tunnel Transport manually. The syntax looks like this:
@@ -90,7 +85,7 @@ where COLLECTION can be one of the following:
 |buildings|Toggle player's ability to teleport buildings.|
 |VEHICLENAME_C|Toggle player's ability to teleport a specific vehicle class.|
 |BUILDINGNAME_C|Toggle player's ability to teleport a specific building class.|
-|light/lights|Toggle all ambient light in the cavern. The player cannot override this. Vehicles have floodlights and some miner helmets have a light.|
+|light/lights|Toggle all ambient light in the cavern. The player cannot override this. Vehicles have floodlights that still show and some miner helmets have a light that will still show.|
 
 Example - this event chain will turn off any ability to transport miners, vehicles, buildings or use explosives:
 
@@ -121,7 +116,7 @@ Math events are complete events thus you cannot use math operators inside of a c
 
 You cannot combine multiple math operators. Only a single math operation at a time - there is no support for complex operations or ordering.
 
-While the engine will convert bool to int automatically - it is poor programming practice to mix bool and integers. Bools should only set to true/false and only tested against true/false.
+While the engine will convert bool to int automatically - it is poor programming practice to mix bool and integers. bool should only set to true/false and only tested against true/false.
 
 Strings only support + and += operations. The values of int and float variables are converted to strings. 
 
@@ -134,16 +129,16 @@ Since place and drill only modify a single tile - the game collects up all of th
 
 Note that a wait event also allows processing of all queued place events. Thus one can do animations - change some tiles - wait - change more tiles - wait, etc.
 
-The engine has a limit on the number of tiles that may be modified in the context of a trigger - that value is somewhere around 630 tiles. Non-deterministic results may happen changing too many tiles. This can be seen in the map editor where a range goes red when it is too large.
+The engine has a limit on the number of tiles that may be modified in the context of a trigger - that value is somewhere around 630 tiles. Non-deterministic results may happen changing too many tiles. This can be seen in the map editor where a range goes red when it is too large. Script that changes hundreds of tiles may cause a lag spike to the user and thus one may find better interactivity by limiting updates to smaller number of tiles and doing them over a time period.
 
 Water and lava are special tiles. They require custom textures and the engine is not able to mix new water and lava tiles in the context of the same trigger. Also trying to place either water or lava tile(s) when other tiles are changed has the same limitation.  Thus in the context of a single trigger you may only place
 - only water
 - only lava
 - only non water/lava.
 
-Attempts to do more than one of these has non-deterministic results.
+Attempts to do more than one of these has non-deterministic results.  One must be aware that multiple triggers may fire around the same time and the same restrictions still apply so beware of these cases when modifying maps. Thus it is a good idea after using place to change tiles - if any of them could be water/lava, using a wait event with a short timeout is a good idea to allow the changes to be processed.
 
-A drill event is similar to a place event, so if you use drill, you cannot also place either water or lava from the same trigger.
+A drill event is similar to a place event, so if you use drill, you cannot also place either water or lava from the same trigger without a wait event.
 
 You cannot use place to create new undiscovered caverns. Undiscovered caverns are only setup by the engine during map load and are fixed by the time script starts executing.
 A currently undiscovered cavern may have its walls modified (for example changing from solid rock to loose rock) since you are not changing the undiscovered space.

@@ -5,7 +5,7 @@ The Level data file contains all the information needed to generate a level incl
 
 |ID|Name|
 |---|---|
-0|UNUSED|
+0|UNUSED blank|
 1|Ground|
 2|Rubble Level 1|
 3|Rubble Level 2|
@@ -59,15 +59,23 @@ The Level data file contains all the information needed to generate a level incl
 51|Recharge seam corner|
 52|Recharge seam edge|
 53|Recharge seam intersect|
-54|ERROR|
-55|ERROR|
-56|ERROR|
-57|ERROR|
+54|Undefined|
+55|Undefined|
+56|Undefined|
+57|Undefined|
 58|Roof|
-59|ERROR|
+59|Undefined|
 60|Fake rubble 1|
 61|Fake rubble 2|
 62|Fake rubble 3|
 63|Fake rubble 4|
 64|Cliff type 1 (experimental)|
 65|Cliff type 2 (experimental)|
+
+- Tiles over 65 are undefined.
+- Tiles over 100 are hidden cavern tiles. These are the normal ground tiles with +100 added to them indicating they are hidden and will be discovered. Walls within a hidden cavern do not have the +100 added to them.
+- Reenforced walls tiles have +50 added to them.
+
+>Some of the undefined tiles have different textures depending on the theme and some are simply interesting.
+
+>All undefined tiles are subject to change but that said no new changes to tile textures are planned.

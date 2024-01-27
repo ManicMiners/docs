@@ -1,5 +1,6 @@
 # Vehicle Class
 The vehicle class is used to create a reference to a vehicle. With that reference you can then call on and use triggers and properties exclusive to that vehicle. You may also refer to a vehicle collection where you may use triggers connected to every vehicle of a specific type.
+
 ## Declaration
 
 ```mms
@@ -13,8 +14,11 @@ vehicle Sofia      # unassigned vehicle, will be assigned later
 - It is common to use a vehicle collection class in the trigger and use `=lastvehicle` or `savevehicle` in an event chain.
 - Undiscovered vehicles and their triggers are inactive until they are discovered.
 
-## Triggers 
-Triggers may be used on a single object variable or on collections.
+## Properties
+These are the class properties specific to vehicles.  Properties start with the dot `.` character followed by the name after the object variable or collection name.
+
+## Trigger Properties
+>These properties are for use in triggers. They cannot be used in assignments or conditions.
 
 |Name|Description|
 |---|---|
@@ -26,7 +30,7 @@ Triggers may be used on a single object variable or on collections.
 |upgrade|Trigger when vehicle is upgraded.|
 
 ## Properties
-Properties may only be used on a single object, they are not for use with collections.
+>These properties are read-only and are used as a macro, returning a value. They may be used in assignment events on the right side, or in conditions for testing. These cannot be used on collections, they must be used with a specific vehicle.
 
 |Property|Type|Note|
 |---|---|---|
@@ -47,26 +51,7 @@ Properties may only be used on a single object, they are not for use with collec
 Note: there is no level property on vehicles to query upgrades
 
 ## Collections
-Each native vehicle class has their own collection. When used by itself the collection return the total amount of constructed vehicles of that type. The collection can utilize triggers but not properties.
-
-> `vehicle` keyword may also be used as a collection in triggers.  It is a special collection in that it cannot be used as a macro to return number of vehicles but can be used in triggers. To detect every new vehicle:
-```msg
-when(vehicle.new)[MyNewVehicleChain]
-```
-
-
-### Disable or enable a vehicle
-A collection can be used together with the disable event in order to prevent the player from teleporting down the specified vehicle. Likewise the enable event will re-allow a player to teleport the specified vehicle. See [Events](_pages/Events).
-
-```mms
-disable:VehicleChromeCrusher_C
-enable:VehicleChromeCrusher_C
-disable:vehicles
-```
-
-### List of collections 
-Collections may be used by as a macro to return an int the is the number of those objects in the map. Undiscovered objects are not included in the count.
-Collections may be used as a trigger.
+Each native vehicle class has their own collection. When used by itself without a trigger property, it is treated as a read-only macro returning the total number of vehicles of that type. Collections may only use trigger properties.
 
 |Name|Description|
 |---|---|
@@ -82,6 +67,12 @@ Collections may be used as a trigger.
 |VehicleSMLC_C|Small Mobile Laser Cutter|
 |VehicleTunnelScout_C|Tunnel Scouts|
 |VehicleTunnelTransport_C|Tunnel Transports|
+
+> `vehicle` keyword may also be used as a collection in triggers.  It is a special collection referring to all vehicles. It cannot be used as a macro to return number of vehicles but can be used in triggers. To detect every new vehicle:
+```msg
+when(vehicle.new)[MyNewVehicleChain]
+```
+
 
 ## Macros
 These are not collections. They return the number of objects as an int.
@@ -101,6 +92,17 @@ These are not collections. They return the number of objects as an int.
 |tunnelscout|Number of Tunnel Scouts.|
 |tunneltransport|Number of Tunnel Transports.|
 |vehicles|Number of vehicles.|
+
+
+### Disable or enable a vehicle
+A collection can be used together with the disable event in order to prevent the player from teleporting down the specified vehicle. Likewise the enable event will re-allow a player to teleport the specified vehicle. See [Events](_pages/Events).
+
+```mms
+disable:VehicleChromeCrusher_C
+enable:VehicleChromeCrusher_C
+disable:vehicles      # vehicles is a special keyword to refer to all vehicles in this context
+enable:vehicles       # vehicles is a special keyword to refer to all vehicles in this context
+```
 
 
 ## Examples 

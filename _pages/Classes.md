@@ -1,124 +1,35 @@
-# Classes
+# Classes and Collections
 
-Not all classes of the game are known. See the bottom of this page on how you can learn more about them. Also don't forget to share anything you discover so that the wiki can be updated.
+The various objects in the game are usually associated with a class and/or collection. A collection is a wrapper for  multiple similar objects. Most Classes and Collections may be used with triggers to get notification related to that class or with conditions to test values in comparisons.
 
-## General information 
-A class can imply a declaration of an object type or a reference to a collection of objects. Currently classes can be divided in the following subcategories:
+Currently classes can be divided in the following subcategories:
 
-- Buildings
-- Vehicles
-- Items
-- Environmental
+- [Arrows](_pages/ClassesArrow)
+- [Buildings](_pages/ClassesBuildings)
+- [Creatures](_pages/classesCreatures)
+- [Miners](_pages/ClassesMiners)
+- [Timers](_pages/ClassesTimer)
+- [Vehicles](_pages/ClassesVehicles)
+- Environmental Collections
 
-### Declaration 
-A variable is declared a object of a certain type, for example a miner.
+## Environment Collections
 
-```mms
-	miner myMiner=1
-```
-
-### Collection 
-A group of objects of a specific type or category, for example miners or Support Stations
-
-```mms
-	miners
-	BuildingSupportStation_C
-```
-
-### Usage
-Declared objects or collections can be used together with triggers or properties, for example:
-
-```mms
-	when(myMiner.dead)[EVENT]
-```
-
-Trigger when the specified miner gets teleported back up.
-
-```mms
-	when(BuildingSupportStation_C.new)[EVENT]
-```
-
-Trigger when a Support Station is built.
-
-```mms
-	when(MyBuilding.click)((MyBuilding.power==true))[EVENT]
-```
-
-Trigger when a building is clicked but only if the building is currently powered and not turned off.
-<hr>
-Complete examples can be found in the pages for the larger classes and in the scripting examples page.
-
-## Class-types 
-A class can either be **curated** or **non-curated**, this refer to wheter the class have a predictable behaviour or not. Over time more classes will become curated as the game is developed further.
-
-### Curated
-Curated classes are officially supported, therefore they have predictable behaviour. For example, asking the game for the amount of Support Stations will return all constructed Support Stations, buildings under construction will not be counted. The following scripts are supported:
-
-- Count macros
-- Monitor events
-- Enable/Disable events
-
-### Non-curated 
-These classes can be used in some instances. These classes can have undefined return values for certain classes. For example, if you try to check how many Crystals are in the level, you will get both rechargable and charged crystals with no way of sorting them.
-
-## Class triggers 
-Class triggers are predefined triggers bound to specific object types. For triggers connected to larger classes, see their respective wiki-page. 
-
-```mms
-	CLASS.Trigger
-```
-
-Where CLASS is replaced with a collection or declared object and trigger with a valid trigger:
-
-|Command|Meaning|
-|----|----|
-|miner|Trigger if the event occur to any miner except miners named with variables.|
-|vehicle|Trigger if the event occur to any vehicle except vehicles named with variables.|
-|collection|Trigger when the specified event occur to any object of that collection.|
-|named object|Trigger if the event occur to that specific object.|
-
-?> Triggering a named object can also execute a trigger for a collection that includes that object.
-
-**List of common triggers**
+Environment Collections are special collections that are read only and are used as a macro, returning the number of discovered objects of that type. These collections do not have properties. TODO RESEARCH if any properties work.
 
 |Name|Description|
 |---|---|
-|click|Trigger when a object is clicked.|
-|dead|Trigger when a object dies or get teleported.|
-|hurt|Trigger when a object takes damage.|
-|new|Trigger when a object is created.|
+|Barrier_C|TODO.|
+|Crystal_C|Number of energy crystals active not yet stored. It is the number of green/purple ones on the ground and those being carried by miners or vehicles. Does not include any eaten by monsters.|
+|Dynamite_C|Number of dynamite outside of toolstore. They can be carried by a miner or dropped on the ground.|
+|ElectricFence_C|Number of electric fences placed on the map. TODO does it includes ones being carried?|
+|EventErosion_C|Number of ongoing erosions.|
+|EventLandslide_C|Number of ongoing landslides.|
+|NavModifierLava_C |Amount of lava tiles.|
+|NavModifierPowerPath_C|Amount of Power Path tiles, any type. Only finished paths.|
+|NavModifierRubble_C|Amount of Rubble tiles, any stage.|
+|NavModifierWater_C|Amount of water tiles.|
+|Ore_C|Number of Ore collected.  Can be changed by assigning **ore** macro with a new value.|
+|RechargeSeamGoal_C|Number of discovered recharge seams.|
+|Stud_C|Number of Studs collected. Can be changed by assigning **studs** macro with a new value.|
 
-## Known classes 
-### Larger classes 
-- [Buildings](_pages/ClassesBuildings)
-- [Vehicles](_pages/ClassesVehicles)
-- [Miners](_pages/ClassesMiners)
 
-### Smaller classes 
-
-**Items**
-
-|Name|Curated|Note|
-|---|---|---|
-|Crystal_C|No||
-|Ore_C|No||
-|Stud_C|No||
-|Barrier_C|No||
-|Dynamite_C|No||
-|ElectricFence_C|No|The fence item and fence building are two separate objects.|
-
-**Environmental**
-
-|Name|Curated|Note|
-|---|---|---|
-|EventErosion_C|No|Ongoing erosions. Only exists if they are active!|
-|EventLandslide_C|No|Ongoing landslides. Only exists if they are active!|
-|RechargeSeamGoal_C|No|Visible recharge seams. Can be used to count them.|
-|NavModifierLava_C |No|Amount of lava tiles.|
-|NavModifierWater_C|No|Amount of water tiles.|
-|NavModifierPowerPath_C|No|Amount of Power Path tiles, any type. Only finished paths.|
-|NavModifierRubble_C|No|Amount of Rubble tiles, any stage.|
-
-## More classes
-TODO - is this still valid?
-If you have an interest in a specific type of class to be added to this page, you can personally request them from the developer or check an older unpacked game build. In the unpacked build, every class has its own object. Please note that some class names have changed between different builds of the game.
