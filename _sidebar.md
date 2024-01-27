@@ -28,10 +28,13 @@
 <summary><b>Classes</b></summary>
 
 - [General Information](_pages/Classes)
+	- [Arrows](_pages/ClassesArrow)
 	- [Buildings](_pages/ClassesBuildings)
+	- [Creatures](_pages/classesCreatures)
 	- [Miners](_pages/ClassesMiners)
+	- [Timers](_pages/ClassesTimer)
 	- [Vehicles](_pages/ClassesVehicles)
-    - [Creatures](_pages/ClassesCreatures)
+
 
 </details>
 

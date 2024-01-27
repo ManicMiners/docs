@@ -13,8 +13,12 @@ miner Charlie     # miner unassigned, will be assigned later.
 - It is common to use `miner` collection class in the trigger and use `=lastminer` or `save` in an event chain.
 - Undiscovered miners and their triggers are inactive until they are discovered.
 
+## Properties
+These are the class properties specific to miners.  Properties start with the dot `.` character followed by the name after the object variable or collection name.
 
-## Triggers 
+
+## Trigger Properties 
+>These properties are for use in triggers. They cannot be used in assignments or conditions.
 
 |Name|Description|
 |---|---|
@@ -25,6 +29,7 @@ miner Charlie     # miner unassigned, will be assigned later.
 |levelup|Trigger when miners upgrade level is increased.|
 
 ## Properties
+>These properties are read-only and are used as a macro, returning a value. They may be used in assignment events on the right side, or in conditions for testing. These cannot be used on collections, they must be used with a specific miner.
 
 |Property|Type|Note|
 |---|---|---|
@@ -45,12 +50,15 @@ Note: that there does not appear to be any way to detect miners skills.
 
 ## Collections
 
-> `miner` keyword may also be used as a collection in triggers.  It is a special collection in that it cannot be used as a macro to return number of miners but can be used in triggers. To detect every new miner:
+>Undiscovered miners are inactive and do not receive triggers until they are discovered. There is only a single special collection for miners.
+
+
+`miner` keyword may be used as a collection in triggers.  It is a special collection in that it cannot be used as a macro to return number of miners but can be used in triggers. To detect every new miner:
 ```msg
 when(miner.new)[MyNewMinerChain]
 ```
 
-The `miners` macro returns the number of miners.
+The `miners` read-only macro returns the number of miners.
 
 ## enable / disable
 The `enable` and `disable` events support disabling transporting of miners and re-enabling. See [Events](_pages/Events).

@@ -19,7 +19,8 @@ There exist variable names that are reserved as macros. When used in Scripting, 
 |clock|float|Returns the amount of seconds that have passed since the level. Same as time.|
 |ConstructedBuilding|building|Return the last constructed building.|
 |creatures|int|Returns number of creatures.|
-|crystals|int|Returns the crystal count.|
+|crystals|int|Returns the stored crystal count.|
+|Crystal_C|int|Returns the unstored crystal count.|
 |crystal_seam|int|Returns tile id of a crystal seam (42).|
 |dirt|int|Returns tile id of dirt (26).|
 |docks|int|Returns number of Docks.|
@@ -27,7 +28,7 @@ There exist variable names that are reserved as macros. When used in Scripting, 
 |ElectricFence_C|int|Returns number of fence objects. Not a collection.|
 |erosionscale|float|Returns or sets the erosionscale.|
 |geologicalcenter|int|Returns number of Geological Centers.|
-|get(ROW)(COLUMN)|int|Returns the tile ID of the specified coordinates.|
+|get(ROW)(COLUMN)|int|Returns the tile ID of the specified coordinates. ROW COLUMN are ints.|
 |granitegrinder|int|Return Number of Granite Grinders.|
 |hard_rock|int|Returns tile id of hard rock (34).|
 |hostiles|int|Returns number of hostile units.|
@@ -48,7 +49,7 @@ There exist variable names that are reserved as macros. When used in Scripting, 
 |ore_seam|int|Returns tile id of an ore seam (46).|
 |powerstation|int|Returns number of Power Stations.|
 |progress_path|int|Returns tile id of a progress path (13).|
-|random(MIN)(MAX)|float|Return random number from MIN to MAX.|
+|random(MIN)(MAX)|float|Return random number from MIN to MAX. MIN MAX are floats.|
 |rapidrider|int|Return number of Rapid Riders.|
 |slugs|int|Returns number of slimy slugs.|
 |slug_hole|int|Returns tile id of slimy slug hole (12).|
@@ -69,7 +70,7 @@ There exist variable names that are reserved as macros. When used in Scripting, 
 
 All collection classes may be used as a macro and they will return an int that is the number of objects in that collection.
 
-[building](_pages/ClassesBuildings), [creature](_pages/ClassesCreatures), [miner](_pages/ClassesMiners)and [vehicle](_pages/ClassesVehicles) classes have data fields that allow querying properties on them and they are also treated as a macro. See each class type for the list of data fields it supports.
+[building](_pages/ClassesBuildings), [creature](_pages/ClassesCreatures), [miner](_pages/ClassesMiners) and [vehicle](_pages/ClassesVehicles) classes have data fields that allow querying properties on them and they are also treated as a macro. See each class type for the list of data fields it supports.
 
 
 ## Macros that may be modified
@@ -78,7 +79,7 @@ A few macros allow modification which changes game play. These may be used on th
 
 |Macro|Assignment Type|Function|
 |----|----|----|
-|air|int|Set current amount of air. Will be capped between zero and map limit.|
+|air|int|Set current amount of air. Will be capped between zero and map limit. Setting to low numbers may lose the map.|
 |crystals|int|Set amount of crystals collected.|
 |erosionscale|float|Set erosion scaling.|
 |ore|int|Set amount of ore collected.|
@@ -86,6 +87,7 @@ A few macros allow modification which changes game play. These may be used on th
 
 
 ### Air
+
 Air is specified in miner seconds. One unit of air is the amount of air a single miner will use every game second. Thus one-hundred will support ten miners for ten game seconds or one miner for one-hundred game seconds.
 
 When air gets to zero - the player loses the map.

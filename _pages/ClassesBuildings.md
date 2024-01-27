@@ -4,17 +4,21 @@ The building class is used to create a reference to a building. With that refere
 ## Declaration
 
 ```mms
-building MyStore=2,14  # existing building at row 2, col 14 assigned to variable
-building MyStore       # will be assigned later.
+building MyBuilding=2,14  # existing building at row 2, col 14 assigned to variable
+building MyBuilding       # will be assigned later.
 ```
 
 - Building variables not assigned may later be assigned via `=lastbuilding` or `savebuilding`.
 - Building variables may be assigned to each other.
 - Unassigned building variables cannot be used in a trigger.
-- It is common to use a building collection class in the trigger and use `=lastbuilding` or `savebuilding` in an event chain.
+- It is common to use a building collection class in the trigger and use `=lastbuilding` or `savebuilding` in an event chain to get the building that caused the trigger.
 - Undiscovered buildings and their triggers are inactive until they are discovered.
 
-## Triggers
+## Properties
+These are the class properties specific to buildings.  Properties start with the dot `.` character followed by the name after the object variable or collection name.
+
+## Trigger properties
+>These properties are for use in triggers. They cannot be used in assignments or conditions.
 
 |Name|Description|
 |---|---|
@@ -28,6 +32,7 @@ building MyStore       # will be assigned later.
 |poweron|Trigger when power is activated for a building.|
 
 ## Properties
+>These properties are read-only and are used as a macro, returning a value. They may be used in assignment events on the right side, or in conditions for testing. These cannot be used on collections, they must be used with a specific building.
 
 |Property|Type|Note|
 |---|---|---|
@@ -38,22 +43,25 @@ building MyStore       # will be assigned later.
 |id|int|Returns the ID the building.|
 |ispowered|bool|Same as power.|
 |level|int|Returns upgrade level of the building.|
-|power|bool|Returns TRUE if the building has power, FALSE if it doesn't.|
+|power|bool|Returns `true` if the building has power, `false` if it doesn't.|
 |powered|bool|Same as power.|
 |row|int|Returns row of the building.|
-|stamina|int|same as hp.|
+|stamina|int|Same as hp.|
 |tile|int|TileID for the initial place point of the building.|
-|tileid|int|same as tile.|
-|X|int|Column, 300 values per cell|
-|Y|int|Row, 300 values per cell|
-|Z|int|Height, 300 values per cell|
+|tileid|int|Same as tile.|
+|X|int|Column, 300 values per map tile.|
+|Y|int|Row, 300 values per map tile.|
+|Z|int|Height, 300 values per map tile.|
 
 
 ## Collections 
-Each native building class has their own collection. When used by itself the collection return the total number of constructed buildings of that type. The collection can utilize triggers but not properties. Buildings must be discovered, undiscovered buildings are inactive until they are discovered.
+Each native building class has their own collection. When used by itself without a trigger property, it is treated as a read-only macro returning the total number of constructed buildings of that type. Collections may only use trigger properties.
+
+>Undiscovered buildings are inactive and do not receive triggers until they are discovered.
 
 |Name|Note|
 |---|---|
+|building|Refers to all buildings.|
 |BuildingDocks_C|Docks.|
 |BuildingElectricFence_C|Electric Fences.|
 |BuildingGeologicalCenter_C|Geological Centers.|
@@ -67,13 +75,13 @@ Each native building class has their own collection. When used by itself the col
 |BuildingToolStore_C|Tool Stores.|
 |BuildingUpgradeStation_C|Upgrade Stations.|
 
-> `building` keyword may also be used as a collection in triggers.  It is a special collection in that it cannot be used as a macro to return number of buildings but can be used in triggers. To detect every new building:
+> `building` is a special collection in that it cannot be used as a macro to return number of buildings but can be used in triggers. To detect every new building:
 ```mms
-when(building.new)[MyNewBuildingChain]
+when(building.new)[MyNewBuildingChain]  # call event chain when any building is created.
 ```
 
 ## Macros
-These are not collections. They return the number of objects as an int.
+These are not collections. They return the number of objects as an int. They may be used in assignments on the right side or in conditions.
 
 |Name|Description|
 |---|---|
@@ -82,11 +90,12 @@ These are not collections. They return the number of objects as an int.
 |electricfence|Number of Fences.|
 |ElectricFence_C|Number of fence objects. Not a collection.|
 |geologicalcenter|Number of Geological Centers.|
-|mininglaser|Number of Geological Centers.|
+|mininglaser|Number of Mining Lasers.|
 |orerefinery|Number of Ore Refineries.|
 |powerstation|Number of Power Stations.|
+|superteleport|Number of Super Teleports.|
 |supportstation|Number of Support Stations.|
-|teleportpad|Numbewr of Teleport Pads.|
+|teleportpad|Number of Teleport Pads.|
 |toolstore|Number of Tool Stores.|
 |upgradestation|Number of Upgrade Stations.|
 
@@ -96,17 +105,17 @@ A collection can be used together with the disable event in order to prevent the
 ```mms
 disable:BuildingSuperTeleport_C
 enable:BuildingSuperTeleport_C
-disable:buildings   # notice buildings is special keyword - not a macro.
+disable:buildings   # buildings is a special keyword referring to all buildings in this context.
+enable:buildings    # buildings is a special keyword referring to all buildings in this context
 ```
 
 ## Examples
-### Count buildings
+### Display number of support stations after every one is created.
 
 ```mms
-when(drill:2,2)[msg:BuildingSupportStation_C]
+when(BuildingSupportStation_C.new)[msg:BuildingSupportStation_C]
 ```
 
-When you drill a wall at position 2,2 a number indicating the total amount of constructed Support 	Stations will be displayed.
 
 ### Click a building
 
