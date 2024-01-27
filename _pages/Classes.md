@@ -6,7 +6,7 @@ Currently classes can be divided in the following subcategories:
 
 - [Arrows](_pages/ClassesArrow)
 - [Buildings](_pages/ClassesBuildings)
-- [Creatures](_pages/classesCreatures)
+- [Creatures](_pages/ClassesCreatures)
 - [Miners](_pages/ClassesMiners)
 - [Timers](_pages/ClassesTimer)
 - [Vehicles](_pages/ClassesVehicles)
