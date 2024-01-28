@@ -15,6 +15,7 @@ These are not case sensitive since variable names and event chain names are not 
 |bool|Variable|true false.|
 |building|Variable / Class Trigger|Building object or trigger.|
 |building_path|Macro|Tile ID of a building path (14).|
+|BuildingCanteen_C|Collection|Canteen|
 |BuildingDocks_C|Collection|Docks|
 |BuildingElectricFence_C|Collection|Electric Fences.|
 |BuildingGeologicalCenter_C|Collection|Geological Centers|
@@ -29,6 +30,7 @@ These are not case sensitive since variable names and event chain names are not 
 |BuildingToolStore_C|Collection|Toolstores|
 |BuildingUpgradeStation_C|Collection|Upgrade Stations|
 |built|Data Field Trigger|Trigger when a building is built.|
+|canteen|Macro|Number of Canteens.|
 |cargocarrier|Macro|Number of Cargo Carriers.|
 |change|Trigger|Trigger when tile changes|
 |chromecrusher|Macro|Number of Chrome Crushers.|

@@ -62,6 +62,7 @@ Each native building class has their own collection. When used by itself without
 |Name|Note|
 |---|---|
 |building|Refers to all buildings.|
+|BuildingCanteen_C|Canteen.|
 |BuildingDocks_C|Docks.|
 |BuildingElectricFence_C|Electric Fences.|
 |BuildingGeologicalCenter_C|Geological Centers.|
@@ -81,11 +82,12 @@ when(building.new)[MyNewBuildingChain]  # call event chain when any building is 
 ```
 
 ## Macros
-These are not collections. They return the number of objects as an int. They may be used in assignments on the right side or in conditions.
+These are not collections - they are macros. They return the number of objects as an int. They may be used in assignments on the right side or in conditions.
 
 |Name|Description|
 |---|---|
 |buildings|Number of all buildings.|
+|canteen|Number of Canteens.|
 |docks|Number of Docks.|
 |electricfence|Number of Fences.|
 |ElectricFence_C|Number of fence objects. Not a collection.|
@@ -108,6 +110,9 @@ enable:BuildingSuperTeleport_C
 disable:buildings   # buildings is a special keyword referring to all buildings in this context.
 enable:buildings    # buildings is a special keyword referring to all buildings in this context
 ```
+
+## TODO
+Research exactly what `BuildingElectricFence_C`, `ElectricFence_C`, `electricfence` contains - placed ones, ones in transit, powered/unpowered, Is there a way to query properties on fence objects? Can building variable be used with fence? etc.
 
 ## Examples
 ### Display number of support stations after every one is created.
