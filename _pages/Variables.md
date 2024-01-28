@@ -6,7 +6,7 @@ Variables also are used with many classes:
 
 - [arrow](_pages/ClassesArrow)
 - [building](_pages/ClassesBuildings)
-- [creature](_pages/classesCreatures)
+- [creature](_pages/ClassesCreatures)
 - [miner](_pages/ClassesMiners)
 - [timer](_pages/ClassesTimer)
 - [vehicle](_pages/ClassesVehicles)
