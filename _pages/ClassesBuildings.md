@@ -111,8 +111,17 @@ disable:buildings   # buildings is a special keyword referring to all buildings 
 enable:buildings    # buildings is a special keyword referring to all buildings in this context
 ```
 
-## TODO
-Research exactly what `BuildingElectricFence_C`, `ElectricFence_C`, `electricfence` contains - placed ones, ones in transit, powered/unpowered, Is there a way to query properties on fence objects? Can building variable be used with fence? etc.
+## Electric Fence
+There is very little script can do to track and work with electric fences.  There are are two macros that return the number of placed electric fences:  `ElectricFence_C` and `electricfence`. `BuildingElectricFence_C` collection can be also used as a macro to return the same value.
+
+While `BuildingElectricFence_C` is a collection - it is subject to limitations:
+- new and built property triggers do not fire - they do not appear to be hooked up internally.
+- since there is no way for a fence to cause a trigger, it is not possible to get a fence via `lastbuilding` event.
+- read only property `powered` does work but it needs a variable for a single fence so it is not possible to detect the state of any user placed fences.
+
+Even if triggers would work, generally players place a number of fences and since there is no array for buildings, there is no way to keep track of fences. Also fences can be placed in any order and at some point after the fence is placed it may gain or lose power and there are no triggers for power state changes.
+
+Thus the only operation script really has is the ability to read the number of placed fences.
 
 ## Examples
 ### Display number of support stations after every one is created.
