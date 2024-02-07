@@ -11,12 +11,13 @@ Variables, Triggers, and Events use [Classes](_pages/Classes) to deal with objec
 Combined - script may respond to changes in the map and objects and record those changes or make gameplay changes based on interactions. For example when a miner in a vehicle drives over a location, the script could revel a new area of the map to explore.
 
 Via script, one can make significant changes to the map itself. Any tile can be turned into any other tile, allowing creation and changes to lakes, rivers, walls, spawning monsters, etc. There are a few limitations:
-- no changes to tile height. Height is set at map load time.
-- no new automatic undiscovered caverns may be generated.
-- no new miners and buildings, only the user is able to download miners or make new buildings.
-- no new landslides or erosions - they are set at map load time.
+- No changes to tile height. Height is set at map load time.
+- No new automatic undiscovered caverns may be generated.
+- No new miners, buildings and vehicles - only the user is able to create and interact with objects.
+- No new landslides or erosions - they are set at map load time.
+- No movement to any unit. The only movement control script has is the ability to set a flee location for creatures.
 
-It is possible via script to dramatically affect the gameplay - one could simulate lava and water floods, destroy bases and vehicles, spawn waves of monsters, change areas of the map to create new walls and paths, change available air, and many other things. You are mainly limited by your imagination and ability to convert an idea into working script. 
+It is possible via script to dramatically affect the map which will affect gameplay. One could simulate lava and water floods, destroy bases and vehicles, spawn waves of monsters, change areas of the map to create new walls and paths, change available air, and many other things. 
 
 Start by reviewing the [Scripting Structure](_pages/ScriptingStructure)
 
