@@ -22,7 +22,8 @@ Events describe to the game what you want it to do when a trigger is activated. 
 |heal|heal:OBJECT,AMOUNT|OBJECT is a miner, building or vehicle variable to heal. AMOUNT is number of hit points to give to unit. Unit cannot be healed beyond full health. Use .hp datafield to see current hit points. You cannot heal creatures!|
 |hidearrow|hidearrow:ARROW|The arrow is hidden until manually shown again.|
 |highlight|highlight:ROW,COLUMN,ARROW|Shows a highlight the size of a tile at ROW,COLUMN.|
-|highlightarrow|highlightarrow:ROW,COLUMN,ARROW|Executes both showarrow and highlight at |kill|kill:VARIABLE|kill will transport up the given object, either building, miner, or vehicle. If object also has a .dead trigger, that trigger will fire.|
+|highlightarrow|highlightarrow:ROW,COLUMN,ARROW|Executes both showarrow and highlight
+|kill|kill:VARIABLE|kill will transport up the given object, either building, miner, or vehicle. If object also has a .dead trigger, that trigger will fire. Does not work with collections, must be a variable based object. Does not work with creatures.|
 |lose|lose:MsgStr|Player loses the level with the message defined by string MsgStr. If no string is supplied, they lose the level anyway.|
 |message|msg:MsgStr|Display the message string MsgStr, as defined above. Message is added to the list of message in the message area of the user interface. You must use a string variable or a numeric value that will be displayed as a string - you cannot use a string constant.|
 |pan|pan:ROW,COLUMN|The player's camera pans to the tile at ROW,COLUMN. The view direction does not change.|

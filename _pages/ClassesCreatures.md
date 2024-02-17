@@ -71,6 +71,27 @@ These are not collections. They return the number of objects as an int. They may
 - `creatures` macro returns the number of all creatures.
 - `hostiles` macro returns the number of monsters and slugs.
 
+## Spawning a Monster
+The `emerge` event will try and spawn a single creature near a given location.
+```mms
+emerge:ROW,COLUMN,DIRECTION,COLLECTION,DISTANCE
+```
+- ROW,COLUMN is tile location to try and spawn the creature.
+- Direction is one of `A` automatic, `N` north, `S` south, `E` east, `W` west. This is the direction the monster will attempt to come out. It is best to always use `A` for automatic.
+- COLLECTION is the type of creature to spawn. See list of collections above.
+- DISTANCE is the number of tiles around the ROW,COLUMN to look for a valid spawn location. 0 means to only spawn from the given tile.  The logs will have a warning if the spawn fails.
+
+Example spawning an Ice Monster from row 5 column 4.
+```mms
+emerge:5,4,A,CreatureIceMonster_C,0;
+```
+
+Monsters may only spawn from a valid flat (non-corner) non-reenforced wall that is dirt, loose rock, hard rock.
+
+With script it is possible to give the appearance that a monster can spawn from other flat walls by changing the wall tile first to something that is spawnable, doing the spawn, then changing it back.
+
+Both single unit spawning and the below automatic monster spawning do not support changing the monster health or scale. Only monsters placed into the map via the map editor may hp/scale applied to them.
+
 ## Automatic Monster Spawning
 
 The following events control automatic pseudo random monster spawning in waves.
@@ -87,7 +108,6 @@ Mainly added for slimy slugs, it work on monsters also.  Creatures are spawned o
 
 If you want to have control over the spawn locations, you have to write your own logic using emerge or use the visual block triggers in the map editor.
 
-Emerge event will allow you the ability to emerge a single creature from a given location and an optional radius
 
 ## Making a creature flee
 Use the flee: event to cause a creature to flee to that location.  If you use a collection, all active monsters of that type will flee to that location. The location must be a valid location for the creature, once it gets there it expects to be able to leave the map as it normally would. Thus for slimy slugs, it must be a slug hole. For monsters it must be next to a non-corner wall that is not reenforced of dirt, loose rock, hard rock, or solid rock.
