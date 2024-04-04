@@ -40,19 +40,18 @@ These are the class properties specific to buildings.  Properties start with the
 |column|int|Returns column of the building. Same as col.|
 |health|int|Returns current hitpoints. Same has hp.|
 |hp|int|Returns current hitpoints. Same has health.|
-|id|int|Returns the ID the building.|
 |ispowered|bool|Same as power.|
 |level|int|Returns upgrade level of the building.|
 |power|bool|Returns `true` if the building has power, `false` if it doesn't.|
 |powered|bool|Same as power.|
 |row|int|Returns row of the building.|
-|stamina|int|Same as hp.|
 |tile|int|TileID for the initial place point of the building.|
 |tileid|int|Same as tile.|
 |X|int|Column, 300 values per map tile.|
 |Y|int|Row, 300 values per map tile.|
 |Z|int|Height, 300 values per map tile.|
 
+>Note that there is no id property on buildings.
 
 ## Collections 
 Each native building class has their own collection. When used by itself without a trigger property, it is treated as a read-only macro returning the total number of constructed buildings of that type. Collections may only use trigger properties.
