@@ -15,20 +15,20 @@ Triggers may be used with if and when occurrences.
 |enter|(enter:ROW,COLUMN,NAME)|Like enter but trigger only for the specified object or collection. This does work on creature objects and collections.|
 |hover|(hover:ROW,COLUMN)|Triggers when the player hovers the tile at the specified coordinates with the mouse cursor. (The tile has to be visible.)|
 |laser|(laser:ROW,COLUMN)|Triggers when a wall at ROW,COLUMN is destroyed by a laser.|
-|laserhit|(laserhit:ROW,COLUMN)|Triggers when a wall at ROW,COLUMN is hit by a laser.|
-|reinforce|(reinforce:ROW,COLUMN)|Triggers when a wall at ROW,COLUMN is reinforced by any unit.|
-|time|(time:SECONDS)|Triggers when the specified amount of seconds have been reached. (Supports decimal floats.)|
+|laserhit|(laserhit:ROW,COLUMN)|Triggers when a tile at ROW,COLUMN is hit by a laser. This can be a floor tile!|
+|reinforce|(reinforce:ROW,COLUMN)|Triggers when a wall at ROW,COLUMN is reinforced. Thus the tile must have been a dirt, loose rock or hard rock regular wall tile.|
+|time|(time:SECONDS)|Triggers when the specified amount of game seconds have been reached since the map started. (Supports decimal floats.)|
 |walk|(walk:ROW,COLUMN)|Triggers when a [Miner](_pages/ClassesMiners) walks on a tile.|
 |walk|(walk:ROW,COLUMN,NAME)|Like walk but trigger only for the specified [Miner](_pages/ClassesMiners). (Require named miner variable.)|
 |comparison|(`expression`)|Activates when the `expression` is evaluated as `true`. See the next section for usage.|
 |CLASS||Activates when the class is interacted with in some way. See the [Classes](_pages/Classes) page for details.|
 
 ## How to monitor triggers (comparisons)
-A trigger can be set to fire based on a comparison between two [Variables](_pages/Variables). This is the same as asking the game a yes/no question like *is value1 greater than value2?*. The comparison or question must evaluate to `true` for the trigger to fire. You can use this to e.g. play a sound when the player has collected half of the amount of crystals needed complete a objective.
+A trigger can be set to fire based on a comparison between two [Variables](_pages/Variables). It is subject to the same rules as conditions but it must evaluate to either a true or false value. This is the same as asking the game a yes/no question like *is value1 greater than value2?*. The comparison or question must evaluate to `true` for the trigger to fire. You can use this to e.g. play a sound when the player has collected half of the amount of crystals needed complete a objective.
 
 !> All variables used within a trigger are converted to integers which cuts off any decimals. This is different from rounding as if you compare 2.2 and 2.9 they will be equal. Furthermore comparisons are not to be confused with conditions that are marked by double parenthesis `(())` although they work in a similar way.
 
-?> The compared _values_ can be set to any valid `float`, `integer`, [Macro](_pages/Macros), [Class Macro](_pages/Classes), or regular numeric values.
+?> The compared _values_ can be any valid `float`, `integer`, [Macro](_pages/Macros), [Class Macro](_pages/Classes), or regular numeric values.
 
 See [Conditions](_pages/Conditions) for more detail.
 
@@ -39,8 +39,47 @@ See [Conditions](_pages/Conditions) for more detail.
 	int VALUE1=1
 	int VALUE2=2
 	
-	if(VALUE1>=VALUE2)[EVENT] #Trigger1
-	if(VALUE2>=VALUE1)[EVENT] #Trigger2
+	if(VALUE1>=VALUE2)[EVENT] # Trigger1
+	if(VALUE2>=VALUE1)[EVENT] # Trigger2
 ```
 
 In the above code only `Trigger2` will fire as `2>=1` is `true`, but `1>=2` is `false`.
+
+Remember - if triggers only fire a single time. Once the trigger condition is met, the trigger will never fire again. When triggers will fire every time that condition is met.
+
+When triggers can cause some very bad behavior if misused.  Lets take an example of a map where if a unit enters a given tile, it will cause a rock monster to spawn. One way to code this up would be:
+
+```mms
+string msgMonSpawn="Your presence has spawned a monster!"
+
+when(enter:25,27)[SpawnMonster]
+
+SpawnMonster::;
+emerge:30,31,A,CreatureRockMonster_C,10;  # random spawn from any tile around 30,31 for 10 tiles
+msg:msgMonSpawn;	                  # tell user its their fault
+```
+
+This will work, but it has some issues with scalability. Lets say the player makes 200 miners (yes - you can do that), and they are all grouped up, and the player sends them all to a location that just happens to cross the 25,27 tile.  This will massively lag the game as 200 triggers fire, each spawning a rockmonster and displaying 200 messages - and now the player has 200 rock monsters. Due to lag the player may not even be able to deal with it or weaker machines might just lock up.
+
+As a map designer you have to consider that players have freedom in how they play the map and it is your responsibility to ensure your scripting does not prevent the user from playing the map.
+
+In the above case, clearly you do not want to spawn 200 monsters. So now you have to think about - what is reasonable? Maybe only spawn a monster every 5 seconds. Once a unit enters the tile, save the time, and ignore the trigger until enough time has passed.  Here is a version that does exactly that - it is like above but with just a few changes.
+
+```mms
+string msgMonSpawn="Your presence has spawned a monster!"
+float lastspawn=0        # remember last time we spawned a monster
+float ftemp=0            # temp value to compute time since last spawn
+int OneAtAtime=0         # flag to prevent trigger from calling recursively
+
+when(enter:25,27)((OneAtAtime=0))[SpawnMonster]
+
+SpawnMonster::OneAtAtime=1;               # just one trigger at a time
+ftemp=time-lastspawn;                     # how long since last spawn
+((ftemp>=5))DoSpawnMonster;               # more than 5 seconds, spawn
+OneAtAtime=0;							  # done, allow calls
+
+DoSpawnMonster::lastspawn=time;           # save time for this spawn
+emerge:30,31,A,CreatureRockMonster_C,10;  # random spawn from any tile around 30,31 for 10 tiles
+msg:msgMonSpawn;                          # tell user its their fault
+```
+
