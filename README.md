@@ -1,10 +1,32 @@
 # Scripting
 
-Scripting is programmed map specific behavior that is currently defined by lines in the .MAP file **\[script\]** section. It has **three main components:**
+Manic Miner maps are text files ending in .DAT extension.
+
+Since they are text files, they can be edited with any text editor. Just about any text format is allowed - the engine will read ASCII, UTF8 (with and without BOM) and UTF16 (with BOM) format files.  BOM are byte order markers and every decent text editor used by programmers will automatically deal with these so generally you don't have to worry about it.
+
+Visual Studio Code and Notepad++ are the most common editors one would want to use to directly work with .DAT files.
+
+Map files are organized into sections. Each section starts on a line with the section name followed by an open curly bracket. That is all that is on a line. Every following line is part of that section until a line only containing a closing curly bracket. If there are no lines between the open and closing curly brackets, the section is empty. For example:
+
+```mms
+info{
+}
+```
+
+The map editor built into Manic Mainers will automatically fill in the various sections for you - and it even has a very simple text editor for the `script` section that is fine for very simple tasks. But once you start making more complex scripts, you will want to use a good text editor.
+
+Two other sections indirectly work with the script section.
+- `objectives` can refer to variables defined in the script section
+- `blocks` can call EventChains in the script section.
+
+
+Scripting is programmed map specific behavior that is defined by lines in the .MAP file `script` section. It has **three main components:**
 
 - **Variables** are used to keep track of what's happening in the level.
-- **Triggers** check for when something specific occurs in the level.
+- **Triggers** notify when something specific occurs in the level.
 - **Events** are executed to alter gameplay in some way.
+
+Events can be combined into sequence of events called Event Chains and they are the only way for a trigger to execute multiple statements (events).
 
 Variables, Triggers, and Events use [Classes](_pages/Classes) to deal with objects in the gameplay.
 

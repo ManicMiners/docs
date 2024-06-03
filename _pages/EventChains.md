@@ -72,6 +72,9 @@ The above code run after 5 game-seconds, increases the counter from 0 to 1 and d
 
 A blank line will end an event chain. In fact a trigger or variable statement will also end the event chain but that leaves you with very hard to read code. This means no blank lines (without comment) are allowed in an event chain. To make it easier for you to understand where the event chain ends, just have a blank line.
 
+## No spaces after ;
+Spaces are not allowed after the semi-colon character `;`  unless there is a comment character after the sequence of spaces.  Having spaces after `;` is the single most common error one can make. To find spaces, use a good text editor with an option to show spaces like Visual Studio Code or Notepad++
+
 ## return event
 
 The return event will return from the current event chain. It is very useful to return from an event chain from the middle of logic.
@@ -121,7 +124,7 @@ The above will be computed on every tick. The same applies to use of any macro (
 
 ##  Reentrancy
 
-Timers and when triggers are subject to reentrancy - this is when the same code is executed at the same time.  For example lets say you have two drill triggers but they both call the same event. One can protect against this case by using the following code pattern:
+Timers and when triggers are subject to reentrancy - this is when the same code is re-executed while already executing that event chain.  For example lets say you have two drill triggers but they both call the same event. So one of the drill triggers happens and your event chain start executing, and a moment later the other drill trigger happens - interrupting the first execution and it calls again the same routine. One can protect against this case by using the following code pattern:
 ```
 int allowOnce=0
 
@@ -143,3 +146,5 @@ Timer triggers can fire during the execution of the current event chain. Same fo
 
 ## wait event and Reentrancy
 The wait event will suspend the current event chain. During the time waiting, other timers and triggers are allowed to run. When the specific time duration has exprired, the event chain will then run the events after the wait event. Internally the engine deals with the same event being called by changing the name of the current running eventchain to an internal name that is slightly different and unique. Once the wait period has expired, it is renamed back to its original name.  There is nothing the script developer needs to do - this is an internal implementation. But it is how the same event can be executed while a prior event is executing the wait. Thus you can have multiple event chains waiting at the same time - including multiple invocations of the same event chain.
+
+Since all variables are global, one must be careful of these cases and deal with it.

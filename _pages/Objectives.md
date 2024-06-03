@@ -3,7 +3,7 @@
 
 In the message box area of the UI during map play there is an objectives tab - the text messages displayed there come from this section of the map. Once an objective is complete, it is marked with a green check-mark.
 
-This means that objectives are not changeable at run time - they are loaded at map load time. Thus they are always shown.  Using this section you cannot have hidden objects that then become active.
+This means that objectives are not changeable at run time - they are loaded at map load time. Thus they are always shown.  Using this section you cannot have hidden objectives that then become active.
 
 You bind objectives to scripting using the `variable` keyword.
 
@@ -11,7 +11,7 @@ The format is variable:`EXPRESSION`/`OBJECTIVE`
 
 Each objective is a single line and starts with the `variable:` keyword. After that is the name of a single variable that is defined in the script section or one of the predefined macros. It is then followed by one of the comparison operators, followed by what it is compared to.
 
-EXPRESSION is any valid variable expression and may use macros. It is subject to the same limitations as script expressions so it cannot be compound and cannot include math operators.
+EXPRESSION is any valid comparison expression and may use macros. It is subject to the same limitations as script comparision expressions so it cannot be compound and cannot include math operators.
 
 A forward slash ends the EXPRESSION portion, following it is the OBJECTIVE text.
 
@@ -22,7 +22,7 @@ OBJECTIVE is a message seen by the player describing the objective and cannot be
 variable:NumDrilledWalls>=10/Drill these 10 walls!
 ```
 
-This will create an objective called `Drill these 10 walls!` that will be completed once the variable `NumDrilledWalls` contain a value of 10 or higher.
+This will create an objective called `Drill these 10 walls!` that will be completed once the variable `NumDrilledWalls` contains a value of 10 or higher.
 
 Once any objective has been marked as complete, the game engine no longer checks for it. For example if you want the user to make 5 toolstores, once they have 5 toolstores that objective is done - it is checked as complete in the UI and the game no longer checks for that. Thus the player could delete the toolstores but the objective is still complete.
 
