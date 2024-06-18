@@ -139,6 +139,7 @@ These are not case sensitive since variable names and event chain names are not 
 |rapidrider|Macro|Number of Rapid Riders.|
 |RechargeSeamGoal_C|Collection|Visible recharge seams.|
 |red|Color|Arrow colors.|
+|random|Macro|Return random number [low,high]. Random(low)(high). Floats allowed
 |reinforce|Trigger|Trigger when wall is reinforced.|
 |reset|Event|Resets the player's selection|
 |resetspeed|Event|Loads the game speed from settings again.|
@@ -188,6 +189,7 @@ These are not case sensitive since variable names and event chain names are not 
 |upgraded|Trigger|Not working, don't use.|
 |upgradestation|Macro|Number of Upgrade Stations.|
 |unpause|Event|Resumes the game if paused.|
+|variable|Objective|Objective map section.|
 |vehicle|Variable / Class|Vehicle object or trigger class.|
 |vehicles|Macro|Number of vehicles.|
 |VehicleCargoCarrier_C|Collection|Cargo Carriers|

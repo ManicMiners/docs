@@ -49,7 +49,7 @@ There exist variable names that are reserved as macros. When used in Scripting, 
 |ore_seam|int|Returns tile id of an ore seam (46).|
 |powerstation|int|Returns number of Power Stations.|
 |progress_path|int|Returns tile id of a progress path (13).|
-|random(MIN)(MAX)|float|Return random number from MIN to MAX. MIN MAX are floats.|
+|random(MIN)(MAX)|int/float|Return random number from MIN to MAX.|
 |rapidrider|int|Return number of Rapid Riders.|
 |slugs|int|Returns number of slimy slugs.|
 |slug_hole|int|Returns tile id of slimy slug hole (12).|
