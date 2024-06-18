@@ -42,3 +42,5 @@ In the above case two of the objectives are using predefined macros. Three of th
 
 While the text in the objectives section cannot be changed, from within your script logic there is nothing preventing you from having additional objectives for the user to complete. They cannot be shown in the objectives tab, but you may display any message to the user by using `msg:` or `qmsg:`  If you do this, consider that the user may not see your message so you may need to occasionally remind them...
 
+Note that the keyword `variable` is a reserved word, do not use it for script variables or event chains!
+
