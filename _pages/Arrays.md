@@ -57,6 +57,7 @@ MyMsg+=SomeArray[6];   # not valid, index 6 has never been defined
 ```
 
 The array index must be either a macro that returns an integer, a constant value, or an integer variable that has a valid index.
+
 You cannot use nested arrays directly - the index cannot itself be an array. If you have need for this - for example using the value of one array as the index for another array - you must save the first array result into an integer variable and then use that integer variable.
 
 There is no support for multi-dimensional arrays - only a single dimension is allowed.

@@ -8,6 +8,7 @@ There exist variable names that are reserved as macros. When used in Scripting, 
 - Collections will return the number in the collection.
 - Macros that refer to built in counts will return that value.
 - Most values are int, but some return float and they are converted automatically to int if the other operands are int.
+- Two macros have parameters: `get` and `random`. The parameters themselves cannot be another macro that requires parameters (see below)
 
 |Macro|Return Type|Function|
 |----|----|----|
@@ -94,6 +95,33 @@ When air gets to zero - the player loses the map.
 
 Each Support Station will add ten air every game second.
 
+## Nested parameter macros not allowed.
+Two macros require parameters:
+
+|Name|Brief Description|
+|---|---|---|
+|get(row)(col)| row and col are integers for a row and column in the map, returns tile at that row,col |
+|random(low)(high)| returns random number from [low,high], low and high are inclusive.
+
+The parameters cannot be another macro that requires parameters. For example, if you wanted to return a random tile from a 32x32 map - you `cannot` do this:
+
+```mms
+mytile=get(random(0)(31)(random(0)(31));   # BAD not allowed
+```
+
+Nested parameters are not allowed. To do the above you have to compute the row and column first - saving values into int's and use those ints.
+
+```mms
+int myrow=0
+int mycol=0
+
+MyChain::;
+myrow=random(0)(31);        # get random row
+mycol=random(0)(31);        # get random col
+mytile=get(myrow)(mycol);   # this works.
+```
+
+int arrays have the same limitation - array indexes cannot be another array.
 
 ## Examples
 
