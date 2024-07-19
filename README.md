@@ -1,26 +1,18 @@
 # Scripting
 
+NOTE: If you are reading this on the main github repro - click to navigate to this documentation:  https://manicminers.github.io/docs/#/README
+
 Manic Miner maps are text files ending in .DAT extension.
 
-Since they are text files, they can be edited with any text editor. Just about any text format is allowed - the engine will read ASCII, UTF8 (with and without BOM) and UTF16 (with BOM) format files.  BOM are byte order markers and every decent text editor used by programmers will automatically deal with these so generally you don't have to worry about it.
+The map file is organized into sections. A complete description of each section is documented here: [DAT file format](_pages/DatFileFormat)
 
-Visual Studio Code and Notepad++ are the most common editors one would want to use to directly work with .DAT files.
-
-Map files are organized into sections. Each section starts on a line with the section name followed by an open curly bracket. That is all that is on a line. Every following line is part of that section until a line only containing a closing curly bracket. If there are no lines between the open and closing curly brackets, the section is empty. For example:
-
-```mms
-info{
-}
-```
-
-The map editor built into Manic Mainers will automatically fill in the various sections for you - and it even has a very simple text editor for the `script` section that is fine for very simple tasks. But once you start making more complex scripts, you will want to use a good text editor.
+Scripting is programmed map specific behavior that is defined by lines in the .MAP file `script` section.
 
 Two other sections indirectly work with the script section.
-- `objectives` can refer to variables defined in the script section
-- `blocks` can call EventChains in the script section.
+- `objectives` may refer to variables defined in the script section
+- `blocks` may call EventChains in the script section or EventChains may be defined in blocks for scripts to call.
 
-
-Scripting is programmed map specific behavior that is defined by lines in the .MAP file `script` section. It has **three main components:**
+Scripts have **three main components:**
 
 - **Variables** are used to keep track of what's happening in the level.
 - **Triggers** notify when something specific occurs in the level.
@@ -55,11 +47,11 @@ To assist you with scripting the Level Editor can display the Row, Column and Ti
 
 >If you notice something that's incorrect or require an update, come over to the **#Scripting** channel over on **[Discord](https://discord.gg/85k8JHz)**.
 
-The script syntax will most likely confuse one at first - especially if one is familiar with modern free format programming languages. You cannot indent for readability - in general spaces are only allowed in a few specific places. There are no complex logical  conditions or expressions - in many ways those whom have had experience with assembly will notice many similarities.
+The script syntax will most likely confuse one at first - especially if one is familiar with modern free format programming languages. You cannot indent for readability - in general spaces are only allowed in a few specific places. There are no complex logical conditions or expressions. There are no complex arithmetic operations. In many ways those whom have had experience with assembly will notice many similarities.
 
 >It is highly recommended that one review the demo scripts provided with the game to understand the syntax rules. If you are wondering if it is known how to do something - these would be the best place to start your search. These are found in the location where Manic Miners is installed in the following subdirectory path: ManicMiners\Levels\DEMO\Scripts
 
-Additional formating rules are found in this set of documents.
+Additional formatting rules are found in this set of documents.
 
 ## Links
  - [Manic Miners Discord](https://discord.gg/85k8JHz)
