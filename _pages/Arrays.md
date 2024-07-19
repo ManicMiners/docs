@@ -7,7 +7,9 @@ Arrays allow multiple values to be stored and referenced by a single variable. T
 intarray SomeArray
 ```
 
-The above creates an array variable. To put values in it you use `SomeArray[#]` where `#` is the position your values are to be saved in. Arrays begin with position 0 and end at the highest used position.
+The above creates an array variable. There is no way to initialize intarray to values, you must use script lines to initialize individual array indexes.
+
+To put values in it you use `SomeArray[#]` where `#` is the position your values are to be saved in. Arrays begin with position 0 and end at the highest used position.
 
 ```mms
 intarray SomeArray
@@ -60,7 +62,7 @@ The array index must be either a macro that returns an integer, a constant value
 
 You cannot use nested arrays directly - the index cannot itself be an array. If you have need for this - for example using the value of one array as the index for another array - you must save the first array result into an integer variable and then use that integer variable.
 
-There is no support for multi-dimensional arrays - only a single dimension is allowed.
+There is no support for multi-dimensional arrays - only a single dimension is allowed. You may simulate a multi-dimensional array by using script to compute the resulting linear index.
 
 There is currently no way to clear an array or to resize it.  If you are going to use arrays, generally you also need to maintain a count of the number of indexes used or the last used index.
 
