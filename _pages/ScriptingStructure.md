@@ -9,10 +9,10 @@ The general logic flow of a script is to have trigger(s) to respond to gameplay.
 
 If the map is either won or lost, most triggers will continue to fire until the user exits the map. This allows gameplay to continue after the map is won.
 
-There are two predefined hidden triggers and they call special Event Chains in the script. If you have an Event Chain called `init` that Event Chain will be called once at the start of the gameplay prior to any other trigger in the map firing. If you have an Event Chain called `tick` that Event Chain will be called on every game engine frame update. See [Event Chain](_pages/EventChains) for more information on these.
+There are two predefined hidden triggers and they call special Event Chains in the script. If you have an Event Chain called `init` that Event Chain will be called once at the start of the gameplay prior to any other trigger in the map firing. This is very useful to perform one time initialization. If you have an Event Chain called `tick` that Event Chain will be called on every game engine frame update. See [Event Chain](_pages/EventChains) for more information on these.
 
 There are two types of triggers.
-- Single call triggers defined using `if`. They are only called a single time
+- Single call triggers defined using `if`. They are only called a single time.
 - Multiple call triggers defined using `when`. They are called every time the trigger condition is true. 
 
 The format of a trigger is:
@@ -23,8 +23,8 @@ OCCURRENCE(TRIGGER)((CONDITION))[TRUE_EVENT][FALSE_EVENT]
 ## OCCURRENCE
 This defines how many times a event can occur.
 
-- `when` means the event can fire multiple times.
 - `if` fires once, and then the trigger is removed forever.
+- `when` means the event can fire multiple times.
 
 ## [TRIGGER](_pages/Triggers)
 A trigger defines when the event should be called. The trigger itself is inside of the single parenthesis`()`. 
@@ -32,7 +32,9 @@ A trigger defines when the event should be called. The trigger itself is inside 
 Triggers such as `walk` and `drive` fire when the tile is entered, not while someone is there.
 
 ## [CONDITION](_pages/Conditions)
-A condition is an optional statement you can use to add a requirement to your script. The conditional test is inside of double parenthesis: `(())`. A condition allows you to compare two variables with each other and fire a event based on if the result equals `true` or `false`
+A condition is an optional statement you can use to add a requirement to your script. This is identical to a condition inside of an event chain. The conditional test is inside of double parenthesis: `(())`. A condition allows you to compare two variables with each other and fire a event based on if the result equals `true` or `false`
+
+>Note that an `if` trigger is only executed a single time. If the trigger check is true - the trigger fires and then checks the conditional. The value of the conditional (true/false) only decides which event is called - either the true event or the false event. In either case, the tigger will never fire again.
 
 ## [Event](_pages/Events)
 Events define what should happen. They are contained inside square brackets: `[]`. There is always a true event and an optional false event.
@@ -72,6 +74,6 @@ A list of all known [reserved words](_pages/ReservedWords). Do not use these for
 
 ## Order of coordinates
 
-All events that use row, col are always row first followed by col. Row maps to Y and col maps to X. This will confuse those that would expect the normal order of X,Y used in most vector and graphics system. The level editor always  shows coordinates as row,col.
+All events that use row, col are always row first followed by col. Row maps to Y and col maps to X. This will confuse those that would expect the normal order of X,Y used in most vector and graphics systems. The level editor always shows coordinates as row,col.
 
 Remember - everything that uses coordinates ALWAYS use row,col.
