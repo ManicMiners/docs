@@ -71,6 +71,7 @@ These are not case sensitive since variable names and event chain names are not 
 |EventErosion_C|Collection|Active erosions.|
 |EventLandslide_C|Collection|Active active landslides.|
 |erosionscale|Macro|Global erosion scale factor|
+|false|boolean|bool false or numeric 0.|
 |float|Variable|Floating point number.|
 |geologicalcenter|Macro|Number of Geological Centers.|
 |get|Macro|Get tile ID.|
@@ -182,6 +183,7 @@ These are not case sensitive since variable names and event chain names are not 
 |time|Macro / Trigger|Game time or trigger.|
 |timer|Variable|Timer object.|
 |toolstore|Macro|Returns number of toolstores.|
+|true|boolean|bool value or 1 as numeric.|
 |truewait|Event|Suspend event chain for real user time period.|
 |tunnelscout|Macro|Number of Tunnel Scouts.|
 |tunneltransport|Macro|Number of Tunnel Transports.|

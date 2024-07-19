@@ -28,6 +28,7 @@ There exist variable names that are reserved as macros. When used in Scripting, 
 |electricfence|int|Returns number of Fences.|
 |ElectricFence_C|int|Returns number of fence objects. Not a collection.|
 |erosionscale|float|Returns or sets the erosionscale.|
+|false|int|Returns 0. For use only with bools.|
 |geologicalcenter|int|Returns number of Geological Centers.|
 |get(ROW)(COLUMN)|int|Returns the tile ID of the specified coordinates. ROW COLUMN are ints.|
 |granitegrinder|int|Return Number of Granite Grinders.|
@@ -63,6 +64,7 @@ There exist variable names that are reserved as macros. When used in Scripting, 
 |teleportpad|int|Returns number of Teleport Pads.|
 |time|float|Returns the amount of seconds that have passed since the level began. Same as clock.|
 |toolstore|int|Returns number of toolstores. Similar to BuildingToolStore_C|
+|true|int|Returns 1. For use only with bools.|
 |tunnelscout|int|Return number of Tunnel Scouts.|
 |tunneltransport|int|Return number of Tunnel Transports.|
 |upgradestation|int|Returns number of Upgrade Stations.|
@@ -73,6 +75,8 @@ All collection classes may be used as a macro and they will return an int that i
 
 [building](_pages/ClassesBuildings), [creature](_pages/ClassesCreatures), [miner](_pages/ClassesMiners) and [vehicle](_pages/ClassesVehicles) classes have data fields that allow querying properties on them and they are also treated as a macro. See each class type for the list of data fields it supports.
 
+## true false booleans.
+`true` and `false` are not really macros but are boolean numeric constants. false evaluates to 0 and true evaluates to 1.  While they can be used with int and float values, it is poor programming practice to do so. boolean values should only be used with bool variables.
 
 ## Macros that may be modified
 
@@ -94,6 +98,8 @@ Air is specified in miner seconds. One unit of air is the amount of air a single
 When air gets to zero - the player loses the map.
 
 Each Support Station will add ten air every game second.
+
+When an undiscovered cavern is found, air will be added over time - all of the air in the cavern is not available instantly when the cavern is discovered. Thus if the player is low on air, it is possible to run out of air shortly after discovering a new cavern.  Via script, air can be instantly added or subtracted by changing the air macro. Be aware that changes to the air macro are processed on the next game tick, so it is still possible to run out of air after adding air if the engine would have run out of air on the next tick.
 
 ## Nested parameter macros not allowed.
 Two macros require parameters:
