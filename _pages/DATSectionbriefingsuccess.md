@@ -8,13 +8,13 @@ Each line of text is considered a paragraph, auto-wrapping to fit inside of the 
 
 There is no known limit on the size of this section, the player is given a scrollable dialog box to read the text.
 
-Use of the keyword `CADET` (upper case) will be filled in with the players name.
+Use of the keyword `CADET` (upper case) will be automatically filled in with the players name when the dialog is displayed.
 
 Example:
 
 ```mms
 briefingsuccess{
-CADET - you found the missing base and recovered all of the required crystals - job well done!
+CADET - you found the missing base, restored power to it and recovered all of the required crystals - job well done!
 
 Use of the tunnel scout allowed you to quickly discover the caverns before they were filled with the rising lava.
 
@@ -22,4 +22,4 @@ Get some well deserved rest and prepare for your next away mission.
 }
 ```
 
-The message may contain non-ansi characters. If any are used, the editor will save the map using UTF16LE BOM format.
+>The message may contain non-ANSI characters. If any are used, the editor will save the map using UTF16LE BOM format.

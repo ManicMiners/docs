@@ -96,3 +96,20 @@ Optional floating point value. Probability percentage ( 0.0 - 100.0, floating po
 
 ## version
 This is the version of the game engine that last saved this map. It is in `yyyy-mm-dd` format (year-month-day)
+
+Example for an empty 8x8 new .DAT created by map editor.
+
+```mms
+info{
+rowcount:8
+colcount:8
+camerapos:Translation: X=1200.000 Y=1200.000 Z=0.000 Rotation: P=44.999989 Y=-89.999992 R=0.000002 Scale X=1.000 Y=1.000 Z=1.000
+biome:rock
+creator:Tyab
+spiderrate:10
+spidermin:2
+spidermax:4
+version:2023-08-14-1
+opencaves:3,4/
+}
+```

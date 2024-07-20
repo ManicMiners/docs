@@ -14,4 +14,38 @@ It is also recommended (but not required) that if your utility is adding data to
 
 Be aware that some map developers use the comment section to store notes to themselves about issues with the map. This just enforces that there is no format for any data in this section and thus external utilities need to preserve any data in this section that is not part of that utility.
 
+Example of an empty section:
+```mms
+comments{
+}
+```
+
+Example of map developer comments: (see LRRC\frozenfrenzy.dat)
+```mms
+comments{
+you love to see it
+note: landslide timers have been doubled in the cavern, since you have two tiles to landslide onto the one tile
+ which I think LRR worked on a ground-tile basis for landslides (not wall-basis)
+ so this should bring the landslides slightly closer to LRR's rates
+ ... maybe
+}
+```
+
+Example of 3rd party utility comments: (MMMM utility)
+```mms
+comments{
+Author:NuvaHammer
+LevelType1:Panic
+LevelType2:Puzzle
+Length:Medium
+Asset:
+Info:Specialist this mission is critical. A volcano just erupted in the cavern we were using for our vehicle depot. The evacuation is in progress but we won't be able to get all the vehicles out. We sent a team of demolitionist to reroute a nearby river. Unfortunately they were a little trigger happy and now lava is flowing down the canal they made. We need you to drill out a new canal for the river before the lava reaches the vehicle depot.
+
+You must be careful though, the canal cannot be split. So it is imperative you pick the right direction or all will be lost. 
+
+Good Luck Cadet
+
+Note: This level was made on early scripting features,so the lava flow is based off of time and the clock cannot be stopped. So if you win, you may still lose.
+}
+```
 
