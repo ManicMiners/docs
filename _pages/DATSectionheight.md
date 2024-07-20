@@ -5,7 +5,7 @@ The section has one more row than the height of map. Each row has one more colum
 
 ![Example 3x3 map heights](../_media/MMHeightPointsTrans.png "Example 3x3 map heights")
 
-There are rowcount+1 rows, each containing colcount+1 heights. Each hight is a signed integer value followed by a comma. There are no spaces.
+There are rowcount+1 rows, each containing colcount+1 heights. Each height is a signed integer value followed by a comma. There are no spaces.
 
 Height values are in 300 units per tile, so a height of 300 is one tile higher than 0 and -300 is one tile lower than 0. These are the same units returned by the X, Y, Z data members in script.
 

@@ -6,7 +6,7 @@ Manic Miner maps are text files ending in .DAT extension.
 
 The map file is organized into sections. A complete description of each section is documented here: [DAT file format](_pages/DatFileFormat)
 
-Scripting is programmed map specific behavior that is defined by lines in the .MAP file `script` section.
+Scripting is programmed map specific behavior that is defined by lines in the .DAT file `script` section.
 
 Two other sections indirectly work with the script section.
 - `objectives` may refer to variables defined in the script section

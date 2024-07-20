@@ -26,7 +26,7 @@ The Manic Miner editor may create UTF16LE BOM or ANSI no BOM formats. Testing ha
 
 While the map engine does read in UTF16 and UTF8 formats, the engine does not generally support internationalization. All sections names must be in lower case ANSI western (a-z). Variable names and Event Chain names in script must be in ANSI western (A-Z, a-z, 0-9).
 
-Internationalized strings appear to work correctly in the info section for levelname and creator, inside script strings, and for the text contained within the three briefing sections. Use of non-ansi characters will automatically cause Manic Miners to save using UTF16LE BOM format.
+Internationalized strings appear to work correctly in the info section for levelname and creator, inside script strings, and for the text contained within the three briefing sections. Use of non-ANSI characters will automatically cause Manic Miners to save using UTF16LE BOM format.
 
 ## Sections
 
