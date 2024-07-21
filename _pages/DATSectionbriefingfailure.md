@@ -14,7 +14,7 @@ Use of the keyword `CADET` (upper case) will be automatically filled in with the
 
 Example:
 
-```mms
+```
 briefingfailure{
 CADET - you failed to locate the missing base - wasting valuable resources and time.
 
