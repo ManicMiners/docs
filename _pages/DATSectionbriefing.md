@@ -12,7 +12,7 @@ Use of the keyword `CADET` (upper case) will be automatically filled in with the
 
 Example:
 
-```mms
+```
 briefing{
 Get ready CADET - this is going to be a hard mission. A remote base was trapped in a cavern by landslides, but before we lost contact with them they were also under threat from rising lava.
 

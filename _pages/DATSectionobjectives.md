@@ -120,7 +120,7 @@ The forward slash character separates the conditional from the text. The text is
 
 If using a script variable and the variable does not exist, the objective cannot be completed.
 
-There is no known limit on the number of variable objectives in the objectives section but very large numbers may slow down play due to procession of the objectives on every tick.
+There is no known limit on the number of variable objectives in the objectives section but very large numbers may slow down play due to processing of the objectives on every tick.
 
 >Be careful with use of variable conditions. If the condition is in error - or it is not possible in the script logic for this condition to be true, the user may not be able to win map unless the script uses the `win` event. This may itself be useful to add new objectives that are communicated by the `msg` event that are not part of the objective display.
 

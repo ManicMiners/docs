@@ -12,7 +12,7 @@ Use of the keyword `CADET` (upper case) will be automatically filled in with the
 
 Example:
 
-```mms
+```
 briefingsuccess{
 CADET - you found the missing base, restored power to it and recovered all of the required crystals - job well done!
 
