@@ -54,7 +54,7 @@ Integer value. This is the number of columns (X) tiles - can be considered the w
 ## creator
 Name of the player that created the map. Do not enclose the name in double quotes. It does not change when saving the map - only on the initial creation. Non ansi western characters including extended UTF8/16 sequences appear to work, and will cause the map editor to save using UTF16LE BOM format.
 
-# erosioninitialwaittime
+## erosioninitialwaittime
 Floating point value. Number of seconds the game waits from the start before starting any erosions. This is a global erosion delay, after the provided number of seconds from the game start, erosions may begin. Optional value, default is 0 seconds.
 
 ## erosionscale
@@ -67,14 +67,14 @@ Integer value. Amount of crystals the player starts with. Optional value, defaul
 Integer value. Amount of ore the player starts with. Optional value, default is 0.
 
 ## levelname
-This is the name of map and it is allowed to have spaces. All characters from the : until the end of line are part of the map name. Do not enclose the name in double quotes. Once it is set, the name never changes even after saving. Non ansi western characters including extended UTF8/16 sequences appear to work, and will cause the map editor to save using UTF16LE BOM format.
+Optional name of map. All characters from the : until the end of line are part of the map name including spaces. Do not enclose the name in double quotes. Once it is set, the name never changes even after saving. Non ansi western characters including extended UTF8/16 sequences appear to work, and will cause the map editor to save using UTF16LE BOM format.
 
 ## opencaves
 Integer row,col/ values. This is a list of row,col pairs with a forward slash after every row,col pair. It defines a tile that is initially discovered when the map is loaded. The engine will look at every tile starting at this location and identify a closed region that surrounds that tile - and that net closed region will be visible when the map starts.  If there is no closed region, the entire map is visible.
 
 Many legacy maps do not have this value. In that case, the engine attempts to automatically detect what is the initial open location. Generally this works, but there are cases where it is incorrect. The only way to fix those maps is to open it with the map editor, remove any incorrect open cave flags, and add open cave flags to those areas that should be visible.
 
-# oxygen
+## oxygen
 Optional integer initial/maximum values. This has two parameters, first is the initial air value that the map starts with, and the second is the maximum air value, separated by a forward slash.  Miners consume one air per second. A value of 100 means one miner is supported for 100 seconds, or 10 miners for 10 seconds.  When air reaches zero - the player loses the map.  Support stations generated 10 air per second.
 
 If this option is missing, then air is unlimited.
@@ -97,7 +97,7 @@ Optional floating point value. Probability percentage ( 0.0 - 100.0, floating po
 ## version
 This is the version of the game engine that last saved this map. It is in `yyyy-mm-dd` format (year-month-day)
 
-Example for an empty 8x8 new .DAT created by map editor.
+## Example for an empty 8x8 new .DAT created by map editor.
 
 ```mms
 info{
