@@ -67,7 +67,7 @@ Integer value. Amount of crystals the player starts with. Optional value, defaul
 Integer value. Amount of ore the player starts with. Optional value, default is 0.
 
 ## levelname
-This is the name of the player that created the map. Do not enclose the name in double quotes. Once it is set, the name never changes even after saving. Non ansi western characters including extended UTF8/16 sequences appear to work, and will cause the map editor to save using UTF16LE BOM format.
+This is the name of map and it is allowed to have spaces. All characters from the : until the end of line are part of the map name. Do not enclose the name in double quotes. Once it is set, the name never changes even after saving. Non ansi western characters including extended UTF8/16 sequences appear to work, and will cause the map editor to save using UTF16LE BOM format.
 
 ## opencaves
 Integer row,col/ values. This is a list of row,col pairs with a forward slash after every row,col pair. It defines a tile that is initially discovered when the map is loaded. The engine will look at every tile starting at this location and identify a closed region that surrounds that tile - and that net closed region will be visible when the map starts.  If there is no closed region, the entire map is visible.
