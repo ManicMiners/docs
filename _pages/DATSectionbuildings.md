@@ -37,13 +37,13 @@ Required field, it provides the translation (offset), rotations, and scale for t
 
 Format:
 ```
-Translation: X= Y= Z= Rotation: P= Y= R= Scale X= Y= Z=
+Translation: X=value Y=value Z=value Rotation: P=value Y=value R=value Scale X=value Y=value Z=value
 ```
 
 Translation:
-- X= floating point X location, this is in 300 units per tile. This is the save value returned by the .X data member.
-- Y= floating point Y location, this is in 300 units per tile. This is the save value returned by the .Y data member.
-- Z= floating point Z location, this is in 300 units per tile. This is the save value returned by the .Z data member.
+- X= floating point X location, this is in 300 units per tile. This is the same value returned by the .X data member.
+- Y= floating point Y location, this is in 300 units per tile. This is the same value returned by the .Y data member.
+- Z= floating point Z location, this is in 300 units per tile. This is the same value returned by the .Z data member.
 
 Rotation:
 - P= floating point in degrees (-180 - 180). Pitch around the X axis (TODO verify)

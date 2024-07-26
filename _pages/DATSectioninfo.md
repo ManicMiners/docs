@@ -38,12 +38,15 @@ Floating point values. X,Y,Z angles in degrees. Note that the order is tradition
 
 Mix of text keywords and floating point values. The camera has a X,Y,Z location, a P,Y,R rotation, and an X,Y,Z scale.  Note that X,Y,Z order is traditional graphics X,Y,Z order (column, row, height)
 
-Format is `Translation: X=value Y=value Z=value Rotation P=value Y=value R=value Scale X=value Y=value Z=value`
+Format:
+```
+Translation: X=value Y=value Z=value Rotation P=value Y=value R=value Scale X=value Y=value Z=value
+```
 
 Translation:
-- X= floating point X location, this is in 300 units per tile. This is the save value returned by the .X data member.
-- Y= floating point Y location, this is in 300 units per tile. This is the save value returned by the .Y data member.
-- Z= floating point Z location, this is in 300 units per tile. This is the save value returned by the .Z data member.
+- X= floating point X location, this is in 300 units per tile. This is the same value returned by the .X data member.
+- Y= floating point Y location, this is in 300 units per tile. This is the same value returned by the .Y data member.
+- Z= floating point Z location, this is in 300 units per tile. This is the same value returned by the .Z data member.
 
 Rotation:
 - P= floating point in degrees (-180 - 180). Pitch around the X axis (TODO verify)
