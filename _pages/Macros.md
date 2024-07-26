@@ -93,13 +93,7 @@ A few macros allow modification which changes game play. These may be used on th
 
 ### Air
 
-Air is specified in miner seconds. One unit of air is the amount of air a single miner will use every game second. Thus one-hundred will support ten miners for ten game seconds or one miner for one-hundred game seconds.
-
-When air gets to zero - the player loses the map.
-
-Each Support Station will add ten air every game second.
-
-When an undiscovered cavern is found, air will be added over time - all of the air in the cavern is not available instantly when the cavern is discovered. Thus if the player is low on air, it is possible to run out of air shortly after discovering a new cavern.  Via script, air can be instantly added or subtracted by changing the air macro. Be aware that changes to the air macro are processed on the next game tick, so it is still possible to run out of air after adding air if the engine would have run out of air on the next tick.
+[Click here for information about air](_pages/Air).
 
 ## Nested parameter macros not allowed.
 Two macros require parameters:
@@ -112,7 +106,7 @@ Two macros require parameters:
 The parameters cannot be another macro that requires parameters. For example, if you wanted to return a random tile from a 32x32 map - you `cannot` do this:
 
 ```mms
-mytile=get(random(0)(31)(random(0)(31));   # BAD not allowed
+mytile=get(random(0)(31),random(0)(31));   # BAD not allowed
 ```
 
 Nested parameters are not allowed. To do the above you have to compute the row and column first - saving values into int's and use those ints.
