@@ -37,9 +37,23 @@ Floating point values. X,Y,Z angles in degrees. Note that the order is tradition
 ## camerapos
 
 Mix of text keywords and floating point values. The camera has a X,Y,Z location, a P,Y,R rotation, and an X,Y,Z scale.  Note that X,Y,Z order is traditional graphics X,Y,Z order (column, row, height)
-X,Y,Z location values are map fractional coords, there are 300 coords per tile - these are the same coords used by the X,Y,Z datafields.
 
 Format is `Translation: X=value Y=value Z=value Rotation P=value Y=value R=value Scale X=value Y=value Z=value`
+
+Translation:
+- X= floating point X location, this is in 300 units per tile. This is the save value returned by the .X data member.
+- Y= floating point Y location, this is in 300 units per tile. This is the save value returned by the .Y data member.
+- Z= floating point Z location, this is in 300 units per tile. This is the save value returned by the .Z data member.
+
+Rotation:
+- P= floating point in degrees (-180 - 180). Pitch around the X axis (TODO verify)
+- Y= floating point in degrees (-180 - 180). Yaw around the Y axis (TODO verify)
+- R= floating point in degrees (-180 - 180), Roll around the Z axis (TODO verify)
+
+Scale  (notice no colon character)
+- X= floating point X scale, default is 1.0.
+- Y= floating point Y scale, default is 1.0.
+- Z= floating point Z scale, default is 1.0.
 
 The default camera is at the center of the map with a P of 45 - this means a 45 degree angle for the camera looking down.
 The default scale is 1.0, 1.0, 1.0
