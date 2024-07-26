@@ -92,12 +92,9 @@ Integer row,col/ values. This is a list of row,col pairs with a forward slash af
 Many legacy maps do not have this value. In that case, the engine attempts to automatically detect what is the initial open location. Generally this works, but there are cases where it is incorrect. The only way to fix those maps is to open it with the map editor, remove any incorrect open cave flags, and add open cave flags to those areas that should be visible.
 
 ## oxygen
-Optional integer initial/maximum values. This has two parameters, first is the initial air value that the map starts with, and the second is the maximum air value, separated by a forward slash.  Miners consume one air per second. A value of 100 means one miner is supported for 100 seconds, or 10 miners for 10 seconds.  When air reaches zero - the player loses the map.  Support stations generated 10 air per second.
+Optional integer initial/maximum values. This has two parameters, first is the initial air value that the map starts with, and the second is the maximum air value, separated by a forward slash.  [Click for detailed information about air](_pages/Air).
 
 If this option is missing, then air is unlimited.
-
-When a cave is discovered, the amount of air the player gets from opening the cave is related to the maximum value. The amount of air is:  A / B * C.  A is the number of non-wall tiles in the cavern just opened, B is the total number of non-wall tiles in the entire map + number of drillable walls in map, and C is the maximum air value from this option.
-The air discovered is added incrementally over a short period of time.
 
 ## rowcount
 Integer value. This is the number of rows (Y) tiles - can be considered the height of the map in the default view. The smallest possible rowcount is 3. The map borders are part of this count.
