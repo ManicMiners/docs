@@ -52,18 +52,18 @@ This is a list of options, each ending in a forward slash character with no spac
 
 ### Objects
 
-- Drill/
-- Shovel/
-- Hammer/
-- Spanner/
-- Sandwich/
+- Drill/ 
+- Shovel/ 
+- Hammer/ 
+- Spanner/ 
+- Sandwich/ 
 
 Weapons:
 
-- BeamLaser/
-- BeamFreezer/
-- BeamPusher/
-- SonicBlasterTool/
+- BeamLaser/ 
+- BeamFreezer/ 
+- BeamPusher/ 
+- SonicBlasterTool/ 
  
 > Only one of the four weapons may be carried. It is not valid to list multiple weapons for the same miner.
 
@@ -72,12 +72,12 @@ Weapons:
 ### Jobs
 Miners may learn up to six jobs (skills).
 
-- JobExplosivesExpert/
-- JobDriver/
-- JobEngineer/
-- JobGeologist/
-- JobPilot/
-- JobSailor
+- JobExplosivesExpert/ 
+- JobDriver/ 
+- JobEngineer/ 
+- JobGeologist/ 
+- JobPilot/ 
+- JobSailor/ 
 
 ### Level
 By default every miner is level 1. Each use of the `Level/` tag increases the miner level, thus a level five miner will have 4 upgrades.
