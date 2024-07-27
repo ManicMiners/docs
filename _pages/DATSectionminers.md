@@ -23,7 +23,7 @@ value is the id of the miners. ID's start at 0 and increment by one for every mi
 
 ## TRANSLATION
 
-Required field, it provides the translation (offset), rotations, and scale for the vehicle. The editor will automatically compute these values for you so that the vehicle is correctly placed on the floor tiles. By changing these values you may manually bury part or all of a vehicle or cause it to float in the air. Vehicles that are not correctly placed on the floor may be unusable.
+Required field, it provides the translation (offset), rotations, and scale for the miner. The editor will automatically compute these values for you so that the miner is correctly placed on the floor tiles. By changing these values you may manually bury part or all of a miner or cause it to float in the air. Miners that are not correctly placed on the floor may be unusable.
 
 Format:
 ```
@@ -87,7 +87,7 @@ Level/Level/Level/Level/
 
 ## ESSENTIAL
 
-Optional value - miners that are essential for the player to complete the map have this tag. This means if the miner is teleported in any manner including manual teleportation, will cause the player to lose the map. These vehicles will have a floating star over them to identify them as essential.
+Optional value - miners that are essential for the player to complete the map have this tag. This means if the miner is teleported in any manner including manual teleportation, will cause the player to lose the map. These miners will have a floating star over them to identify them as essential.
 
 Format:
 ```
