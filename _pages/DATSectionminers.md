@@ -47,10 +47,11 @@ Scale  (notice no colon character)
 
 ## OPTIONS
 
-This is a list of options, each ending in a forward slash character with no spaces. Options may be jobs known by the miner, objects carried by the miner or its level.  While the order  is not enforced, the editor always writes the options in the order of: objects/jobs/level
+This is a list of optional options, each ending in a forward slash character with no spaces. Options may be jobs known by the miner, objects carried by the miner or its level.  While the order during map load, the editor always writes the options in the order of: objects/jobs/level
 
 
 ### Objects
+Objects are all optional.
 
 - Drill/ 
 - Shovel/ 
@@ -70,7 +71,7 @@ Weapons:
 > The level of the miner determines how many objects they may hold. Every miner starts at level one and may hold two items, each increase in level lets the miner hold an additional item. Thus a level 5 miner may hold all 5 objects plus one of the weapons.
 
 ### Jobs
-Miners may learn up to six jobs (skills).
+Jobs are all optional. Miners may learn up to six jobs (skills).
 
 - JobExplosivesExpert/ 
 - JobDriver/ 
