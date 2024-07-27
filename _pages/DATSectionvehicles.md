@@ -64,20 +64,23 @@ upgrades=name1/name2/...
 
 Where the names are valid upgrades for each vehicle class. Each upgrade ends in a forward slash. There are no spaces anywhere.
 
-List of Upgrades:
+Upgrades for each vehicle class:
+
 |Vehicle class|Upgrades|
-|-----|-----|
-|VehicleCargoCarrier_C|UpAddNav/|
-|VehicleChromeCrusher_C|UpDrill/ UpLaser/ UpScanner/ UpEngine/|
-|VehicleGraniteGrinder_C|UpDrill/ UpEngine/|
-|VehicleHoverScout_C|UpEngine/|
-|VehicleLMLC_C|UpEngine/ UpLaser/|
-|VehicleLoaderDozer_C|UpEngine/|
-|VehicleRapidRider_C|UpCargoHold/ UpAddDrill/|
-|VehicleSmallDigger_C|UpDrill/ UpEngine/|
-|VehicleSMLC_C|UpEngine/ UpLaser/|
-|VehicleTunnelScout_C|UpAddDrill/|
-|VehicleTunnelTransport_C|NONE|
+|---|---|
+|VehicleCargoCarrier_C|UpAddNav/ |
+|VehicleChromeCrusher_C|UpDrill/ UpLaser/ UpScanner/ UpEngine/ |
+|VehicleGraniteGrinder_C|UpDrill/ UpEngine/ |
+|VehicleHoverScout_C|UpEngine/ |
+|VehicleLMLC_C|UpEngine/ UpLaser/ |
+|VehicleLoaderDozer_C|UpEngine/ |
+|VehicleRapidRider_C|UpCargoHold/ UpAddDrill/ |
+|VehicleSmallDigger_C|UpDrill/ UpEngine/ |
+|VehicleSMLC_C|UpEngine/ UpLaser/ |
+|VehicleTunnelScout_C|UpAddDrill/ |
+|VehicleTunnelTransport_C|NONE |
+
+>VehicleTunnelTransport_C has no upgrades and cannot have the Upgrades= field.
 
 ## DRIVER
 
