@@ -45,9 +45,9 @@ Translation:
 - Z= floating point Z location, this is in 300 units per tile. This is the same value returned by the .Z data member.
 
 Rotation:
-- P= floating point in degrees (-180 - 180). Pitch around the X axis (TODO verify)
-- Y= floating point in degrees (-180 - 180). Yaw around the Y axis (TODO verify)
-- R= floating point in degrees (-180 - 180), Roll around the Z axis (TODO verify)
+- P= floating point in degrees (-180 - 180). Pitch around the X axis.
+- Y= floating point in degrees (-180 - 180). Yaw around the Y axis.
+- R= floating point in degrees (-180 - 180), Roll around the Z axis.
 
 Scale  (notice no colon character)
 - X= floating point X scale, default is 1.0.
@@ -91,11 +91,12 @@ driver=value
 value is the Miner ID from the section miners.
 
 ## ID
-Required value. This is the ID of this vehicle.
+Required field. Every starting vehicle has a unique vehicle ID automatically filled in by the map editor. Once that vehicle has left the game, any script variable associated with that vehicle is now invalid, any triggers for that variable are invalid, and the ID is then reused for new vehicles transported down.
+
 ```
 ID=value
 ```
-value is the ID of this vehicle.
+value is the id of the vehicle. ID's start at 0 and increment by one for every vehicle in the game. 
 
 ## ESSENTIAL
 

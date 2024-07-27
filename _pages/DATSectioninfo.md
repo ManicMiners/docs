@@ -49,9 +49,9 @@ Translation:
 - Z= floating point Z location, this is in 300 units per tile. This is the same value returned by the .Z data member.
 
 Rotation:
-- P= floating point in degrees (-180 - 180). Pitch around the X axis (TODO verify)
-- Y= floating point in degrees (-180 - 180). Yaw around the Y axis (TODO verify)
-- R= floating point in degrees (-180 - 180), Roll around the Z axis (TODO verify)
+- P= floating point in degrees (-180 - 180). Pitch around the X axis.
+- Y= floating point in degrees (-180 - 180). Yaw around the Y axis.
+- R= floating point in degrees (-180 - 180), Roll around the Z axis.
 
 Scale  (notice no colon character)
 - X= floating point X scale, default is 1.0.
