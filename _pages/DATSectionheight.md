@@ -1,4 +1,5 @@
-# DAT Section height
+# DAT Section heights
+
 The height section is required and written by the map editor on every save. It contains the height of every tile corner in the map. Tiles with shared corners only have a single height for the shared corner - thus the corners will start at the same height.
 
 The section has one more row than the height of map. Each row has one more column than the width of the map. Thus a 3x3 map will have 4x4 heights.
