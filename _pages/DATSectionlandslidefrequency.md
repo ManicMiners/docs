@@ -18,6 +18,8 @@ Each tile that has a landslide at that interval is listed, row,column order foll
 
 >It is invalid to list the same tile having multiple landslides intervals, thus every tile may only be listed a single time.
 
+>The engine requires that all tiles having landslides with the same interval MUST be listed together on the same line. Additional lines with the same interval are ignored.
+
 ## Example
 
 Within a map, there are three groups of landslide cooldowns:
