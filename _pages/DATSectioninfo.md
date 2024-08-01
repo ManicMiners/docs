@@ -75,7 +75,9 @@ Name of the player that created the map. Do not enclose the name in double quote
 Floating point value. Number of seconds the game waits from the start before starting any erosions. This is a global erosion delay, after the provided number of seconds from the game start, erosions may begin. Optional value, default is 0 seconds.
 
 ## erosionscale
-Floating point value. Global multiplier on lava erosion. Optional value, default is 1.0. TODO need more info
+Floating point value. Global multiplier on lava erosion. Optional value, default is 1.0. This value is the initial value for the script erosionscale macro.
+
+This value is a multiplier on the time durations. By default 1.0, setting 2.0 will double the length of time for erosion. Setting to 0.0 will prevent any erosions permanently in the map.
 
 ## initialcrystals
 Integer value. Amount of crystals the player starts with. Optional value, default is 0.
