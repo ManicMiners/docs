@@ -58,7 +58,7 @@ Scale  (notice no colon character)
 - Y= floating point Y scale, default is 1.0.
 - Z= floating point Z scale, default is 1.0.
 
-The default camera is at the center of the map with a P of 45 - this means a 45 degree angle for the camera looking down.
+The default camera is at the center of the map with a P of 45 - this means a 45 degree angle for the camera looking down. Yaw is -90 so the 0,0 tile is upper left.
 The default scale is 1.0, 1.0, 1.0
 The default rotation is 0
 
