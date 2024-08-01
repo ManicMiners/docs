@@ -1,6 +1,6 @@
 # DAT Section landslidefrequency
 
-The landslidefrequeency lists all of the tiles that have landslides assigned to them.  The editor sorts the list into groups that have the same interval and outputs all of them on the same line.
+The landslidefrequeency section lists all of the tiles that have landslides assigned to them.  The editor sorts the list into groups that have the same interval and outputs all of them on the same line.
 
 Format:
 
@@ -10,7 +10,7 @@ INTERVAL:ROW,COL/ROW,COL/...
 
 ## INTERVAL
 
-The interval is a floating point number. The editor outputs values to the 0.1 resolution, it may be that internally landslides are collected into groups at the 0.1 second interval.
+The interval is a floating point number representing the number of seconds between each landslide. This value is the minimum number of seconds, the game engine picks a random value between this number and double the number. The editor outputs values to the 0.1 resolution, it may be that internally landslides are collected into groups at the 0.1 second interval.
 
 ## ROW,COL/
 
