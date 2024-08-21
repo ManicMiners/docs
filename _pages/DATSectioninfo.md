@@ -40,7 +40,7 @@ Mix of text keywords and floating point values. The camera has a X,Y,Z location,
 
 Format:
 ```
-Translation: X=value Y=value Z=value Rotation P=value Y=value R=value Scale X=value Y=value Z=value
+Translation: X=value Y=value Z=value Rotation: P=value Y=value R=value Scale X=value Y=value Z=value
 ```
 
 Translation:

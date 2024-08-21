@@ -14,6 +14,8 @@ building MyBuilding       # will be assigned later.
 - It is common to use a building collection class in the trigger and use `=lastbuilding` or `savebuilding` in an event chain to get the building that caused the trigger.
 - Undiscovered buildings and their triggers are inactive until they are discovered.
 
+>Specifying a row,col only works on buildings that are part of the map. There is no way to dynamically assign at runtime a building using the row,col format.
+
 ## Properties
 These are the class properties specific to buildings.  Properties start with the dot `.` character followed by the name after the object variable or collection name.
 

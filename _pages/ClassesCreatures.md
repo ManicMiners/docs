@@ -13,6 +13,8 @@ creature MyCreature    # will be assigned later by lastcreature or =.
 - It is common to use a creature collection class in the trigger and use `=lastcreature` or `savecreature` in an event chain.
 - Undiscovered creatures and their triggers are inactive until they are discovered.
 
+>Specifying an id only works on creatures that are part of the map. There is no way to dynamically assign at runtime a creature using the id.
+
 ## Properties
 These are the class properties specific to creatures.  Properties start with the dot `.` character followed by the name after the object variable or collection name.
 

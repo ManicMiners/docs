@@ -15,6 +15,8 @@ It is good practice to declare your variables at the start of the script before 
 
 Variables have a type followed by a single space followed by a name. The name should not be one of the reserved events and macros - [list of reserved words](_pages/ReservedWords). Most variables have an optional initialization which is an equal sign after the name followed by the values(s).
 
+>All variables have global scope - there are no local variables. Variables that contain initialization values are loaded during map load time prior to init being called and those variables cannot themselves contain other variables - all initialization values are constants.
+
 ## Variable Types
 
 Variables can be of different types. Each type will only save certain values which means you have to use a type that can contain the value or text you want to save. Make sure to use a variable of the correct type to avoid errors.

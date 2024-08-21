@@ -14,6 +14,9 @@ vehicle Sofia      # unassigned vehicle, will be assigned later
 - It is common to use a vehicle collection class in the trigger and use `=lastvehicle` or `savevehicle` in an event chain.
 - Undiscovered vehicles and their triggers are inactive until they are discovered.
 
+>Specifying an id only works on vehicles that are part of the map. There is no way to dynamically assign at runtime a vehicle using the id.
+
+
 ## Properties
 These are the class properties specific to vehicles.  Properties start with the dot `.` character followed by the name after the object variable or collection name.
 
