@@ -9,11 +9,13 @@ There are five different types of objectives:
 - discovertile
 - findbuilding
 - resources
-- variables
+- variable
 
 There may only be a single resources key, but the rest may have as many as needed.
 
 >If the info section has an oxygen: statement, then the map automatically has a requirement to not run out of air, if air ever gets to 0 the player loses the map.
+
+>Since the objective section is also processed by the script engine, the above keywords are also reserved words in script - no event chain or variables may have the above five names.
 
 ## building
 

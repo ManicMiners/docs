@@ -54,6 +54,7 @@ These are not case sensitive since variable names and event chain names are not 
 |dead|Data Field Trigger|Trigger when object is dead.|
 |dirt|Macro|Tile ID of dirt (26).|
 |disable|Event|Disable object.|
+|discovertile|Objective|Objective section keyword.|
 |docks|Macro|Number of Docks.|
 |drill|Event / Trigger|Drill tile.|
 |drive|Trigger|Trigger when vehicle over tile.|
@@ -72,6 +73,7 @@ These are not case sensitive since variable names and event chain names are not 
 |EventLandslide_C|Collection|Active active landslides.|
 |erosionscale|Macro|Global erosion scale factor|
 |false|boolean|bool false or numeric 0.|
+|findbuilding|Objective|Objective section keyword.|
 |float|Variable|Floating point number.|
 |geologicalcenter|Macro|Number of Geological Centers.|
 |get|Macro|Get tile ID.|
@@ -137,13 +139,14 @@ These are not case sensitive since variable names and event chain names are not 
 |powerstation|Macro|Number of Power Stations.|
 |progress_path|Macro|Tile id of a progress path (13).|
 |qmsg|Event|Display message to user.|
+|random|Macro|Return random number [low,high]. Random(low)(high). Floats allowed
 |rapidrider|Macro|Number of Rapid Riders.|
 |RechargeSeamGoal_C|Collection|Visible recharge seams.|
 |red|Color|Arrow colors.|
-|random|Macro|Return random number [low,high]. Random(low)(high). Floats allowed
 |reinforce|Trigger|Trigger when wall is reinforced.|
 |reset|Event|Resets the player's selection|
 |resetspeed|Event|Loads the game speed from settings again.|
+|resources|Objective|Objective section keyword.|
 |resume|Event|Same as unpause.|
 |RockMonster|Collection|Rock Monsters.|
 |row|Data Field|Object row.|
@@ -217,5 +220,3 @@ These are not case sensitive since variable names and event chain names are not 
 |Y|Data Field|Row, 300 values per cell|
 |yellow|Colors|Arrow colors.|
 |Z|Data Field|Height, 300 values per cell|
-
-
