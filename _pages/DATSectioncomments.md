@@ -48,4 +48,11 @@ Good Luck Cadet
 Note: This level was made on early scripting features,so the lava flow is based off of time and the clock cannot be stopped. So if you win, you may still lose.
 }
 ```
+> It is very important that developers that are going to modify this section make sure they do not place a closing braces by itself as part of their data without some leading spaces. Remember - a single closing braces by itself with no leading spaces on its own line will terminate the comment section.
 
+Example for embedded closing braces - notice that the embedded closing braces is indented with spaces:
+```
+comment{
+    my private data that includes a closing braces
+    }  
+}
