@@ -23,7 +23,7 @@ Triggers may be used with if and when occurrences.
 |comparison|(`expression`)|Activates when the `expression` is evaluated as `true`. See the next section for usage.|
 |CLASS||Activates when the class is interacted with in some way. See the [Classes](_pages/Classes) page for details.|
 
-## How to monitor triggers (comparisons)
+## Conditional triggers (comparisons)
 A trigger can be set to fire based on a comparison between two [Variables](_pages/Variables). It is subject to the same rules as conditions but it must evaluate to either a true or false value. This is the same as asking the game a yes/no question like *is value1 greater than value2?*. The comparison or question must evaluate to `true` for the trigger to fire. You can use this to e.g. play a sound when the player has collected half of the amount of crystals needed complete a objective.
 
 > All variables used within a trigger are converted to integers which cuts off any decimals. This is different from rounding as if you compare 2.2 and 2.9 they will be equal. Furthermore comparisons are not to be confused with conditions that are marked by double parenthesis `(())` although they work in a similar way.
@@ -32,8 +32,19 @@ A trigger can be set to fire based on a comparison between two [Variables](_page
 
 See [Conditions](_pages/Conditions) for more detail.
 
+## Multiple Identical Triggers
+Having the same trigger type on the same tile multiple times to non-deterministic behavior. Example:
 
-### Example
+```
+when(enter:4,5)[foo]
+when(enter:4,5)[bar]
+```
+
+The same trigger is duplicated, one wants to call foo event chain, the other wants to call bar event chain. This causes non-deterministic behavior in the script engine and should always be avoided.
+
+It is currently not documented the behavior for multiple different triggers for the same tile. TODO - <i>It is known that some combinations due work but it needs to be researched to find those that work and those that do not, and the priority they are called for those that work.</i>
+
+### Examples
 
 ```mms
 	int VALUE1=1
