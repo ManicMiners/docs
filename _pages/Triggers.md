@@ -1,6 +1,7 @@
 # Triggers
-A trigger activates in response to things that happen in the world, such as a wall being drilled or a miner walking over a tile. A list of triggers can be found below. In addition there are triggers that can be used by [Classes](_pages/Classes) but since available triggers differ between classes they are not mentioned here in detail.
-Triggers may be used with if and when occurrences.
+A trigger activates in response to things that happen in the world, such as a wall being drilled or a miner walking over a tile. A list of triggers can be found below. In addition there are triggers that may be used with [Classes](_pages/Classes) but since available triggers differ between classes they are not mentioned here in detail.
+
+Triggers are used with `if` and `when` occurrences.
 
 |Trigger|Syntax|Description|
 |----|----|----|
@@ -33,16 +34,29 @@ A trigger can be set to fire based on a comparison between two [Variables](_page
 See [Conditions](_pages/Conditions) for more detail.
 
 ## Multiple Identical Triggers
-Having the same trigger type on the same tile multiple times to non-deterministic behavior. Example:
+Having the same trigger type on the same tile multiple times causes undefined behavior. Example:
 
 ```
 when(enter:4,5)[foo]
 when(enter:4,5)[bar]
+if(enter:4,5)[singleShot]
 ```
 
-The same trigger is duplicated, one wants to call foo event chain, the other wants to call bar event chain. This causes non-deterministic behavior in the script engine and should always be avoided.
+The same trigger is duplicated, one trigger wants to call foo event chain, another trigger wants to call bar event chain, and another trigger wants to call singleShot a single time only. Multiple triggers of the same type on the same tile cause undefined behavior in the script engine and should always be avoided.
 
 It is currently not documented the behavior for multiple different triggers for the same tile. TODO - <i>It is known that some combinations due work but it needs to be researched to find those that work and those that do not, and the priority they are called for those that work.</i>
+
+## time:
+There is a known exception to the no duplicated triggers rule. The engine does support multiple `time:` triggers. Each will be called in the given number of seconds after map play has started, after the `init` event chain has been called.
+
+```
+if(time:0)[startup1]
+if(time:0)[startup2]
+if(time:0)[startup3]
+```
+The three event chains startup1, startup2, startup3 will all be called at the beginning of map play right after the `init` event chain has been called.
+
+>Avoid using `when` with time triggers. They are evaluated on every engine tick and once the given number of seconds has past, will constantly fire. Very similar to tick event chain in terms of overhead.
 
 ### Examples
 
@@ -58,7 +72,7 @@ In the above code only `Trigger2` will fire as `2>=1` is `true`, but `1>=2` is `
 
 Remember - `if` triggers only fire a single time. Once the trigger condition is met, the trigger will never fire again. `When` triggers will fire every time that condition is met.
 
-`When` triggers can cause some very bad behavior if misused.  Lets take an example of a map where if a unit enters a given tile, it will cause a rock monster to spawn. One way to code this up would be:
+`When` triggers may cause poor performance and undesired behavior if misused.  Lets take an example of a map where if a unit enters a given tile, it will cause a rock monster to spawn. One way to code this up would be:
 
 ```mms
 string msgMonSpawn="Your presence has spawned a monster!"

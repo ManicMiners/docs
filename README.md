@@ -53,6 +53,9 @@ The script syntax will most likely confuse one at first - especially if one is f
 
 Additional formatting rules are found in this set of documents.
 
+# Undefined Behavior
+The terms `non-deterministic` and `undefined` are used interchangeably in this documentation. They are both referring to either behavior or syntax that cannot be depended upon by the map developer. Basically - don't do that.
+
 ## Links
  - [Manic Miners Discord](https://discord.gg/85k8JHz)
  - [Manic Miners Homepage](https://manicminers.baraklava.com/)
