@@ -24,7 +24,8 @@ These are the class properties specific to creatures.  Properties start with the
 |Name|Description|
 |---|---|
 |dead|Trigger when a creature gets killed or enters rock.|
-|new|Trigger when creature is emerged. Only used with collections.
+|new|Trigger when creature is emerged. Only used with collections.|
+|wake|Trigger when creature wakes up.|
 
 ## Properties
 
