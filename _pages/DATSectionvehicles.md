@@ -25,6 +25,7 @@ Required field, it names the vehicle collection class. It may be one of the foll
 - VehicleLoaderDozer_C
 - VehicleRapidRider_C
 - VehicleSmallDigger_C
+- VehicleSmallTransportTruck_C
 - VehicleSMLC_C
 - VehicleTunnelScout_C
 - VehicleTunnelTransport_C
@@ -76,6 +77,7 @@ Upgrades for each vehicle class:
 |VehicleLoaderDozer_C|UpEngine/ |
 |VehicleRapidRider_C|UpCargoHold/ UpAddDrill/ |
 |VehicleSmallDigger_C|UpDrill/ UpEngine/ |
+|VehicleSmallTransportTruck_C|UpCargoHold/ UpEngine/|
 |VehicleSMLC_C|UpEngine/ UpLaser/ |
 |VehicleTunnelScout_C|UpAddDrill/ |
 |VehicleTunnelTransport_C|NONE |
