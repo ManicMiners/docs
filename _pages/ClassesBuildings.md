@@ -24,7 +24,7 @@ These are the class properties specific to buildings.  Properties start with the
 
 |Name|Description|
 |---|---|
-|built|Trigger when a building is built. Requires collection.|
+|built:row,col|Trigger when a building is built covering the row,col. Requires collection.|
 |click|Trigger when a building is clicked.|
 |dead|Trigger when a building gets teleported up.|
 |hurt|Trigger when a building take damage.|
