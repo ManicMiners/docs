@@ -83,7 +83,8 @@ Upgrades for each vehicle class:
 |VehicleTunnelTransport_C|NONE |
 
 >VehicleTunnelTransport_C has no upgrades and cannot have the Upgrades= field.
-> LMLC has a hidden upgrade UpAddNav which allows the vehicle to travel over lava. It can only be applied to vehicles defined in the map file. Currently there is no way for a user to add this upgrade in game.
+
+>LMLC has a hidden upgrade `UpAddNav` which allows the vehicle to travel over lava. It can only be applied to vehicles defined in the map file. Currently there is no way for a user to add this upgrade in game.
 ## DRIVER
 
 Optional value - has the miner id that is driving the vehicle. If a miner is not driving, this field is missing.
