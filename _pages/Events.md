@@ -15,7 +15,8 @@ Events describe to the game what you want it to do when a trigger is activated. 
 |---|---|---|
 |addrandomspawn|addrandomspawn:COLLECTION,MINTIME,MAXTIME|Configure random spawn of a creature collection. MINTIME and MAXTIME define a random time in float seconds between each spawn wave.|
 |disable|disable:COLLECTION|Disable the given object type. See description below for list of types|
-|drill|drill:ROW,COLUMN|Drill tile ROW,COLUMN. It will play the appropriate effect and place rubble. All wall tiles can be drilled with this event including those not normally drillable.
+|drain|drain:NUM|Will drain NUM crystals. This is the same as a slimy slug draining them.|
+|drill|drill:ROW,COLUMN|Drill tile ROW,COLUMN. It will play the appropriate effect and place rubble. All wall tiles can be drilled with this event including those not normally drillable. Drilling a wall may cause other tiles to automatically collapse. This event may cause drill triggers to fire.
 |emerge|emerge:ROW,COLUMN,DIRECTION,COLLECTION,DISTANCE|Causes a monster to emerge. ROW,COLUMN integers are desired tile. DIRECTION is one of A,N,S,E,W. COLLECTION is one of CreatureRockMonster_C, CreatureLavaMonster_C, CreatureIceMonster_C. DISTANCE is integer distance from ROW,COLUMN to find emergeable tile to use.|
 |enable|enable:COLLECTION|Enable the given object type. See description below for list of types.|
 |flee|flee:OBJECT,ROW,COL|Causes the given monster object (or collection) to flee to the given tile. Once there, the Creature will try and escape as it normally does. Collections will cause all creatures of that collection to flee to that location.|
