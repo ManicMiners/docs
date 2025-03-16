@@ -65,7 +65,7 @@ ID/EventRelay:ROW,COL,COOLDOWN,DELAY
 - ID is a unique number assigned by the map editor that represents this event.
 - ROW,COL are the row and column for the block. The actual coordinates do not matter but it must be in a discovered part of the map at map load time to be active.
 - COOLDOWN is a floating point number of seconds that must pass between each call. If non-zero, that number of seconds must pass before another call will have any action. Calls are not queued during the cool down period, they are ignored.
-- DELAY is optional and is how long once activated to wait to pass on the event to all connected wires.
+- DELAY is an optional floating point number and is how long in seconds once activated to wait to pass on the event to all connected wires.
 
 A example use for this block would be if you want a trigger to have multiple events but at different times. Driving over a tile could cause a monster to spawn a few seconds later, and then later still cause a wall to collapse or a different monster to spawn. That would take two relay blocks with different delay times.
 
@@ -122,20 +122,23 @@ ID/TriggerEventChain:ROW,COL,COOLDOWN,NAME
 - NAME is a user defined name that must be unique and follow the same rules as all event chain names. This name once entered by the user will not change, and it is the event chain name your script may call to cause some action within the block system.
 
 ### Enter Block
-Enter block define a trigger that fires when any miner or vehicle enters the tile. Optionally it may be restricted to just the given collection class.
+Enter block define a trigger that fires when any miner, vehicle or optionally creature enters the tile. 
 
 Format:
 ```
-ID/TriggerEnter:ROW,COL,COOLDOWN,_,BMINERS,BVEHICLES,CLASS
+ID/TriggerEnter:ROW,COL,COOLDOWN,BMINERS,BVEHICLES,CLASS
 ```
 - ID is a unique number assigned by the map editor that represents this trigger.
-- ROW,COL are the row and column for the block. The actual coordinates do not matter but it must be in a discovered part of the map at map load time to be active.
+- ROW,COL are the row and column for the Tile to trigger on.
 - COOLDOWN is a floating point number of seconds that must pass between each enter. If non-zero, that number of seconds must pass before another call will have any action. Enters are not queued during the cool down period, they are ignored.
 - BMINERS is true to allow miners to cause trigger, false to ignore miners.
 - BVEHICLES is true to allow vehicles to cause trigger, false to ignore vehicles.
 - CLASS is optional value and is the collection class to trigger on. It may be any creature, vehicle, and resource collection class. When that class of an object enters the tile, the trigger will fire.
 
-> This is similar to the script `when(enter:ROW,COL,CLASS)` but has less restrictions and a cool down and is not limited to miners and vehicles.
+> This is similar to the script `when(enter:ROW,COL,CLASS)` but has less restrictions and a cool down and allows creatures.
+
+> By default, creatures `will not` trigger this block. You must provide the creature collection class for creatures to trigger this. When you do this, miners and vehicles will not trigger. When using a creature class, you must set BMINERS and BVEHICLES to false.  It is not possible to have a single trigger for miners, vehicles and creatures.
+
 
 ### Change Block
 Change block will trigger when the given tile changes or optionally changes to the specified tile.
@@ -145,9 +148,10 @@ Format:
 ID/TriggerChange:ROW,COL,COOLDOWN,TILEID
 ```
 - ID is a unique number assigned by the map editor that represents this trigger.
-- ROW,COL are the row and column for the block. The actual coordinates do not matter but it must be in a discovered part of the map at map load time to be active.
+- ROW,COL are the row and column for the tile that will be changed.
 - COOLDOWN is a floating point number of seconds that must pass between each change. If non-zero, that number of seconds must pass before another call will have any action. Changes are not queued during the cool down period, they are ignored.
 -TILEID is an optional value and if specified will only trigger when changed to the given TileID.
 
+This is nearly identical to the script `when(change:ROW,COL,ID)` trigger except it has a cooldown.
 
 ## TODO WIRE BLOCKS
