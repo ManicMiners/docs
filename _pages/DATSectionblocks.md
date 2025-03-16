@@ -25,7 +25,64 @@ This documentation is not an instruction guide on how to use the block system, b
 
 ## TODO CREATURE BLOCKS
 
-## TODO EVENT BLOCKS
+## Event Blocks
+There are 4 types of event blocks:
+- Call Event
+- Drill
+- Place
+- Relay
+
+### Event Call Event Block
+This block will call the specified event entered by the user. The even can be any script event or an EventChain. The most common use for this is to provide a way for your script to be called by the block system. The event chain will be called asynchronously so the block system does not wait for your event to return before continuing processing wires.
+
+The event chain name you provide will be scheduled to be called just as if some sort of trigger called that event.  
+
+```
+ID/EventCallEvent:ROW,COL,COOLDOWN,NAME
+```
+- ID is a unique number assigned by the map editor that represents this event.
+- ROW,COL are the row and column for the block. The actual coordinates do not matter but it must be in a discovered part of the map at map load time to be active.
+- COOLDOWN is a floating point number of seconds that must pass between each call. If non-zero, that number of seconds must pass before another call will have any action. Calls are not queued during the cool down period, they are ignored.
+- NAME is a user defined name that must be unique and follow the same rules as all event chain names. This name once entered by the user will not change, and it is the event chain name called by the block system into your script.  NAME may also be any single event script command, for example 'win' can be used to win the map.
+
+### Event Drill Block
+
+This will cause the given tile to be drilled. Any wall type of tile will be turned into rubble, which may cause other tiles to also collapse. It is identical to using the script drill event.
+
+```
+ID/EventDrill:6,2
+```
+- ID is a unique number assigned by the map editor that represents this event.
+- ROW,COL are the row and column for the tile to drill. If the tile is already a ground tile, nothing happens. 
+
+### Event Relay Block
+
+This event itself does not perform any action, but it can be used to chain via wires to other blocks. It has both a cooldown and a delay. Cooldown is the time between activations, activates are ignored until the cooldown from the last activation has passed.
+Delay is separate, one activated it will wait that number of seconds and then pass the event to the connected wires.
+```
+ID/EventRelay:ROW,COL,COOLDOWN,DELAY
+```
+- ID is a unique number assigned by the map editor that represents this event.
+- ROW,COL are the row and column for the block. The actual coordinates do not matter but it must be in a discovered part of the map at map load time to be active.
+- COOLDOWN is a floating point number of seconds that must pass between each call. If non-zero, that number of seconds must pass before another call will have any action. Calls are not queued during the cool down period, they are ignored.
+- DELAY is optional and is how long once activated to wait to pass on the event to all connected wires.
+
+A example use for this block would be if you want a trigger to have multiple events but at different times. Driving over a tile could cause a monster to spawn a few seconds later, and then later still cause a wall to collapse or a different monster to spawn. That would take two relay blocks with different delay times.
+
+Another advanced use of this block would be to provide to script a way to delay actions without having to write all the timer logic yourself. You could have a `Trigger Event Chain Block` wired to a `Event Relay Block` with a delay value wired to an `Event Call Event Block`. Thus your script would call - causing a delay to start - and later your script is called back after the delay.
+
+### Event Place Block
+This event block is identical to the place script event. It allows the abiliity to change the TileID of any single tile.
+
+```
+ID/EventPlace:ROW,COL,COOLDOWN,TileID
+```
+- ID is a unique number assigned by the map editor that represents this event.
+- ROW,COL are the row and column for tile to be changed.
+- COOLDOWN is a floating point number of seconds that must pass between each call. If non-zero, that number of seconds must pass before another call will have any action. Calls are not queued during the cool down period, they are ignored.
+-TileID is the new TileID to assign to the ROW,COL tile.
+
+Just like the script place event, only a single tile is changed. The engine will queue up changes so one is able to construct walls.
 
 ## Trigger Blocks
 
