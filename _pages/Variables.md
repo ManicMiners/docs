@@ -99,11 +99,11 @@ i=0-2;        # i is now -2
 
 ## Variable Names
 
-Variable names (and Event Chains names) should follow standard programming variable names. The first character is an alpha followed by one or more alpha or digits. Names are case insensitive but case can be used to improve readability.  Variables do not have any special characters in them, just alpha followed by alphanumerics. There is no documented limit on the length of a variable name.
+Variable names (and Event Chains names) should follow standard programming variable names. The first character is an alpha or underbar followed by one or more alpha or digits or underbars. Names are case insensitive but case can be used to improve readability.  Variables do not have any special characters in them except for underbar. There is no documented limit on the length of a variable name.
 
-Technically the engine supports variables names (and Event Chains) that start with numeric(s) followed by at least one alpha and then optionally alphanumerics but it is really poor practice to do this - it violates modern programming standards. You will find this style in only a few older maps and is strongly discouraged.
+Technically the engine supports variables names (and Event Chains) that start with numeric(s) followed by at least one alpha or underbar - but it is really poor practice to do this - it violates modern programming standards. You will find this style in only a few older maps and is strongly discouraged. Thus it is `STRONGLY` encouraged that your variable names and event chain names start with either an alpha or underbar.
 
 >Note that the engine will not generate an error if a variable and event chain have the same name BUT you do get undefined behavior. Variables and Event Chains names must be unique.
 
-As already stated above, variable names and event chain names must be unique and not one of the reserved words.  The script engine ignores case so variables cannot be unique by case alone. While case is ignored, it is a good practice to use case to improve readability.
+>As already stated above, variable names and event chain names must be unique and not one of the reserved words or you may have undefined behavior.  The script engine ignores case so variables cannot be unique by case alone. While case is ignored, it is a good practice to use case to improve readability.
 

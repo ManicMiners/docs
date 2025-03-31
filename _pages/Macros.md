@@ -13,10 +13,14 @@ There exist variable names that are reserved as macros. When used in Scripting, 
 |Macro|Return Type|Function|
 |----|----|----|
 |air|int|Returns the air status in miner-seconds.|
+|bat|int|Returns number of bats.|
+|Bat_C|int|Returns number of bats.|
 |buildings|int|Returns the amount of buildings.|
 |building_path|int|Returns tile id of a building path (14).|
 |cargocarrier|int|Return number of Cargo Carriers.|
+|CargoCarrier_C|int|Return number of Cargo Carriers.|
 |chromecrusher|int|Return number of Chrome Crushers.|
+|ChromeCrusher_C|int|Return number of Chrome Crushers.|
 |clock|float|Returns the amount of seconds that have passed since the level. Same as time.|
 |ConstructedBuilding|building|Return the last constructed building.|
 |creatures|int|Returns number of creatures.|
@@ -25,13 +29,16 @@ There exist variable names that are reserved as macros. When used in Scripting, 
 |crystal_seam|int|Returns tile id of a crystal seam (42).|
 |dirt|int|Returns tile id of dirt (26).|
 |docks|int|Returns number of Docks.|
+|Docks_C|int|Returns number of Docks.|
 |electricfence|int|Returns number of Fences.|
 |ElectricFence_C|int|Returns number of fence objects. Not a collection.|
 |erosionscale|float|Returns or sets the erosionscale.|
 |false|int|Returns 0. For use only with bools.|
 |geologicalcenter|int|Returns number of Geological Centers.|
+|GeologicalCenter_C|int|Returns number of Geological Centers.|
 |get(ROW)(COLUMN)|int|Returns the tile ID of the specified coordinates. ROW COLUMN are ints.|
 |granitegrinder|int|Return Number of Granite Grinders.|
+|GraniteGrinder_C|int|Return Number of Granite Grinders.|
 |hard_rock|int|Returns tile id of hard rock (34).|
 |hostiles|int|Returns number of hostile units.|
 |hoverscout|int|Return Number of Hover Scouts.|
@@ -41,33 +48,48 @@ There exist variable names that are reserved as macros. When used in Scripting, 
 |lastvehicle|vehicle|Return the last vehicle that activated a trigger.|
 |lava|int|Returns tile id of lava (6).|
 |LMLC|int|Return number of Large Mobile Laser Cutters.|
+|LMLC_C|int|Return number of Large Mobile Laser Cutters.|
 |loaderdozer|int|Return number of Loader Dozers.|
+|LoaderDozer_C|int|Return number of Loader Dozers.|
 |loose_rock|int|Returns tile id of loose rock (30).|
 |miners|int|Returns the amount of miners.|
-|mininglaser|int|Returns number of Geological Centers.|
+|mininglaser|int|Returns number of Mining Lasers.|
+|MiningLaser_C|int|Returns number of Mining Lasers.|
 |monsters|int|Returns number of monsters.|
 |ore|int|Returns the ore count.|
 |orerefinery|int|Returns number of Ore Refineries.|
+|OreRefinery_C|int|Returns number of Ore Refineries.|
 |ore_seam|int|Returns tile id of an ore seam (46).|
 |powerstation|int|Returns number of Power Stations.|
+|PowerStation_C|int|Returns number of Power Stations.|
 |progress_path|int|Returns tile id of a progress path (13).|
 |random(MIN)(MAX)|int/float|Return random number from MIN to MAX.|
 |rapidrider|int|Return number of Rapid Riders.|
+|RapidRider_C|int|Return number of Rapid Riders.|
 |slugs|int|Returns number of slimy slugs.|
 |slug_hole|int|Returns tile id of slimy slug hole (12).|
 |smalldigger|int|Return number of Small Diggers.|
+|SmallDigger_C|int|Return number of Small Diggers.|
 |smalltransporttruck|int|Return number of Small Transport Trucks.|
+|SmallTransportTruck_C|int|Return number of Small Transport Trucks.|
 |SMLC|int|Return number of Small Mobile Laser Cutters|
+|SMLC_C|int|Return number of Small Mobile Laser Cutters|
 |solid_rock|int|Returns tile id of solid rock (38).|
 |studs|int|Returns number of building studs.|
 |supportstation|int|Returns number of Support Stations.|
+|SupportStation_C|int|Returns number of Support Stations.|
 |teleportpad|int|Returns number of Teleport Pads.|
+|TeleportPad_C|int|Returns number of Teleport Pads.|
 |time|float|Returns the amount of seconds that have passed since the level began. Same as clock.|
-|toolstore|int|Returns number of toolstores. Similar to BuildingToolStore_C|
+|toolstore|int|Returns number of toolstores.|
+|Toolstore_C|int|Returns number of toolstores.|
 |true|int|Returns 1. For use only with bools.|
 |tunnelscout|int|Return number of Tunnel Scouts.|
+|TunnelScout_C|int|Return number of Tunnel Scouts.|
 |tunneltransport|int|Return number of Tunnel Transports.|
+|TunnelTransport_C|int|Return number of Tunnel Transports.|
 |upgradestation|int|Returns number of Upgrade Stations.|
+|UpgradeStation|int|Returns number of Upgrade Stations.|
 |vehicles|int|Returns the amount of vehicles.|
 |water|int|Returns tile id of water (11).|
 

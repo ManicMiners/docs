@@ -8,8 +8,9 @@ These are not case sensitive since variable names and event chain names are not 
 |addrandomspawn|Event|Config random spawn.|
 |air|Macro|Air remaining.|
 |arrow|Variable|Arrow object.|
-|Barrier_C|Collection|TODO what are these?|
+|Barrier_C|Collection|Construction barriers released from toolstore|
 |Bat|Collection|Bats.|
+|Bat_C|Collection|Bats.|
 |black|Color|Arrow colors.|
 |blue|Color|Arrow colors.|
 |bool|Variable|true false.|
@@ -31,9 +32,12 @@ These are not case sensitive since variable names and event chain names are not 
 |BuildingUpgradeStation_C|Collection|Upgrade Stations|
 |built|Data Field Trigger|Trigger when a building is built.|
 |canteen|Macro|Number of Canteens.|
+|Canteen_C|Macro|Number of Canteens.|
 |cargocarrier|Macro|Number of Cargo Carriers.|
+|CargoCarrier_C|Macro|Number of Cargo Carriers.|
 |change|Trigger|Trigger when tile changes|
 |chromecrusher|Macro|Number of Chrome Crushers.|
+|ChromeCrusher_C|Macro|Number of Chrome Crushers.|
 |click|Data Field Trigger|Trigger when object is clicked.|
 |clock|Macro|Same as time.|
 |col|Data Field|Object column. Same as column.|
@@ -56,6 +60,7 @@ These are not case sensitive since variable names and event chain names are not 
 |disable|Event|Disable object.|
 |discovertile|Objective|Objective section keyword.|
 |docks|Macro|Number of Docks.|
+|Docks_C|Macro|Number of Docks.|
 |drill|Event / Trigger|Drill tile.|
 |drive|Trigger|Trigger when vehicle over tile.|
 |driven|Data Field Trigger|Trigger when a miner enters a vehicle.|
@@ -76,8 +81,10 @@ These are not case sensitive since variable names and event chain names are not 
 |findbuilding|Objective|Objective section keyword.|
 |float|Variable|Floating point number.|
 |geologicalcenter|Macro|Number of Geological Centers.|
+|GeologicalCenter_C|Macro|Number of Geological Centers.|
 |get|Macro|Get tile ID.|
 |granitegrinder|Macro|Number of Granite Grinders.|
+|GraniteGrinder_C|Macro|Number of Granite Grinders.|
 |green|Color|Arrow colors.|
 |hard_rock|Macro|Tile ID of hard rock (34).|
 |heal|Event|Heal object.|
@@ -88,9 +95,11 @@ These are not case sensitive since variable names and event chain names are not 
 |hostiles|Macro|Number of hostile creatures.|
 |hover|Trigger|Trigger when mouse is over a tile.|
 |hoverscout|Macro|Number of Hover Scouts.|
+|HoverScout_C|Macro|Number of Hover Scouts.|
 |hp|Data Field|Object hitpoints. Same has health.|
 |hurt|Data Field Trigger|Trigger when object takes damage.|
 |IceMonster|Collection|Ice Monsters.|
+|IceMonster_C|Collection|Ice Monsters.|
 |id|Data Field|Object ID.|
 |if|Trigger|single time trigger.|
 |init|Event Chain|First event called after map load.|
@@ -107,16 +116,20 @@ These are not case sensitive since variable names and event chain names are not 
 |lastvehicle|Macro|Last vehicle that activated a trigger.|
 |lava|Macro|Tile ID of lava (6).|
 |LavaMonster|Collection|Lava Monsters.|
+|LavaMonster_C|Collection|Lava Monsters.|
 |level|Data Field|Returns upgrade level of the building.|
 |light|Parameter|enable/disable parameter.|
 |lights|Parameter|same as light.|
 |LMLC|Macro|Number of Large Mobile Laser Cutters.|
+|LMLC_C|Macro|Number of Large Mobile Laser Cutters.|
 |loaderdozer|Macro|Number of Loader Dozers.|
+|LoaderDozer_C|Macro|Number of Loader Dozers.|
 |loose_rock|Macro|Tile ID of loose rock (30).|
 |lose|Event|Lose the map.|
 |miner|Variable / Class|Miner object or class.|
 |miners|Macro|Miners discovered or active.|
 |mininglaser|Macro|Number of Geological Centers.|
+|MiningLaser_C|Macro|Number of Geological Centers.|
 |monsters|Macro|Number of monsters.|
 |msg|Event|Display a message to user.|
 |N|Emerge Direction|North.|
@@ -128,6 +141,7 @@ These are not case sensitive since variable names and event chain names are not 
 |ore|Macro|Ore count.|
 |Ore_C|Collection|All ore.|
 |orerefinery|Macro|Number of Ore Refineries.|
+|OreRefinery_C|Macro|Number of Ore Refineries.|
 |ore_seam|Macro|Tile ID of an ore seam (46).|
 |pan|Event|Pan camera.|
 |pause|Event|Pauses the game.|
@@ -137,10 +151,12 @@ These are not case sensitive since variable names and event chain names are not 
 |poweroff|Data Field Trigger|Trigger when power is deactivated for a building.|
 |poweron|Data Field Trigger|Trigger when power is activated for a building.|
 |powerstation|Macro|Number of Power Stations.|
+|PowerStation_C|Macro|Number of Power Stations.|
 |progress_path|Macro|Tile id of a progress path (13).|
 |qmsg|Event|Display message to user.|
 |random|Macro|Return random number [low,high]. Random(low)(high). Floats allowed
 |rapidrider|Macro|Number of Rapid Riders.|
+|RapidRider_C|Macro|Number of Rapid Riders.|
 |RechargeSeamGoal_C|Collection|Visible recharge seams.|
 |red|Color|Arrow colors.|
 |reinforce|Trigger|Trigger when wall is reinforced.|
@@ -149,6 +165,7 @@ These are not case sensitive since variable names and event chain names are not 
 |resources|Objective|Objective section keyword.|
 |resume|Event|Same as unpause.|
 |RockMonster|Collection|Rock Monsters.|
+|RockMonster_C|Collection|Rock Monsters.|
 |row|Data Field|Object row.|
 |S|Emerge Direction|South.|
 |save|Event|Save last miner that activated a trigger into a variable.|
@@ -158,12 +175,17 @@ These are not case sensitive since variable names and event chain names are not 
 |shake|Event|Shake camera.|
 |showarrow|Event|Show arrow object.|
 |SlimySlug|Collection|Slimy Slugs.|
+|SlimySlug_C|Collection|Slimy Slugs.|
 |slug_hole|Macro|Tile id of slimy slug hole (12).|
 |slugs|Macro|Number of slimy slugs.|
 |smalldigger|Macro|Number of Small Diggers.|
+|SmallDigger_C|Macro|Number of Small Diggers.|
 |SmallSpider|Collection|Small Spiders.|
+|SmallSpider_C|Collection|Small Spiders.|
 |smalltransporttruck|Macro|Number of Small Transport Trucks.|
+|SmallTransportTruck_C|Macro|Number of Small Transport Trucks.|
 |SMLC|Macro|Number of Small Mobile Laser Cutters|
+|SMLC_C|Macro|Number of Small Mobile Laser Cutters|
 |solid_rock|Macro|Tile ID of solid rock (38).|
 |sound|Event|Play .ogg file.|
 |spawncap|Event|Config random spawn.|
@@ -178,21 +200,27 @@ These are not case sensitive since variable names and event chain names are not 
 |studs|Macro|Building Stud count.|
 |string|Variable|Text.|
 |superteleport|Macro|Number of Super Teleports.|
+|SuperTeleport_C|Macro|Number of Super Teleports.|
 |supportstation|Macro|Number of Support Stations.|
-|teleportpad|Macro|Numbewr of Teleport Pads.|
+|SupportStation_C|Macro|Number of Support Stations.|
+|teleportpad|Macro|Number of Teleport Pads.|
+|TeleportPad_C|Macro|Number of Teleport Pads.|
 |tick|Event Chain|Called on every engine tick. Not recommended.|
 |tile|Data Field|TileID for objectt.|
 |tileid|Data Field|same as tile.|
 |time|Macro / Trigger|Game time or trigger.|
 |timer|Variable|Timer object.|
 |toolstore|Macro|Returns number of toolstores.|
+|Toolstore_C|Macro|Returns number of toolstores.|
 |true|boolean|bool value or 1 as numeric.|
 |truewait|Event|Suspend event chain for real user time period.|
 |tunnelscout|Macro|Number of Tunnel Scouts.|
 |tunneltransport|Macro|Number of Tunnel Transports.|
+|TunnelTransport_C|Macro|Number of Tunnel Transports.|
 |upgrade|Trigger when vehicle is upgraded.|
 |upgraded|Trigger|Not working, don't use.|
 |upgradestation|Macro|Number of Upgrade Stations.|
+|UpgradeStation_C|Macro|Number of Upgrade Stations.|
 |unpause|Event|Resumes the game if paused.|
 |variable|Objective|Objective map section.|
 |vehicle|Variable / Class|Vehicle object or trigger class.|

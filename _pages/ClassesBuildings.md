@@ -83,24 +83,37 @@ when(building.new)[MyNewBuildingChain]  # call event chain when any building is 
 ```
 
 ## Macros
-These are not collections - they are macros. They return the number of objects as an int. They may be used in assignments on the right side or in conditions.
+These are not collections - they are macros. They return the number of objects as an int. Some of them end in _C but they are legacy macros.
+
+These may be used in assignments on the right side or in conditions.
 
 |Name|Description|
 |---|---|
 |buildings|Number of all buildings.|
 |canteen|Number of Canteens.|
+|Canteen_C|Number of Canteens.|
 |docks|Number of Docks.|
+|Docks_C|Number of Docks.|
 |electricfence|Number of Fences.|
-|ElectricFence_C|Number of fence objects. Not a collection.|
+|ElectricFence_C|Number of Fences.|
 |geologicalcenter|Number of Geological Centers.|
+|GeologicalCenter_C|Number of Geological Centers.|
 |mininglaser|Number of Mining Lasers.|
+|MiningLaser_C|Number of Mining Lasers.|
 |orerefinery|Number of Ore Refineries.|
+|OreRefinery_C|Number of Ore Refineries.|
 |powerstation|Number of Power Stations.|
+|PowerStation_C|Number of Power Stations.|
 |superteleport|Number of Super Teleports.|
+|SuperTeleport_C|Number of Super Teleports.|
 |supportstation|Number of Support Stations.|
+|SupportStation_C|Number of Support Stations.|
 |teleportpad|Number of Teleport Pads.|
+|TeleportPad_C|Number of Teleport Pads.|
 |toolstore|Number of Tool Stores.|
+|Toolstore_C|Number of Tool Stores.|
 |upgradestation|Number of Upgrade Stations.|
+|UpgradeStation_C|Number of Upgrade Stations.|
 
 ## Disable or enable a building
 A collection can be used together with the disable event in order to prevent the player from creating a specified building. Likewise the enable event will re-allow a player to construct the specified building. See [Events](_pages/Events).

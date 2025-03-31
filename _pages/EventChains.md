@@ -15,23 +15,25 @@ Event chain names are defined by a valid name followed by two semi-colons and ei
 	EVENT;
 ```
 
-- Event chain names follow the same rules as variables. They start with an alpha and are followed by optional alpha/digits followed by two semi-colons. It is the two semi-colons that identify an Event Chain. Do not use any of the reserved works for the event chain name. Using a reserved keyword as an event chain name will cause non-deterministic behaviors/errors just like variables. [list of reserved words](_pages/ReservedWords).
+Event chain names follow the same rules as variables. They start with an alpha or underbar and are followed by optional alphas/digits/underbars followed by two semi-colons. It is the two semi-colons that identify an Event Chain. Do not use any of the reserved words for the event chain name. Using a reserved keyword as an event chain name may cause undefined behaviors/errors just like variables. [list of reserved words](_pages/ReservedWords).
 
-- The `EVENT` events will execute in order as they are written.
+>Technically the engine supports names (and variable names) that start with numeric(s) followed by at least one alpha or underbar - but it is really poor practice to do this - it violates modern programming standards. You will find this style in only a few older maps and is strongly discouraged. Thus it is `STRONGLY` encouraged that your variable names and event chain names start with either an alpha or underbar.
 
-!> After each event chain there should be an **empty line** to signal the end of the chain.
+Within an event chain, the events will execute in order as they are written.
+
+> After each event chain there should be an `empty line` to signal the end of the chain. See the note below about the technical rules that define the end of event chain.
 
 Event chains are similar to a subroutine call. Using the name will call the chain of events. When they have finished, control returns back to the caller.
 
 ## Init
-The Init or Initialize event chain runs before any trigger can occurr in the level. This can be used to setup variables which need modification at runtime. The syntax is the same as any other event chain but the chain name must be Init.
+The `init::` event chain runs before any trigger is allowed to fire in the level. This may be used to setup variables which need modification at runtime. The syntax is the same as any other event chain but the chain name must be init.
 
 ```
 	init::doStuff;
 ```
 
 ## tick
-The tick event chain is called by the engine on EVERY engine tick. It is not recommended to be used unless that action taken by the script is very short. It would be far less overhead to use a timer that called script on some useful interval. Tick is called by the engine on every graphics frame update. 
+The tick event chain is called by the engine on EVERY engine frame update. It is not recommended to be used unless that action taken by the script is very short. It would be far less overhead to use a timer that called script on some useful interval. Tick is called by the engine on every graphics frame update - based on your vsync settings. Using tick may significantly impact framerate depending on what your event chain is performing.
 
 ```
 	tick::doSomethingReallyShortAndFast;
@@ -148,3 +150,9 @@ Timer triggers can fire during the execution of the current event chain. Same fo
 The wait event will suspend the current event chain. During the time waiting, other timers and triggers are allowed to run. When the specific time duration has exprired, the event chain will then run the events after the wait event. Internally the engine deals with the same event being called by changing the name of the current running eventchain to an internal name that is slightly different and unique. Once the wait period has expired, it is renamed back to its original name.  There is nothing the script developer needs to do - this is an internal implementation. But it is how the same event can be executed while a prior event is executing the wait. Thus you can have multiple event chains waiting at the same time - including multiple invocations of the same event chain.
 
 Since all variables are global, one must be careful of these cases and deal with it.
+
+## End of event chain.
+It is highly recommended that every event chain be ended with a blank line. This makes reading the script much easier - given how hard script is already to read due to lack of supported indentation and spaces.
+
+But technically anything other than a comment line and an event line will end the current event chain. Variable declarations, the end of the script section, if/when trigger lines and a new event chain will all end the current event chain. Thus it is possible to not have any blank lines in a script - it is just very difficult to read.
+

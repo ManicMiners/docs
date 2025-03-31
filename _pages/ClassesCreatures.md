@@ -54,6 +54,7 @@ Each native creature class has their own collection. When used by itself without
 |Name|Description|
 |---|---|
 |Bat|Bats.|
+|Bat_C|Bats.|
 |CreatureRockMonster_C|Rock Monsters.|
 |CreatureIceMonster_C|Ice Monsters.|
 |CreatureLavaMonster_C|Lava Monsters.|
@@ -61,12 +62,17 @@ Each native creature class has their own collection. When used by itself without
 |CreatureSmallSpider_C|Small Spiders.|
 |CreatureBat_C|Bats.|
 |IceMonster|Ice Monsters.|
+|IceMonster_C|Ice Monsters.|
 |LavaMonster|Lava Monsters.|
+|LavaMonster_C|Lava Monsters.|
 |RockMonster|Rock Monsters.|
+|RockMonster_C|Rock Monsters.|
 |SlimySlug|Slimy Slugs.|
+|SlimySlug_C|Slimy Slugs.|
 |SmallSpider|Small Spiders.|
+|SmallSpider_C|Small Spiders.|
 
-> There are two names for each creature collection, it is recommend to use the long name for clarity. The short names are for compatibility with older maps.
+> There are multiple names for each creature collection, it is recommend to use the long name for clarity. The short names are legacy.
 
 ## Macros
 These are not collections. They return the number of objects as an int. They may be used in assignments on the right side or in conditions.

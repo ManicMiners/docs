@@ -78,22 +78,36 @@ when(vehicle.new)[MyNewVehicleChain]
 
 
 ## Macros
-These are not collections. They return the number of objects as an int.
+These are not collections. They return the number of objects as an int. Some of the names end in _C but they are NOT collections, they are legacy macros.
+
+These may be used in assignments on the right side or in conditions.
 
 |Name|Description|
 |---|---|
 |cargocarrier|Number of Cargo Carriers.|
+|CargoCarrier_C|Number of Cargo Carriers.|
 |chromecrusher|Number of Chrome Crushers.|
+|ChromeCrusher_C|Number of Chrome Crushers.|
 |granitegrinder|Number of Granite Grinders.|
+|GraniteGrinder_C|Number of Granite Grinders.|
 |hoverscout|Number of Hover Scouts.|
+|HoverScout_C|Number of Hover Scouts.|
 |LMLC|Number of Large Mobile Laser Cutters.|
+|LMLC_C|Number of Large Mobile Laser Cutters.|
 |loaderdozer|Number of Loader Dozers.|
+|LoaderDozer_C|Number of Loader Dozers.|
 |rapidrider|Number of Rapid Riders.|
+|RapidRider_C|Number of Rapid Riders.|
 |smalldigger|Number of Small Diggers.|
+|SmallDigger_C|Number of Small Diggers.|
 |smalltransporttruck|Number of Small Transport Trucks.|
+|SmallTransportTruck_C|Number of Small Transport Trucks.|
 |SMLC|Number of Small Mobile Laser Cutters|
+|SMLC_C|Number of Small Mobile Laser Cutters|
 |tunnelscout|Number of Tunnel Scouts.|
+|TunnelScout_C|Number of Tunnel Scouts.|
 |tunneltransport|Number of Tunnel Transports.|
+|TunnelTransport_C|Number of Tunnel Transports.|
 |vehicles|Number of vehicles.|
 
 
