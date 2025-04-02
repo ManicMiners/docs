@@ -33,6 +33,9 @@ when (TRIGGER)((CONDITIONAL))[TRUEEVENT][FALSEEVENT]
 |comparison|(`expression`)|Activates when the `expression` is evaluated as `true`. See the next section for usage.|
 |CLASS||Activates when the class is interacted with in some way. See the [Classes](_pages/Classes) page for details.|
 
+## Class specific data field triggers.
+Some classes have data members that may be used as a trigger. See each class for the list of trigger data fields specific for that class.
+
 ## Comparison triggers
 A trigger can be set to fire based on a comparison between two [Variables](_pages/Variables) or  macros / properties of some classes or literal values.   If the result of the comparison is true, the trigger is considered fired and then will either call the event or will then be subject to the conditional.
 
