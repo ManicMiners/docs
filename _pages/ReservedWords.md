@@ -118,6 +118,7 @@ These are not case sensitive since variable names and event chain names are not 
 |LavaMonster|Collection|Lava Monsters.|
 |LavaMonster_C|Collection|Lava Monsters.|
 |level|Data Field|Returns upgrade level of the building.|
+|levelup|Data Field Trigger|Miner or Building upgraded.|
 |light|Parameter|enable/disable parameter.|
 |lights|Parameter|same as light.|
 |LMLC|Macro|Number of Large Mobile Laser Cutters.|
