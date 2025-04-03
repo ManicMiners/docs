@@ -87,7 +87,7 @@ float fNow=0.0
 
 init::;
 fNow=time;   # get game time as a float
-s="The current game time: "
+s="The current game time: ";
 s+=fNow;     # append floating point number to string
 msg:s;       # display current game time
 ```
