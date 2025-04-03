@@ -31,7 +31,7 @@ Variables can be of different types. Each type will only save certain values whi
 |int|int MyInteger=5|Saves positive whole numbers. Any decimal number will be truncated - 2.9 will be shortened to just 2. You cannot auto initialized negative values. By default it has a valud of 0.|
 |intarray|intarray MyArray|Defines an array of integers that will dynamically grow. No initialization values may be assigned and there are no default values for members of the array.|
 |miner|miner Charlie=3|This binds the miner with the ID specified to the variable name at the time of initialization. If unassigned it may later be assigned a miner by `lastminer` event.|
-|string|string MessStr="This is a message!"|Saves text. Numbers saved to strings are also considered text. There is no way to embed double quotes in the string itself.|
+|string|string MessStr="My message!"|Saves text. Numbers saved to strings are also considered text. See comments below.|
 |timer|timer name=delay,min,max,eventchain|Defines a variable of type timer with the given name. It will wait delay seconds to start, and will fire between min seconds and max seconds after the last firing, calling the given eventchain. Timer values can be int or float. See Levels\DEMO\Scripts\demotimers.dat for example.|
 |vehicle|vehicle BigBoye=2|This binds the vehicle with the ID specified to the variable name at the time of initialization. If unassigned, it may later be assigned a value with `lastvehicle` event.|
 
@@ -58,6 +58,15 @@ You can dynamically change `miner`, `vehicle`, `building` and `creature` variabl
 `timer` variables are not real variables - they cannot be used in any context other than the events that specifically work with timers.
 
 `bool`, `int`, `float` work as expected compared to modern programming languages. Note that int and float cannot be initialized to a negative value but later may be given negative results.
+
+## string variables
+`string` variables start off empty if not initialized. If initialized, they contain the contents of the double quoted string, but not the double quotes themselves. This is normal expected behavior that any developer that uses modern languages would expect.
+
+A legacy format is still supported where there are no double quotes around the string, the string ends at the end of line or at the comment. In either format, the engine does not support embedding double quotes. If you embed a double quoted string, at the closing embedded quote, the string is terminated, ignoring all characters after that double quote. Note that this behavior is the current behavior but not the initial behavior during development, and thus some of the samples provided with the current released version will not display messages correctly since they maps were not updated to current behavior.
+
+string variables may be added to each other, this is a concatenation operation where one string is appended to the end of the other string.
+
+Numeric variables may be added to string, the value of the variable is converted to a string and appended to the current string.
 
 ## Mixing Variable Types
 
