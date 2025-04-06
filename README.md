@@ -10,7 +10,7 @@ Scripting is programmed map specific behavior that is defined by lines in the .D
 
 Two other sections indirectly work with the script section.
 - `objectives` may refer to variables defined in the script section
-- `blocks` may call EventChains in the script section or EventChains may be defined in blocks for scripts to call.
+- `blocks` may call EventChains in the script section or EventChains may be defined in blocks for scripts to call. Blocks may also execute a single event.
 
 Scripts have **three main components:**
 

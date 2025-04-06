@@ -1,10 +1,12 @@
 # Scripting structure
-Scripting is text inside the Script section of the .DAT file. There are five types of lines that are found inside this section.
-- comments. [Comments](_pages/Comments) start with a `#` character and continue until the end of the line.
-- variables. [Variables](_pages/Variables) provide storage for values or objects to modify.
-- triggers. [Triggers](_pages/Triggers) are notifications from the engine to the script allowing logic changes. Every action a script is able to do starts with a trigger. Triggers may use a single event or call Event Chains.
-- Events. [Events](_pages/Events) are a single operation and they are what a trigger will use.
+Scripting is lines of text inside the Script section of the .DAT file. There are five types of lines that are found inside this section.
+- blank lines. These are for readability and will end an EventChain. Blank lines do not contain comments.
+- [Comments](_pages/Comments) start with a `#` character and continue until the end of the line. Note that the `#` ALWAYS starts a comment, no matter where it is. Thus one cannot embedd the pound character inside of text strings.  A line that has nothing but a comment is not a blank line and thus will not end an EventChain.
 - [Event Chains](_pages/EventChains) are multiple events assigned to a name, they are similar to a function call in other languages. Since the name is itself now considered a single event, it may be called by triggers, the block system or by other Event Chains.
+- [Triggers](_pages/Triggers) are notifications from the engine to the script allowing logic changes. Every action a script is able to do starts with a trigger. Triggers may use a single event or call Event Chains.
+- [Variables](_pages/Variables) provide storage for values or objects to modify.
+
+[Events](_pages/Events) are the basic action operation of script. Event Chains contains one or more Events, and triggers may use a single event or an Event Chain.
 
 The general logic flow of a script is to have trigger(s) to respond to gameplay. When those triggers are invoked (trigger fires), the script runs performing some action by using event(s). If the action is simple the trigger may only use a single event. If the action is more complex, the trigger is able to call an Event Chain to perform a sequence of actions. The script then returns from the trigger.  This process continues until the map is exited.
 
@@ -59,10 +61,9 @@ when(enter:3,4)((crystals>10))[EnoughCrystals][TooFewCrystals]
 ## No Spaces
 
 - Do not use spaces at the beginning of a line.
-- Do not use spaces at the end of a line.
+- Do not use spaces after the end of a line unless you have a comment.
 - Do not use spaces in the middle of a line. (see variables below)
 - Spaces are allowed inside of a string:  "  spaces are ok here"
-- Spaces are allowed after the end of a line if you have a comment.
 - A space is required between a variable declaration and its name.
 
 ## Example Scripts

@@ -37,7 +37,7 @@ when (TRIGGER)((CONDITIONAL))[TRUEEVENT][FALSEEVENT]
 Some classes have data members that may be used as a trigger. See each class for the list of trigger data fields specific for that class.
 
 ## Comparison triggers
-A trigger can be set to fire based on a comparison between two [Variables](_pages/Variables) or  macros / properties of some classes or literal values.   If the result of the comparison is true, the trigger is considered fired and then will either call the event or will then be subject to the conditional.
+A trigger can be set to fire based on a comparison between two [Variables](_pages/Variables) or  macros / properties of some classes or literal values.   If the result of the comparison is true, the trigger is considered fired and then will either call the true or false event depending on the conditional.
 
 > All variables used within a trigger are converted to integers which cuts off any decimals. This is different from rounding as if you compare 2.2 and 2.9 they will be equal. Furthermore comparisons are not to be confused with conditionals that are marked by double parenthesis `(())` although they work in a similar way.
 
@@ -61,7 +61,7 @@ if(enter:4,5)[singleShot]
 
 The same trigger is duplicated, one trigger wants to call foo event chain, another trigger wants to call bar event chain, and another trigger wants to call singleShot a single time only. Multiple triggers of the same type on the same tile cause undefined behavior in the script engine and should always be avoided.
 
-It is currently not documented the behavior for multiple different triggers for the same tile. TODO - <i>It is known that some combinations due work but it needs to be researched to find those that work and those that do not, and the priority they are called for those that work.</i>
+The behavior for multiple different triggers on the same tile is not documented. Developers should not count on any specific order that triggers may fire, and using the same tile for multiple triggers will require testing to ensure it works.
 
 ## time:
 There is a known exception to the no duplicated triggers rule. The engine does support multiple `time:` triggers. Each will be called in the given number of seconds after map play has started, after the `init` event chain has been called.

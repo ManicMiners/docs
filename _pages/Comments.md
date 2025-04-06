@@ -1,5 +1,5 @@
 # Comments
-Comments can be typed directly into the script. They are preceded by the `#` symbol. You can also use this to disable certain script lines.
+Comments are notes to the developer that do not have any action to the script engine - they are ignored when reading in the map. They are preceded by the `#` symbol. You can also use this to disable certain script lines.
 
 The game engine ignores everything after the `#` comment character.  When added to a script line, the game engine will also ignore all spaces from the end of the script `;`
 
