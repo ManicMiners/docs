@@ -249,3 +249,17 @@ These are not case sensitive since variable names and event chain names are not 
 |Y|Data Field|Row, 300 values per cell|
 |yellow|Colors|Arrow colors.|
 |Z|Data Field|Height, 300 values per cell|
+
+## Block system reserved words
+The Block system generates internal timer variable names and a number of event chains. The names of these change based on the number of blocks and it is undefined behavior for a developer to rely on any fixed name generated automatically by the block system.
+
+Developers should not use any variable names or event chain names that begin with the following names:
+
+- CreatureEmergeEvent
+- FleeTo
+- PlaceEvent
+- RandomSpawnSetup
+- ScriptBlockTimerTrigger
+- StartRandomSpawn
+- StopRandomSpawn
+- TimerTrigger
