@@ -290,5 +290,5 @@ Blocks 13 and 14 are backup wires. If block 8 is an emerge event and the emerge 
 
 >Backup wires only execute if the emerge block fails.
 
-The use of the `?` wire internally is implemented as the `?` modifier on an event within an Event Chain. See [Events](_pages/Events)
+The use of the `?` and `~` wires are internally implemented as the `?` and `~` modifiers on an event within an Event Chain. See [Events](_pages/Events)
 
