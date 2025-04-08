@@ -156,3 +156,5 @@ It is highly recommended that every event chain be ended with a blank line. This
 
 But technically anything other than a comment line and an event line will end the current event chain. Variable declarations, the end of the script section, if/when trigger lines and a new event chain will all end the current event chain. Thus it is possible to not have any blank lines in a script - it is just very difficult to read.
 
+## Special Event Modifiers
+See [Events](_pages/Events) for description of the event `?` and `~` modifiers - they only are used within an Event Chain.

@@ -269,7 +269,7 @@ FROMID TYPE TOID
 >There are no spaces in the actual format, they are only used for readability in this doc.
 
 `-` are normal wires, when the FROMID block is executed, it will also cause TOID block to execute.
-`~` are backup wires. If the emerge event in the FROMID block fails, it will casue the TOID block to execute. If the emerge block is successful, this wire will not be used.
+`~` are backup wires. If the emerge event in the FROMID block fails, it will cause the TOID block to execute. If the emerge block is successful, this wire will not be used.
 `?` are random wires. All of the random wires are considered a single set, and randomly just one of them will execute. This happens in addition to the normal wires and backup wires.
 
 Example:
@@ -291,3 +291,6 @@ Blocks 13 and 14 are backup wires. If block 8 is an emerge event and the emerge 
 >Random wires execute one of them in addition to what other wires may do.
 
 >Backup wires only execute if the emerge block fails.
+
+The use of the `?` wire internally is implemented as the `?` modifier on an event within an Event Chain. See [Events](_pages/Events)
+

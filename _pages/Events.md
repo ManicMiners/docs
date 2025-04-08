@@ -153,3 +153,79 @@ Both drill events and place events will signal change triggers for any tile chan
 
 Drill and change triggers may execute at the same time as the trigger that used the drill or place events.
 
+## Special Event Modifiers
+
+There are two special event modifiers. These may only be used on events within an Event Chain, and were added specifically for features needed by the block system.
+
+- Failed emerge operator `~`
+- Random event from a list `?`
+
+### Random event from a list.
+Within an Event Chain, all connective events that start with a question mark are treated as a list of event. Only one of them will be executed, the rest will be ignored. The event chosen is at random.
+
+Example:
+
+```
+MyChain::;
+?msg:"one";    # maybe we display this message
+?msg:"two";    # or this message
+?msg:"three";  # or this message, but only one event will be chosen at random
+```
+
+When the Event Chain MyChain is run, only one of the three msg lines will be chosen randomly. The others will be skipped. This modifier applies to any event line including called event chains.
+
+```
+MyChain::;
+?DoChain1;    # only one of these four event chains will be executed
+?DoChain2;    # only one of these four event chains will be executed
+?DoChain3;    # only one of these four event chains will be executed
+?DoChain4;    # only one of these four event chains will be executed
+```
+
+Any event that does not start with the `?` character (or the end of the chain) will end the list, and only one of the events in the list will be executed.
+
+### Emerge Event failed.
+There is a special modifier `~` that will cause an event to be executed if the emerge event fails. In the block system, this is how the backup wires are implemented. If the emerge event was successful, the event chain containing the `~` event will be terminated.
+
+Because a successful emerge will cause the `~` event to exit the current event chain, it is important to isolate the emerge and the `~` event from other logic.
+
+Example:
+
+```
+bool bEmergeGood;
+
+MyEvent::;
+DoEmerge;
+((bEmergeGood==true))[EmergeOk][EmergeBad];
+
+DoEmerge::;
+bEmergeGood=true;   # assume emerge will work
+emerge:2,3,A,CreatureIceMonster,0;
+~bEmergeGood=false;  # emerge failed
+
+```
+In the above example, either the EmergeOK or EmergeBad events will be called depending on if the emerge worked or not. By having the `~` operator on the last line of the chain, the chain will work as expected.
+
+Example of incorrect usage:
+```
+MyEvent::;
+emerge:2,3,A,CreatureIceMonster,0;
+~msg:"Monster failed to emerge";
+MoreStuff;     # incorrect, if the monster did emerge, this line is never executed
+```
+
+In the above example, the event chain MoreStuff will not execute if the emerge was successful since the ~msg line will fail and cause the event chain to end.
+
+The main point to remember is to have the `~` event as the last event of the event chain, then the engine behavior will be as expected and your coding will be easier. This is what the block system does when it turns the backup wires into internal event chains.
+
+You may have multiple failed events.
+```
+DoEmerge::;
+emerge:2,3,A,CreatureIceMonster,0;
+~EmergeFailed1;  # emerge failed
+~EmergeFailed2;  # emerge failed.
+```
+
+Both the  `~` events will be executed if the emerge fails. If the emerge event is successful, the event chain will exit on the first `~` line.
+
+
