@@ -13,9 +13,7 @@ Triggers by themselves do not do anything, they must be connected by wires to ei
 - A tile is placed.
 - A Creature is spawned.
 
-The one thing the blocks may do that script cannot do is have a back-up. If the first action cannot be performed (a creature cannot be spawned is the only case), then a backup wire may fire alternative action(s). Script does not have this ability - there is no way for script to know if an emerge event fails.
-
-Using the blocks system in the editor allows an easy way to visualize triggers and actions those triggers cause. Internally much of the block section is converted into internal event chains and the script engine is used to process events.
+The entire block system at map load time is converted into a number of internal event chains. Everything done by the block system is done internally by script. This includes the failed emerge event. The advantage of the block system is that it hides the complexity of script and visually presents triggers and events.
 
 It is possible for script to directly call the block system, and the block system can itself call event chains in the script section.
 
