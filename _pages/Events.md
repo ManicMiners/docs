@@ -161,7 +161,7 @@ There are two special event modifiers. These may only be used on events within a
 - Random event from a list `?`
 
 ### Random event from a list.
-Within an Event Chain, all connective events that start with a question mark are treated as a list of event. Only one of them will be executed, the rest will be ignored. The event chosen is at random.
+Within an Event Chain, all consecutive events that start with a question mark are treated as a list of event. Only one of them will be executed, the rest will be ignored. The event chosen is at random.
 
 Example:
 
