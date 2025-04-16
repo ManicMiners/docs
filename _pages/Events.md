@@ -228,4 +228,14 @@ emerge:2,3,A,CreatureIceMonster,0;
 
 Both the  `~` events will be executed if the emerge fails. If the emerge event is successful, the event chain will exit on the first `~` line.
 
+## Collapsing Walls
 
+In general a wall needs to be two  tiles thick. Drilling one of them, will collapse the other side except if the other side is a hidden area. Then you actually have to drill both.   If you want to make it so you only have to drill one wall for a hidden area - its very easy.  Three ways:
+- Visual block system. Put a change trigger on the wall you will drill, connect with a wire to a drill event to the other wall to automatically drill. you can connect multiple wires and drill multiple parts of the wall causing larger areas to collapse.
+- Script. Use a trigger:  if(drill:ROW,COL)[drill:ROW1,COL1]
+Either of these will work. If you have multiple places where the wall could be drilled, have a trigger for each one that can be drilled. You will find many maps use this. It is common to call an eventchain to drill many parts of the wall, causing multiple walls or a long wall to collapse
+- Editor, use flat mode and draw a single width wall. This can be confusing - it will show a squished wall tile that is only a single tile thick. The confusing part is - they only work as expected if they are enclosing an undiscovered area. Then you get a wall that is a single tile thick. But they can't be used as a wall for a discovered area. Why?  Walls need to be two tiles thick to prevent collapsing except if they are enclosing an undiscovered area. So if you use flatten mode where both sides are a discovered area - the wall will collapse at runtime.
+
+So most walls are two tiles thick to prevent collapsing. A call can be a single tile thick if it encloses a hidden area, and once the area is discovered all single tile thick walls will collapse that are also discovered on the other side.
+
+There is also a special cliff tile (listed as experimental in the UI) that can sort of be used in a similar way but it has its own behavior that you need play with - its really only intended to prevent objects from falling down but it also has some collapse behaviors. Normally you can't drill it but with blocks or script you can.
