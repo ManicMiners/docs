@@ -2,6 +2,13 @@
 
 Variables are containers for objects such as numbers and text. You can use them to keep track of values such as how many times the player has reinforced walls or how many caverns they have opened. Integer and float values are similar to what one would expect from any programming language.
 
+Variable names should all be unique and only defined a single time. Variable names should not be:
+- Already defined variable name.
+- An Event Chain name.
+- [A reserved word.](_pages/ReservedWords)
+
+>The script engine may not notify you in the logs of issues from duplicate names. If you have duplicate names it is considered undefined behavior.
+
 Variables also are used with many classes:
 
 - [arrow](_pages/ClassesArrow)

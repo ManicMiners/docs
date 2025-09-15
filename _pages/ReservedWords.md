@@ -251,9 +251,9 @@ These are not case sensitive since variable names and event chain names are not 
 |Z|Data Field|Height, 300 values per cell|
 
 ## Block system reserved words
-The Block system generates internal timer variable names and a number of event chains. The names of these change based on the number of blocks and it is undefined behavior for a developer to rely on any fixed name generated automatically by the block system.
+The Block system generates internal timer variable names and event chain names. The names of these change based on the number of blocks and it is undefined behavior for a developer to rely on any fixed name generated automatically by the block system.
 
-Developers should not use any variable names or event chain names that begin with the following names:
+Developers `should not` use any variable names or event chain names that begin with the following names:
 
 - CreatureEmergeEvent
 - FleeTo
@@ -263,3 +263,6 @@ Developers should not use any variable names or event chain names that begin wit
 - StartRandomSpawn
 - StopRandomSpawn
 - TimerTrigger
+
+## Duplicate Variable and Event Chain names
+The script engine may not notify you in the logs if you have declared a variable or event chain with a duplicate name. It is considered undefined behavior to have duplicate names from either variables or event chain names. It is also undefined behavior to use any of the reserved words as a variable or event chain name.

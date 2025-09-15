@@ -15,9 +15,16 @@ Event chain names are defined by a valid name followed by two semi-colons and ei
 	EVENT;
 ```
 
+Event chain names should all be unique and only defined a single time. Event Chain names should not be:
+- A variable name.
+- An already defined Event Chain name.
+- [A reserved word.](_pages/ReservedWords)
+
+>The script engine may not notify you in the logs of issues from duplicate names. If you have duplicate names it is considered undefined behavior.
+
 Event chain names follow the same rules as variables. They start with an alpha or underbar and are followed by optional alphas/digits/underbars followed by two semi-colons. It is the two semi-colons that identify an Event Chain. Do not use any of the reserved words for the event chain name. Using a reserved keyword as an event chain name may cause undefined behaviors/errors just like variables. [list of reserved words](_pages/ReservedWords).
 
->Technically the engine supports names (and variable names) that start with numeric(s) followed by at least one alpha or underbar - but it is really poor practice to do this - it violates modern programming standards. You will find this style in only a few older maps and is strongly discouraged. Thus it is `STRONGLY` encouraged that your variable names and event chain names start with either an alpha or underbar.
+>Technically the engine supports Event Chain names (and variable names) that start with numeric(s) followed by at least one alpha or underbar - but it is really poor practice to do this - it violates modern programming standards. You will find this style in only a few older maps and is strongly discouraged. Thus it is `STRONGLY` encouraged that your variable names and event chain names start with either an alpha or underbar.
 
 Within an event chain, the events will execute in order as they are written.
 
