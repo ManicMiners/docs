@@ -155,7 +155,8 @@ These are not case sensitive since variable names and event chain names are not 
 |PowerStation_C|Macro|Number of Power Stations.|
 |progress_path|Macro|Tile id of a progress path (13).|
 |qmsg|Event|Display message to user.|
-|random|Macro|Return random number [low,high]. Random(low)(high). Floats allowed
+|random|Macro|Return random number [low,high]. Random(low)(high). Floats allowed|
+|randomspawn|Event|Spawn creature collection in a random location|
 |rapidrider|Macro|Number of Rapid Riders.|
 |RapidRider_C|Macro|Number of Rapid Riders.|
 |RechargeSeamGoal_C|Collection|Visible recharge seams.|

@@ -30,6 +30,7 @@ Events describe to the game what you want it to do when a trigger is activated. 
 |pan|pan:ROW,COLUMN|The player's camera pans to the tile at ROW,COLUMN. The view direction does not change.|
 |pause|pause|Pauses the game. A bit weird right now as it stops the camera lag effect. The player can unpause with the pause button (P)|
 |place|place:ROW,COLUMN,ID|Place a tile with the specified [ID](_pages/LevelDataFile) in the level at the coordinates given by ROW and COLUMN.__**__|
+|randomspawn|randomspawn:COLLECTION|Spawn a given creature from a random location|
 |qmessage|qmsg:MsgStr|Display the message string MsgStr, wait for message to be acknowledged by user. You must use a string variable or a numeric value that will be displayed as a string - you cannot use a string constant.|
 |save|[save:MINERVAR]|Saves the last miner unit who activated a trigger into a variable.|
 |savebuilding|savebuilding:BUILDINGVAR|Saves the last building that activated a trigger into given building variable.|
@@ -188,6 +189,8 @@ Any event that does not start with the `?` character (or the end of the chain) w
 There is a special modifier `~` that will cause an event to be executed if the emerge event fails. In the block system, this is how the backup wires are implemented. If the emerge event was successful, the event chain containing the `~` event will be terminated.
 
 Because a successful emerge will cause the `~` event to exit the current event chain, it is important to isolate the emerge and the `~` event from other logic.
+
+> `randomspawn` event will also trigger the fail event if it fails to spawn a creature.
 
 Example:
 

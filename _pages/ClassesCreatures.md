@@ -95,11 +95,16 @@ Example spawning an Ice Monster from row 5 column 4.
 emerge:5,4,A,CreatureIceMonster_C,0;
 ```
 
+The `randomspawn` event will try and spawn a single creature anywhere in the discovered area of the map.
+```mms
+randomspawn:COLLECTION
+```
+
 Monsters may only spawn from a valid flat (non-corner) non-reenforced wall that is dirt, loose rock, hard rock.
 
 With script it is possible to give the appearance that a monster can spawn from other flat walls by changing the wall tile first to something that is spawnable, doing the spawn, then changing it back.
 
-Both single unit spawning and the below automatic monster spawning do not support changing the monster health or scale. Only monsters placed into the map via the map editor may hp/scale applied to them.
+Both single unit spawning and the below automatic monster spawning do not support changing the monster health or scale. Only monsters placed into the map via the map editor may have hp and scale applied to them.
 
 ## Automatic Monster Spawning
 
@@ -113,13 +118,14 @@ The following events control automatic pseudo random monster spawning in waves.
 |startrandomspawn:COLLECTION|Start the random spawn for the given collection.|
 |stoprandomspawn:COLLECTION|Stop the random spawn for the given collection.|
 
-Mainly added for slimy slugs, it work on monsters also.  Creatures are spawned on a random basis in waves until the the spawncap number of creatures are active. Creatures are spawned from any random valid  location in the discovered areas of the map. Valid locations are non-corner, not reenforced walls of dirt, loose rock, or hard rock.
+Mainly added for slimy slugs, it works on monsters also.  Creatures are spawned on a random basis in waves until the the spawncap number of creatures are active. Creatures are spawned from any random valid  location in the discovered areas of the map. Valid locations are non-corner, not reenforced walls of dirt, loose rock, or hard rock.
 
 If you want to have control over the spawn locations, you have to write your own logic using emerge or use the visual block triggers in the map editor.
 
 
 ## Making a creature flee
 Use the flee: event to cause a creature to flee to that location.  If you use a collection, all active monsters of that type will flee to that location. The location must be a valid location for the creature, once it gets there it expects to be able to leave the map as it normally would. Thus for slimy slugs, it must be a slug hole. For monsters it must be next to a non-corner wall that is not reenforced of dirt, loose rock, hard rock, or solid rock.
+>Once creatures are told to flee - they ignore all other `flee` events. If your base is along the path or vehicle runs across it - they will stop and do normal creature damage. If the creature flee'ing is interrupted by damaging your base, they may ignore the flee point and just exit.
 
 ```mms
 flee:MyMonster,row,col
