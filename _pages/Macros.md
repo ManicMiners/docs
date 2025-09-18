@@ -117,6 +117,8 @@ A few macros allow modification which changes game play. These may be used on th
 
 erosionscale is initially set to the value in the info section erosionscale key. This value is a multiplier on the time durations. By default 1.0, setting 2.0 will double the length of time for erosion. Changing this value in script will not change the time for the current phase of an erosion but it will be used when the tile transitions to the next phase. It does not appear to affect the delay (TODO need to verify), only the per phase interval.
 
+Small values less than 1.0 will accelerate the erosion, the closer to 0 the faster the erosion is.
+
 Setting to 0.0 will cause any future erosion to stop, and any current erosions will move to lava. Once set to 0, erosions will never restart even if you change it to back to any other non-zero value, the engine treats it as a global stop erosions for the remainder of the map.
 
 ### Air

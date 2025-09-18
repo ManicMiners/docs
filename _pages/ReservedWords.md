@@ -5,6 +5,7 @@ These are not case sensitive since variable names and event chain names are not 
 |Name|Type|Brief Description|
 |---|---|---|
 |A|Emerge Direction|Automatic.|
+|actionstations|Parameter|enable/disable value|
 |addrandomspawn|Event|Config random spawn.|
 |air|Macro|Air remaining.|
 |arrow|Variable|Arrow object.|

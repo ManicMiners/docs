@@ -83,14 +83,16 @@ where COLLECTION can be one of the following:
 
 |Collection|Description|
 |---|---|
-|miners|Toggle player's ability to teleport miners.|
-|vehicles|Toggle player's ability to teleport vehicles.|
+|actionstations|Toggle player's ability to turn on action stations.|
 |buildings|Toggle player's ability to teleport buildings.|
-|VEHICLENAME_C|Toggle player's ability to teleport a specific vehicle class.|
 |BUILDINGNAME_C|Toggle player's ability to teleport a specific building class.|
 |light/lights|Toggle all ambient light in the cavern. The player cannot override this. Vehicles have floodlights that still show and some miner helmets have a light that will still show.|
+|miners|Toggle player's ability to teleport miners.|
+|vehicles|Toggle player's ability to teleport vehicles.|
+|VEHICLENAME_C|Toggle player's ability to teleport a specific vehicle class.|
 
-Example - this event chain will turn off any ability to transport miners, vehicles, buildings or use explosives:
+
+Example - this event chain will turn off any ability to transport miners, vehicles, buildings or use explosives and disable action stations.
 
 ```mms
 TurnStuffOff::;
@@ -98,7 +100,9 @@ disable:vehicles;
 disable:miners;
 disable:buildings;
 disable:Dynamite_C;
+disable:actionstations;
 ```
+> disabling actionstations is changing how a player may attack monsters so think about using it very carefully.
 
 ## Math events
 Variable-types int, float and string have specific events that makes it possible to alter them while the game is running. This also work with some macros.
