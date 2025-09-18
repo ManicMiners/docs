@@ -67,6 +67,7 @@ These are not case sensitive since variable names and event chain names are not 
 |driven|Data Field Trigger|Trigger when a miner enters a vehicle.|
 |driver|Data Field|miner id of the driver. Same as driverid.|
 |driverid|Data Field|miner id of the driver. Same as driver.|
+|dynamite|Parameter|disable/enable parameter|
 |Dynamite_C|Collection|All dynamite outside of toolstore.|
 |E|Emerge Direction|East.|
 |eaten|Data Field|The number of crystals eaten/absorbed.|
@@ -152,6 +153,8 @@ These are not case sensitive since variable names and event chain names are not 
 |powered|Data Field|Same as power.|
 |poweroff|Data Field Trigger|Trigger when power is deactivated for a building.|
 |poweron|Data Field Trigger|Trigger when power is activated for a building.|
+|powerpath|Parameter|enable/disable value|
+|PowerPath_C|Macro|Number of Power Paths.|
 |powerstation|Macro|Number of Power Stations.|
 |PowerStation_C|Macro|Number of Power Stations.|
 |progress_path|Macro|Tile id of a progress path (13).|

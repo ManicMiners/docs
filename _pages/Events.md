@@ -84,10 +84,14 @@ where COLLECTION can be one of the following:
 |Collection|Description|
 |---|---|
 |actionstations|Toggle player's ability to turn on action stations.|
-|buildings|Toggle player's ability to teleport buildings.|
+|buildings|Toggle player's ability to teleport all buildings.|
 |BUILDINGNAME_C|Toggle player's ability to teleport a specific building class.|
+|dynamite|Toggle player's ability to use dynamite|
+|Dynamite_C|Toggle player's ability to use dynamite|
 |light/lights|Toggle all ambient light in the cavern. The player cannot override this. Vehicles have floodlights that still show and some miner helmets have a light that will still show.|
 |miners|Toggle player's ability to teleport miners.|
+|powerpath|Toggle player's ability to build power paths.|
+|PowerPath_C|Toggle player's ability to build power paths.|
 |vehicles|Toggle player's ability to teleport vehicles.|
 |VEHICLENAME_C|Toggle player's ability to teleport a specific vehicle class.|
 

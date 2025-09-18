@@ -30,6 +30,7 @@ There exist variable names that are reserved as macros. When used in Scripting, 
 |dirt|int|Returns tile id of dirt (26).|
 |docks|int|Returns number of Docks.|
 |Docks_C|int|Returns number of Docks.|
+|Dynamite_C|int|Returns number of dynamite outside of toolshed|
 |electricfence|int|Returns number of Fences.|
 |ElectricFence_C|int|Returns number of fence objects. Not a collection.|
 |erosionscale|float|Returns or sets the erosionscale.|
@@ -60,6 +61,7 @@ There exist variable names that are reserved as macros. When used in Scripting, 
 |orerefinery|int|Returns number of Ore Refineries.|
 |OreRefinery_C|int|Returns number of Ore Refineries.|
 |ore_seam|int|Returns tile id of an ore seam (46).|
+|PowerPath_C|int|Returns number of Power Paths.|
 |powerstation|int|Returns number of Power Stations.|
 |PowerStation_C|int|Returns number of Power Stations.|
 |progress_path|int|Returns tile id of a progress path (13).|

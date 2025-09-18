@@ -28,8 +28,9 @@ Environment Collections are special collections that are read only and are used 
 |NavModifierPowerPath_C|Amount of Power Path tiles, any type. Only finished paths.|
 |NavModifierRubble_C|Amount of Rubble tiles, any stage.|
 |NavModifierWater_C|Amount of water tiles.|
-|Ore_C|Number of Ore collected.  Can be changed by assigning **ore** macro with a new value.|
+|Ore_C|Number of Ore collected.  Can be changed by assigning `ore` macro with a new value.|
+|PowerPath_C|Number of Power Paths.|
 |RechargeSeamGoal_C|Number of discovered recharge seams.|
-|Stud_C|Number of Studs collected. Can be changed by assigning **studs** macro with a new value.|
+|Stud_C|Number of Studs collected. Can be changed by assigning `studs` macro with a new value.|
 
 
