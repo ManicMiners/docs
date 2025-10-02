@@ -79,9 +79,19 @@ The above code run after 5 game-seconds, increases the counter from 0 to 1 and d
 
 ## Ending an Event Chain.
 
-A blank line will end an event chain. In fact a trigger or variable statement will also end the event chain but that leaves you with very hard to read code. This means no blank lines (without comment) are allowed in an event chain. To make it easier for you to understand where the event chain ends, just have a blank line.
+All of these will end an event chain:
+- blank line (highly recommended)
+- comment line with leading space(s)
+- Last event on the line does not have a semi-colon
 
-## No spaces after ;
+>It is considered undefined behavior to not end an event chain via the above three methods.
+
+Manic Miner scripting is already hard to debug. If you always have a blank line after an event chain, it helps in readability which always leads to fewer bugs.
+
+- Having a comment with a leading space inside of an event chain always causes incorrect parsing by the engine but it may not show up in the logs at load time. These errors will show up in the runtime logs but may be hard to understand. Thus if you never have leading spaces for full line comments, you will never have this happen to you.
+- Leaving the semi-colon off on the last event chain line also can lead to accidental errors if you leave off a semi-colon on an event inside of the event chain. This will end the event chain, and the remaining lines are now errors. If you just always end events inside of an event chain with semi-colons and use a blank line to end the event chain, you will avoid that error.
+
+## No spaces after semi-colon ;
 Spaces are not allowed after the semi-colon character `;`  unless there is a comment character after the sequence of spaces.  Having spaces after `;` is the single most common error one can make. To find spaces, use a good text editor with an option to show spaces like Visual Studio Code or Notepad++
 
 ## return event
