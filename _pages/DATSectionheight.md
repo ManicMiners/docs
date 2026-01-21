@@ -8,11 +8,16 @@ The section has one more row than the height of map. Each row has one more colum
 
 There are rowcount+1 rows, each containing colcount+1 heights. Each height is a signed integer value followed by a comma. There are no spaces.
 
+0,0 is the upper left tile, and 2,2 is the lower right tile.
+
+For heights, 0,0 is the upper left corner, and 3,3 is the final lower right corner.
+
 Height values are in 300 units per tile, so a height of 300 is one tile higher than 0 and -300 is one tile lower than 0. These are the same units returned by the X, Y, Z data members in script.
 
 It is unknown if there is are maximum or minimum heights, by default new maps have all heights set to 0.
 
 Generally the border values all have 0 for heights. Holes in textures are sometimes seen at the edges of the map if heights are non-zero. Border heights are only those on the outside. In the 3x3 map above, there are 12 border heights and 4 interior heights.
+
 
 Example section for a 3x3 map where the inside is raised up.
 
@@ -26,3 +31,5 @@ heights{
 ```
 
 Map heights are set during map load and remain the same during play - there is no way to modify heights dynamically during runtime.
+
+The first row of data starts with the 0,0

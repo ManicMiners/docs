@@ -1,7 +1,9 @@
 # DAT Section tiles
 The tiles section is required and written by the map editor on every save. It contains the TileID of every tile in the map.
 
-The section has one line of columns values per rows in the map.
+0,0 is the upper left tile, and rows-1,cols-1 is the lower right tile.
+
+The section has one line of columns values starting at 0 per rows in the map.
 
 Each line contains a `TileID,` for that column tile. After all columns are written a new line is started.  Every value is followed by a comma. There are no spaces.
 

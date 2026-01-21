@@ -12,6 +12,8 @@ On a line by itself is the type of resource
 
 Starting on the next line is value for each tile in the map for that resource. This is identical to how the tiles section is formatted. There are rowcount rows of values, each line has colcount integers. Each integer value is followed by a comma with no space.
 
+0,0 is the upper left tile, and rows-1,cols-1 is the lower right tile.
+
 There may only be a single crystals and a single ore data. The order of them does not matter but the editor always writes the crystals section first.
 
 Example for a 3x3 map that has 5 ore and 10 crystals in the middle tile of the map.

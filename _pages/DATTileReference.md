@@ -76,22 +76,29 @@ Note that with script, the map designer is able to dynamically change a tile to 
 |64|wall|Cliff type 1 (experimental)|
 |65|wall|Cliff type 2 (experimental)|
 
-Floor tiles may have values that are +100. Those are undiscovered caverns and the map editor will automatically add the +100 value to those tiles during map save.  Wall tiles should not have the +100 values, since walls are never visible if the floor tile is also not visible.
+Dirt, loose rock, hard rock, and solid rock may have a +50 value added to them. That means it has been reinforced so it cannot cause a landslide nor can monsters emerge from it.
 
-During map read floor tiles that have the +100 value will be converted automatically to visible (the +100 will be removed) if the cavern is part of the open caves flag area.  When a cavern is discovered, all of the tiles discovered will have the +100 value removed from them.
+>Normally it is not possible to reinforce hard rock, but tile id 88 (solid rock regular + 50) is exactly that texture and can be placed by script. A development version of the game did allow reinforcing of solid rock in "Challenging Mode" which no longer exists.
 
-Dirt, loose rock, hard rock may have a +50 value added to them. That means it has been reenforced so it cannot cause a landslide nor can monsters emerge from it.
+Floor tiles may have values that are +100. Those are undiscovered caverns and the map editor will automatically add the +100 value to those tiles during map save. If your walls are two tiles thick, wall tiles should not have the +100 value added to them.
 
->Tile 0 is special - it stands for invalid texture or empty. The engine may generate warnings when using tile 0. Do not intentionally place tile 0 via script.
+>Wall tiles that are +100 are treated by the engine as flat walls. These are single thick walls. They cannot be created at runtime by script. Single thick walls must enclose an undiscovered area and if any are drilled all of them collapse. If you have two flat wall tiles thick, the engine converts them into normal wall tiles.
+
+During map read floor tiles that have the +100 value will be converted automatically to visible (the +100 will be removed) if the cavern is part of the open caves flag area.  When a cavern is discovered, all of the floor tiles discovered will have the +100 value removed from them.
+
+- Tile 0 is special - it stands for invalid texture or empty. The engine generates warnings when using tile 0. Do not intentionally place tile 0 via script.
+- Tiles 54 - 59 have unique textures that change based on biome.
+- Tiles 60 - 63 are floor tiles that have different amounts of rubble. None of that rubble will generate ore when cleared.
+- Tiles 76, 80, 84, 88 are reinforced dirt, loose rock, hard rock, and solid rock.
+- Tiles 66 - 99 are defined (some above) the others need to be viewed to see what they are for. Many of them are solid grey textures.
 
 The main wall types (dirt, loose rock, hard rock, solid rock, crystal Seam, Ore Seam, Recharge Seam) each have 4 different tiles. Unless you are trying to create a unique effect, there is only one that you use, the regular version. That tile will automatically be converted to the correct corner, edge, intersect by the game engine. The four types are:
-- Regular, where it has 3 neighbor tiles and 2 diagonal neighbors adjacent to each other. In general these are the only wall tile id's used.
-- Corner, where it has 4 neighbors and 3 diagonal neighbors
-- Edge, where it has 2 neighbor tiles and 1 diagonal neighbors,
-- Intersect, where it has 4 neighbors and 2 diagonal neighbors opposite to each other
+- Regular, flat section of a wall. In general these are the only wall tile id's used.
+- Outside corner, end or outside corner of a wall.
+- Edge, is a corner with a gap. (TODO verify)
+- Inside corner (intersect).
 
 The two cliff types are special - they act as walls but the wall is a single tile thick instead of the normal two tile think walls. They prevent movement across them and also prevent objects from moving across them. In general they are designed to deal with large differences in height to prevent vehicles, miners, and resources from falling down (and prevent monster from crossing them). Note that they are sometimes buggy but in general work.
 
-Note that with script using the `place` event, you have access to tiles 1 - 175. Some have biome specific textures. Careful use some of id's can display interesting effects depending on biome. 
+Note that with script using the `place` event, you have access to tiles 1 - 175. Some have biome specific textures, some do nothing, and some id's display interesting effects depending on biome. 
 
->Tiles 60 - 63 are floor tiles that have different amounts of rubble. None of that rubble will generate ore when cleared.
