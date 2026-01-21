@@ -88,6 +88,7 @@ These are not case sensitive since variable names and event chain names are not 
 |granitegrinder|Macro|Number of Granite Grinders.|
 |GraniteGrinder_C|Macro|Number of Granite Grinders.|
 |green|Color|Arrow colors.|
+|ground|Macro|Return tile id of ground (1).|
 |hard_rock|Macro|Tile ID of hard rock (34).|
 |heal|Event|Heal object.|
 |health|Data Field|Object hitpoints. Same has hp.|
@@ -173,6 +174,7 @@ These are not case sensitive since variable names and event chain names are not 
 |RockMonster|Collection|Rock Monsters.|
 |RockMonster_C|Collection|Rock Monsters.|
 |row|Data Field|Object row.|
+|rubble|Macro|Return tile id of rubble4 (5).|
 |S|Emerge Direction|South.|
 |save|Event|Save last miner that activated a trigger into a variable.|
 |savebuilding|Event|Save last building that activated a trigger into a variable.|

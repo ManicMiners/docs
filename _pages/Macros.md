@@ -27,7 +27,7 @@ There exist variable names that are reserved as macros. When used in Scripting, 
 |crystals|int|Returns the stored crystal count.|
 |Crystal_C|int|Returns the unstored crystal count.|
 |crystal_seam|int|Returns tile id of a crystal seam (42).|
-|dirt|int|Returns tile id of dirt (26).|
+|dirt|int|Returns tile id of dirt regular (26).|
 |docks|int|Returns number of Docks.|
 |Docks_C|int|Returns number of Docks.|
 |Dynamite_C|int|Returns number of dynamite outside of toolshed|
@@ -40,6 +40,7 @@ There exist variable names that are reserved as macros. When used in Scripting, 
 |get(ROW)(COLUMN)|int|Returns the tile ID of the specified coordinates. ROW COLUMN are ints.|
 |granitegrinder|int|Return Number of Granite Grinders.|
 |GraniteGrinder_C|int|Return Number of Granite Grinders.|
+|ground|int|Return tile id of ground (1).|
 |hard_rock|int|Returns tile id of hard rock (34).|
 |hostiles|int|Returns number of hostile units.|
 |hoverscout|int|Return Number of Hover Scouts.|
@@ -68,6 +69,7 @@ There exist variable names that are reserved as macros. When used in Scripting, 
 |random(MIN)(MAX)|int/float|Return random number from MIN to MAX.|
 |rapidrider|int|Return number of Rapid Riders.|
 |RapidRider_C|int|Return number of Rapid Riders.|
+|rubble|int|Return tile id of rubble4 (5).|
 |slugs|int|Returns number of slimy slugs.|
 |slug_hole|int|Returns tile id of slimy slug hole (12).|
 |smalldigger|int|Return number of Small Diggers.|
