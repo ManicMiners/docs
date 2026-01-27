@@ -143,35 +143,66 @@ The above will be computed on every tick. The same applies to use of any macro (
 
 ##  Reentrancy
 
-Timers and when triggers are subject to reentrancy - this is when the same code is re-executed while already executing that event chain.  For example lets say you have two drill triggers but they both call the same event. So one of the drill triggers happens and your event chain start executing, and a moment later the other drill trigger happens - interrupting the first execution and it calls again the same routine. One can protect against this case by using the following code pattern:
+Contrary to previous versions of this document, new testing has determined that the script engine is always run in synchronous mode. This means that one never has to worry about multiple event chains running at the same time.
+
+The engine has a queue of triggers waiting to be processed, and they are processed one at a time in the order they entered into the queue. 
+
+Timers are a bit special, they have a min and max time. Once a timer is ready, it may jump to the head of the queue so it can be processed. It is not clear if this always happens, but testing does seem to indicate that timers have a slightly different priority than other triggers.  Like all triggers, the timer must return from its event chain before any other trigger or timer may run.
+
+There is a wait event, this suspends the current event chain for a period of time, and allows other triggers to be executed.
+
+If any timer or trigger event chain uses the following events, the current event chain is paused waiting for the action of that to finish:
+- `drill:row,col`   Go drill that wall (and queue any other walls that collapse because of that) and execute its trigger.
+- `place:row,col,tile`  Change the tile to another. This can cause the drill trigger if what you replace causes the wall to collapse or change to ground.
+- `kill:unit`  Kill the miner, building, creature causing its .dead trigger to fire. That trigger will run and then return.
+- `wait:time`  Pause the current event chain for the given time period. It allows any other trigger to execute.
+
+What this means is that using place, drill, kill, or wait can cause another trigger to be called and your event chain will wait for that to return before continuing.
+
+Example:
 ```
-int allowOnce=0
+when(enter:5,4)[entered54]
+if(drill:5,6)[didDrill56]
+if(drill:6,7)[didDrill67]
 
-MyEvent::((allowOnce==0))[allowOnce=1][return];
-# the following logic will only be executed once
+entered54::;  # when unit enter this tile
+drill:5,6;    # drill 5,6. Wait until that drill trigger finishes
+drill:6,7;    # drill 6,7. Wait until that drill trigger finishes
+
+didDrill56::;
+# do whatever
+
+didDrill67::;
+# do whatever
 ```
-This pattern can be extended into a semaphore type of control to only allow a single execution of the logic at any time - ignoring any attempts to run while the first one is running.
+When a unit enters the 5,4 tile, it will start the entered54 event chain. That chain will drill the 5,6 wall and wait for the drill trigger to finish. Then it will drill the 6,7 wall and wait for that drill trigger to finish.
+
+> Using drill, place, kill, or wait can cause other triggers to run. You must be careful in your event chain calling sequences to guard against the same code being called again.  Remember - script only has global variables so event chains do not have local variables. Thus the script developer needs to make sure their global variables are not unintentionally changed.
+
+## wait event
+
+The wait event is special. What it does is tell the current event chain to pause for a bit, with the wait value specified by the parameter.
+
+While not generally useful, you can use `wait:0` to pause your event chain for as short as possible but give other pending triggers a chance to run.
+
+Pausing an event chain has a special side effect - it allows other triggers to execute.  So if there triggers waiting to run, they will get a chance to run.  Thus it is possible that through other triggers, your same code can be called again - this is call reentrancy.
+
+## protecting timers from reentrancy
+
+In particular, timers should check for this.  The following code snippet is one way to protect timers.
+
 ```
-int oneAtATime=0
+bool bInMyTimer=false
 
-MyEvent::((oneAtATime==0))[oneAtATime=1][return];
-# start of the logic
-...
-# end of the logic
-oneAtATime=0;
+MyTimer::;
+((bInMyTimer==false))[bInMyTimer=true][return];  # ignore if already inside
+# do your logic
+# end of your logic
+bInMyTimer=false;   # no longer inside
 ```
 
-Timer triggers can fire during the execution of the current event chain. Same for many movement / modification based triggers such as enter, drill, and change. Because the script only has global variables the script developer must be aware of these possible reentrancies.
+Generally timers are safe to do this to since a timer just a way to do some sort of regular processing and ignoring a timer should not change your behavior.
 
-## wait event and Reentrancy
-The wait event will suspend the current event chain. During the time waiting, other timers and triggers are allowed to run. When the specific time duration has exprired, the event chain will then run the events after the wait event. Internally the engine deals with the same event being called by changing the name of the current running eventchain to an internal name that is slightly different and unique. Once the wait period has expired, it is renamed back to its original name.  There is nothing the script developer needs to do - this is an internal implementation. But it is how the same event can be executed while a prior event is executing the wait. Thus you can have multiple event chains waiting at the same time - including multiple invocations of the same event chain.
-
-Since all variables are global, one must be careful of these cases and deal with it.
-
-## End of event chain.
-It is highly recommended that every event chain be ended with a blank line. This makes reading the script much easier - given how hard script is already to read due to lack of supported indentation and spaces.
-
-But technically anything other than a comment line and an event line will end the current event chain. Variable declarations, the end of the script section, if/when trigger lines and a new event chain will all end the current event chain. Thus it is possible to not have any blank lines in a script - it is just very difficult to read.
 
 ## Special Event Modifiers
 See [Events](_pages/Events) for description of the event `?` and `~` modifiers - they only are used within an Event Chain.

@@ -125,9 +125,7 @@ There are 4 types of event blocks:
 - Relay
 
 ### Event Call Event Block
-This block will call the specified event entered by the user. The even can be any script event or an EventChain. The most common use for this is to provide a way for your script to be called by the block system. The event chain will be called asynchronously so the block system does not wait for your event to return before continuing processing wires.
-
-The event chain name you provide will be scheduled to be called just as if some sort of trigger called that event.  
+This block will call the specified event entered by the user. The even can be any script event or an EventChain. The most common use for this is to provide a way for your script to be called by the block system. The block system will wait until your event chain returns before continuing its wire processing.
 
 ```
 ID/EventCallEvent:ROW,COL,COOLDOWN,NAME
@@ -204,7 +202,7 @@ ID/TriggerTimer:ROW,COL,NAME,DELAY,MAX,MIN
 >The name in this block does not change once the block is created. Thus script is allowed to access it for use in the stoptimer and starttimer events.
 
 ### Event Chain Block
-Event chains blocks define a user EventChain name which allows script to call into the block system. Once called by script, it will then chain to other blocks or creatures based on its connected wires. This is the only event chain name that may be called by script.  Be aware that calling this event chain name triggers connecting wires via a asynchronous system - think of this as invoking a trigger that immediately returns, and the actions from that trigger will eventually happen.
+Event chains blocks define a user EventChain name which allows script to call into the block system. Once called by script, it will then chain to other blocks or creatures based on its connected wires. This is the only event chain name that may be called by script.  The calling script will wait until the block system has processed the wires connected.
 
 Format:
 ```

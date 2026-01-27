@@ -147,7 +147,7 @@ Water and lava are special tiles. They require custom textures and the engine is
 - only lava
 - only non water/lava.
 
-Attempts to do more than one of these has non-deterministic results.  One must be aware that multiple triggers may fire around the same time and the same restrictions still apply so beware of these cases when modifying maps. Thus it is a good idea after using place to change tiles - if any of them could be water/lava, using a wait event with a short timeout is a good idea to allow the changes to be processed.
+Attempts to do more than one of these has undefined results.  A trigger that use drill or place that causes another drill or change trigger to fire still has the same restriction - you are still in the context of the calling trigger. Thus it is a good idea after using place to change tiles - if any of them could be water/lava, using a wait event with a short timeout is a good idea to allow the changes to be processed.
 
 A drill event is similar to a place event, so if you use drill, you cannot also place either water or lava from the same trigger without a wait event.
 
@@ -160,7 +160,7 @@ A drill event will signal drill triggers for any wall tile that is collapsed as 
 
 Both drill events and place events will signal change triggers for any tile changed by the events.
 
-Drill and change triggers may execute at the same time as the trigger that used the drill or place events.
+Drill and change triggers will be called from the event that used the drill or place events.
 
 ## Special Event Modifiers
 
