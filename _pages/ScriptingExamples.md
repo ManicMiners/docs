@@ -17,10 +17,10 @@ Note that drill triggers usually use `if` since once the wall is drilled, it is 
 ### Time based event
 
 ```mms    
-when(time:10)[place:6,7,11]
+if(time:10)[place:6,7,11]
 ```
 
-When `time` reaches 10 seconds, place a tile of water (ID 11) at row 6, column 7.
+When `time` reaches 10 seconds, place a tile of water (ID 11) at row 6, column 7. This is only done once.
 
 ### Crystal count
    
@@ -71,14 +71,14 @@ myBool=true;					# start drilling
 when(myBool==true)[DrillDrill]    # drill walls until this is false
  
 DrillDrill::;
-drill:myRow,myCol;
-wait:0.1;                       # wait 1/10 game second
+drill:myRow,myCol;              # drill the wall
 ((myCol>=6))myRow+=1;           # next row
 ((myCol<6))[myCol+=1][myCol=1]; # next col or back to start of new row
 ((myRow>=7))myBool=false;       # all done
+wait:0.5;                       # wait 1/10 game second
 ```
  
-The above example will drill out all the walls from 1,1 until 6,6 in the map. They will not drill as fast as possible since there is a 1/10 second delay after drilling every wall.  There are alternative ways to write similar logic using more event chains or even double nested loops.
+The above example will drill out all the walls from 1,1 until 6,6 in the map. They will not drill as fast as possible since there is a 1/2 second delay after drilling every wall.  There are alternative ways to write similar logic using more event chains or even double nested loops.
 
 ## Class Scripts
 
@@ -88,7 +88,7 @@ The above example will drill out all the walls from 1,1 until 6,6 in the map. Th
 when(drill:2,3)[msg:BuildingSupportStation_C]
 ```
 
-When you drill a wall at position 2,3 a number indicating the total amount of constructed Support Stations will be displayed. This works with any collection.  `BuildingSupportStation_C` being a colleciton will return an int that is the number of them. `msg:` event wants a string parameter, so the int value is converted to a string and thus displayed.
+When you drill a wall at position 2,3 a number indicating the total amount of constructed Support Stations will be displayed. This works with any collection.  `BuildingSupportStation_C` being a collection will return an int that is the number of them. `msg:` event wants a string parameter, so the int value is converted to a string and thus displayed.
 
 ### Class gets teleported
 

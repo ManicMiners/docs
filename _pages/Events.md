@@ -250,3 +250,18 @@ Either of these will work. If you have multiple places where the wall could be d
 So most walls are two tiles thick to prevent collapsing. A call can be a single tile thick if it encloses a hidden area, and once the area is discovered all single tile thick walls will collapse that are also discovered on the other side.
 
 There is also a special cliff tile (listed as experimental in the UI) that can sort of be used in a similar way but it has its own behavior that you need play with - its really only intended to prevent objects from falling down but it also has some collapse behaviors. Normally you can't drill it but with blocks or script you can.
+
+# Winning and Losing
+There are two events to directly win the map or lose the map.
+- win:message
+- lose:message
+
+These override any objectives. Using win event cause the map to be won. Using lose causes the map to be lost. Once the map is won or lost, these events have no action.
+
+Each has an optional message that may be displayed to the user. This message may be a string variable so a custom built at runtime message may be shown.
+
+With these events, you may have custom ways to win the map outside of the objective section. And you may have a custom way to lose the map.
+
+Once a map has been won or lost, triggers may continue to fire until the map is exited by the player. In the case of lose, there is a short period before the briefingfailure message is displayed. If your triggers could display messages during that time, it might be confusing to the player. Thus it is a good idea if using win / lose that you also have a variable that can be tested by your event chains to ignore some triggers.
+
+

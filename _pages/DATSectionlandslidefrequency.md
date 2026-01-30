@@ -54,5 +54,5 @@ Landslides damage miners, some vehicles, and buildings. The following vehicles a
 - VehicleCargoCarrier_C is water vehicle and there are no landslides over water.
 - VehicleLoaderDozer_C is immune to landslide damage.
 - VehicleRapidRider_C is a water vehicle and there are no landslides over water.
-- VehicleTunnelScout_C is ariel vehicle so it moves above the landslide.
+- VehicleTunnelScout_C is aerial vehicle so it moves above the landslide.
 - VehicleTunnelTransport_C is aerial vehicle so it moves above the landslide.

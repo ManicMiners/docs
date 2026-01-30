@@ -10,15 +10,15 @@ Each line of text is considered a paragraph, auto-wrapping to fit inside of the 
 
 There is no known limit on the size of this section, the player is given a scrollable dialog box to read the text.
 
-Use of the keyword `CADET` (upper case) will be automatically filled in with the players name when the dialog is displayed.
+Use of the keyword `Cadet` will be automatically filled in with the players name when the dialog is displayed.
 
 Example:
 
 ```
 briefingfailure{
-CADET - you failed to locate the missing base - wasting valuable resources and time.
+Cadet - you failed to locate the missing base - wasting valuable resources and time.
 
-Chief is disappointed in your performance and suggests defending your initial base better while quickly exploring more distant areas may help locate the missing base.
+Chief is disappointed in your performance and suggests defending your initial base better. You need to quickly explore more distant areas to locate the missing base.
 
 Review your plan and be ready to try again.
 }

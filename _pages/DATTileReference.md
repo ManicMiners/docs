@@ -78,7 +78,7 @@ Note that with script, the map designer is able to dynamically change a tile to 
 
 Dirt, loose rock, hard rock, and solid rock may have a +50 value added to them. That means it has been reinforced so it cannot cause a landslide nor can monsters emerge from it.
 
->Normally it is not possible to reinforce hard rock, but tile id 88 (solid rock regular + 50) is exactly that texture and can be placed by script. A development version of the game did allow reinforcing of solid rock in "Challenging Mode" which no longer exists.
+>Normally it is not possible to reinforce solid rock, but tile id 88 (solid rock regular + 50) is exactly that texture and can be placed by script. A development version of the game did allow reinforcing of solid rock in "Challenging Mode" which no longer exists.
 
 Floor tiles may have values that are +100. Those are undiscovered caverns and the map editor will automatically add the +100 value to those tiles during map save. If your walls are two tiles thick, wall tiles should not have the +100 value added to them.
 
@@ -98,7 +98,7 @@ The main wall types (dirt, loose rock, hard rock, solid rock, crystal Seam, Ore 
 - Edge, is a corner with a gap. (TODO verify)
 - Inside corner (intersect).
 
-The two cliff types are special - they act as walls but the wall is a single tile thick instead of the normal two tile think walls. They prevent movement across them and also prevent objects from moving across them. In general they are designed to deal with large differences in height to prevent vehicles, miners, and resources from falling down (and prevent monster from crossing them). Note that they are sometimes buggy but in general work.
+The two cliff types are special. They are a single tile width wall that is not part of normal walls. They do not block visibility nor are they part of the enclosed area for hidden caverns. They are there to prevent objects from moving across them. In general they are designed to deal with large differences in height to prevent vehicles, miners, and resources from falling down (and prevent monster from crossing them). Note that they are sometimes buggy but in general work.
 
 Note that with script using the `place` event, you have access to tiles 1 - 175. Some have biome specific textures, some do nothing, and some id's display interesting effects depending on biome. 
 

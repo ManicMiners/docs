@@ -15,13 +15,13 @@ Facts about air:
 - Support Stations each generate ten air per second. Thus each Support Station may support ten miners indefinitely.
 - Discovering a cavern will start returning ten air per floor tile discovered. This air is returned over time, no more than 100 air per second is returned.
 - Script has a air macro - this allows direct modification of air. This works in both types of maps!
-- air can never be less than zero. If zero, the player loses the map.
+- Air can never be less than zero. If zero, the player loses the map if it is an air requirement map.
 
 > Even if air goes to 0 in a no air requirement map (by using script), the player never loses the game. 
 
 ## air macro in script
 
-Scripting has the `air` read/write macro. It allow direct and immediate change to the air in the cavern. If adding air, the air instantly is updated - it is not added over time. Air will always be capped to the maximum air amount set in the info section `oxygen:` keyword. Air cannot be less than 0, any attempt to set air to a negative value is automatically set to 0. Setting air to 0 will cause the player to lose the map.
+Scripting has the `air` read/write macro. It allow direct and immediate change to the air in the cavern. If adding air, the air instantly is updated - it is not added over time. Air will always be capped to the maximum air amount set in the info section `oxygen:` keyword. Air cannot be less than 0, any attempt to set air to a negative value is automatically set to 0. Setting air to 0 will cause the player to lose the map if the map has air requirement.
 
 Script examples with air
 ```

@@ -8,13 +8,13 @@ Each line of text is considered a paragraph, auto-wrapping to fit inside of the 
 
 There is no known limit on the size of this section, the player is given a scrollable dialog box to read the text.
 
-Use of the keyword `CADET` (upper case) will be automatically filled in with the players name when the dialog is displayed.
+Use of the keyword `Cadet` will be automatically filled in with the players name when the dialog is displayed.
 
 Example:
 
 ```
 briefingsuccess{
-CADET - you found the missing base, restored power to it and recovered all of the required crystals - job well done!
+Cadet - you found the missing base, restored power to it and recovered all of the required crystals - job well done!
 
 Use of the tunnel scout allowed you to quickly discover the caverns before they were filled with the rising lava.
 

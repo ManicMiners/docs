@@ -65,7 +65,7 @@ This allows an objective to be completed when a specific tile is visible. This t
 ```mms
 discovertile:row,col/Text Message
 ```
-row,col are the row and column for the tile. The text to display is after the forward slash character.
+row,col are the row and column for the tile. The text to display is after the forward slash character. The text should not have double quotes around it.
 
 There is no known limit on the number of discovertile keys in the objective section.
 
@@ -87,7 +87,7 @@ There is no known limit on the number of findbuilding keys in the objective sect
 Use of resources: key adds a crystal, ore and stud resources required to automatically win. The format is:
 
 ```mms
-resources: crystals,ore,studs
+resources:crystals,ore,studs
 ```
 
 Where crystals, ore, studs are positive integers with the amount of that resource needed. If a value is 0 then that resource has no collection requirement.
@@ -95,7 +95,7 @@ Where crystals, ore, studs are positive integers with the amount of that resourc
 Example of requiring 20 crystals, 30 ore and 40 building studs to win the map.
 ```mms
 objectives{
-resources: 20,30,40
+resources:20,30,40
 }
 ```
 
@@ -109,7 +109,7 @@ The variable: tag allows an objective that has access to conditional statements 
 variable:conditional/Text message
 ```
 
-Unlike script the conditional is not inside of double parentheses.
+Unlike script the conditional is not inside of double parentheses.  The text message should not have double quotes around it.
 
 Example
 ```mms
@@ -126,6 +126,6 @@ There is no known limit on the number of variable objectives in the objectives s
 
 >Be careful with use of variable conditions. If the condition is in error - or it is not possible in the script logic for this condition to be true, the user may not be able to win map unless the script uses the `win` event. This may itself be useful to add new objectives that are communicated by the `msg` event that are not part of the objective display.
 
->Script allow another way to win the map by use of the `win` event. This event causes the player to immediately win the map.  This allows alternative way(s) to win the map.  There is also a `lose` event that causes the player to lose the map.
+>Script allow another way to win the map by use of the `win:message` event. This event causes the player to immediately win the map.  This allows alternative way(s) to win the map.  There is also a `lose:message` event that causes the player to lose the map. See [Events](_pages/Events)
 
 

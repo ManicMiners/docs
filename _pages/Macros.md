@@ -133,9 +133,9 @@ Setting to 0.0 will cause any future erosion to stop, and any current erosions w
 Two macros require parameters:
 
 |Name|Brief Description|
-|---|---|---|
-|get(row)(col)| row and col are integers for a row and column in the map, returns tile at that row,col |
-|random(low)(high)| returns random number from [low,high], low and high are inclusive.
+|----|---|
+|get(row)(col)| row and col are integers for a row and column in the map, returns tile at that row,col|
+|random(low)(high)| returns random number from low to high, both are inclusive.
 
 The parameters cannot be another macro that requires parameters. For example, if you wanted to return a random tile from a 32x32 map - you `cannot` do this:
 
