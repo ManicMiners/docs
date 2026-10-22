@@ -56,9 +56,9 @@ Additional formatting rules are found in this set of documents.
 The [Events](_pages/Events) page has misc information related to events including the rules for collapsing walls.
 
 # Undefined Behavior
-The terms `non-deterministic` and `undefined` are used interchangeably in this documentation. They are both referring to either behavior or syntax that cannot be depended upon by the map developer. Basically - don't do that.
+The term `undefined` is used in this documentation. This refers to either behavior or syntax that cannot be depended upon by the map developer. Basically - don't do that.
 
 ## Links
  - [Manic Miners Discord](https://discord.gg/85k8JHz)
  - [Manic Miners Homepage](https://manicminers.baraklava.com/)
- - [Manic Miners Wiki](https://manicminers.fandom.com/)
+ 

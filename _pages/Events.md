@@ -140,7 +140,7 @@ Since place and drill only modify a single tile - the game collects up all of th
 
 Note that a wait event also allows processing of all queued place events. Thus one can do animations - change some tiles - wait - change more tiles - wait, etc.
 
-The engine has a limit on the number of tiles that may be modified in the context of a trigger - that value is somewhere around 630 tiles. Non-deterministic results may happen changing too many tiles. This can be seen in the map editor where a range goes red when it is too large. Script that changes hundreds of tiles may cause a lag spike to the user and thus one may find better interactivity by limiting updates to a smaller number of tiles and doing them over a time period.
+The engine has a limit on the number of tiles that may be modified in the context of a trigger - that value is somewhere around 630 tiles. Tiles changes may be ignored or incorrect changing too many tiles. This can be seen in the map editor where a range goes red when it is too large. Script that changes hundreds of tiles may cause a lag spike to the user and thus one may find better interactivity by limiting updates to a smaller number of tiles and doing them over a time period.
 
 Water and lava are special tiles. They require custom textures and the engine is not able to mix new water and lava tiles in the context of the same trigger. Also trying to place either water or lava tile(s) when other tiles are changed has the same limitation.  Thus in the context of a single trigger you may only place
 - only water

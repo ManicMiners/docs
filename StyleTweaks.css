@@ -5,3 +5,9 @@
     --base-line-height     				: 1.4;
 
 }
+
+/* Cover page: credits block stays centered, lines inside are left-justified */
+section.cover .cover-main .cover-credits {
+    display: inline-block;
+    text-align: left;
+}
