@@ -30,7 +30,7 @@ These are the class properties specific to vehicles.  Properties start with the 
 |driven|Trigger when a miner enters a vehicle.|
 |hurt|Trigger when a vehicle takes damage.|
 |new|Trigger when a vehicle is created. Collection required.|
-|upgrade|Trigger when vehicle is upgraded.|
+|upgrade|Trigger when a vehicle is upgraded.|
 
 ## Properties
 >These properties are read-only and are used as a macro, returning a value. They may be used in assignment events on the right side, or in conditions for testing. These cannot be used on collections, they must be used with a specific vehicle.
@@ -41,9 +41,9 @@ These are the class properties specific to vehicles.  Properties start with the 
 |column|int|Returns column of the vehicle. Same as col.|
 |driver|int|miner id of the driver. Same as driverid.|
 |driverid|int|miner id of the driver. Same as driver.|
-|health|int|Returns current hitpoints. Same has hp.|
-|hp|int|Returns current hitpoints. Same has health.|
-|id|int|Returns the ID the vehicle.|
+|health|int|Returns current hitpoints. Same as hp.|
+|hp|int|Returns current hitpoints. Same as health.|
+|id|int|Returns the ID of the vehicle.|
 |row|int|Returns row of the vehicle.|
 |tile|int|Current tile ID vehicle is over. Same as tileid.|
 |tileid|int|Current tile ID vehicle is over. Same as tile.|
@@ -54,7 +54,7 @@ These are the class properties specific to vehicles.  Properties start with the 
 Note: there is no level property on vehicles to query upgrades
 
 ## Collections
-Each native vehicle class has their own collection. When used by itself without a trigger property, it is treated as a read-only macro returning the total number of vehicles of that type. Collections may only use trigger properties.
+Each native vehicle class has its own collection. When used by itself without a trigger property, it is treated as a read-only macro returning the total number of vehicles of that type. Collections may only use trigger properties.
 
 |Name|Description|
 |---|---|
@@ -67,18 +67,18 @@ Each native vehicle class has their own collection. When used by itself without 
 |VehicleRapidRider_C|Rapid Riders|
 |VehicleSmallDigger_C|Small Diggers|
 |VehicleSmallTransportTruck_C|Small Transport Trucks|
-|VehicleSMLC_C|Small Mobile Laser Cutter|
+|VehicleSMLC_C|Small Mobile Laser Cutters|
 |VehicleTunnelScout_C|Tunnel Scouts|
 |VehicleTunnelTransport_C|Tunnel Transports|
 
-> `vehicle` keyword may also be used as a collection in triggers.  It is a special collection referring to all vehicles. It cannot be used as a macro to return number of vehicles but can be used in triggers. To detect every new vehicle:
-```msg
+> `vehicle` keyword may also be used as a collection in triggers.  It is a special collection referring to all vehicles. It cannot be used as a macro to return the number of vehicles but can be used in triggers. To detect every new vehicle:
+```mms
 when(vehicle.new)[MyNewVehicleChain]
 ```
 
 
 ## Macros
-These are not collections. They return the number of objects as an int. Some of the names end in _C but they are NOT collections, they are legacy macros.
+These are not collections. They return the number of objects as an int. Some of the names end in _C but they are NOT collections; they are legacy macros.
 
 These may be used in assignments on the right side or in conditions.
 
@@ -137,13 +137,13 @@ when(vehicle.dead)[msg:VehicleDied]
 when(VehicleSmallDigger_C.dead)[msg:SmallDiggerDied]
 ```
 
-When you lose your Small Digger named Sofia you will get two messages: One because the named vehicle got teleported and one because a vehicle of the Small Digger collection got teleported. You would expect a third message being created by "vehicle.dead" but it is overriden by "Sofia.dead" which means a third message will not be displayed.
+When you lose your Small Digger named Sofia, you will get two messages: one because the named vehicle got teleported and one because a vehicle of the Small Digger collection got teleported. You would expect a third message to be created by "vehicle.dead" but it is overridden by "Sofia.dead" which means a third message will not be displayed.
 
-### A miner enter a vehicle 
+### A miner enters a vehicle 
 
 ```mms
 vehicle Sofia=1
 when(Sofia.driven)[GiantEruption]
 ```
 
-When a miner enter the vehicle Sofia a chain event will be called. 
+When a miner enters the vehicle Sofia, an event chain will be called. 

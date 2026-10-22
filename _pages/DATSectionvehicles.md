@@ -1,12 +1,12 @@
 # DAT Section vehicles
 
-The vehicles section lists all of the vehicles in the map. These vehicles do not have to be visible, they may be in undiscovered caverns.
+The vehicles section lists all of the vehicles in the map. These vehicles do not have to be visible; they may be in undiscovered caverns.
 
 Each vehicle is on its own line. There is no known limit to the number of vehicles in a map. 
 
-Vehicles may be marked as essential, if the player in any way loses the vehicle - they lose the map.
+Vehicles may be marked as essential; if the player in any way loses the vehicle - they lose the map.
 
-Optionally a miner may be the driver, in that case the miner is also listed in the miner section.
+Optionally a miner may be the driver; in that case, the miner is also listed in the miners section.
 
 Format:
 ```
@@ -48,7 +48,7 @@ Translation:
 Rotation:
 - P= floating point in degrees (-180 - 180). Pitch around the X axis.
 - Y= floating point in degrees (-180 - 180). Yaw around the Y axis.
-- R= floating point in degrees (-180 - 180), Roll around the Z axis.
+- R= floating point in degrees (-180 - 180). Roll around the Z axis.
 
 Scale  (notice no colon character)
 - X= floating point X scale, default is 1.0.
@@ -57,7 +57,7 @@ Scale  (notice no colon character)
 
 ## UPGRADES
 
-Optional value - only valid for vehicles that may be updated. Vehicles have class specific upgrades.
+Optional value - only valid for vehicles that may be upgraded. Vehicles have class-specific upgrades.
 
 ```
 upgrades=name1/name2/...
@@ -73,7 +73,7 @@ Upgrades for each vehicle class:
 |VehicleChromeCrusher_C|UpDrill/ UpLaser/ UpScanner/ UpEngine/ |
 |VehicleGraniteGrinder_C|UpDrill/ UpEngine/ |
 |VehicleHoverScout_C|UpEngine/ |
-|VehicleLMLC_C|UpEngine/ UpLaser/ UpAddNav |
+|VehicleLMLC_C|UpEngine/ UpLaser/ UpAddNav/ |
 |VehicleLoaderDozer_C|UpEngine/ |
 |VehicleRapidRider_C|UpCargoHold/ UpAddDrill/ |
 |VehicleSmallDigger_C|UpDrill/ UpEngine/ |
@@ -84,14 +84,15 @@ Upgrades for each vehicle class:
 
 >VehicleTunnelTransport_C has no upgrades and cannot have the Upgrades= field.
 
->LMLC has a hidden upgrade `UpAddNav` which allows the vehicle to travel over lava. It can only be applied to vehicles defined in the map file. Currently there is no way for a user to add this upgrade in game.
+>LMLC has a hidden upgrade `UpAddNav` which allows the vehicle to travel over lava. It can only be applied to vehicles defined in the map file. Currently there is no way for a user to add this upgrade in-game.
+
 ## DRIVER
 
 Optional value - has the miner id that is driving the vehicle. If a miner is not driving, this field is missing.
 ```
 driver=value
 ```
-value is the Miner ID from the section miners.
+value is the Miner ID from the miners section.
 
 ## ID
 Required field. Every starting vehicle has a unique vehicle ID automatically filled in by the map editor. Once that vehicle has left the game, any script variable associated with that vehicle is now invalid, any triggers for that variable are invalid, and the ID is then reused for new vehicles transported down.
@@ -99,11 +100,11 @@ Required field. Every starting vehicle has a unique vehicle ID automatically fil
 ```
 ID=value
 ```
-value is the id of the vehicle. ID's start at 0 and increment by one for every vehicle in the game. 
+value is the id of the vehicle. IDs start at 0 and increment by one for every vehicle in the game. 
 
 ## ESSENTIAL
 
-Optional value - vehicles that are essential for the player to complete the map have this tag. This means if the vehicle is destroyed or lost in any manner including manual teleportation, will cause the player to lose the map. These vehicles will have a floating star over them to identify them as essential.
+Optional value - vehicles that are essential for the player to complete the map have this tag. This means that if the vehicle is destroyed or lost in any manner, including manual teleportation, the player will lose the map. These vehicles will have a floating star over them to identify them as essential.
 
 Format:
 ```
@@ -112,7 +113,7 @@ Essential=true
 
 # Example
 
-Within an 8x8 map,  Chrome Crusher that has all upgrades, a driver, and is essential. The ID for this vehicle is 9, and the miner ID is 2 (so a miner with an ID of 2 will be in the sections miners).
+Within an 8x8 map, a Chrome Crusher that has all upgrades, has a driver, and is essential. The ID for this vehicle is 9, and the miner ID is 2 (so a miner with an ID of 2 will be in the miners section).
 
 ```
 VehicleChromeCrusher_C,Translation: X=1138.967 Y=673.896 Z=0.187 Rotation: P=-0.000061 Y=-77.706703 R=-0.237549 Scale X=1.000 Y=1.000 Z=1.000,upgrades=UpDrill/UpLaser/UpScanner/UpEngine/,driver=2,ID=9,Essential=true

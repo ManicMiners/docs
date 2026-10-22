@@ -1,14 +1,14 @@
 # Macros
-There exist variable names that are reserved as macros. When used in Scripting, these can return, and in some cases set a value.
+There exist variable names that are reserved as macros. When used in Scripting, these can return, and in some cases set, a value.
 
 ## Macros used read-only.
 
 - Macros used in a condition are not modified.
-- Macros used as part of an assignment type of math expression on the right hand side are not modified.
+- Macros used as part of an assignment type of math expression on the right-hand side are not modified.
 - Collections will return the number in the collection.
-- Macros that refer to built in counts will return that value.
+- Macros that refer to built-in counts will return that value.
 - Most values are int, but some return float and they are converted automatically to int if the other operands are int.
-- Two macros have parameters: `get` and `random`. The parameters themselves cannot be another macro that requires parameters (see below)
+- Two macros have parameters: `get` and `random`. The parameters themselves cannot be another macro that requires parameters (see below).
 
 |Macro|Return Type|Function|
 |----|----|----|
@@ -17,12 +17,12 @@ There exist variable names that are reserved as macros. When used in Scripting, 
 |Bat_C|int|Returns number of bats.|
 |buildings|int|Returns the amount of buildings.|
 |building_path|int|Returns tile id of a building path (14).|
-|cargocarrier|int|Return number of Cargo Carriers.|
-|CargoCarrier_C|int|Return number of Cargo Carriers.|
-|chromecrusher|int|Return number of Chrome Crushers.|
-|ChromeCrusher_C|int|Return number of Chrome Crushers.|
-|clock|float|Returns the amount of seconds that have passed since the level. Same as time.|
-|ConstructedBuilding|building|Return the last constructed building.|
+|cargocarrier|int|Returns number of Cargo Carriers.|
+|CargoCarrier_C|int|Returns number of Cargo Carriers.|
+|chromecrusher|int|Returns number of Chrome Crushers.|
+|ChromeCrusher_C|int|Returns number of Chrome Crushers.|
+|clock|float|Returns the amount of seconds that have passed since the level began. Same as time.|
+|ConstructedBuilding|building|Returns the last constructed building.|
 |creatures|int|Returns number of creatures.|
 |crystals|int|Returns the stored crystal count.|
 |Crystal_C|int|Returns the unstored crystal count.|
@@ -30,7 +30,7 @@ There exist variable names that are reserved as macros. When used in Scripting, 
 |dirt|int|Returns tile id of dirt regular (26).|
 |docks|int|Returns number of Docks.|
 |Docks_C|int|Returns number of Docks.|
-|Dynamite_C|int|Returns number of dynamite outside of toolshed|
+|Dynamite_C|int|Returns amount of dynamite outside of the Tool Store.|
 |electricfence|int|Returns number of Fences.|
 |ElectricFence_C|int|Returns number of fence objects. Not a collection.|
 |erosionscale|float|Returns or sets the erosionscale.|
@@ -38,21 +38,21 @@ There exist variable names that are reserved as macros. When used in Scripting, 
 |geologicalcenter|int|Returns number of Geological Centers.|
 |GeologicalCenter_C|int|Returns number of Geological Centers.|
 |get(ROW)(COLUMN)|int|Returns the tile ID of the specified coordinates. ROW COLUMN are ints.|
-|granitegrinder|int|Return Number of Granite Grinders.|
-|GraniteGrinder_C|int|Return Number of Granite Grinders.|
-|ground|int|Return tile id of ground (1).|
+|granitegrinder|int|Returns number of Granite Grinders.|
+|GraniteGrinder_C|int|Returns number of Granite Grinders.|
+|ground|int|Returns tile id of ground (1).|
 |hard_rock|int|Returns tile id of hard rock (34).|
 |hostiles|int|Returns number of hostile units.|
-|hoverscout|int|Return Number of Hover Scouts.|
-|lastbuilding|building|Return the last building that activated a trigger.|
-|lastcreature|creature|Return the last creature that activated a trigger.|
-|lastminer|miner|Return the last miner that activated a trigger.|
-|lastvehicle|vehicle|Return the last vehicle that activated a trigger.|
+|hoverscout|int|Returns number of Hover Scouts.|
+|lastbuilding|building|Returns the last building that activated a trigger.|
+|lastcreature|creature|Returns the last creature that activated a trigger.|
+|lastminer|miner|Returns the last miner that activated a trigger.|
+|lastvehicle|vehicle|Returns the last vehicle that activated a trigger.|
 |lava|int|Returns tile id of lava (6).|
-|LMLC|int|Return number of Large Mobile Laser Cutters.|
-|LMLC_C|int|Return number of Large Mobile Laser Cutters.|
-|loaderdozer|int|Return number of Loader Dozers.|
-|LoaderDozer_C|int|Return number of Loader Dozers.|
+|LMLC|int|Returns number of Large Mobile Laser Cutters.|
+|LMLC_C|int|Returns number of Large Mobile Laser Cutters.|
+|loaderdozer|int|Returns number of Loader Dozers.|
+|LoaderDozer_C|int|Returns number of Loader Dozers.|
 |loose_rock|int|Returns tile id of loose rock (30).|
 |miners|int|Returns the amount of miners.|
 |mininglaser|int|Returns number of Mining Lasers.|
@@ -66,18 +66,18 @@ There exist variable names that are reserved as macros. When used in Scripting, 
 |powerstation|int|Returns number of Power Stations.|
 |PowerStation_C|int|Returns number of Power Stations.|
 |progress_path|int|Returns tile id of a progress path (13).|
-|random(MIN)(MAX)|int/float|Return random number from MIN to MAX.|
-|rapidrider|int|Return number of Rapid Riders.|
-|RapidRider_C|int|Return number of Rapid Riders.|
-|rubble|int|Return tile id of rubble4 (5).|
+|random(MIN)(MAX)|int/float|Returns a random number from MIN to MAX.|
+|rapidrider|int|Returns number of Rapid Riders.|
+|RapidRider_C|int|Returns number of Rapid Riders.|
+|rubble|int|Returns tile id of rubble4 (5).|
 |slugs|int|Returns number of slimy slugs.|
 |slug_hole|int|Returns tile id of slimy slug hole (12).|
-|smalldigger|int|Return number of Small Diggers.|
-|SmallDigger_C|int|Return number of Small Diggers.|
-|smalltransporttruck|int|Return number of Small Transport Trucks.|
-|SmallTransportTruck_C|int|Return number of Small Transport Trucks.|
-|SMLC|int|Return number of Small Mobile Laser Cutters|
-|SMLC_C|int|Return number of Small Mobile Laser Cutters|
+|smalldigger|int|Returns number of Small Diggers.|
+|SmallDigger_C|int|Returns number of Small Diggers.|
+|smalltransporttruck|int|Returns number of Small Transport Trucks.|
+|SmallTransportTruck_C|int|Returns number of Small Transport Trucks.|
+|SMLC|int|Returns number of Small Mobile Laser Cutters|
+|SMLC_C|int|Returns number of Small Mobile Laser Cutters|
 |solid_rock|int|Returns tile id of solid rock (38).|
 |studs|int|Returns number of building studs.|
 |supportstation|int|Returns number of Support Stations.|
@@ -88,12 +88,12 @@ There exist variable names that are reserved as macros. When used in Scripting, 
 |toolstore|int|Returns number of toolstores.|
 |Toolstore_C|int|Returns number of toolstores.|
 |true|int|Returns 1. For use only with bools.|
-|tunnelscout|int|Return number of Tunnel Scouts.|
-|TunnelScout_C|int|Return number of Tunnel Scouts.|
-|tunneltransport|int|Return number of Tunnel Transports.|
-|TunnelTransport_C|int|Return number of Tunnel Transports.|
+|tunnelscout|int|Returns number of Tunnel Scouts.|
+|TunnelScout_C|int|Returns number of Tunnel Scouts.|
+|tunneltransport|int|Returns number of Tunnel Transports.|
+|TunnelTransport_C|int|Returns number of Tunnel Transports.|
 |upgradestation|int|Returns number of Upgrade Stations.|
-|UpgradeStation|int|Returns number of Upgrade Stations.|
+|UpgradeStation_C|int|Returns number of Upgrade Stations.|
 |vehicles|int|Returns the amount of vehicles.|
 |water|int|Returns tile id of water (11).|
 
@@ -106,7 +106,7 @@ All collection classes may be used as a macro and they will return an int that i
 
 ## Macros that may be modified
 
-A few macros allow modification which changes game play. These may be used on the left side of an assignment type of event.
+A few macros allow modification which changes gameplay. These may be used on the left side of an assignment type of event.
 
 |Macro|Assignment Type|Function|
 |----|----|----|
@@ -119,11 +119,11 @@ A few macros allow modification which changes game play. These may be used on th
 
 ### erosionscale
 
-erosionscale is initially set to the value in the info section erosionscale key. This value is a multiplier on the time durations. By default 1.0, setting 2.0 will double the length of time for erosion. Changing this value in script will not change the time for the current phase of an erosion but it will be used when the tile transitions to the next phase. It does not appear to affect the delay (TODO need to verify), only the per phase interval.
+erosionscale is initially set to the value in the info section erosionscale key. This value is a multiplier on the time durations. The default is 1.0; setting 2.0 will double the length of time for erosion. Changing this value in script will not change the time for the current phase of an erosion but it will be used when the tile transitions to the next phase. It does not appear to affect the delay (TODO need to verify), only the per-phase interval.
 
-Small values less than 1.0 will accelerate the erosion, the closer to 0 the faster the erosion is.
+Small values less than 1.0 will accelerate the erosion; the closer to 0, the faster the erosion is.
 
-Setting to 0.0 will cause any future erosion to stop, and any current erosions will move to lava. Once set to 0, erosions will never restart even if you change it to back to any other non-zero value, the engine treats it as a global stop erosions for the remainder of the map.
+Setting to 0.0 will cause any future erosion to stop, and any current erosions will move to lava. Once set to 0, erosions will never restart even if you change it back to any other non-zero value; the engine treats it as a global stop of erosion for the remainder of the map.
 
 ### Air
 
@@ -143,7 +143,7 @@ The parameters cannot be another macro that requires parameters. For example, if
 mytile=get(random(0)(31),random(0)(31));   # BAD not allowed
 ```
 
-Nested parameters are not allowed. To do the above you have to compute the row and column first - saving values into int's and use those ints.
+Nested parameters are not allowed. To do the above you have to compute the row and column first - save the values into ints, and use those ints.
 
 ```mms
 int myrow=0
@@ -161,12 +161,12 @@ int arrays have the same limitation - array indexes cannot be another array.
 
 ```mms	
 int CrystalGoal=3
-string myMsg=You have collected 3 crystals!
+string myMsg="You have collected 3 crystals!"
 	
-if(crystals>=CrystalGoal)(msg:myMsg)
+if(crystals>=CrystalGoal)[msg:myMsg]
 ```
 
-The above code make the game display a message once when the player has collected 3 or more crystals.
+The above code makes the game display a message once when the player has collected 3 or more crystals.
 
 ```mms
 AddResources::;   # give player resources

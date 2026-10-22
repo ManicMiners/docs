@@ -1,12 +1,12 @@
 # DAT Section buildings
 
-The buildings section lists all of the buildings in the map. These buildings do not have to be visible, they may be in undiscovered caverns.
+The buildings section lists all of the buildings in the map. These buildings do not have to be visible; they may be in undiscovered caverns.
 
-Buildings may be part of an objective, in that case they are listed in both the objectives and buildings section.
+Buildings may be part of an objective; in that case, they are listed in both the objectives and buildings sections.
 
 Each building is on its own line. There is no known limit to the number of buildings in a map. Undefined behavior may occur if buildings overlap each other. Buildings are not subject to map editor placement rules - the engine will try as best as possible to put the building in the given location with the provided rotation and scale. A building may be unusable if incorrectly placed.
 
-Buildings may be marked as essential, if the player in any way loses the building - they lose the map.
+Buildings may be marked as essential; if the player in any way loses the building - they lose the map.
 
 > Buildings do not have an ID!
 
@@ -50,7 +50,7 @@ Translation:
 Rotation:
 - P= floating point in degrees (-180 - 180). Pitch around the X axis.
 - Y= floating point in degrees (-180 - 180). Yaw around the Y axis.
-- R= floating point in degrees (-180 - 180), Roll around the Z axis.
+- R= floating point in degrees (-180 - 180). Roll around the Z axis.
 
 Scale  (notice no colon character)
 - X= floating point X scale, default is 1.0.
@@ -59,28 +59,28 @@ Scale  (notice no colon character)
 
 ## LEVEL
 
-Optional value - only valid for building that may be updated. Provides the upgrade level
+Optional value - only valid for buildings that may be upgraded. Provides the upgrade level.
 
 ```
 Level=value
 ```
 
-Where the value is the upgrade level of the building. The value must be a valid upgrade level for that building. By default, all buildings have a level 1.
+Where the value is the upgrade level of the building. The value must be a valid upgrade level for that building. By default, all buildings are level 1.
 
 ## TELEPORT
 
-Optional value - buildings that are intended to display teleport down animation at map start or after discovery will have this value.
+Optional value - buildings that are intended to display the teleport-down animation at map start or after discovery will have this value.
 
 Format:
 ```
 Teleport=True
 ```
 
-By default every building has a false value - it will be fully shown instantly upon discovery or map load.
+By default, every building has a false value - it will be fully shown instantly upon discovery or map load.
 
 ## ESSENTIAL
 
-Optional value - buildings that are essential for the player to complete the map have this tag. This means if the building is destroyed or lost in any manner including manual teleportation, will cause the player to lose the map. These buildings will have a floating star over them to identify them as essential.
+Optional value - buildings that are essential for the player to complete the map have this tag. This means that if the building is destroyed or lost in any manner, including manual teleportation, the player will lose the map. These buildings will have a floating star over them to identify them as essential.
 
 Format:
 ```

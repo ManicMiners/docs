@@ -2,9 +2,9 @@
 
 The miners section lists all of the starting miners in the game. Each miner is on its own line, and every miner has a unique ID number.
 
-Miners are from level one through level five, may carry up to five items, and be trained in up to six jobs. They may be flagged as essential, and the player will lose the map if the miner is teleported for any reason.
+Miners are from level one through level five, may carry up to five items, and may be trained in up to six jobs. They may be flagged as essential, in which case the player will lose the map if the miner is teleported for any reason.
 
-Miners listed in the objectives sections must also be in the miners section. Miners listed in the vehicle section as driving a vehicle must exist in the miners section.
+Miners listed in the objectives section must also be in the miners section. Miners listed in the vehicle section as driving a vehicle must exist in the miners section.
 
 Format:
 
@@ -19,7 +19,7 @@ Required field. Every starting miner has a unique miner ID automatically filled 
 ```
 ID=value
 ```
-value is the id of the miners. ID's start at 0 and increment by one for every miner in the game. 
+value is the id of the miner. IDs start at 0 and increment by one for every miner in the game. 
 
 ## TRANSLATION
 
@@ -38,7 +38,7 @@ Translation:
 Rotation:
 - P= floating point in degrees (-180 - 180). Pitch around the X axis.
 - Y= floating point in degrees (-180 - 180). Yaw around the Y axis.
-- R= floating point in degrees (-180 - 180), Roll around the Z axis.
+- R= floating point in degrees (-180 - 180). Roll around the Z axis.
 
 Scale  (notice no colon character)
 - X= floating point X scale, default is 1.0.
@@ -47,7 +47,7 @@ Scale  (notice no colon character)
 
 ## OPTIONS
 
-This is a list of optional options, each ending in a forward slash character with no spaces. Options may be jobs known by the miner, objects carried by the miner or its level.  While the order during map load, the editor always writes the options in the order of: objects/jobs/level
+This is a list of optional options, each ending in a forward slash character with no spaces. Options may be jobs known by the miner, objects carried by the miner or its level.  While the order does not matter during map load, the editor always writes the options in the order of: objects/jobs/level
 
 
 ### Objects
@@ -68,7 +68,7 @@ Weapons:
  
 > Only one of the four weapons may be carried. It is not valid to list multiple weapons for the same miner.
 
-> The level of the miner determines how many objects they may hold. Every miner starts at level one and may hold two items, each increase in level lets the miner hold an additional item. Thus a level 5 miner may hold all 5 objects plus one of the weapons.
+> The level of the miner determines how many objects they may hold. Every miner starts at level one and may hold two items; each increase in level lets the miner hold an additional item. Thus a level 5 miner may hold all 5 objects plus one of the weapons.
 
 ### Jobs
 Jobs are all optional. Miners may learn up to six jobs (skills).
@@ -81,14 +81,14 @@ Jobs are all optional. Miners may learn up to six jobs (skills).
 - JobSailor/ 
 
 ### Level
-By default every miner is level 1. Each use of the `Level/` tag increases the miner level, thus a level five miner will have 4 upgrades.
+By default every miner is level 1. Each use of the `Level/` tag increases the miner level; thus a level five miner will have 4 upgrades.
 ```
 Level/Level/Level/Level/
 ```
 
 ## ESSENTIAL
 
-Optional value - miners that are essential for the player to complete the map have this tag. This means if the miner is teleported in any manner including manual teleportation, will cause the player to lose the map. These miners will have a floating star over them to identify them as essential.
+Optional value - miners that are essential for the player to complete the map have this tag. This means that if the miner is teleported in any manner, including manual teleportation, the player will lose the map. These miners will have a floating star over them to identify them as essential.
 
 Format:
 ```
@@ -96,7 +96,7 @@ Essential=true
 ```
 
 ## Example
-Within a 8x8 map, a level 5 miner carrying all tools and a pusher beam and knows all jobs and is essential.
+Within an 8x8 map, a level 5 miner that carries all tools and a pusher beam, knows all jobs, and is essential.
 
 ```
 ID=4,Translation: X=1644.653 Y=1701.715 Z=53.095 Rotation: P=0.000000 Y=142.691574 R=0.000000 Scale X=1.000 Y=1.000 Z=1.000,Drill/BeamPusher/Sandwich/Spanner/Hammer/Shovel/JobExplosivesExpert/JobDriver/JobEngineer/JobGeologist/JobPilot/JobSailor/Level/Level/Level/Level/,Essential=true

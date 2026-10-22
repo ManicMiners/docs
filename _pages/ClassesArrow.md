@@ -32,6 +32,6 @@ It is highly recommended to review the Arrow examples in ManicMiners\Levels\DEMO
 
 Arrows have two display properties. First is the bouncing arrow - all arrow variables draw the exact same arrow. Arrows also have a highlight property - this is the blinking highlight of the tile in the color of the arrow variable.   `showarrow` only shows the arrow, `highlight` only shows the highlight, `highlightarrow` does both at the same time.
 
-Arrows were primarily put in for the tutorials and have limited use outside of tutorial type of maps - but it does allow the user to be notified of something they need to pay attention to by the map designer.
+Arrows were primarily put in for the tutorials and have limited use outside of tutorial type of maps - but they do allow the map designer to notify the user of something that needs their attention.
 
 Arrow variables `cannot be assigned to each other`. They cannot be used in any expression, conditional or assignment and may only be used with the above events.

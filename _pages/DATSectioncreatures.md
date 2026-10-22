@@ -10,7 +10,7 @@ TRANSLATION
 ID,HP,SLEEP
 ```
 
->Bats have no mechanic in the game - they are for visual effect only and they move around in a small swarm in a random manner. Historically Bats would scare miners but the mechanic was removed from Manic Miners since it could adversely affect game play. Bats have an ID and a creature script variable may be assigned to them and they exist for the duration of the game. Bats cannot have the HP or SLEEP properties.
+>Bats have no mechanic in the game - they are for visual effect only and they move around in a small swarm in a random manner. Historically, Bats would scare miners but the mechanic was removed from Manic Miners since it could adversely affect gameplay. Bats have an ID and a creature script variable may be assigned to them and they exist for the duration of the game. Bats cannot have the HP or SLEEP properties.
 
 ## COLLECTION
 This is the collection class of the creature and is one of:
@@ -39,7 +39,7 @@ Translation:
 Rotation:
 - P= floating point in degrees (-180 - 180). Pitch around the X axis.
 - Y= floating point in degrees (-180 - 180). Yaw around the Y axis.
-- R= floating point in degrees (-180 - 180), Roll around the Z axis.
+- R= floating point in degrees (-180 - 180). Roll around the Z axis.
 
 Scale  (notice no colon character)
 - X= floating point X scale, default is 1.0.
@@ -53,7 +53,7 @@ Required field. Every starting creature has a unique creature ID automatically f
 ```
 ID=value
 ```
-value is the id of the creature. ID's start at 0 and increment by one for every creature in the game. 
+value is the id of the creature. IDs start at 0 and increment by one for every creature in the game. 
 
 
 ## HP
@@ -77,7 +77,7 @@ Sleep=true
 Indicates the creature is sleeping. If the creature is awake, this field is not used.
 
 ## Examples
-Various creatures on a 8x8 map with different scales and properties.
+Various creatures on an 8x8 map with different scales and properties.
 
 ```
 CreatureSlimySlug_C

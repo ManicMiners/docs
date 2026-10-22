@@ -1,6 +1,6 @@
-TileID's are used in the Dat tiles section and are also used in the script `place:` event.
+TileIDs are used in the DAT tiles section and are also used in the script `place:` event.
 There are two main types of tiles.
-- floor tiles. These tiles allow traversal across (in some manner) and create the space for game play.
+- floor tiles. These tiles allow traversal across (in some manner) and create the space for gameplay.
 - wall tiles. These are two tiles thick and some are drillable. When a wall tile collapses, it becomes a floor tile, usually with rubble.
 
 The info section contains rowcount and colcount - these are the height and width of the map. Note that the map border is usually solid rock regular (38).
@@ -82,23 +82,23 @@ Dirt, loose rock, hard rock, and solid rock may have a +50 value added to them. 
 
 Floor tiles may have values that are +100. Those are undiscovered caverns and the map editor will automatically add the +100 value to those tiles during map save. If your walls are two tiles thick, wall tiles should not have the +100 value added to them.
 
->Wall tiles that are +100 are treated by the engine as flat walls. These are single thick walls. They cannot be created at runtime by script. Single thick walls must enclose an undiscovered area and if any are drilled all of them collapse. If you have two flat wall tiles thick, the engine converts them into normal wall tiles.
+>Wall tiles that are +100 are treated by the engine as flat walls. These are single thick walls. They cannot be created at runtime by script. Single thick walls must enclose an undiscovered area and if any are drilled all of them collapse. If flat walls are two tiles thick, the engine converts them into normal wall tiles.
 
-During map read floor tiles that have the +100 value will be converted automatically to visible (the +100 will be removed) if the cavern is part of the open caves flag area.  When a cavern is discovered, all of the floor tiles discovered will have the +100 value removed from them.
+During map read, floor tiles that have the +100 value will be converted automatically to visible (the +100 will be removed) if the cavern is part of the open caves flag area.  When a cavern is discovered, all of the floor tiles discovered will have the +100 value removed from them.
 
 - Tile 0 is special - it stands for invalid texture or empty. The engine generates warnings when using tile 0. Do not intentionally place tile 0 via script.
 - Tiles 54 - 59 have unique textures that change based on biome.
 - Tiles 60 - 63 are floor tiles that have different amounts of rubble. None of that rubble will generate ore when cleared.
 - Tiles 76, 80, 84, 88 are reinforced dirt, loose rock, hard rock, and solid rock.
-- Tiles 66 - 99 are defined (some above) the others need to be viewed to see what they are for. Many of them are solid grey textures.
+- Tiles 66 - 99 are defined (some above); the others need to be viewed to see what they are for. Many of them are solid grey textures.
 
 The main wall types (dirt, loose rock, hard rock, solid rock, crystal Seam, Ore Seam, Recharge Seam) each have 4 different tiles. Unless you are trying to create a unique effect, there is only one that you use, the regular version. That tile will automatically be converted to the correct corner, edge, intersect by the game engine. The four types are:
-- Regular, flat section of a wall. In general these are the only wall tile id's used.
+- Regular, flat section of a wall. In general these are the only wall tile IDs used.
 - Outside corner, end or outside corner of a wall.
 - Edge, is a corner with a gap. (TODO verify)
 - Inside corner (intersect).
 
-The two cliff types are special. They are a single tile width wall that is not part of normal walls. They do not block visibility nor are they part of the enclosed area for hidden caverns. They are there to prevent objects from moving across them. In general they are designed to deal with large differences in height to prevent vehicles, miners, and resources from falling down (and prevent monster from crossing them). Note that they are sometimes buggy but in general work.
+The two cliff types are special. They are a single-tile-width wall that is not part of normal walls. They do not block visibility nor are they part of the enclosed area for hidden caverns. They are there to prevent objects from moving across them. In general they are designed to deal with large differences in height to prevent vehicles, miners, and resources from falling down (and prevent monsters from crossing them). Note that they are sometimes buggy but generally work.
 
-Note that with script using the `place` event, you have access to tiles 1 - 175. Some have biome specific textures, some do nothing, and some id's display interesting effects depending on biome. 
+Note that with script using the `place` event, you have access to tiles 1 - 175. Some have biome-specific textures, some do nothing, and some IDs display interesting effects depending on biome. 
 

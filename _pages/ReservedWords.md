@@ -1,6 +1,6 @@
 # Reserved Words
 List of keywords in alphabetical order used by the script engine. These should not be used as variable names or event chain names.  Doing so will have undefined behavior!
-These are not case sensitive since variable names and event chain names are not case sensitive.
+These are not case-sensitive since variable names and event chain names are not case-sensitive.
 
 |Name|Type|Brief Description|
 |---|---|---|
@@ -77,7 +77,7 @@ These are not case sensitive since variable names and event chain names are not 
 |enable|Event|Enable object|
 |enter|Trigger|Trigger when object enters tile.|
 |EventErosion_C|Collection|Active erosions.|
-|EventLandslide_C|Collection|Active active landslides.|
+|EventLandslide_C|Collection|Active landslides.|
 |erosionscale|Macro|Global erosion scale factor|
 |false|boolean|bool false or numeric 0.|
 |findbuilding|Objective|Objective section keyword.|
@@ -91,7 +91,7 @@ These are not case sensitive since variable names and event chain names are not 
 |ground|Macro|Return tile id of ground (1).|
 |hard_rock|Macro|Tile ID of hard rock (34).|
 |heal|Event|Heal object.|
-|health|Data Field|Object hitpoints. Same has hp.|
+|health|Data Field|Object hitpoints. Same as hp.|
 |hidearrow|Event|Hide arrow object.|
 |highlight|Event|Highlight tile.|
 |highlightarrow|[Event]|showarrow and highlight at once.|
@@ -99,7 +99,7 @@ These are not case sensitive since variable names and event chain names are not 
 |hover|Trigger|Trigger when mouse is over a tile.|
 |hoverscout|Macro|Number of Hover Scouts.|
 |HoverScout_C|Macro|Number of Hover Scouts.|
-|hp|Data Field|Object hitpoints. Same has health.|
+|hp|Data Field|Object hitpoints. Same as health.|
 |hurt|Data Field Trigger|Trigger when object takes damage.|
 |IceMonster|Collection|Ice Monsters.|
 |IceMonster_C|Collection|Ice Monsters.|
@@ -132,8 +132,8 @@ These are not case sensitive since variable names and event chain names are not 
 |lose|Event|Lose the map.|
 |miner|Variable / Class|Miner object or class.|
 |miners|Macro|Miners discovered or active.|
-|mininglaser|Macro|Number of Geological Centers.|
-|MiningLaser_C|Macro|Number of Geological Centers.|
+|mininglaser|Macro|Number of Mining Lasers.|
+|MiningLaser_C|Macro|Number of Mining Lasers.|
 |monsters|Macro|Number of monsters.|
 |msg|Event|Display a message to user.|
 |N|Emerge Direction|North.|
@@ -179,7 +179,7 @@ These are not case sensitive since variable names and event chain names are not 
 |save|Event|Save last miner that activated a trigger into a variable.|
 |savebuilding|Event|Save last building that activated a trigger into a variable.|
 |savecreature|Event|Save last creature that activated a trigger into a variable.|
-|savevehicle|Event|Save last vehicle that activated a triggger into a variable.|
+|savevehicle|Event|Save last vehicle that activated a trigger into a variable.|
 |shake|Event|Shake camera.|
 |showarrow|Event|Show arrow object.|
 |SlimySlug|Collection|Slimy Slugs.|
@@ -214,7 +214,7 @@ These are not case sensitive since variable names and event chain names are not 
 |teleportpad|Macro|Number of Teleport Pads.|
 |TeleportPad_C|Macro|Number of Teleport Pads.|
 |tick|Event Chain|Called on every engine tick. Not recommended.|
-|tile|Data Field|TileID for objectt.|
+|tile|Data Field|TileID for object.|
 |tileid|Data Field|same as tile.|
 |time|Macro / Trigger|Game time or trigger.|
 |timer|Variable|Timer object.|
@@ -225,7 +225,7 @@ These are not case sensitive since variable names and event chain names are not 
 |tunnelscout|Macro|Number of Tunnel Scouts.|
 |tunneltransport|Macro|Number of Tunnel Transports.|
 |TunnelTransport_C|Macro|Number of Tunnel Transports.|
-|upgrade|Trigger when vehicle is upgraded.|
+|upgrade|Data Field Trigger|Trigger when vehicle is upgraded.|
 |upgraded|Trigger|Not working, don't use.|
 |upgradestation|Macro|Number of Upgrade Stations.|
 |UpgradeStation_C|Macro|Number of Upgrade Stations.|
@@ -242,7 +242,7 @@ These are not case sensitive since variable names and event chain names are not 
 |VehicleRapidRider_C|Collection|Rapid Riders|
 |VehicleSmallDigger_C|Collection|Small Diggers|
 |VehicleSmallTransportTruck_C|Collection|Small Transport Trucks|
-|VehicleSMLC_C|Collection|Small Mobile Laser Cutter|
+|VehicleSMLC_C|Collection|Small Mobile Laser Cutters|
 |VehicleTunnelScout_C|Collection|Tunnel Scouts|
 |VehicleTunnelTransport_C|Collection|Tunnel Transports|
 |wait|Event|Suspend event chain for a given period of time modified by game speed.|
@@ -254,7 +254,7 @@ These are not case sensitive since variable names and event chain names are not 
 |win|Event|Win the map.|
 |X|Data Field|Column, 300 values per cell|
 |Y|Data Field|Row, 300 values per cell|
-|yellow|Colors|Arrow colors.|
+|yellow|Color|Arrow colors.|
 |Z|Data Field|Height, 300 values per cell|
 
 ## Block system reserved words

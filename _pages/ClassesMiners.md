@@ -10,7 +10,7 @@ miner Charlie     # miner unassigned, will be assigned later.
 - Miner variables not assigned may later be assigned via `=lastminer` or `save`.
 - Miner variables may be assigned to each other.
 - Unassigned Miner variables cannot be used in a trigger.
-- It is common to use `miner` collection class in the trigger and use `=lastminer` or `save` in an event chain.
+- It is common to use the `miner` collection class in the trigger and use `=lastminer` or `save` in an event chain.
 - Undiscovered miners and their triggers are inactive until they are discovered.
 
 >Specifying an id only works on miners that are part of the map. There is no way to dynamically assign at runtime a miner using the id.
@@ -27,8 +27,8 @@ These are the class properties specific to miners.  Properties start with the do
 |dead|Trigger when a miner dies.|
 |new|Trigger when a miner is created. Requires collection. |
 |click|Trigger when a miner is clicked.|
-|hurt|Trigger when a miner take damage.|
-|levelup|Trigger when miners upgrade level is increased.|
+|hurt|Trigger when a miner takes damage.|
+|levelup|Trigger when a miner's upgrade level is increased.|
 
 ## Properties
 >These properties are read-only and are used as a macro, returning a value. They may be used in assignment events on the right side, or in conditions for testing. These cannot be used on collections, they must be used with a specific miner.
@@ -37,8 +37,8 @@ These are the class properties specific to miners.  Properties start with the do
 |---|---|---|
 |col|int|Returns column of the miner.|
 |column|int|Returns column of the miner. Same as col.|
-|health|int|Returns current hitpoints. Same has hp.|
-|hp|int|Returns current hitpoints. Same has health.|
+|health|int|Returns current hitpoints. Same as hp.|
+|hp|int|Returns current hitpoints. Same as health.|
 |level|int|Returns upgrade level of the miner.|
 |row|int|Returns row of the miner.|
 |stamina|int|same as hp.|
@@ -48,15 +48,15 @@ These are the class properties specific to miners.  Properties start with the do
 |Y|int|Row, 300 values per cell|
 |Z|int|Height, 300 values per cell|
 
-Note: that there does not appear to be any way to detect miners skills.
+Note: there does not appear to be any way to detect a miner's skills.
 
 ## Collections
 
 >Undiscovered miners are inactive and do not receive triggers until they are discovered. There is only a single special collection for miners.
 
 
-`miner` keyword may be used as a collection in triggers.  It is a special collection in that it cannot be used as a macro to return number of miners but can be used in triggers. To detect every new miner:
-```msg
+`miner` keyword may be used as a collection in triggers.  It is a special collection in that it cannot be used as a macro to return the number of miners but can be used in triggers. To detect every new miner:
+```mms
 when(miner.new)[MyNewMinerChain]
 ```
 
@@ -75,7 +75,7 @@ The `enable` and `disable` events support disabling transporting of miners and r
 ### A miner gets teleported 
 
 ```mms
-	#First we bind our variable to a object of the miner class.
+	#First we bind our variable to an object of the miner class.
 	miner Charlie=3
 	
 	#Then we create a message to display upon him being teleported.
@@ -85,4 +85,4 @@ The `enable` and `disable` events support disabling transporting of miners and r
 	when(Charlie.dead)[msg:MyString]
 ```
 
-When the miner Charlie gets teleported up a message will be displayed.
+When the miner Charlie gets teleported up, a message will be displayed.

@@ -4,9 +4,9 @@ Conditions allow some sort of comparison and allow both true and false events to
 
 `LHS`compare`RHS`
 
-- `LHS` is the left hand side and can be a variable, macro, or numeric literal that returns a value. It is never modified.
+- `LHS` is the left-hand side and can be a variable, macro, or numeric literal that returns a value. It is never modified.
 - `compare` is one of the logical operations.
-- `RHS` is the right hand side and can be a variable, macro or numeric literal that returns a value. It is never modified.
+- `RHS` is the right-hand side and can be a variable, macro or numeric literal that returns a value. It is never modified.
 
 ## Logical operators
 
@@ -27,11 +27,11 @@ There are three types of conditions.
 - Condition event.
 
 
-For a trigger, the conditions are describe as:
+For a trigger, the conditions are described as:
 
-`OCCURENCE`(`TRIGGER`)((`OptionalCONDITION`))[`EVENT_IF_TRUE`][`OPTIONAL_EVENT_IF_FALSE`]
+`OCCURRENCE`(`TRIGGER`)((`OptionalCONDITION`))[`EVENT_IF_TRUE`][`OPTIONAL_EVENT_IF_FALSE`]
 
-TRIGGER can be itself a comparison. For example:
+TRIGGER can itself be a comparison. For example:
 
 ```mms
 if(air<500)[MyEvent]
@@ -39,16 +39,16 @@ if(air<500)[MyEvent]
 
 This trigger will fire a single time once the air is under 500, calling the MyEvent event chain.  Notice that the trigger condition is surrounded with single braces. Notice that triggers do not end in a semi-colon.
 
-A Trigger may have an optional CONDITION. It is surrounded with double braces just like an event condition.  What the engine does is wait for the given trigger to be true (in this case air<500) then it will evaluate the optional condition. If that is true the true event is executed, if it was false, the optional false event is executed
+A Trigger may have an optional CONDITION. It is surrounded with double braces just like an event condition.  What the engine does is wait for the given trigger to be true (in this case air<500) then it will evaluate the optional condition. If that is true, the true event is executed; if it is false, the optional false event is executed.
 
 ```mms
 string msgbuildss="Hurry - build a support station!"
 if(air<500)((BuildingSupportStation_C==0))[msg:msgbuildss]
 ```
 
-In the above example, once the air falls below 500 the trigger will use the macro to return the number of Support Stations in the map, and if there are none - it will display a message telling the player to build a support station. The trigger that checks for air<500 will only happen a single time.
+In the above example, once the air falls below 500, the trigger will use the macro to return the number of Support Stations in the map, and if there are none - it will display a message telling the player to build a support station. The trigger that checks for air<500 will only happen a single time.
 
-Event condition as part of an event chain is just like the optional condition for a trigger but it is now considered a single event. The format is:
+An event condition as part of an event chain is just like the optional condition for a trigger but it is now considered a single event. The format is:
 
 ```mms
 ((CONDITION))TRUEEVENT;                # only true case does anything
@@ -87,14 +87,14 @@ You cannot compare a string variable to a number. Or a building to a vehicle. Bo
 
 ## Emulating complex conditions
 
-Conditions are only single comparisons - a left side variable or macro is compared to a right side variable or macro.  If your logic requires more than a single test you have to break up the logic into multiple tests - one at a time.
+Conditions are only single comparisons - a left side variable or macro is compared to a right side variable or macro.  If your logic requires more than a single test, you have to break up the logic into multiple tests - one at a time.
 
-Here are some examples of patterns that can be used do compound tests:
+Here are some examples of patterns that can be used to do compound tests:
 
-Lets assume you need to check an x value and a y value to be in the range of 10,10 to 20,20. Psuedo code would be something like:
+Let's assume you need to check an x value and a y value to be in the range of 10,10 to 20,20. Pseudocode would be something like:
 
 ```mms
-if (x >= 10) and (x <=20) and (y >= 10) and (y <= 20)) then
+if ((x >= 10) and (x <= 20) and (y >= 10) and (y <= 20)) then
     true_event
 else
     false_event
@@ -113,7 +113,7 @@ checkxy2::((y>=10))[checkxy3][falseevent];
 checkxy3::((y<=20))[trueevent][falseevent];
 ```
 
-With this pattern you keep spawning to a new event chain for the true condition. Its messy and does not scale well but does work correctly. You have early exits for false conditions.
+With this pattern you keep spawning to a new event chain for the true condition. It's messy and does not scale well but does work correctly. You have early exits for false conditions.
 
 Pattern 2. Simulate result using int var. Keep track of how many true conditions you have and check for that number of correct results.
 
@@ -125,11 +125,11 @@ temp=0;
 ((x>=10))temp+=1;
 ((x<=20))temp+=1;
 ((y>=10))temp+=1;
-((x<=20))temp+=1;
-((temp==4))[trueevent][falseevent];   # all 4 tests are true or of them failed
+((y<=20))temp+=1;
+((temp==4))[trueevent][falseevent];   # all 4 tests are true, or one of them failed
 ```
 
-This pattern scales well for complex tests. Only disadvantage is all tests have to be done - there is no early exit for the false condition.
+This pattern scales well for complex tests. The only disadvantage is that all tests have to be done - there is no early exit for the false condition.
 
 Pattern 3 - invert tests and use return statement with a variable.
 
@@ -149,7 +149,7 @@ temp=0;             # assume failure
 temp=1;             # all tests pass, end of chain
 ```
 
-This pattern scales well for large number of tests, you simply write a single event chain for all of the tests, and you test for the failure conditions and early return.
+This pattern scales well for a large number of tests, you simply write a single event chain for all of the tests, and you test for the failure conditions and early return.
 
 These patterns can be combined and/or nested to handle very complex if cases.
 

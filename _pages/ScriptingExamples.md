@@ -14,7 +14,7 @@ When a unit drills the wall in row 2, column 2, invoke the msg event which will 
 
 Note that drill triggers usually use `if` since once the wall is drilled, it is no longer a wall. If your script recreates the wall using place events - that would be a case where `when` might be appropriate.
 
-### Time based event
+### Time-based event
 
 ```mms    
 if(time:10)[place:6,7,11]
@@ -37,7 +37,7 @@ myMsg=myStr+myCrystals;
 msg:myMsg;
 ```
 
-When you collect 5 or more crystals a message will appear once and display your currently collected	crystals.
+When you collect 5 or more crystals, a message will appear once and display your currently collected crystals.
 
 ### Increasing counter
 
@@ -54,7 +54,7 @@ myMsg=myStr+counter;
 msg:myMsg;
 ```
 
-Every time you click on the tile at row 6, column 6 the value of `counter` increases and a message is displayed with the new value.
+Every time you click on the tile at row 6, column 6, the value of `counter` increases and a message is displayed with the new value.
 
 ### Conditions inside Event Chains
 
@@ -75,7 +75,7 @@ drill:myRow,myCol;              # drill the wall
 ((myCol>=6))myRow+=1;           # next row
 ((myCol<6))[myCol+=1][myCol=1]; # next col or back to start of new row
 ((myRow>=7))myBool=false;       # all done
-wait:0.5;                       # wait 1/10 game second
+wait:0.5;                       # wait 1/2 game second
 ```
  
 The above example will drill out all the walls from 1,1 until 6,6 in the map. They will not drill as fast as possible since there is a 1/2 second delay after drilling every wall.  There are alternative ways to write similar logic using more event chains or even double nested loops.
@@ -88,7 +88,7 @@ The above example will drill out all the walls from 1,1 until 6,6 in the map. Th
 when(drill:2,3)[msg:BuildingSupportStation_C]
 ```
 
-When you drill a wall at position 2,3 a number indicating the total amount of constructed Support Stations will be displayed. This works with any collection.  `BuildingSupportStation_C` being a collection will return an int that is the number of them. `msg:` event wants a string parameter, so the int value is converted to a string and thus displayed.
+When you drill a wall at position 2,3, a number indicating the total amount of constructed Support Stations will be displayed. This works with any collection.  `BuildingSupportStation_C` being a collection will return an int that is the number of them. The `msg:` event wants a string parameter, so the int value is converted to a string and thus displayed.
 
 ### Class gets teleported
 
@@ -99,7 +99,7 @@ string MyString="Oh no! We lost Charlie!"
 when(Charlie.dead)[msg:MyString]
 ```
 
-When miner *Charlie* dies a message will be shown.
+When miner *Charlie* dies, a message will be shown.
 
 ### Class gets teleported 2
 
@@ -114,7 +114,7 @@ when(vehicle.dead)[msg:VehicleDied]
 when(VehicleSmallDigger_C.dead)[msg:SmallDiggerDied]
 ```
  
-When you lose your `Small Digger` named Sofia you will get two messages; One because the named unit got teleported and one because class a unit of the vehicle class got teleported. `Sofia.dead` overrides `vehicle.dead` which means a third message will not be displayed even though we have 3 events in this example.
+When you lose your `Small Digger` named Sofia, you will get two messages: one because the named unit got teleported and one because a unit of the Small Digger class got teleported. `Sofia.dead` overrides `vehicle.dead` which means a third message will not be displayed even though we have 3 events in this example.
 
 ## Variable Scripts
 

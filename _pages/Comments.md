@@ -1,5 +1,5 @@
 # Comments
-Comments are notes to the developer that in most cases do not have any action to the script engine - they are mostly ignored when reading in the map. They are preceded by the `#` symbol. You can also use this to disable certain script lines.
+Comments are notes to the developer that in most cases have no effect on the script engine - they are mostly ignored when reading in the map. They are preceded by the `#` symbol. You can also use this to disable certain script lines.
 
 The game engine ignores everything after the `#` comment character.  When added to a script line, the game engine will also ignore all spaces from the end of the script `;`
 
@@ -9,7 +9,7 @@ Within the middle of an event chain, you CANNOT have comments that start with le
 
 Having a comment line after the end of an event chain will not terminate the event chain unless it has one or more leading spaces.
 
-Given that there are rules associated with comment line and leading spaces, it is recommended to not have any leading spaces for comment lines - that way there is consistent behavior.
+Given that there are rules associated with comment lines and leading spaces, it is recommended to not have any leading spaces for comment lines - that way there is consistent behavior.
 
 ```mms
 #This comments out the entire line, which is then ignored by the game.
